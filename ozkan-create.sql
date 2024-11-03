@@ -1,3 +1,6 @@
+-- Özkan Gezmiş
+-- 150200033
+
 -- create database 3kan;
 show databases;
 use 3kan;
