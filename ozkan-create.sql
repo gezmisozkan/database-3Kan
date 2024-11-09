@@ -32,6 +32,7 @@ create table matches(
     draw BOOLEAN NOT NULL,
     
     FOREIGN KEY (season_id) REFERENCES seasons(season_id),
+	
     FOREIGN KEY (home_team_id) REFERENCES teams(team_id),
     FOREIGN KEY (away_team_id) REFERENCES teams(team_id),
     
@@ -65,8 +66,10 @@ CREATE TABLE appearances (
     draw BOOLEAN NOT NULL,
     points INT DEFAULT 0,
 
-    FOREIGN KEY (season_id) REFERENCES seasons(season_id),
     FOREIGN KEY (match_id) REFERENCES matches(match_id),
+	
+    FOREIGN KEY (season_id) REFERENCES seasons(season_id)
+	
     FOREIGN KEY (team_id) REFERENCES teams(team_id),
     FOREIGN KEY (opponent_id) REFERENCES teams(team_id),
 	
@@ -83,3 +86,9 @@ CHANGE COLUMN `season` `season` CHAR(4) NOT NULL ; -- I change it to char from y
 
 ALTER TABLE appearances
 CHANGE COLUMN `season` `season` CHAR(4) NOT NULL ; -- I change it to char from year, since I gave error while inserting to table
+
+CREATE INDEX season_id_index
+ ON seasons(season_id);
+
+CREATE INDEX team_id_index
+ ON teams(team_id );
