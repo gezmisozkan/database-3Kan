@@ -11,7 +11,7 @@ show tables;
 create table matches(
     key_id INT PRIMARY KEY,
     season_id VARCHAR(20) NOT NULL,
-    season CHAR(4) NOT NULL,
+    season YEAR NOT NULL,
     tier INT NOT NULL CHECK (tier BETWEEN 1 AND 4),
     division VARCHAR(50) NOT NULL,
     subdivision VARCHAR(50) DEFAULT 'None',
@@ -44,7 +44,7 @@ create table matches(
 CREATE TABLE appearances (
     key_id INT PRIMARY KEY,
     season_id VARCHAR(20) NOT NULL,
-    season CHAR(4) NOT NULL,
+    season YEAR NOT NULL,
     tier INT NOT NULL CHECK (tier BETWEEN 1 AND 4),
     division VARCHAR(50) NOT NULL,
     subdivision VARCHAR(50) DEFAULT 'None',
@@ -77,3 +77,9 @@ CREATE TABLE appearances (
 show tables;
 select * from matches;
 select * from appearances;
+
+ALTER TABLE matches
+CHANGE COLUMN `season` `season` CHAR(4) NOT NULL ; -- I change it to char from year, since I gave error while inserting to table
+
+ALTER TABLE appearances
+CHANGE COLUMN `season` `season` CHAR(4) NOT NULL ; -- I change it to char from year, since I gave error while inserting to table
