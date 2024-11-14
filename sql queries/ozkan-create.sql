@@ -33,8 +33,8 @@ create table matches(
     
     FOREIGN KEY (season_id) REFERENCES seasons(season_id),
 	
-    FOREIGN KEY (home_team_id) REFERENCES teams(team_id),
-    FOREIGN KEY (away_team_id) REFERENCES teams(team_id),
+--    FOREIGN KEY (home_team_id) REFERENCES teams(team_id),
+--    FOREIGN KEY (away_team_id) REFERENCES teams(team_id),
     
     CHECK (home_team_win + away_team_win + draw = 1),
     CHECK (home_team_score_margin = -away_team_score_margin),
@@ -59,19 +59,20 @@ CREATE TABLE appearances (
     away_team BOOLEAN NOT NULL,
     goals_for INT DEFAULT 0,
     goals_against INT DEFAULT 0,
-    goal_difference INT GENERATED ALWAYS AS (goals_for - goals_against) STORED,
+--    goal_difference INT GENERATED ALWAYS AS (goals_for - goals_against) STORED,
+    goal_difference INT,
     result ENUM('win', 'lose', 'draw') NOT NULL,
     win BOOLEAN NOT NULL,
     lose BOOLEAN NOT NULL,
     draw BOOLEAN NOT NULL,
     points INT DEFAULT 0,
 
-    FOREIGN KEY (match_id) REFERENCES matches(match_id),
+--    FOREIGN KEY (match_id) REFERENCES matches(match_id),
 	
-    FOREIGN KEY (season_id) REFERENCES seasons(season_id)
+--    FOREIGN KEY (season_id) REFERENCES seasons(season_id),
 	
-    FOREIGN KEY (team_id) REFERENCES teams(team_id),
-    FOREIGN KEY (opponent_id) REFERENCES teams(team_id),
+--    FOREIGN KEY (team_id) REFERENCES teams(team_id),
+--    FOREIGN KEY (opponent_id) REFERENCES teams(team_id),
 	
     CHECK (win + lose + draw = 1),
     CHECK (home_team + away_team = 1)

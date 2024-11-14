@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Football Matches</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Football Matches</h1>
+    <form method="post" class="mb-4">
+        <div class="row">
+            <div class="col-md-6">
+                <select name="team" class="form-select" required>
+                    <option value="" disabled selected>Select a team</option>
+                    {% for team in teams %}
+                        <option value="{{ team }}" {% if team == selected_team %}selected{% endif %}>{{ team }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary">Show Matches</button>
+            </div>
+        </div>
+    </form>
+
+    {% if matches %}
+        <h2>Matches for {{ selected_team }}</h2>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Match ID</th>
+                <th>Home Team</th>
+                <th>Away Team</th>
+                <th>Home Goals</th>
+                <th>Away Goals</th>
+                <th>Match Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for match in matches %}
+                <tr>
+                    <td>{{ match[0] }}</td>
+                    <td>{{ match[1] }}</td>
+                    <td>{{ match[2] }}</td>
+                    <td>{{ match[3] }}</td>
+                    <td>{{ match[4] }}</td>
+                    <td>{{ match[5] }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% elif selected_team %}
+        <p>No matches found for {{ selected_team }}.</p>
+    {% endif %}
+</div>
+</body>
+</html>
