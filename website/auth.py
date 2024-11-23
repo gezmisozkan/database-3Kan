@@ -1,7 +1,7 @@
 from flask import Blueprint, flash, render_template, request, redirect, url_for
 from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash # Passwordu metin halinde saklamamak için
-from .website import db
+from . import db
 from flask_login import login_user, login_required, logout_user
 
 auth = Blueprint('auth', __name__)
@@ -49,7 +49,7 @@ def sign_up():
         elif len(password1) < 7:
             flash('Password must be greater than 6 characters.', category='error')
         else: # add user to database
-            new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1, method='scrypt'))  # Hashing tam olarak çalışmıyor. 
+            new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1, method='scrypt'))  # Hashing tam olarak çalışmıyor.
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)

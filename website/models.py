@@ -1,6 +1,6 @@
-# Database models for the website  This will be hibrited with insert_to_db.py
+# Database models for the website
 from sqlalchemy import func
-from .website import db  #. means from the current package yani website
+from . import db  #. means from the current package yani website
 from flask_login import UserMixin
 
 class Note(db.Model): # Note isimli bir class oluşturuldu ve db.Model classından miras alıyor
