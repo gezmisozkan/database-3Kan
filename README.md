@@ -1,5 +1,5 @@
 # database-3Kan
 
-example index file
+example teams page
 
-![image](https://github.com/user-attachments/assets/bfce0c09-e88b-4091-8a7c-c4999b30aca8)
+![image](https://github.com/user-attachments/assets/eb6232ea-58b2-4ed9-85e3-c173a2c91d86)
