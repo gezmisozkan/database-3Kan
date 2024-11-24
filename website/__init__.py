@@ -3,21 +3,28 @@ from os import path
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from sqlalchemy import create_engine
 
 db = SQLAlchemy() #Database objesi oluşturuldu
 DB_NAME = "database.db" # Database ismi belirlendi
 
+# MySQL connection string
+MYSQL_DB_URI = 'mysql+mysqlconnector://root:1234@localhost/3kan'
+
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'Hakan1234'
+
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}' # Database bağlantısı yapıldı
     db.init_app(app) # Database objesi app ile ilişkilendirildi 
 
+    # MySQL configuration (create a separate engine)
+    mysql_engine = create_engine(MYSQL_DB_URI)
     
+    # Blueprints for modularity
     from .views import views
     from .auth import auth
 
-    
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
@@ -39,5 +46,7 @@ def create_app():
             db.create_all(app=app)
             print('Created Database!')
 
-   
+    # Attach MySQL engine for direct SQL execution
+    app.mysql_engine = mysql_engine
+    
     return app

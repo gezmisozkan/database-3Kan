@@ -1,0 +1,1001 @@
+key_id,season_id,season,tier,division,subdivision,match_id,match_name,home_team_id,home_team_name,away_team_id,away_team_name,score,home_team_score,away_team_score,home_team_score_margin,away_team_score_margin,result,home_team_win,away_team_win,draw
+1,S-1888-1,1888,1,First Division,None,M-1888-1-001,Accrington vs Aston Villa,T-001,Accrington,T-002,Aston Villa,1-1,1,1,0,0,draw,0,0,1
+2,S-1888-1,1888,1,First Division,None,M-1888-1-002,Accrington vs Blackburn Rovers,T-001,Accrington,T-003,Blackburn Rovers,0-2,0,2,-2,2,away team win,0,1,0
+3,S-1888-1,1888,1,First Division,None,M-1888-1-003,Accrington vs Bolton Wanderers,T-001,Accrington,T-004,Bolton Wanderers,2-3,2,3,-1,1,away team win,0,1,0
+4,S-1888-1,1888,1,First Division,None,M-1888-1-004,Accrington vs Burnley,T-001,Accrington,T-005,Burnley,5-1,5,1,4,-4,home team win,1,0,0
+5,S-1888-1,1888,1,First Division,None,M-1888-1-005,Accrington vs Derby County,T-001,Accrington,T-006,Derby County,6-2,6,2,4,-4,home team win,1,0,0
+6,S-1888-1,1888,1,First Division,None,M-1888-1-006,Accrington vs Everton,T-001,Accrington,T-007,Everton,3-1,3,1,2,-2,home team win,1,0,0
+7,S-1888-1,1888,1,First Division,None,M-1888-1-007,Accrington vs Notts County,T-001,Accrington,T-008,Notts County,1-2,1,2,-1,1,away team win,0,1,0
+8,S-1888-1,1888,1,First Division,None,M-1888-1-008,Accrington vs Preston North End,T-001,Accrington,T-009,Preston North End,0-0,0,0,0,0,draw,0,0,1
+9,S-1888-1,1888,1,First Division,None,M-1888-1-009,Accrington vs Stoke,T-001,Accrington,T-010,Stoke,2-0,2,0,2,-2,home team win,1,0,0
+10,S-1888-1,1888,1,First Division,None,M-1888-1-010,Accrington vs West Bromwich Albion,T-001,Accrington,T-011,West Bromwich Albion,2-1,2,1,1,-1,home team win,1,0,0
+11,S-1888-1,1888,1,First Division,None,M-1888-1-011,Accrington vs Wolverhampton Wanderers,T-001,Accrington,T-012,Wolverhampton Wanderers,4-4,4,4,0,0,draw,0,0,1
+12,S-1888-1,1888,1,First Division,None,M-1888-1-012,Aston Villa vs Accrington,T-002,Aston Villa,T-001,Accrington,4-3,4,3,1,-1,home team win,1,0,0
+13,S-1888-1,1888,1,First Division,None,M-1888-1-013,Aston Villa vs Blackburn Rovers,T-002,Aston Villa,T-003,Blackburn Rovers,6-1,6,1,5,-5,home team win,1,0,0
+14,S-1888-1,1888,1,First Division,None,M-1888-1-014,Aston Villa vs Bolton Wanderers,T-002,Aston Villa,T-004,Bolton Wanderers,6-2,6,2,4,-4,home team win,1,0,0
+15,S-1888-1,1888,1,First Division,None,M-1888-1-015,Aston Villa vs Burnley,T-002,Aston Villa,T-005,Burnley,4-2,4,2,2,-2,home team win,1,0,0
+16,S-1888-1,1888,1,First Division,None,M-1888-1-016,Aston Villa vs Derby County,T-002,Aston Villa,T-006,Derby County,4-2,4,2,2,-2,home team win,1,0,0
+17,S-1888-1,1888,1,First Division,None,M-1888-1-017,Aston Villa vs Everton,T-002,Aston Villa,T-007,Everton,2-1,2,1,1,-1,home team win,1,0,0
+18,S-1888-1,1888,1,First Division,None,M-1888-1-018,Aston Villa vs Notts County,T-002,Aston Villa,T-008,Notts County,9-1,9,1,8,-8,home team win,1,0,0
+19,S-1888-1,1888,1,First Division,None,M-1888-1-019,Aston Villa vs Preston North End,T-002,Aston Villa,T-009,Preston North End,0-2,0,2,-2,2,away team win,0,1,0
+20,S-1888-1,1888,1,First Division,None,M-1888-1-020,Aston Villa vs Stoke,T-002,Aston Villa,T-010,Stoke,5-1,5,1,4,-4,home team win,1,0,0
+21,S-1888-1,1888,1,First Division,None,M-1888-1-021,Aston Villa vs West Bromwich Albion,T-002,Aston Villa,T-011,West Bromwich Albion,2-0,2,0,2,-2,home team win,1,0,0
+22,S-1888-1,1888,1,First Division,None,M-1888-1-022,Aston Villa vs Wolverhampton Wanderers,T-002,Aston Villa,T-012,Wolverhampton Wanderers,2-1,2,1,1,-1,home team win,1,0,0
+23,S-1888-1,1888,1,First Division,None,M-1888-1-023,Blackburn Rovers vs Accrington,T-003,Blackburn Rovers,T-001,Accrington,5-5,5,5,0,0,draw,0,0,1
+24,S-1888-1,1888,1,First Division,None,M-1888-1-024,Blackburn Rovers vs Aston Villa,T-003,Blackburn Rovers,T-002,Aston Villa,5-1,5,1,4,-4,home team win,1,0,0
+25,S-1888-1,1888,1,First Division,None,M-1888-1-025,Blackburn Rovers vs Bolton Wanderers,T-003,Blackburn Rovers,T-004,Bolton Wanderers,4-4,4,4,0,0,draw,0,0,1
+26,S-1888-1,1888,1,First Division,None,M-1888-1-026,Blackburn Rovers vs Burnley,T-003,Blackburn Rovers,T-005,Burnley,4-2,4,2,2,-2,home team win,1,0,0
+27,S-1888-1,1888,1,First Division,None,M-1888-1-027,Blackburn Rovers vs Derby County,T-003,Blackburn Rovers,T-006,Derby County,3-0,3,0,3,-3,home team win,1,0,0
+28,S-1888-1,1888,1,First Division,None,M-1888-1-028,Blackburn Rovers vs Everton,T-003,Blackburn Rovers,T-007,Everton,3-0,3,0,3,-3,home team win,1,0,0
+29,S-1888-1,1888,1,First Division,None,M-1888-1-029,Blackburn Rovers vs Notts County,T-003,Blackburn Rovers,T-008,Notts County,5-2,5,2,3,-3,home team win,1,0,0
+30,S-1888-1,1888,1,First Division,None,M-1888-1-030,Blackburn Rovers vs Preston North End,T-003,Blackburn Rovers,T-009,Preston North End,2-2,2,2,0,0,draw,0,0,1
+31,S-1888-1,1888,1,First Division,None,M-1888-1-031,Blackburn Rovers vs Stoke,T-003,Blackburn Rovers,T-010,Stoke,5-2,5,2,3,-3,home team win,1,0,0
+32,S-1888-1,1888,1,First Division,None,M-1888-1-032,Blackburn Rovers vs West Bromwich Albion,T-003,Blackburn Rovers,T-011,West Bromwich Albion,6-2,6,2,4,-4,home team win,1,0,0
+33,S-1888-1,1888,1,First Division,None,M-1888-1-033,Blackburn Rovers vs Wolverhampton Wanderers,T-003,Blackburn Rovers,T-012,Wolverhampton Wanderers,2-2,2,2,0,0,draw,0,0,1
+34,S-1888-1,1888,1,First Division,None,M-1888-1-034,Bolton Wanderers vs Accrington,T-004,Bolton Wanderers,T-001,Accrington,4-1,4,1,3,-3,home team win,1,0,0
+35,S-1888-1,1888,1,First Division,None,M-1888-1-035,Bolton Wanderers vs Aston Villa,T-004,Bolton Wanderers,T-002,Aston Villa,2-3,2,3,-1,1,away team win,0,1,0
+36,S-1888-1,1888,1,First Division,None,M-1888-1-036,Bolton Wanderers vs Blackburn Rovers,T-004,Bolton Wanderers,T-003,Blackburn Rovers,3-2,3,2,1,-1,home team win,1,0,0
+37,S-1888-1,1888,1,First Division,None,M-1888-1-037,Bolton Wanderers vs Burnley,T-004,Bolton Wanderers,T-005,Burnley,3-4,3,4,-1,1,away team win,0,1,0
+38,S-1888-1,1888,1,First Division,None,M-1888-1-038,Bolton Wanderers vs Derby County,T-004,Bolton Wanderers,T-006,Derby County,3-6,3,6,-3,3,away team win,0,1,0
+39,S-1888-1,1888,1,First Division,None,M-1888-1-039,Bolton Wanderers vs Everton,T-004,Bolton Wanderers,T-007,Everton,6-2,6,2,4,-4,home team win,1,0,0
+40,S-1888-1,1888,1,First Division,None,M-1888-1-040,Bolton Wanderers vs Notts County,T-004,Bolton Wanderers,T-008,Notts County,7-3,7,3,4,-4,home team win,1,0,0
+41,S-1888-1,1888,1,First Division,None,M-1888-1-041,Bolton Wanderers vs Preston North End,T-004,Bolton Wanderers,T-009,Preston North End,2-5,2,5,-3,3,away team win,0,1,0
+42,S-1888-1,1888,1,First Division,None,M-1888-1-042,Bolton Wanderers vs Stoke,T-004,Bolton Wanderers,T-010,Stoke,2-1,2,1,1,-1,home team win,1,0,0
+43,S-1888-1,1888,1,First Division,None,M-1888-1-043,Bolton Wanderers vs West Bromwich Albion,T-004,Bolton Wanderers,T-011,West Bromwich Albion,1-2,1,2,-1,1,away team win,0,1,0
+44,S-1888-1,1888,1,First Division,None,M-1888-1-044,Bolton Wanderers vs Wolverhampton Wanderers,T-004,Bolton Wanderers,T-012,Wolverhampton Wanderers,2-1,2,1,1,-1,home team win,1,0,0
+45,S-1888-1,1888,1,First Division,None,M-1888-1-045,Burnley vs Accrington,T-005,Burnley,T-001,Accrington,2-2,2,2,0,0,draw,0,0,1
+46,S-1888-1,1888,1,First Division,None,M-1888-1-046,Burnley vs Aston Villa,T-005,Burnley,T-002,Aston Villa,4-0,4,0,4,-4,home team win,1,0,0
+47,S-1888-1,1888,1,First Division,None,M-1888-1-047,Burnley vs Blackburn Rovers,T-005,Burnley,T-003,Blackburn Rovers,1-7,1,7,-6,6,away team win,0,1,0
+48,S-1888-1,1888,1,First Division,None,M-1888-1-048,Burnley vs Bolton Wanderers,T-005,Burnley,T-004,Bolton Wanderers,4-1,4,1,3,-3,home team win,1,0,0
+49,S-1888-1,1888,1,First Division,None,M-1888-1-049,Burnley vs Derby County,T-005,Burnley,T-006,Derby County,1-0,1,0,1,-1,home team win,1,0,0
+50,S-1888-1,1888,1,First Division,None,M-1888-1-050,Burnley vs Everton,T-005,Burnley,T-007,Everton,2-2,2,2,0,0,draw,0,0,1
+51,S-1888-1,1888,1,First Division,None,M-1888-1-051,Burnley vs Notts County,T-005,Burnley,T-008,Notts County,1-0,1,0,1,-1,home team win,1,0,0
+52,S-1888-1,1888,1,First Division,None,M-1888-1-052,Burnley vs Preston North End,T-005,Burnley,T-009,Preston North End,2-2,2,2,0,0,draw,0,0,1
+53,S-1888-1,1888,1,First Division,None,M-1888-1-053,Burnley vs Stoke,T-005,Burnley,T-010,Stoke,2-1,2,1,1,-1,home team win,1,0,0
+54,S-1888-1,1888,1,First Division,None,M-1888-1-054,Burnley vs West Bromwich Albion,T-005,Burnley,T-011,West Bromwich Albion,2-0,2,0,2,-2,home team win,1,0,0
+55,S-1888-1,1888,1,First Division,None,M-1888-1-055,Burnley vs Wolverhampton Wanderers,T-005,Burnley,T-012,Wolverhampton Wanderers,0-4,0,4,-4,4,away team win,0,1,0
+56,S-1888-1,1888,1,First Division,None,M-1888-1-056,Derby County vs Accrington,T-006,Derby County,T-001,Accrington,1-1,1,1,0,0,draw,0,0,1
+57,S-1888-1,1888,1,First Division,None,M-1888-1-057,Derby County vs Aston Villa,T-006,Derby County,T-002,Aston Villa,5-2,5,2,3,-3,home team win,1,0,0
+58,S-1888-1,1888,1,First Division,None,M-1888-1-058,Derby County vs Blackburn Rovers,T-006,Derby County,T-003,Blackburn Rovers,0-2,0,2,-2,2,away team win,0,1,0
+59,S-1888-1,1888,1,First Division,None,M-1888-1-059,Derby County vs Bolton Wanderers,T-006,Derby County,T-004,Bolton Wanderers,2-3,2,3,-1,1,away team win,0,1,0
+60,S-1888-1,1888,1,First Division,None,M-1888-1-060,Derby County vs Burnley,T-006,Derby County,T-005,Burnley,1-0,1,0,1,-1,home team win,1,0,0
+61,S-1888-1,1888,1,First Division,None,M-1888-1-061,Derby County vs Everton,T-006,Derby County,T-007,Everton,2-4,2,4,-2,2,away team win,0,1,0
+62,S-1888-1,1888,1,First Division,None,M-1888-1-062,Derby County vs Notts County,T-006,Derby County,T-008,Notts County,3-2,3,2,1,-1,home team win,1,0,0
+63,S-1888-1,1888,1,First Division,None,M-1888-1-063,Derby County vs Preston North End,T-006,Derby County,T-009,Preston North End,2-3,2,3,-1,1,away team win,0,1,0
+64,S-1888-1,1888,1,First Division,None,M-1888-1-064,Derby County vs Stoke,T-006,Derby County,T-010,Stoke,2-1,2,1,1,-1,home team win,1,0,0
+65,S-1888-1,1888,1,First Division,None,M-1888-1-065,Derby County vs West Bromwich Albion,T-006,Derby County,T-011,West Bromwich Albion,1-2,1,2,-1,1,away team win,0,1,0
+66,S-1888-1,1888,1,First Division,None,M-1888-1-066,Derby County vs Wolverhampton Wanderers,T-006,Derby County,T-012,Wolverhampton Wanderers,3-0,3,0,3,-3,home team win,1,0,0
+67,S-1888-1,1888,1,First Division,None,M-1888-1-067,Everton vs Accrington,T-007,Everton,T-001,Accrington,2-1,2,1,1,-1,home team win,1,0,0
+68,S-1888-1,1888,1,First Division,None,M-1888-1-068,Everton vs Aston Villa,T-007,Everton,T-002,Aston Villa,2-0,2,0,2,-2,home team win,1,0,0
+69,S-1888-1,1888,1,First Division,None,M-1888-1-069,Everton vs Blackburn Rovers,T-007,Everton,T-003,Blackburn Rovers,3-1,3,1,2,-2,home team win,1,0,0
+70,S-1888-1,1888,1,First Division,None,M-1888-1-070,Everton vs Bolton Wanderers,T-007,Everton,T-004,Bolton Wanderers,2-1,2,1,1,-1,home team win,1,0,0
+71,S-1888-1,1888,1,First Division,None,M-1888-1-071,Everton vs Burnley,T-007,Everton,T-005,Burnley,3-2,3,2,1,-1,home team win,1,0,0
+72,S-1888-1,1888,1,First Division,None,M-1888-1-072,Everton vs Derby County,T-007,Everton,T-006,Derby County,6-2,6,2,4,-4,home team win,1,0,0
+73,S-1888-1,1888,1,First Division,None,M-1888-1-073,Everton vs Notts County,T-007,Everton,T-008,Notts County,2-1,2,1,1,-1,home team win,1,0,0
+74,S-1888-1,1888,1,First Division,None,M-1888-1-074,Everton vs Preston North End,T-007,Everton,T-009,Preston North End,0-2,0,2,-2,2,away team win,0,1,0
+75,S-1888-1,1888,1,First Division,None,M-1888-1-075,Everton vs Stoke,T-007,Everton,T-010,Stoke,2-1,2,1,1,-1,home team win,1,0,0
+76,S-1888-1,1888,1,First Division,None,M-1888-1-076,Everton vs West Bromwich Albion,T-007,Everton,T-011,West Bromwich Albion,1-4,1,4,-3,3,away team win,0,1,0
+77,S-1888-1,1888,1,First Division,None,M-1888-1-077,Everton vs Wolverhampton Wanderers,T-007,Everton,T-012,Wolverhampton Wanderers,1-2,1,2,-1,1,away team win,0,1,0
+78,S-1888-1,1888,1,First Division,None,M-1888-1-078,Notts County vs Accrington,T-008,Notts County,T-001,Accrington,3-3,3,3,0,0,draw,0,0,1
+79,S-1888-1,1888,1,First Division,None,M-1888-1-079,Notts County vs Aston Villa,T-008,Notts County,T-002,Aston Villa,2-4,2,4,-2,2,away team win,0,1,0
+80,S-1888-1,1888,1,First Division,None,M-1888-1-080,Notts County vs Blackburn Rovers,T-008,Notts County,T-003,Blackburn Rovers,3-3,3,3,0,0,draw,0,0,1
+81,S-1888-1,1888,1,First Division,None,M-1888-1-081,Notts County vs Bolton Wanderers,T-008,Notts County,T-004,Bolton Wanderers,0-4,0,4,-4,4,away team win,0,1,0
+82,S-1888-1,1888,1,First Division,None,M-1888-1-082,Notts County vs Burnley,T-008,Notts County,T-005,Burnley,6-1,6,1,5,-5,home team win,1,0,0
+83,S-1888-1,1888,1,First Division,None,M-1888-1-083,Notts County vs Derby County,T-008,Notts County,T-006,Derby County,3-5,3,5,-2,2,away team win,0,1,0
+84,S-1888-1,1888,1,First Division,None,M-1888-1-084,Notts County vs Everton,T-008,Notts County,T-007,Everton,3-1,3,1,2,-2,home team win,1,0,0
+85,S-1888-1,1888,1,First Division,None,M-1888-1-085,Notts County vs Preston North End,T-008,Notts County,T-009,Preston North End,0-7,0,7,-7,7,away team win,0,1,0
+86,S-1888-1,1888,1,First Division,None,M-1888-1-086,Notts County vs Stoke,T-008,Notts County,T-010,Stoke,0-3,0,3,-3,3,away team win,0,1,0
+87,S-1888-1,1888,1,First Division,None,M-1888-1-087,Notts County vs West Bromwich Albion,T-008,Notts County,T-011,West Bromwich Albion,2-1,2,1,1,-1,home team win,1,0,0
+88,S-1888-1,1888,1,First Division,None,M-1888-1-088,Notts County vs Wolverhampton Wanderers,T-008,Notts County,T-012,Wolverhampton Wanderers,3-0,3,0,3,-3,home team win,1,0,0
+89,S-1888-1,1888,1,First Division,None,M-1888-1-089,Preston North End vs Accrington,T-009,Preston North End,T-001,Accrington,2-0,2,0,2,-2,home team win,1,0,0
+90,S-1888-1,1888,1,First Division,None,M-1888-1-090,Preston North End vs Aston Villa,T-009,Preston North End,T-002,Aston Villa,1-1,1,1,0,0,draw,0,0,1
+91,S-1888-1,1888,1,First Division,None,M-1888-1-091,Preston North End vs Blackburn Rovers,T-009,Preston North End,T-003,Blackburn Rovers,1-0,1,0,1,-1,home team win,1,0,0
+92,S-1888-1,1888,1,First Division,None,M-1888-1-092,Preston North End vs Bolton Wanderers,T-009,Preston North End,T-004,Bolton Wanderers,3-1,3,1,2,-2,home team win,1,0,0
+93,S-1888-1,1888,1,First Division,None,M-1888-1-093,Preston North End vs Burnley,T-009,Preston North End,T-005,Burnley,5-2,5,2,3,-3,home team win,1,0,0
+94,S-1888-1,1888,1,First Division,None,M-1888-1-094,Preston North End vs Derby County,T-009,Preston North End,T-006,Derby County,5-0,5,0,5,-5,home team win,1,0,0
+95,S-1888-1,1888,1,First Division,None,M-1888-1-095,Preston North End vs Everton,T-009,Preston North End,T-007,Everton,3-0,3,0,3,-3,home team win,1,0,0
+96,S-1888-1,1888,1,First Division,None,M-1888-1-096,Preston North End vs Notts County,T-009,Preston North End,T-008,Notts County,4-1,4,1,3,-3,home team win,1,0,0
+97,S-1888-1,1888,1,First Division,None,M-1888-1-097,Preston North End vs Stoke,T-009,Preston North End,T-010,Stoke,7-0,7,0,7,-7,home team win,1,0,0
+98,S-1888-1,1888,1,First Division,None,M-1888-1-098,Preston North End vs West Bromwich Albion,T-009,Preston North End,T-011,West Bromwich Albion,3-0,3,0,3,-3,home team win,1,0,0
+99,S-1888-1,1888,1,First Division,None,M-1888-1-099,Preston North End vs Wolverhampton Wanderers,T-009,Preston North End,T-012,Wolverhampton Wanderers,5-2,5,2,3,-3,home team win,1,0,0
+100,S-1888-1,1888,1,First Division,None,M-1888-1-100,Stoke vs Accrington,T-010,Stoke,T-001,Accrington,2-4,2,4,-2,2,away team win,0,1,0
+101,S-1888-1,1888,1,First Division,None,M-1888-1-101,Stoke vs Aston Villa,T-010,Stoke,T-002,Aston Villa,1-1,1,1,0,0,draw,0,0,1
+102,S-1888-1,1888,1,First Division,None,M-1888-1-102,Stoke vs Blackburn Rovers,T-010,Stoke,T-003,Blackburn Rovers,2-1,2,1,1,-1,home team win,1,0,0
+103,S-1888-1,1888,1,First Division,None,M-1888-1-103,Stoke vs Bolton Wanderers,T-010,Stoke,T-004,Bolton Wanderers,2-2,2,2,0,0,draw,0,0,1
+104,S-1888-1,1888,1,First Division,None,M-1888-1-104,Stoke vs Burnley,T-010,Stoke,T-005,Burnley,4-3,4,3,1,-1,home team win,1,0,0
+105,S-1888-1,1888,1,First Division,None,M-1888-1-105,Stoke vs Derby County,T-010,Stoke,T-006,Derby County,1-1,1,1,0,0,draw,0,0,1
+106,S-1888-1,1888,1,First Division,None,M-1888-1-106,Stoke vs Everton,T-010,Stoke,T-007,Everton,0-0,0,0,0,0,draw,0,0,1
+107,S-1888-1,1888,1,First Division,None,M-1888-1-107,Stoke vs Notts County,T-010,Stoke,T-008,Notts County,3-0,3,0,3,-3,home team win,1,0,0
+108,S-1888-1,1888,1,First Division,None,M-1888-1-108,Stoke vs Preston North End,T-010,Stoke,T-009,Preston North End,0-3,0,3,-3,3,away team win,0,1,0
+109,S-1888-1,1888,1,First Division,None,M-1888-1-109,Stoke vs West Bromwich Albion,T-010,Stoke,T-011,West Bromwich Albion,0-2,0,2,-2,2,away team win,0,1,0
+110,S-1888-1,1888,1,First Division,None,M-1888-1-110,Stoke vs Wolverhampton Wanderers,T-010,Stoke,T-012,Wolverhampton Wanderers,0-1,0,1,-1,1,away team win,0,1,0
+111,S-1888-1,1888,1,First Division,None,M-1888-1-111,West Bromwich Albion vs Accrington,T-011,West Bromwich Albion,T-001,Accrington,2-2,2,2,0,0,draw,0,0,1
+112,S-1888-1,1888,1,First Division,None,M-1888-1-112,West Bromwich Albion vs Aston Villa,T-011,West Bromwich Albion,T-002,Aston Villa,3-3,3,3,0,0,draw,0,0,1
+113,S-1888-1,1888,1,First Division,None,M-1888-1-113,West Bromwich Albion vs Blackburn Rovers,T-011,West Bromwich Albion,T-003,Blackburn Rovers,2-1,2,1,1,-1,home team win,1,0,0
+114,S-1888-1,1888,1,First Division,None,M-1888-1-114,West Bromwich Albion vs Bolton Wanderers,T-011,West Bromwich Albion,T-004,Bolton Wanderers,1-5,1,5,-4,4,away team win,0,1,0
+115,S-1888-1,1888,1,First Division,None,M-1888-1-115,West Bromwich Albion vs Burnley,T-011,West Bromwich Albion,T-005,Burnley,4-3,4,3,1,-1,home team win,1,0,0
+116,S-1888-1,1888,1,First Division,None,M-1888-1-116,West Bromwich Albion vs Derby County,T-011,West Bromwich Albion,T-006,Derby County,5-0,5,0,5,-5,home team win,1,0,0
+117,S-1888-1,1888,1,First Division,None,M-1888-1-117,West Bromwich Albion vs Everton,T-011,West Bromwich Albion,T-007,Everton,1-0,1,0,1,-1,home team win,1,0,0
+118,S-1888-1,1888,1,First Division,None,M-1888-1-118,West Bromwich Albion vs Notts County,T-011,West Bromwich Albion,T-008,Notts County,4-2,4,2,2,-2,home team win,1,0,0
+119,S-1888-1,1888,1,First Division,None,M-1888-1-119,West Bromwich Albion vs Preston North End,T-011,West Bromwich Albion,T-009,Preston North End,0-5,0,5,-5,5,away team win,0,1,0
+120,S-1888-1,1888,1,First Division,None,M-1888-1-120,West Bromwich Albion vs Stoke,T-011,West Bromwich Albion,T-010,Stoke,2-0,2,0,2,-2,home team win,1,0,0
+121,S-1888-1,1888,1,First Division,None,M-1888-1-121,West Bromwich Albion vs Wolverhampton Wanderers,T-011,West Bromwich Albion,T-012,Wolverhampton Wanderers,1-3,1,3,-2,2,away team win,0,1,0
+122,S-1888-1,1888,1,First Division,None,M-1888-1-122,Wolverhampton Wanderers vs Accrington,T-012,Wolverhampton Wanderers,T-001,Accrington,4-0,4,0,4,-4,home team win,1,0,0
+123,S-1888-1,1888,1,First Division,None,M-1888-1-123,Wolverhampton Wanderers vs Aston Villa,T-012,Wolverhampton Wanderers,T-002,Aston Villa,1-1,1,1,0,0,draw,0,0,1
+124,S-1888-1,1888,1,First Division,None,M-1888-1-124,Wolverhampton Wanderers vs Blackburn Rovers,T-012,Wolverhampton Wanderers,T-003,Blackburn Rovers,2-2,2,2,0,0,draw,0,0,1
+125,S-1888-1,1888,1,First Division,None,M-1888-1-125,Wolverhampton Wanderers vs Bolton Wanderers,T-012,Wolverhampton Wanderers,T-004,Bolton Wanderers,3-2,3,2,1,-1,home team win,1,0,0
+126,S-1888-1,1888,1,First Division,None,M-1888-1-126,Wolverhampton Wanderers vs Burnley,T-012,Wolverhampton Wanderers,T-005,Burnley,4-1,4,1,3,-3,home team win,1,0,0
+127,S-1888-1,1888,1,First Division,None,M-1888-1-127,Wolverhampton Wanderers vs Derby County,T-012,Wolverhampton Wanderers,T-006,Derby County,4-1,4,1,3,-3,home team win,1,0,0
+128,S-1888-1,1888,1,First Division,None,M-1888-1-128,Wolverhampton Wanderers vs Everton,T-012,Wolverhampton Wanderers,T-007,Everton,4-0,4,0,4,-4,home team win,1,0,0
+129,S-1888-1,1888,1,First Division,None,M-1888-1-129,Wolverhampton Wanderers vs Notts County,T-012,Wolverhampton Wanderers,T-008,Notts County,2-1,2,1,1,-1,home team win,1,0,0
+130,S-1888-1,1888,1,First Division,None,M-1888-1-130,Wolverhampton Wanderers vs Preston North End,T-012,Wolverhampton Wanderers,T-009,Preston North End,0-4,0,4,-4,4,away team win,0,1,0
+131,S-1888-1,1888,1,First Division,None,M-1888-1-131,Wolverhampton Wanderers vs Stoke,T-012,Wolverhampton Wanderers,T-010,Stoke,4-1,4,1,3,-3,home team win,1,0,0
+132,S-1888-1,1888,1,First Division,None,M-1888-1-132,Wolverhampton Wanderers vs West Bromwich Albion,T-012,Wolverhampton Wanderers,T-011,West Bromwich Albion,2-1,2,1,1,-1,home team win,1,0,0
+133,S-1889-1,1889,1,First Division,None,M-1889-1-001,Accrington vs Aston Villa,T-001,Accrington,T-002,Aston Villa,4-2,4,2,2,-2,home team win,1,0,0
+134,S-1889-1,1889,1,First Division,None,M-1889-1-002,Accrington vs Blackburn Rovers,T-001,Accrington,T-003,Blackburn Rovers,2-2,2,2,0,0,draw,0,0,1
+135,S-1889-1,1889,1,First Division,None,M-1889-1-003,Accrington vs Bolton Wanderers,T-001,Accrington,T-004,Bolton Wanderers,3-1,3,1,2,-2,home team win,1,0,0
+136,S-1889-1,1889,1,First Division,None,M-1889-1-004,Accrington vs Burnley,T-001,Accrington,T-005,Burnley,2-2,2,2,0,0,draw,0,0,1
+137,S-1889-1,1889,1,First Division,None,M-1889-1-005,Accrington vs Derby County,T-001,Accrington,T-006,Derby County,6-1,6,1,5,-5,home team win,1,0,0
+138,S-1889-1,1889,1,First Division,None,M-1889-1-006,Accrington vs Everton,T-001,Accrington,T-007,Everton,5-3,5,3,2,-2,home team win,1,0,0
+139,S-1889-1,1889,1,First Division,None,M-1889-1-007,Accrington vs Notts County,T-001,Accrington,T-008,Notts County,1-8,1,8,-7,7,away team win,0,1,0
+140,S-1889-1,1889,1,First Division,None,M-1889-1-008,Accrington vs Preston North End,T-001,Accrington,T-009,Preston North End,2-2,2,2,0,0,draw,0,0,1
+141,S-1889-1,1889,1,First Division,None,M-1889-1-009,Accrington vs Stoke,T-001,Accrington,T-010,Stoke,2-1,2,1,1,-1,home team win,1,0,0
+142,S-1889-1,1889,1,First Division,None,M-1889-1-010,Accrington vs West Bromwich Albion,T-001,Accrington,T-011,West Bromwich Albion,0-0,0,0,0,0,draw,0,0,1
+143,S-1889-1,1889,1,First Division,None,M-1889-1-011,Accrington vs Wolverhampton Wanderers,T-001,Accrington,T-012,Wolverhampton Wanderers,6-3,6,3,3,-3,home team win,1,0,0
+144,S-1889-1,1889,1,First Division,None,M-1889-1-012,Aston Villa vs Accrington,T-002,Aston Villa,T-001,Accrington,1-2,1,2,-1,1,away team win,0,1,0
+145,S-1889-1,1889,1,First Division,None,M-1889-1-013,Aston Villa vs Blackburn Rovers,T-002,Aston Villa,T-003,Blackburn Rovers,3-0,3,0,3,-3,home team win,1,0,0
+146,S-1889-1,1889,1,First Division,None,M-1889-1-014,Aston Villa vs Bolton Wanderers,T-002,Aston Villa,T-004,Bolton Wanderers,1-2,1,2,-1,1,away team win,0,1,0
+147,S-1889-1,1889,1,First Division,None,M-1889-1-015,Aston Villa vs Burnley,T-002,Aston Villa,T-005,Burnley,2-2,2,2,0,0,draw,0,0,1
+148,S-1889-1,1889,1,First Division,None,M-1889-1-016,Aston Villa vs Derby County,T-002,Aston Villa,T-006,Derby County,7-1,7,1,6,-6,home team win,1,0,0
+149,S-1889-1,1889,1,First Division,None,M-1889-1-017,Aston Villa vs Everton,T-002,Aston Villa,T-007,Everton,1-2,1,2,-1,1,away team win,0,1,0
+150,S-1889-1,1889,1,First Division,None,M-1889-1-018,Aston Villa vs Notts County,T-002,Aston Villa,T-008,Notts County,1-1,1,1,0,0,draw,0,0,1
+151,S-1889-1,1889,1,First Division,None,M-1889-1-019,Aston Villa vs Preston North End,T-002,Aston Villa,T-009,Preston North End,5-3,5,3,2,-2,home team win,1,0,0
+152,S-1889-1,1889,1,First Division,None,M-1889-1-020,Aston Villa vs Stoke,T-002,Aston Villa,T-010,Stoke,6-1,6,1,5,-5,home team win,1,0,0
+153,S-1889-1,1889,1,First Division,None,M-1889-1-021,Aston Villa vs West Bromwich Albion,T-002,Aston Villa,T-011,West Bromwich Albion,1-0,1,0,1,-1,home team win,1,0,0
+154,S-1889-1,1889,1,First Division,None,M-1889-1-022,Aston Villa vs Wolverhampton Wanderers,T-002,Aston Villa,T-012,Wolverhampton Wanderers,2-1,2,1,1,-1,home team win,1,0,0
+155,S-1889-1,1889,1,First Division,None,M-1889-1-023,Blackburn Rovers vs Accrington,T-003,Blackburn Rovers,T-001,Accrington,3-2,3,2,1,-1,home team win,1,0,0
+156,S-1889-1,1889,1,First Division,None,M-1889-1-024,Blackburn Rovers vs Aston Villa,T-003,Blackburn Rovers,T-002,Aston Villa,7-0,7,0,7,-7,home team win,1,0,0
+157,S-1889-1,1889,1,First Division,None,M-1889-1-025,Blackburn Rovers vs Bolton Wanderers,T-003,Blackburn Rovers,T-004,Bolton Wanderers,7-1,7,1,6,-6,home team win,1,0,0
+158,S-1889-1,1889,1,First Division,None,M-1889-1-026,Blackburn Rovers vs Burnley,T-003,Blackburn Rovers,T-005,Burnley,7-1,7,1,6,-6,home team win,1,0,0
+159,S-1889-1,1889,1,First Division,None,M-1889-1-027,Blackburn Rovers vs Derby County,T-003,Blackburn Rovers,T-006,Derby County,4-2,4,2,2,-2,home team win,1,0,0
+160,S-1889-1,1889,1,First Division,None,M-1889-1-028,Blackburn Rovers vs Everton,T-003,Blackburn Rovers,T-007,Everton,2-4,2,4,-2,2,away team win,0,1,0
+161,S-1889-1,1889,1,First Division,None,M-1889-1-029,Blackburn Rovers vs Notts County,T-003,Blackburn Rovers,T-008,Notts County,9-1,9,1,8,-8,home team win,1,0,0
+162,S-1889-1,1889,1,First Division,None,M-1889-1-030,Blackburn Rovers vs Preston North End,T-003,Blackburn Rovers,T-009,Preston North End,3-4,3,4,-1,1,away team win,0,1,0
+163,S-1889-1,1889,1,First Division,None,M-1889-1-031,Blackburn Rovers vs Stoke,T-003,Blackburn Rovers,T-010,Stoke,8-0,8,0,8,-8,home team win,1,0,0
+164,S-1889-1,1889,1,First Division,None,M-1889-1-032,Blackburn Rovers vs West Bromwich Albion,T-003,Blackburn Rovers,T-011,West Bromwich Albion,5-0,5,0,5,-5,home team win,1,0,0
+165,S-1889-1,1889,1,First Division,None,M-1889-1-033,Blackburn Rovers vs Wolverhampton Wanderers,T-003,Blackburn Rovers,T-012,Wolverhampton Wanderers,4-3,4,3,1,-1,home team win,1,0,0
+166,S-1889-1,1889,1,First Division,None,M-1889-1-034,Bolton Wanderers vs Accrington,T-004,Bolton Wanderers,T-001,Accrington,2-4,2,4,-2,2,away team win,0,1,0
+167,S-1889-1,1889,1,First Division,None,M-1889-1-035,Bolton Wanderers vs Aston Villa,T-004,Bolton Wanderers,T-002,Aston Villa,2-0,2,0,2,-2,home team win,1,0,0
+168,S-1889-1,1889,1,First Division,None,M-1889-1-036,Bolton Wanderers vs Blackburn Rovers,T-004,Bolton Wanderers,T-003,Blackburn Rovers,3-2,3,2,1,-1,home team win,1,0,0
+169,S-1889-1,1889,1,First Division,None,M-1889-1-037,Bolton Wanderers vs Burnley,T-004,Bolton Wanderers,T-005,Burnley,2-2,2,2,0,0,draw,0,0,1
+170,S-1889-1,1889,1,First Division,None,M-1889-1-038,Bolton Wanderers vs Derby County,T-004,Bolton Wanderers,T-006,Derby County,7-1,7,1,6,-6,home team win,1,0,0
+171,S-1889-1,1889,1,First Division,None,M-1889-1-039,Bolton Wanderers vs Everton,T-004,Bolton Wanderers,T-007,Everton,3-4,3,4,-1,1,away team win,0,1,0
+172,S-1889-1,1889,1,First Division,None,M-1889-1-040,Bolton Wanderers vs Notts County,T-004,Bolton Wanderers,T-008,Notts County,0-4,0,4,-4,4,away team win,0,1,0
+173,S-1889-1,1889,1,First Division,None,M-1889-1-041,Bolton Wanderers vs Preston North End,T-004,Bolton Wanderers,T-009,Preston North End,2-6,2,6,-4,4,away team win,0,1,0
+174,S-1889-1,1889,1,First Division,None,M-1889-1-042,Bolton Wanderers vs Stoke,T-004,Bolton Wanderers,T-010,Stoke,5-0,5,0,5,-5,home team win,1,0,0
+175,S-1889-1,1889,1,First Division,None,M-1889-1-043,Bolton Wanderers vs West Bromwich Albion,T-004,Bolton Wanderers,T-011,West Bromwich Albion,7-0,7,0,7,-7,home team win,1,0,0
+176,S-1889-1,1889,1,First Division,None,M-1889-1-044,Bolton Wanderers vs Wolverhampton Wanderers,T-004,Bolton Wanderers,T-012,Wolverhampton Wanderers,4-1,4,1,3,-3,home team win,1,0,0
+177,S-1889-1,1889,1,First Division,None,M-1889-1-045,Burnley vs Accrington,T-005,Burnley,T-001,Accrington,2-2,2,2,0,0,draw,0,0,1
+178,S-1889-1,1889,1,First Division,None,M-1889-1-046,Burnley vs Aston Villa,T-005,Burnley,T-002,Aston Villa,2-6,2,6,-4,4,away team win,0,1,0
+179,S-1889-1,1889,1,First Division,None,M-1889-1-047,Burnley vs Blackburn Rovers,T-005,Burnley,T-003,Blackburn Rovers,1-2,1,2,-1,1,away team win,0,1,0
+180,S-1889-1,1889,1,First Division,None,M-1889-1-048,Burnley vs Bolton Wanderers,T-005,Burnley,T-004,Bolton Wanderers,7-0,7,0,7,-7,home team win,1,0,0
+181,S-1889-1,1889,1,First Division,None,M-1889-1-049,Burnley vs Derby County,T-005,Burnley,T-006,Derby County,2-0,2,0,2,-2,home team win,1,0,0
+182,S-1889-1,1889,1,First Division,None,M-1889-1-050,Burnley vs Everton,T-005,Burnley,T-007,Everton,0-1,0,1,-1,1,away team win,0,1,0
+183,S-1889-1,1889,1,First Division,None,M-1889-1-051,Burnley vs Notts County,T-005,Burnley,T-008,Notts County,3-0,3,0,3,-3,home team win,1,0,0
+184,S-1889-1,1889,1,First Division,None,M-1889-1-052,Burnley vs Preston North End,T-005,Burnley,T-009,Preston North End,0-3,0,3,-3,3,away team win,0,1,0
+185,S-1889-1,1889,1,First Division,None,M-1889-1-053,Burnley vs Stoke,T-005,Burnley,T-010,Stoke,1-3,1,3,-2,2,away team win,0,1,0
+186,S-1889-1,1889,1,First Division,None,M-1889-1-054,Burnley vs West Bromwich Albion,T-005,Burnley,T-011,West Bromwich Albion,1-2,1,2,-1,1,away team win,0,1,0
+187,S-1889-1,1889,1,First Division,None,M-1889-1-055,Burnley vs Wolverhampton Wanderers,T-005,Burnley,T-012,Wolverhampton Wanderers,1-2,1,2,-1,1,away team win,0,1,0
+188,S-1889-1,1889,1,First Division,None,M-1889-1-056,Derby County vs Accrington,T-006,Derby County,T-001,Accrington,2-3,2,3,-1,1,away team win,0,1,0
+189,S-1889-1,1889,1,First Division,None,M-1889-1-057,Derby County vs Aston Villa,T-006,Derby County,T-002,Aston Villa,5-0,5,0,5,-5,home team win,1,0,0
+190,S-1889-1,1889,1,First Division,None,M-1889-1-058,Derby County vs Blackburn Rovers,T-006,Derby County,T-003,Blackburn Rovers,4-0,4,0,4,-4,home team win,1,0,0
+191,S-1889-1,1889,1,First Division,None,M-1889-1-059,Derby County vs Bolton Wanderers,T-006,Derby County,T-004,Bolton Wanderers,3-2,3,2,1,-1,home team win,1,0,0
+192,S-1889-1,1889,1,First Division,None,M-1889-1-060,Derby County vs Burnley,T-006,Derby County,T-005,Burnley,4-1,4,1,3,-3,home team win,1,0,0
+193,S-1889-1,1889,1,First Division,None,M-1889-1-061,Derby County vs Everton,T-006,Derby County,T-007,Everton,2-2,2,2,0,0,draw,0,0,1
+194,S-1889-1,1889,1,First Division,None,M-1889-1-062,Derby County vs Notts County,T-006,Derby County,T-008,Notts County,2-0,2,0,2,-2,home team win,1,0,0
+195,S-1889-1,1889,1,First Division,None,M-1889-1-063,Derby County vs Preston North End,T-006,Derby County,T-009,Preston North End,2-1,2,1,1,-1,home team win,1,0,0
+196,S-1889-1,1889,1,First Division,None,M-1889-1-064,Derby County vs Stoke,T-006,Derby County,T-010,Stoke,2-0,2,0,2,-2,home team win,1,0,0
+197,S-1889-1,1889,1,First Division,None,M-1889-1-065,Derby County vs West Bromwich Albion,T-006,Derby County,T-011,West Bromwich Albion,3-1,3,1,2,-2,home team win,1,0,0
+198,S-1889-1,1889,1,First Division,None,M-1889-1-066,Derby County vs Wolverhampton Wanderers,T-006,Derby County,T-012,Wolverhampton Wanderers,3-3,3,3,0,0,draw,0,0,1
+199,S-1889-1,1889,1,First Division,None,M-1889-1-067,Everton vs Accrington,T-007,Everton,T-001,Accrington,2-2,2,2,0,0,draw,0,0,1
+200,S-1889-1,1889,1,First Division,None,M-1889-1-068,Everton vs Aston Villa,T-007,Everton,T-002,Aston Villa,7-0,7,0,7,-7,home team win,1,0,0
+201,S-1889-1,1889,1,First Division,None,M-1889-1-069,Everton vs Blackburn Rovers,T-007,Everton,T-003,Blackburn Rovers,3-2,3,2,1,-1,home team win,1,0,0
+202,S-1889-1,1889,1,First Division,None,M-1889-1-070,Everton vs Bolton Wanderers,T-007,Everton,T-004,Bolton Wanderers,3-0,3,0,3,-3,home team win,1,0,0
+203,S-1889-1,1889,1,First Division,None,M-1889-1-071,Everton vs Burnley,T-007,Everton,T-005,Burnley,2-1,2,1,1,-1,home team win,1,0,0
+204,S-1889-1,1889,1,First Division,None,M-1889-1-072,Everton vs Derby County,T-007,Everton,T-006,Derby County,3-0,3,0,3,-3,home team win,1,0,0
+205,S-1889-1,1889,1,First Division,None,M-1889-1-073,Everton vs Notts County,T-007,Everton,T-008,Notts County,5-3,5,3,2,-2,home team win,1,0,0
+206,S-1889-1,1889,1,First Division,None,M-1889-1-074,Everton vs Preston North End,T-007,Everton,T-009,Preston North End,1-5,1,5,-4,4,away team win,0,1,0
+207,S-1889-1,1889,1,First Division,None,M-1889-1-075,Everton vs Stoke,T-007,Everton,T-010,Stoke,8-0,8,0,8,-8,home team win,1,0,0
+208,S-1889-1,1889,1,First Division,None,M-1889-1-076,Everton vs West Bromwich Albion,T-007,Everton,T-011,West Bromwich Albion,5-1,5,1,4,-4,home team win,1,0,0
+209,S-1889-1,1889,1,First Division,None,M-1889-1-077,Everton vs Wolverhampton Wanderers,T-007,Everton,T-012,Wolverhampton Wanderers,1-1,1,1,0,0,draw,0,0,1
+210,S-1889-1,1889,1,First Division,None,M-1889-1-078,Notts County vs Accrington,T-008,Notts County,T-001,Accrington,3-1,3,1,2,-2,home team win,1,0,0
+211,S-1889-1,1889,1,First Division,None,M-1889-1-079,Notts County vs Aston Villa,T-008,Notts County,T-002,Aston Villa,1-1,1,1,0,0,draw,0,0,1
+212,S-1889-1,1889,1,First Division,None,M-1889-1-080,Notts County vs Blackburn Rovers,T-008,Notts County,T-003,Blackburn Rovers,1-1,1,1,0,0,draw,0,0,1
+213,S-1889-1,1889,1,First Division,None,M-1889-1-081,Notts County vs Bolton Wanderers,T-008,Notts County,T-004,Bolton Wanderers,3-5,3,5,-2,2,away team win,0,1,0
+214,S-1889-1,1889,1,First Division,None,M-1889-1-082,Notts County vs Burnley,T-008,Notts County,T-005,Burnley,1-1,1,1,0,0,draw,0,0,1
+215,S-1889-1,1889,1,First Division,None,M-1889-1-083,Notts County vs Derby County,T-008,Notts County,T-006,Derby County,3-1,3,1,2,-2,home team win,1,0,0
+216,S-1889-1,1889,1,First Division,None,M-1889-1-084,Notts County vs Everton,T-008,Notts County,T-007,Everton,4-3,4,3,1,-1,home team win,1,0,0
+217,S-1889-1,1889,1,First Division,None,M-1889-1-085,Notts County vs Preston North End,T-008,Notts County,T-009,Preston North End,0-1,0,1,-1,1,away team win,0,1,0
+218,S-1889-1,1889,1,First Division,None,M-1889-1-086,Notts County vs Stoke,T-008,Notts County,T-010,Stoke,3-1,3,1,2,-2,home team win,1,0,0
+219,S-1889-1,1889,1,First Division,None,M-1889-1-087,Notts County vs West Bromwich Albion,T-008,Notts County,T-011,West Bromwich Albion,1-2,1,2,-1,1,away team win,0,1,0
+220,S-1889-1,1889,1,First Division,None,M-1889-1-088,Notts County vs Wolverhampton Wanderers,T-008,Notts County,T-012,Wolverhampton Wanderers,0-2,0,2,-2,2,away team win,0,1,0
+221,S-1889-1,1889,1,First Division,None,M-1889-1-089,Preston North End vs Accrington,T-009,Preston North End,T-001,Accrington,3-1,3,1,2,-2,home team win,1,0,0
+222,S-1889-1,1889,1,First Division,None,M-1889-1-090,Preston North End vs Aston Villa,T-009,Preston North End,T-002,Aston Villa,3-2,3,2,1,-1,home team win,1,0,0
+223,S-1889-1,1889,1,First Division,None,M-1889-1-091,Preston North End vs Blackburn Rovers,T-009,Preston North End,T-003,Blackburn Rovers,1-1,1,1,0,0,draw,0,0,1
+224,S-1889-1,1889,1,First Division,None,M-1889-1-092,Preston North End vs Bolton Wanderers,T-009,Preston North End,T-004,Bolton Wanderers,3-1,3,1,2,-2,home team win,1,0,0
+225,S-1889-1,1889,1,First Division,None,M-1889-1-093,Preston North End vs Burnley,T-009,Preston North End,T-005,Burnley,6-0,6,0,6,-6,home team win,1,0,0
+226,S-1889-1,1889,1,First Division,None,M-1889-1-094,Preston North End vs Derby County,T-009,Preston North End,T-006,Derby County,5-0,5,0,5,-5,home team win,1,0,0
+227,S-1889-1,1889,1,First Division,None,M-1889-1-095,Preston North End vs Everton,T-009,Preston North End,T-007,Everton,1-2,1,2,-1,1,away team win,0,1,0
+228,S-1889-1,1889,1,First Division,None,M-1889-1-096,Preston North End vs Notts County,T-009,Preston North End,T-008,Notts County,4-3,4,3,1,-1,home team win,1,0,0
+229,S-1889-1,1889,1,First Division,None,M-1889-1-097,Preston North End vs Stoke,T-009,Preston North End,T-010,Stoke,10-0,10,0,10,-10,home team win,1,0,0
+230,S-1889-1,1889,1,First Division,None,M-1889-1-098,Preston North End vs West Bromwich Albion,T-009,Preston North End,T-011,West Bromwich Albion,5-0,5,0,5,-5,home team win,1,0,0
+231,S-1889-1,1889,1,First Division,None,M-1889-1-099,Preston North End vs Wolverhampton Wanderers,T-009,Preston North End,T-012,Wolverhampton Wanderers,0-2,0,2,-2,2,away team win,0,1,0
+232,S-1889-1,1889,1,First Division,None,M-1889-1-100,Stoke vs Accrington,T-010,Stoke,T-001,Accrington,7-1,7,1,6,-6,home team win,1,0,0
+233,S-1889-1,1889,1,First Division,None,M-1889-1-101,Stoke vs Aston Villa,T-010,Stoke,T-002,Aston Villa,1-1,1,1,0,0,draw,0,0,1
+234,S-1889-1,1889,1,First Division,None,M-1889-1-102,Stoke vs Blackburn Rovers,T-010,Stoke,T-003,Blackburn Rovers,0-3,0,3,-3,3,away team win,0,1,0
+235,S-1889-1,1889,1,First Division,None,M-1889-1-103,Stoke vs Bolton Wanderers,T-010,Stoke,T-004,Bolton Wanderers,0-1,0,1,-1,1,away team win,0,1,0
+236,S-1889-1,1889,1,First Division,None,M-1889-1-104,Stoke vs Burnley,T-010,Stoke,T-005,Burnley,3-4,3,4,-1,1,away team win,0,1,0
+237,S-1889-1,1889,1,First Division,None,M-1889-1-105,Stoke vs Derby County,T-010,Stoke,T-006,Derby County,1-1,1,1,0,0,draw,0,0,1
+238,S-1889-1,1889,1,First Division,None,M-1889-1-106,Stoke vs Everton,T-010,Stoke,T-007,Everton,1-2,1,2,-1,1,away team win,0,1,0
+239,S-1889-1,1889,1,First Division,None,M-1889-1-107,Stoke vs Notts County,T-010,Stoke,T-008,Notts County,1-1,1,1,0,0,draw,0,0,1
+240,S-1889-1,1889,1,First Division,None,M-1889-1-108,Stoke vs Preston North End,T-010,Stoke,T-009,Preston North End,1-2,1,2,-1,1,away team win,0,1,0
+241,S-1889-1,1889,1,First Division,None,M-1889-1-109,Stoke vs West Bromwich Albion,T-010,Stoke,T-011,West Bromwich Albion,1-3,1,3,-2,2,away team win,0,1,0
+242,S-1889-1,1889,1,First Division,None,M-1889-1-110,Stoke vs Wolverhampton Wanderers,T-010,Stoke,T-012,Wolverhampton Wanderers,2-1,2,1,1,-1,home team win,1,0,0
+243,S-1889-1,1889,1,First Division,None,M-1889-1-111,West Bromwich Albion vs Accrington,T-011,West Bromwich Albion,T-001,Accrington,4-1,4,1,3,-3,home team win,1,0,0
+244,S-1889-1,1889,1,First Division,None,M-1889-1-112,West Bromwich Albion vs Aston Villa,T-011,West Bromwich Albion,T-002,Aston Villa,3-0,3,0,3,-3,home team win,1,0,0
+245,S-1889-1,1889,1,First Division,None,M-1889-1-113,West Bromwich Albion vs Blackburn Rovers,T-011,West Bromwich Albion,T-003,Blackburn Rovers,3-2,3,2,1,-1,home team win,1,0,0
+246,S-1889-1,1889,1,First Division,None,M-1889-1-114,West Bromwich Albion vs Bolton Wanderers,T-011,West Bromwich Albion,T-004,Bolton Wanderers,6-3,6,3,3,-3,home team win,1,0,0
+247,S-1889-1,1889,1,First Division,None,M-1889-1-115,West Bromwich Albion vs Burnley,T-011,West Bromwich Albion,T-005,Burnley,6-1,6,1,5,-5,home team win,1,0,0
+248,S-1889-1,1889,1,First Division,None,M-1889-1-116,West Bromwich Albion vs Derby County,T-011,West Bromwich Albion,T-006,Derby County,2-3,2,3,-1,1,away team win,0,1,0
+249,S-1889-1,1889,1,First Division,None,M-1889-1-117,West Bromwich Albion vs Everton,T-011,West Bromwich Albion,T-007,Everton,4-1,4,1,3,-3,home team win,1,0,0
+250,S-1889-1,1889,1,First Division,None,M-1889-1-118,West Bromwich Albion vs Notts County,T-011,West Bromwich Albion,T-008,Notts County,4-2,4,2,2,-2,home team win,1,0,0
+251,S-1889-1,1889,1,First Division,None,M-1889-1-119,West Bromwich Albion vs Preston North End,T-011,West Bromwich Albion,T-009,Preston North End,2-2,2,2,0,0,draw,0,0,1
+252,S-1889-1,1889,1,First Division,None,M-1889-1-120,West Bromwich Albion vs Stoke,T-011,West Bromwich Albion,T-010,Stoke,2-1,2,1,1,-1,home team win,1,0,0
+253,S-1889-1,1889,1,First Division,None,M-1889-1-121,West Bromwich Albion vs Wolverhampton Wanderers,T-011,West Bromwich Albion,T-012,Wolverhampton Wanderers,1-4,1,4,-3,3,away team win,0,1,0
+254,S-1889-1,1889,1,First Division,None,M-1889-1-122,Wolverhampton Wanderers vs Accrington,T-012,Wolverhampton Wanderers,T-001,Accrington,2-1,2,1,1,-1,home team win,1,0,0
+255,S-1889-1,1889,1,First Division,None,M-1889-1-123,Wolverhampton Wanderers vs Aston Villa,T-012,Wolverhampton Wanderers,T-002,Aston Villa,1-1,1,1,0,0,draw,0,0,1
+256,S-1889-1,1889,1,First Division,None,M-1889-1-124,Wolverhampton Wanderers vs Blackburn Rovers,T-012,Wolverhampton Wanderers,T-003,Blackburn Rovers,2-4,2,4,-2,2,away team win,0,1,0
+257,S-1889-1,1889,1,First Division,None,M-1889-1-125,Wolverhampton Wanderers vs Bolton Wanderers,T-012,Wolverhampton Wanderers,T-004,Bolton Wanderers,5-1,5,1,4,-4,home team win,1,0,0
+258,S-1889-1,1889,1,First Division,None,M-1889-1-126,Wolverhampton Wanderers vs Burnley,T-012,Wolverhampton Wanderers,T-005,Burnley,9-1,9,1,8,-8,home team win,1,0,0
+259,S-1889-1,1889,1,First Division,None,M-1889-1-127,Wolverhampton Wanderers vs Derby County,T-012,Wolverhampton Wanderers,T-006,Derby County,2-1,2,1,1,-1,home team win,1,0,0
+260,S-1889-1,1889,1,First Division,None,M-1889-1-128,Wolverhampton Wanderers vs Everton,T-012,Wolverhampton Wanderers,T-007,Everton,2-1,2,1,1,-1,home team win,1,0,0
+261,S-1889-1,1889,1,First Division,None,M-1889-1-129,Wolverhampton Wanderers vs Notts County,T-012,Wolverhampton Wanderers,T-008,Notts County,2-0,2,0,2,-2,home team win,1,0,0
+262,S-1889-1,1889,1,First Division,None,M-1889-1-130,Wolverhampton Wanderers vs Preston North End,T-012,Wolverhampton Wanderers,T-009,Preston North End,0-1,0,1,-1,1,away team win,0,1,0
+263,S-1889-1,1889,1,First Division,None,M-1889-1-131,Wolverhampton Wanderers vs Stoke,T-012,Wolverhampton Wanderers,T-010,Stoke,2-2,2,2,0,0,draw,0,0,1
+264,S-1889-1,1889,1,First Division,None,M-1889-1-132,Wolverhampton Wanderers vs West Bromwich Albion,T-012,Wolverhampton Wanderers,T-011,West Bromwich Albion,1-1,1,1,0,0,draw,0,0,1
+265,S-1890-1,1890,1,First Division,None,M-1890-1-001,Accrington vs Aston Villa,T-001,Accrington,T-002,Aston Villa,1-3,1,3,-2,2,away team win,0,1,0
+266,S-1890-1,1890,1,First Division,None,M-1890-1-002,Accrington vs Blackburn Rovers,T-001,Accrington,T-003,Blackburn Rovers,0-4,0,4,-4,4,away team win,0,1,0
+267,S-1890-1,1890,1,First Division,None,M-1890-1-003,Accrington vs Bolton Wanderers,T-001,Accrington,T-004,Bolton Wanderers,2-1,2,1,1,-1,home team win,1,0,0
+268,S-1890-1,1890,1,First Division,None,M-1890-1-004,Accrington vs Burnley,T-001,Accrington,T-005,Burnley,1-1,1,1,0,0,draw,0,0,1
+269,S-1890-1,1890,1,First Division,None,M-1890-1-005,Accrington vs Derby County,T-001,Accrington,T-006,Derby County,4-0,4,0,4,-4,home team win,1,0,0
+270,S-1890-1,1890,1,First Division,None,M-1890-1-006,Accrington vs Everton,T-001,Accrington,T-007,Everton,1-2,1,2,-1,1,away team win,0,1,0
+271,S-1890-1,1890,1,First Division,None,M-1890-1-007,Accrington vs Notts County,T-001,Accrington,T-008,Notts County,3-2,3,2,1,-1,home team win,1,0,0
+272,S-1890-1,1890,1,First Division,None,M-1890-1-008,Accrington vs Preston North End,T-001,Accrington,T-009,Preston North End,1-3,1,3,-2,2,away team win,0,1,0
+273,S-1890-1,1890,1,First Division,None,M-1890-1-009,Accrington vs Sunderland,T-001,Accrington,T-013,Sunderland,4-1,4,1,3,-3,home team win,1,0,0
+274,S-1890-1,1890,1,First Division,None,M-1890-1-010,Accrington vs West Bromwich Albion,T-001,Accrington,T-011,West Bromwich Albion,1-0,1,0,1,-1,home team win,1,0,0
+275,S-1890-1,1890,1,First Division,None,M-1890-1-011,Accrington vs Wolverhampton Wanderers,T-001,Accrington,T-012,Wolverhampton Wanderers,1-2,1,2,-1,1,away team win,0,1,0
+276,S-1890-1,1890,1,First Division,None,M-1890-1-012,Aston Villa vs Accrington,T-002,Aston Villa,T-001,Accrington,3-1,3,1,2,-2,home team win,1,0,0
+277,S-1890-1,1890,1,First Division,None,M-1890-1-013,Aston Villa vs Blackburn Rovers,T-002,Aston Villa,T-003,Blackburn Rovers,2-2,2,2,0,0,draw,0,0,1
+278,S-1890-1,1890,1,First Division,None,M-1890-1-014,Aston Villa vs Bolton Wanderers,T-002,Aston Villa,T-004,Bolton Wanderers,5-0,5,0,5,-5,home team win,1,0,0
+279,S-1890-1,1890,1,First Division,None,M-1890-1-015,Aston Villa vs Burnley,T-002,Aston Villa,T-005,Burnley,4-4,4,4,0,0,draw,0,0,1
+280,S-1890-1,1890,1,First Division,None,M-1890-1-016,Aston Villa vs Derby County,T-002,Aston Villa,T-006,Derby County,4-0,4,0,4,-4,home team win,1,0,0
+281,S-1890-1,1890,1,First Division,None,M-1890-1-017,Aston Villa vs Everton,T-002,Aston Villa,T-007,Everton,2-2,2,2,0,0,draw,0,0,1
+282,S-1890-1,1890,1,First Division,None,M-1890-1-018,Aston Villa vs Notts County,T-002,Aston Villa,T-008,Notts County,3-2,3,2,1,-1,home team win,1,0,0
+283,S-1890-1,1890,1,First Division,None,M-1890-1-019,Aston Villa vs Preston North End,T-002,Aston Villa,T-009,Preston North End,0-1,0,1,-1,1,away team win,0,1,0
+284,S-1890-1,1890,1,First Division,None,M-1890-1-020,Aston Villa vs Sunderland,T-002,Aston Villa,T-013,Sunderland,0-0,0,0,0,0,draw,0,0,1
+285,S-1890-1,1890,1,First Division,None,M-1890-1-021,Aston Villa vs West Bromwich Albion,T-002,Aston Villa,T-011,West Bromwich Albion,0-4,0,4,-4,4,away team win,0,1,0
+286,S-1890-1,1890,1,First Division,None,M-1890-1-022,Aston Villa vs Wolverhampton Wanderers,T-002,Aston Villa,T-012,Wolverhampton Wanderers,6-2,6,2,4,-4,home team win,1,0,0
+287,S-1890-1,1890,1,First Division,None,M-1890-1-023,Blackburn Rovers vs Accrington,T-003,Blackburn Rovers,T-001,Accrington,0-0,0,0,0,0,draw,0,0,1
+288,S-1890-1,1890,1,First Division,None,M-1890-1-024,Blackburn Rovers vs Aston Villa,T-003,Blackburn Rovers,T-002,Aston Villa,5-1,5,1,4,-4,home team win,1,0,0
+289,S-1890-1,1890,1,First Division,None,M-1890-1-025,Blackburn Rovers vs Bolton Wanderers,T-003,Blackburn Rovers,T-004,Bolton Wanderers,0-2,0,2,-2,2,away team win,0,1,0
+290,S-1890-1,1890,1,First Division,None,M-1890-1-026,Blackburn Rovers vs Burnley,T-003,Blackburn Rovers,T-005,Burnley,5-2,5,2,3,-3,home team win,1,0,0
+291,S-1890-1,1890,1,First Division,None,M-1890-1-027,Blackburn Rovers vs Derby County,T-003,Blackburn Rovers,T-006,Derby County,8-0,8,0,8,-8,home team win,1,0,0
+292,S-1890-1,1890,1,First Division,None,M-1890-1-028,Blackburn Rovers vs Everton,T-003,Blackburn Rovers,T-007,Everton,2-1,2,1,1,-1,home team win,1,0,0
+293,S-1890-1,1890,1,First Division,None,M-1890-1-029,Blackburn Rovers vs Notts County,T-003,Blackburn Rovers,T-008,Notts County,1-7,1,7,-6,6,away team win,0,1,0
+294,S-1890-1,1890,1,First Division,None,M-1890-1-030,Blackburn Rovers vs Preston North End,T-003,Blackburn Rovers,T-009,Preston North End,1-0,1,0,1,-1,home team win,1,0,0
+295,S-1890-1,1890,1,First Division,None,M-1890-1-031,Blackburn Rovers vs Sunderland,T-003,Blackburn Rovers,T-013,Sunderland,3-2,3,2,1,-1,home team win,1,0,0
+296,S-1890-1,1890,1,First Division,None,M-1890-1-032,Blackburn Rovers vs West Bromwich Albion,T-003,Blackburn Rovers,T-011,West Bromwich Albion,2-1,2,1,1,-1,home team win,1,0,0
+297,S-1890-1,1890,1,First Division,None,M-1890-1-033,Blackburn Rovers vs Wolverhampton Wanderers,T-003,Blackburn Rovers,T-012,Wolverhampton Wanderers,2-3,2,3,-1,1,away team win,0,1,0
+298,S-1890-1,1890,1,First Division,None,M-1890-1-034,Bolton Wanderers vs Accrington,T-004,Bolton Wanderers,T-001,Accrington,6-0,6,0,6,-6,home team win,1,0,0
+299,S-1890-1,1890,1,First Division,None,M-1890-1-035,Bolton Wanderers vs Aston Villa,T-004,Bolton Wanderers,T-002,Aston Villa,4-0,4,0,4,-4,home team win,1,0,0
+300,S-1890-1,1890,1,First Division,None,M-1890-1-036,Bolton Wanderers vs Blackburn Rovers,T-004,Bolton Wanderers,T-003,Blackburn Rovers,2-0,2,0,2,-2,home team win,1,0,0
+301,S-1890-1,1890,1,First Division,None,M-1890-1-037,Bolton Wanderers vs Burnley,T-004,Bolton Wanderers,T-005,Burnley,1-0,1,0,1,-1,home team win,1,0,0
+302,S-1890-1,1890,1,First Division,None,M-1890-1-038,Bolton Wanderers vs Derby County,T-004,Bolton Wanderers,T-006,Derby County,3-1,3,1,2,-2,home team win,1,0,0
+303,S-1890-1,1890,1,First Division,None,M-1890-1-039,Bolton Wanderers vs Everton,T-004,Bolton Wanderers,T-007,Everton,0-5,0,5,-5,5,away team win,0,1,0
+304,S-1890-1,1890,1,First Division,None,M-1890-1-040,Bolton Wanderers vs Notts County,T-004,Bolton Wanderers,T-008,Notts County,4-2,4,2,2,-2,home team win,1,0,0
+305,S-1890-1,1890,1,First Division,None,M-1890-1-041,Bolton Wanderers vs Preston North End,T-004,Bolton Wanderers,T-009,Preston North End,1-0,1,0,1,-1,home team win,1,0,0
+306,S-1890-1,1890,1,First Division,None,M-1890-1-042,Bolton Wanderers vs Sunderland,T-004,Bolton Wanderers,T-013,Sunderland,2-5,2,5,-3,3,away team win,0,1,0
+307,S-1890-1,1890,1,First Division,None,M-1890-1-043,Bolton Wanderers vs West Bromwich Albion,T-004,Bolton Wanderers,T-011,West Bromwich Albion,7-1,7,1,6,-6,home team win,1,0,0
+308,S-1890-1,1890,1,First Division,None,M-1890-1-044,Bolton Wanderers vs Wolverhampton Wanderers,T-004,Bolton Wanderers,T-012,Wolverhampton Wanderers,6-0,6,0,6,-6,home team win,1,0,0
+309,S-1890-1,1890,1,First Division,None,M-1890-1-045,Burnley vs Accrington,T-005,Burnley,T-001,Accrington,2-0,2,0,2,-2,home team win,1,0,0
+310,S-1890-1,1890,1,First Division,None,M-1890-1-046,Burnley vs Aston Villa,T-005,Burnley,T-002,Aston Villa,2-1,2,1,1,-1,home team win,1,0,0
+311,S-1890-1,1890,1,First Division,None,M-1890-1-047,Burnley vs Blackburn Rovers,T-005,Burnley,T-003,Blackburn Rovers,1-6,1,6,-5,5,away team win,0,1,0
+312,S-1890-1,1890,1,First Division,None,M-1890-1-048,Burnley vs Bolton Wanderers,T-005,Burnley,T-004,Bolton Wanderers,1-2,1,2,-1,1,away team win,0,1,0
+313,S-1890-1,1890,1,First Division,None,M-1890-1-049,Burnley vs Derby County,T-005,Burnley,T-006,Derby County,6-1,6,1,5,-5,home team win,1,0,0
+314,S-1890-1,1890,1,First Division,None,M-1890-1-050,Burnley vs Everton,T-005,Burnley,T-007,Everton,3-2,3,2,1,-1,home team win,1,0,0
+315,S-1890-1,1890,1,First Division,None,M-1890-1-051,Burnley vs Notts County,T-005,Burnley,T-008,Notts County,0-1,0,1,-1,1,away team win,0,1,0
+316,S-1890-1,1890,1,First Division,None,M-1890-1-052,Burnley vs Preston North End,T-005,Burnley,T-009,Preston North End,6-2,6,2,4,-4,home team win,1,0,0
+317,S-1890-1,1890,1,First Division,None,M-1890-1-053,Burnley vs Sunderland,T-005,Burnley,T-013,Sunderland,3-3,3,3,0,0,draw,0,0,1
+318,S-1890-1,1890,1,First Division,None,M-1890-1-054,Burnley vs West Bromwich Albion,T-005,Burnley,T-011,West Bromwich Albion,5-4,5,4,1,-1,home team win,1,0,0
+319,S-1890-1,1890,1,First Division,None,M-1890-1-055,Burnley vs Wolverhampton Wanderers,T-005,Burnley,T-012,Wolverhampton Wanderers,4-2,4,2,2,-2,home team win,1,0,0
+320,S-1890-1,1890,1,First Division,None,M-1890-1-056,Derby County vs Accrington,T-006,Derby County,T-001,Accrington,1-2,1,2,-1,1,away team win,0,1,0
+321,S-1890-1,1890,1,First Division,None,M-1890-1-057,Derby County vs Aston Villa,T-006,Derby County,T-002,Aston Villa,5-4,5,4,1,-1,home team win,1,0,0
+322,S-1890-1,1890,1,First Division,None,M-1890-1-058,Derby County vs Blackburn Rovers,T-006,Derby County,T-003,Blackburn Rovers,8-5,8,5,3,-3,home team win,1,0,0
+323,S-1890-1,1890,1,First Division,None,M-1890-1-059,Derby County vs Bolton Wanderers,T-006,Derby County,T-004,Bolton Wanderers,1-1,1,1,0,0,draw,0,0,1
+324,S-1890-1,1890,1,First Division,None,M-1890-1-060,Derby County vs Burnley,T-006,Derby County,T-005,Burnley,2-4,2,4,-2,2,away team win,0,1,0
+325,S-1890-1,1890,1,First Division,None,M-1890-1-061,Derby County vs Everton,T-006,Derby County,T-007,Everton,2-6,2,6,-4,4,away team win,0,1,0
+326,S-1890-1,1890,1,First Division,None,M-1890-1-062,Derby County vs Notts County,T-006,Derby County,T-008,Notts County,3-1,3,1,2,-2,home team win,1,0,0
+327,S-1890-1,1890,1,First Division,None,M-1890-1-063,Derby County vs Preston North End,T-006,Derby County,T-009,Preston North End,1-3,1,3,-2,2,away team win,0,1,0
+328,S-1890-1,1890,1,First Division,None,M-1890-1-064,Derby County vs Sunderland,T-006,Derby County,T-013,Sunderland,3-1,3,1,2,-2,home team win,1,0,0
+329,S-1890-1,1890,1,First Division,None,M-1890-1-065,Derby County vs West Bromwich Albion,T-006,Derby County,T-011,West Bromwich Albion,3-1,3,1,2,-2,home team win,1,0,0
+330,S-1890-1,1890,1,First Division,None,M-1890-1-066,Derby County vs Wolverhampton Wanderers,T-006,Derby County,T-012,Wolverhampton Wanderers,9-0,9,0,9,-9,home team win,1,0,0
+331,S-1890-1,1890,1,First Division,None,M-1890-1-067,Everton vs Accrington,T-007,Everton,T-001,Accrington,3-2,3,2,1,-1,home team win,1,0,0
+332,S-1890-1,1890,1,First Division,None,M-1890-1-068,Everton vs Aston Villa,T-007,Everton,T-002,Aston Villa,5-0,5,0,5,-5,home team win,1,0,0
+333,S-1890-1,1890,1,First Division,None,M-1890-1-069,Everton vs Blackburn Rovers,T-007,Everton,T-003,Blackburn Rovers,3-1,3,1,2,-2,home team win,1,0,0
+334,S-1890-1,1890,1,First Division,None,M-1890-1-070,Everton vs Bolton Wanderers,T-007,Everton,T-004,Bolton Wanderers,2-0,2,0,2,-2,home team win,1,0,0
+335,S-1890-1,1890,1,First Division,None,M-1890-1-071,Everton vs Burnley,T-007,Everton,T-005,Burnley,7-3,7,3,4,-4,home team win,1,0,0
+336,S-1890-1,1890,1,First Division,None,M-1890-1-072,Everton vs Derby County,T-007,Everton,T-006,Derby County,7-0,7,0,7,-7,home team win,1,0,0
+337,S-1890-1,1890,1,First Division,None,M-1890-1-073,Everton vs Notts County,T-007,Everton,T-008,Notts County,4-2,4,2,2,-2,home team win,1,0,0
+338,S-1890-1,1890,1,First Division,None,M-1890-1-074,Everton vs Preston North End,T-007,Everton,T-009,Preston North End,0-1,0,1,-1,1,away team win,0,1,0
+339,S-1890-1,1890,1,First Division,None,M-1890-1-075,Everton vs Sunderland,T-007,Everton,T-013,Sunderland,1-0,1,0,1,-1,home team win,1,0,0
+340,S-1890-1,1890,1,First Division,None,M-1890-1-076,Everton vs West Bromwich Albion,T-007,Everton,T-011,West Bromwich Albion,2-3,2,3,-1,1,away team win,0,1,0
+341,S-1890-1,1890,1,First Division,None,M-1890-1-077,Everton vs Wolverhampton Wanderers,T-007,Everton,T-012,Wolverhampton Wanderers,5-0,5,0,5,-5,home team win,1,0,0
+342,S-1890-1,1890,1,First Division,None,M-1890-1-078,Notts County vs Accrington,T-008,Notts County,T-001,Accrington,5-0,5,0,5,-5,home team win,1,0,0
+343,S-1890-1,1890,1,First Division,None,M-1890-1-079,Notts County vs Aston Villa,T-008,Notts County,T-002,Aston Villa,7-1,7,1,6,-6,home team win,1,0,0
+344,S-1890-1,1890,1,First Division,None,M-1890-1-080,Notts County vs Blackburn Rovers,T-008,Notts County,T-003,Blackburn Rovers,1-2,1,2,-1,1,away team win,0,1,0
+345,S-1890-1,1890,1,First Division,None,M-1890-1-081,Notts County vs Bolton Wanderers,T-008,Notts County,T-004,Bolton Wanderers,3-1,3,1,2,-2,home team win,1,0,0
+346,S-1890-1,1890,1,First Division,None,M-1890-1-082,Notts County vs Burnley,T-008,Notts County,T-005,Burnley,4-0,4,0,4,-4,home team win,1,0,0
+347,S-1890-1,1890,1,First Division,None,M-1890-1-083,Notts County vs Derby County,T-008,Notts County,T-006,Derby County,2-1,2,1,1,-1,home team win,1,0,0
+348,S-1890-1,1890,1,First Division,None,M-1890-1-084,Notts County vs Everton,T-008,Notts County,T-007,Everton,3-1,3,1,2,-2,home team win,1,0,0
+349,S-1890-1,1890,1,First Division,None,M-1890-1-085,Notts County vs Preston North End,T-008,Notts County,T-009,Preston North End,2-1,2,1,1,-1,home team win,1,0,0
+350,S-1890-1,1890,1,First Division,None,M-1890-1-086,Notts County vs Sunderland,T-008,Notts County,T-013,Sunderland,2-1,2,1,1,-1,home team win,1,0,0
+351,S-1890-1,1890,1,First Division,None,M-1890-1-087,Notts County vs West Bromwich Albion,T-008,Notts County,T-011,West Bromwich Albion,3-2,3,2,1,-1,home team win,1,0,0
+352,S-1890-1,1890,1,First Division,None,M-1890-1-088,Notts County vs Wolverhampton Wanderers,T-008,Notts County,T-012,Wolverhampton Wanderers,1-1,1,1,0,0,draw,0,0,1
+353,S-1890-1,1890,1,First Division,None,M-1890-1-089,Preston North End vs Accrington,T-009,Preston North End,T-001,Accrington,1-1,1,1,0,0,draw,0,0,1
+354,S-1890-1,1890,1,First Division,None,M-1890-1-090,Preston North End vs Aston Villa,T-009,Preston North End,T-002,Aston Villa,4-1,4,1,3,-3,home team win,1,0,0
+355,S-1890-1,1890,1,First Division,None,M-1890-1-091,Preston North End vs Blackburn Rovers,T-009,Preston North End,T-003,Blackburn Rovers,1-2,1,2,-1,1,away team win,0,1,0
+356,S-1890-1,1890,1,First Division,None,M-1890-1-092,Preston North End vs Bolton Wanderers,T-009,Preston North End,T-004,Bolton Wanderers,1-0,1,0,1,-1,home team win,1,0,0
+357,S-1890-1,1890,1,First Division,None,M-1890-1-093,Preston North End vs Burnley,T-009,Preston North End,T-005,Burnley,7-0,7,0,7,-7,home team win,1,0,0
+358,S-1890-1,1890,1,First Division,None,M-1890-1-094,Preston North End vs Derby County,T-009,Preston North End,T-006,Derby County,6-0,6,0,6,-6,home team win,1,0,0
+359,S-1890-1,1890,1,First Division,None,M-1890-1-095,Preston North End vs Everton,T-009,Preston North End,T-007,Everton,2-0,2,0,2,-2,home team win,1,0,0
+360,S-1890-1,1890,1,First Division,None,M-1890-1-096,Preston North End vs Notts County,T-009,Preston North End,T-008,Notts County,0-0,0,0,0,0,draw,0,0,1
+361,S-1890-1,1890,1,First Division,None,M-1890-1-097,Preston North End vs Sunderland,T-009,Preston North End,T-013,Sunderland,0-0,0,0,0,0,draw,0,0,1
+362,S-1890-1,1890,1,First Division,None,M-1890-1-098,Preston North End vs West Bromwich Albion,T-009,Preston North End,T-011,West Bromwich Albion,3-0,3,0,3,-3,home team win,1,0,0
+363,S-1890-1,1890,1,First Division,None,M-1890-1-099,Preston North End vs Wolverhampton Wanderers,T-009,Preston North End,T-012,Wolverhampton Wanderers,5-1,5,1,4,-4,home team win,1,0,0
+364,S-1890-1,1890,1,First Division,None,M-1890-1-100,Sunderland vs Accrington,T-013,Sunderland,T-001,Accrington,2-2,2,2,0,0,draw,0,0,1
+365,S-1890-1,1890,1,First Division,None,M-1890-1-101,Sunderland vs Aston Villa,T-013,Sunderland,T-002,Aston Villa,5-1,5,1,4,-4,home team win,1,0,0
+366,S-1890-1,1890,1,First Division,None,M-1890-1-102,Sunderland vs Blackburn Rovers,T-013,Sunderland,T-003,Blackburn Rovers,3-1,3,1,2,-2,home team win,1,0,0
+367,S-1890-1,1890,1,First Division,None,M-1890-1-103,Sunderland vs Bolton Wanderers,T-013,Sunderland,T-004,Bolton Wanderers,2-0,2,0,2,-2,home team win,1,0,0
+368,S-1890-1,1890,1,First Division,None,M-1890-1-104,Sunderland vs Burnley,T-013,Sunderland,T-005,Burnley,2-3,2,3,-1,1,away team win,0,1,0
+369,S-1890-1,1890,1,First Division,None,M-1890-1-105,Sunderland vs Derby County,T-013,Sunderland,T-006,Derby County,5-1,5,1,4,-4,home team win,1,0,0
+370,S-1890-1,1890,1,First Division,None,M-1890-1-106,Sunderland vs Everton,T-013,Sunderland,T-007,Everton,1-0,1,0,1,-1,home team win,1,0,0
+371,S-1890-1,1890,1,First Division,None,M-1890-1-107,Sunderland vs Notts County,T-013,Sunderland,T-008,Notts County,4-0,4,0,4,-4,home team win,1,0,0
+372,S-1890-1,1890,1,First Division,None,M-1890-1-108,Sunderland vs Preston North End,T-013,Sunderland,T-009,Preston North End,3-0,3,0,3,-3,home team win,1,0,0
+373,S-1890-1,1890,1,First Division,None,M-1890-1-109,Sunderland vs West Bromwich Albion,T-013,Sunderland,T-011,West Bromwich Albion,1-1,1,1,0,0,draw,0,0,1
+374,S-1890-1,1890,1,First Division,None,M-1890-1-110,Sunderland vs Wolverhampton Wanderers,T-013,Sunderland,T-012,Wolverhampton Wanderers,3-4,3,4,-1,1,away team win,0,1,0
+375,S-1890-1,1890,1,First Division,None,M-1890-1-111,West Bromwich Albion vs Accrington,T-011,West Bromwich Albion,T-001,Accrington,5-1,5,1,4,-4,home team win,1,0,0
+376,S-1890-1,1890,1,First Division,None,M-1890-1-112,West Bromwich Albion vs Aston Villa,T-011,West Bromwich Albion,T-002,Aston Villa,0-3,0,3,-3,3,away team win,0,1,0
+377,S-1890-1,1890,1,First Division,None,M-1890-1-113,West Bromwich Albion vs Blackburn Rovers,T-011,West Bromwich Albion,T-003,Blackburn Rovers,1-0,1,0,1,-1,home team win,1,0,0
+378,S-1890-1,1890,1,First Division,None,M-1890-1-114,West Bromwich Albion vs Bolton Wanderers,T-011,West Bromwich Albion,T-004,Bolton Wanderers,2-4,2,4,-2,2,away team win,0,1,0
+379,S-1890-1,1890,1,First Division,None,M-1890-1-115,West Bromwich Albion vs Burnley,T-011,West Bromwich Albion,T-005,Burnley,3-1,3,1,2,-2,home team win,1,0,0
+380,S-1890-1,1890,1,First Division,None,M-1890-1-116,West Bromwich Albion vs Derby County,T-011,West Bromwich Albion,T-006,Derby County,3-4,3,4,-1,1,away team win,0,1,0
+381,S-1890-1,1890,1,First Division,None,M-1890-1-117,West Bromwich Albion vs Everton,T-011,West Bromwich Albion,T-007,Everton,1-4,1,4,-3,3,away team win,0,1,0
+382,S-1890-1,1890,1,First Division,None,M-1890-1-118,West Bromwich Albion vs Notts County,T-011,West Bromwich Albion,T-008,Notts County,1-1,1,1,0,0,draw,0,0,1
+383,S-1890-1,1890,1,First Division,None,M-1890-1-119,West Bromwich Albion vs Preston North End,T-011,West Bromwich Albion,T-009,Preston North End,1-3,1,3,-2,2,away team win,0,1,0
+384,S-1890-1,1890,1,First Division,None,M-1890-1-120,West Bromwich Albion vs Sunderland,T-011,West Bromwich Albion,T-013,Sunderland,0-4,0,4,-4,4,away team win,0,1,0
+385,S-1890-1,1890,1,First Division,None,M-1890-1-121,West Bromwich Albion vs Wolverhampton Wanderers,T-011,West Bromwich Albion,T-012,Wolverhampton Wanderers,0-1,0,1,-1,1,away team win,0,1,0
+386,S-1890-1,1890,1,First Division,None,M-1890-1-122,Wolverhampton Wanderers vs Accrington,T-012,Wolverhampton Wanderers,T-001,Accrington,3-0,3,0,3,-3,home team win,1,0,0
+387,S-1890-1,1890,1,First Division,None,M-1890-1-123,Wolverhampton Wanderers vs Aston Villa,T-012,Wolverhampton Wanderers,T-002,Aston Villa,2-1,2,1,1,-1,home team win,1,0,0
+388,S-1890-1,1890,1,First Division,None,M-1890-1-124,Wolverhampton Wanderers vs Blackburn Rovers,T-012,Wolverhampton Wanderers,T-003,Blackburn Rovers,2-0,2,0,2,-2,home team win,1,0,0
+389,S-1890-1,1890,1,First Division,None,M-1890-1-125,Wolverhampton Wanderers vs Bolton Wanderers,T-012,Wolverhampton Wanderers,T-004,Bolton Wanderers,1-0,1,0,1,-1,home team win,1,0,0
+390,S-1890-1,1890,1,First Division,None,M-1890-1-126,Wolverhampton Wanderers vs Burnley,T-012,Wolverhampton Wanderers,T-005,Burnley,3-1,3,1,2,-2,home team win,1,0,0
+391,S-1890-1,1890,1,First Division,None,M-1890-1-127,Wolverhampton Wanderers vs Derby County,T-012,Wolverhampton Wanderers,T-006,Derby County,5-1,5,1,4,-4,home team win,1,0,0
+392,S-1890-1,1890,1,First Division,None,M-1890-1-128,Wolverhampton Wanderers vs Everton,T-012,Wolverhampton Wanderers,T-007,Everton,0-1,0,1,-1,1,away team win,0,1,0
+393,S-1890-1,1890,1,First Division,None,M-1890-1-129,Wolverhampton Wanderers vs Notts County,T-012,Wolverhampton Wanderers,T-008,Notts County,1-1,1,1,0,0,draw,0,0,1
+394,S-1890-1,1890,1,First Division,None,M-1890-1-130,Wolverhampton Wanderers vs Preston North End,T-012,Wolverhampton Wanderers,T-009,Preston North End,2-0,2,0,2,-2,home team win,1,0,0
+395,S-1890-1,1890,1,First Division,None,M-1890-1-131,Wolverhampton Wanderers vs Sunderland,T-012,Wolverhampton Wanderers,T-013,Sunderland,0-3,0,3,-3,3,away team win,0,1,0
+396,S-1890-1,1890,1,First Division,None,M-1890-1-132,Wolverhampton Wanderers vs West Bromwich Albion,T-012,Wolverhampton Wanderers,T-011,West Bromwich Albion,4-0,4,0,4,-4,home team win,1,0,0
+397,S-1891-1,1891,1,First Division,None,M-1891-1-001,Accrington vs Aston Villa,T-001,Accrington,T-002,Aston Villa,3-2,3,2,1,-1,home team win,1,0,0
+398,S-1891-1,1891,1,First Division,None,M-1891-1-002,Accrington vs Blackburn Rovers,T-001,Accrington,T-003,Blackburn Rovers,1-0,1,0,1,-1,home team win,1,0,0
+399,S-1891-1,1891,1,First Division,None,M-1891-1-003,Accrington vs Bolton Wanderers,T-001,Accrington,T-004,Bolton Wanderers,0-3,0,3,-3,3,away team win,0,1,0
+400,S-1891-1,1891,1,First Division,None,M-1891-1-004,Accrington vs Burnley,T-001,Accrington,T-005,Burnley,1-0,1,0,1,-1,home team win,1,0,0
+401,S-1891-1,1891,1,First Division,None,M-1891-1-005,Accrington vs Darwen,T-001,Accrington,T-014,Darwen,1-1,1,1,0,0,draw,0,0,1
+402,S-1891-1,1891,1,First Division,None,M-1891-1-006,Accrington vs Derby County,T-001,Accrington,T-006,Derby County,1-1,1,1,0,0,draw,0,0,1
+403,S-1891-1,1891,1,First Division,None,M-1891-1-007,Accrington vs Everton,T-001,Accrington,T-007,Everton,1-1,1,1,0,0,draw,0,0,1
+404,S-1891-1,1891,1,First Division,None,M-1891-1-008,Accrington vs Notts County,T-001,Accrington,T-008,Notts County,2-0,2,0,2,-2,home team win,1,0,0
+405,S-1891-1,1891,1,First Division,None,M-1891-1-009,Accrington vs Preston North End,T-001,Accrington,T-009,Preston North End,1-3,1,3,-2,2,away team win,0,1,0
+406,S-1891-1,1891,1,First Division,None,M-1891-1-010,Accrington vs Stoke,T-001,Accrington,T-010,Stoke,3-0,3,0,3,-3,home team win,1,0,0
+407,S-1891-1,1891,1,First Division,None,M-1891-1-011,Accrington vs Sunderland,T-001,Accrington,T-013,Sunderland,3-5,3,5,-2,2,away team win,0,1,0
+408,S-1891-1,1891,1,First Division,None,M-1891-1-012,Accrington vs West Bromwich Albion,T-001,Accrington,T-011,West Bromwich Albion,4-2,4,2,2,-2,home team win,1,0,0
+409,S-1891-1,1891,1,First Division,None,M-1891-1-013,Accrington vs Wolverhampton Wanderers,T-001,Accrington,T-012,Wolverhampton Wanderers,3-2,3,2,1,-1,home team win,1,0,0
+410,S-1891-1,1891,1,First Division,None,M-1891-1-014,Aston Villa vs Accrington,T-002,Aston Villa,T-001,Accrington,12-2,12,2,10,-10,home team win,1,0,0
+411,S-1891-1,1891,1,First Division,None,M-1891-1-015,Aston Villa vs Blackburn Rovers,T-002,Aston Villa,T-003,Blackburn Rovers,5-1,5,1,4,-4,home team win,1,0,0
+412,S-1891-1,1891,1,First Division,None,M-1891-1-016,Aston Villa vs Bolton Wanderers,T-002,Aston Villa,T-004,Bolton Wanderers,1-2,1,2,-1,1,away team win,0,1,0
+413,S-1891-1,1891,1,First Division,None,M-1891-1-017,Aston Villa vs Burnley,T-002,Aston Villa,T-005,Burnley,6-1,6,1,5,-5,home team win,1,0,0
+414,S-1891-1,1891,1,First Division,None,M-1891-1-018,Aston Villa vs Darwen,T-002,Aston Villa,T-014,Darwen,7-0,7,0,7,-7,home team win,1,0,0
+415,S-1891-1,1891,1,First Division,None,M-1891-1-019,Aston Villa vs Derby County,T-002,Aston Villa,T-006,Derby County,6-0,6,0,6,-6,home team win,1,0,0
+416,S-1891-1,1891,1,First Division,None,M-1891-1-020,Aston Villa vs Everton,T-002,Aston Villa,T-007,Everton,3-4,3,4,-1,1,away team win,0,1,0
+417,S-1891-1,1891,1,First Division,None,M-1891-1-021,Aston Villa vs Notts County,T-002,Aston Villa,T-008,Notts County,5-1,5,1,4,-4,home team win,1,0,0
+418,S-1891-1,1891,1,First Division,None,M-1891-1-022,Aston Villa vs Preston North End,T-002,Aston Villa,T-009,Preston North End,3-1,3,1,2,-2,home team win,1,0,0
+419,S-1891-1,1891,1,First Division,None,M-1891-1-023,Aston Villa vs Stoke,T-002,Aston Villa,T-010,Stoke,2-1,2,1,1,-1,home team win,1,0,0
+420,S-1891-1,1891,1,First Division,None,M-1891-1-024,Aston Villa vs Sunderland,T-002,Aston Villa,T-013,Sunderland,5-3,5,3,2,-2,home team win,1,0,0
+421,S-1891-1,1891,1,First Division,None,M-1891-1-025,Aston Villa vs West Bromwich Albion,T-002,Aston Villa,T-011,West Bromwich Albion,5-1,5,1,4,-4,home team win,1,0,0
+422,S-1891-1,1891,1,First Division,None,M-1891-1-026,Aston Villa vs Wolverhampton Wanderers,T-002,Aston Villa,T-012,Wolverhampton Wanderers,3-6,3,6,-3,3,away team win,0,1,0
+423,S-1891-1,1891,1,First Division,None,M-1891-1-027,Blackburn Rovers vs Accrington,T-003,Blackburn Rovers,T-001,Accrington,2-2,2,2,0,0,draw,0,0,1
+424,S-1891-1,1891,1,First Division,None,M-1891-1-028,Blackburn Rovers vs Aston Villa,T-003,Blackburn Rovers,T-002,Aston Villa,4-3,4,3,1,-1,home team win,1,0,0
+425,S-1891-1,1891,1,First Division,None,M-1891-1-029,Blackburn Rovers vs Bolton Wanderers,T-003,Blackburn Rovers,T-004,Bolton Wanderers,4-0,4,0,4,-4,home team win,1,0,0
+426,S-1891-1,1891,1,First Division,None,M-1891-1-030,Blackburn Rovers vs Burnley,T-003,Blackburn Rovers,T-005,Burnley,3-3,3,3,0,0,draw,0,0,1
+427,S-1891-1,1891,1,First Division,None,M-1891-1-031,Blackburn Rovers vs Darwen,T-003,Blackburn Rovers,T-014,Darwen,4-0,4,0,4,-4,home team win,1,0,0
+428,S-1891-1,1891,1,First Division,None,M-1891-1-032,Blackburn Rovers vs Derby County,T-003,Blackburn Rovers,T-006,Derby County,0-2,0,2,-2,2,away team win,0,1,0
+429,S-1891-1,1891,1,First Division,None,M-1891-1-033,Blackburn Rovers vs Everton,T-003,Blackburn Rovers,T-007,Everton,2-2,2,2,0,0,draw,0,0,1
+430,S-1891-1,1891,1,First Division,None,M-1891-1-034,Blackburn Rovers vs Notts County,T-003,Blackburn Rovers,T-008,Notts County,5-4,5,4,1,-1,home team win,1,0,0
+431,S-1891-1,1891,1,First Division,None,M-1891-1-035,Blackburn Rovers vs Preston North End,T-003,Blackburn Rovers,T-009,Preston North End,2-4,2,4,-2,2,away team win,0,1,0
+432,S-1891-1,1891,1,First Division,None,M-1891-1-036,Blackburn Rovers vs Stoke,T-003,Blackburn Rovers,T-010,Stoke,5-3,5,3,2,-2,home team win,1,0,0
+433,S-1891-1,1891,1,First Division,None,M-1891-1-037,Blackburn Rovers vs Sunderland,T-003,Blackburn Rovers,T-013,Sunderland,3-1,3,1,2,-2,home team win,1,0,0
+434,S-1891-1,1891,1,First Division,None,M-1891-1-038,Blackburn Rovers vs West Bromwich Albion,T-003,Blackburn Rovers,T-011,West Bromwich Albion,3-2,3,2,1,-1,home team win,1,0,0
+435,S-1891-1,1891,1,First Division,None,M-1891-1-039,Blackburn Rovers vs Wolverhampton Wanderers,T-003,Blackburn Rovers,T-012,Wolverhampton Wanderers,2-0,2,0,2,-2,home team win,1,0,0
+436,S-1891-1,1891,1,First Division,None,M-1891-1-040,Bolton Wanderers vs Accrington,T-004,Bolton Wanderers,T-001,Accrington,3-4,3,4,-1,1,away team win,0,1,0
+437,S-1891-1,1891,1,First Division,None,M-1891-1-041,Bolton Wanderers vs Aston Villa,T-004,Bolton Wanderers,T-002,Aston Villa,1-2,1,2,-1,1,away team win,0,1,0
+438,S-1891-1,1891,1,First Division,None,M-1891-1-042,Bolton Wanderers vs Blackburn Rovers,T-004,Bolton Wanderers,T-003,Blackburn Rovers,4-2,4,2,2,-2,home team win,1,0,0
+439,S-1891-1,1891,1,First Division,None,M-1891-1-043,Bolton Wanderers vs Burnley,T-004,Bolton Wanderers,T-005,Burnley,2-0,2,0,2,-2,home team win,1,0,0
+440,S-1891-1,1891,1,First Division,None,M-1891-1-044,Bolton Wanderers vs Darwen,T-004,Bolton Wanderers,T-014,Darwen,1-0,1,0,1,-1,home team win,1,0,0
+441,S-1891-1,1891,1,First Division,None,M-1891-1-045,Bolton Wanderers vs Derby County,T-004,Bolton Wanderers,T-006,Derby County,3-1,3,1,2,-2,home team win,1,0,0
+442,S-1891-1,1891,1,First Division,None,M-1891-1-046,Bolton Wanderers vs Everton,T-004,Bolton Wanderers,T-007,Everton,1-0,1,0,1,-1,home team win,1,0,0
+443,S-1891-1,1891,1,First Division,None,M-1891-1-047,Bolton Wanderers vs Notts County,T-004,Bolton Wanderers,T-008,Notts County,2-0,2,0,2,-2,home team win,1,0,0
+444,S-1891-1,1891,1,First Division,None,M-1891-1-048,Bolton Wanderers vs Preston North End,T-004,Bolton Wanderers,T-009,Preston North End,3-0,3,0,3,-3,home team win,1,0,0
+445,S-1891-1,1891,1,First Division,None,M-1891-1-049,Bolton Wanderers vs Stoke,T-004,Bolton Wanderers,T-010,Stoke,1-1,1,1,0,0,draw,0,0,1
+446,S-1891-1,1891,1,First Division,None,M-1891-1-050,Bolton Wanderers vs Sunderland,T-004,Bolton Wanderers,T-013,Sunderland,4-3,4,3,1,-1,home team win,1,0,0
+447,S-1891-1,1891,1,First Division,None,M-1891-1-051,Bolton Wanderers vs West Bromwich Albion,T-004,Bolton Wanderers,T-011,West Bromwich Albion,1-1,1,1,0,0,draw,0,0,1
+448,S-1891-1,1891,1,First Division,None,M-1891-1-052,Bolton Wanderers vs Wolverhampton Wanderers,T-004,Bolton Wanderers,T-012,Wolverhampton Wanderers,3-0,3,0,3,-3,home team win,1,0,0
+449,S-1891-1,1891,1,First Division,None,M-1891-1-053,Burnley vs Accrington,T-005,Burnley,T-001,Accrington,2-1,2,1,1,-1,home team win,1,0,0
+450,S-1891-1,1891,1,First Division,None,M-1891-1-054,Burnley vs Aston Villa,T-005,Burnley,T-002,Aston Villa,4-1,4,1,3,-3,home team win,1,0,0
+451,S-1891-1,1891,1,First Division,None,M-1891-1-055,Burnley vs Blackburn Rovers,T-005,Burnley,T-003,Blackburn Rovers,3-0,3,0,3,-3,home team win,1,0,0
+452,S-1891-1,1891,1,First Division,None,M-1891-1-056,Burnley vs Bolton Wanderers,T-005,Burnley,T-004,Bolton Wanderers,1-2,1,2,-1,1,away team win,0,1,0
+453,S-1891-1,1891,1,First Division,None,M-1891-1-057,Burnley vs Darwen,T-005,Burnley,T-014,Darwen,9-0,9,0,9,-9,home team win,1,0,0
+454,S-1891-1,1891,1,First Division,None,M-1891-1-058,Burnley vs Derby County,T-005,Burnley,T-006,Derby County,2-4,2,4,-2,2,away team win,0,1,0
+455,S-1891-1,1891,1,First Division,None,M-1891-1-059,Burnley vs Everton,T-005,Burnley,T-007,Everton,1-0,1,0,1,-1,home team win,1,0,0
+456,S-1891-1,1891,1,First Division,None,M-1891-1-060,Burnley vs Notts County,T-005,Burnley,T-008,Notts County,1-0,1,0,1,-1,home team win,1,0,0
+457,S-1891-1,1891,1,First Division,None,M-1891-1-061,Burnley vs Preston North End,T-005,Burnley,T-009,Preston North End,2-0,2,0,2,-2,home team win,1,0,0
+458,S-1891-1,1891,1,First Division,None,M-1891-1-062,Burnley vs Stoke,T-005,Burnley,T-010,Stoke,4-1,4,1,3,-3,home team win,1,0,0
+459,S-1891-1,1891,1,First Division,None,M-1891-1-063,Burnley vs Sunderland,T-005,Burnley,T-013,Sunderland,1-2,1,2,-1,1,away team win,0,1,0
+460,S-1891-1,1891,1,First Division,None,M-1891-1-064,Burnley vs West Bromwich Albion,T-005,Burnley,T-011,West Bromwich Albion,3-2,3,2,1,-1,home team win,1,0,0
+461,S-1891-1,1891,1,First Division,None,M-1891-1-065,Burnley vs Wolverhampton Wanderers,T-005,Burnley,T-012,Wolverhampton Wanderers,1-1,1,1,0,0,draw,0,0,1
+462,S-1891-1,1891,1,First Division,None,M-1891-1-066,Darwen vs Accrington,T-014,Darwen,T-001,Accrington,5-2,5,2,3,-3,home team win,1,0,0
+463,S-1891-1,1891,1,First Division,None,M-1891-1-067,Darwen vs Aston Villa,T-014,Darwen,T-002,Aston Villa,1-5,1,5,-4,4,away team win,0,1,0
+464,S-1891-1,1891,1,First Division,None,M-1891-1-068,Darwen vs Blackburn Rovers,T-014,Darwen,T-003,Blackburn Rovers,3-5,3,5,-2,2,away team win,0,1,0
+465,S-1891-1,1891,1,First Division,None,M-1891-1-069,Darwen vs Bolton Wanderers,T-014,Darwen,T-004,Bolton Wanderers,1-2,1,2,-1,1,away team win,0,1,0
+466,S-1891-1,1891,1,First Division,None,M-1891-1-070,Darwen vs Burnley,T-014,Darwen,T-005,Burnley,2-6,2,6,-4,4,away team win,0,1,0
+467,S-1891-1,1891,1,First Division,None,M-1891-1-071,Darwen vs Derby County,T-014,Darwen,T-006,Derby County,2-0,2,0,2,-2,home team win,1,0,0
+468,S-1891-1,1891,1,First Division,None,M-1891-1-072,Darwen vs Everton,T-014,Darwen,T-007,Everton,3-1,3,1,2,-2,home team win,1,0,0
+469,S-1891-1,1891,1,First Division,None,M-1891-1-073,Darwen vs Notts County,T-014,Darwen,T-008,Notts County,2-3,2,3,-1,1,away team win,0,1,0
+470,S-1891-1,1891,1,First Division,None,M-1891-1-074,Darwen vs Preston North End,T-014,Darwen,T-009,Preston North End,0-4,0,4,-4,4,away team win,0,1,0
+471,S-1891-1,1891,1,First Division,None,M-1891-1-075,Darwen vs Stoke,T-014,Darwen,T-010,Stoke,9-3,9,3,6,-6,home team win,1,0,0
+472,S-1891-1,1891,1,First Division,None,M-1891-1-076,Darwen vs Sunderland,T-014,Darwen,T-013,Sunderland,1-7,1,7,-6,6,away team win,0,1,0
+473,S-1891-1,1891,1,First Division,None,M-1891-1-077,Darwen vs West Bromwich Albion,T-014,Darwen,T-011,West Bromwich Albion,1-1,1,1,0,0,draw,0,0,1
+474,S-1891-1,1891,1,First Division,None,M-1891-1-078,Darwen vs Wolverhampton Wanderers,T-014,Darwen,T-012,Wolverhampton Wanderers,1-4,1,4,-3,3,away team win,0,1,0
+475,S-1891-1,1891,1,First Division,None,M-1891-1-079,Derby County vs Accrington,T-006,Derby County,T-001,Accrington,3-1,3,1,2,-2,home team win,1,0,0
+476,S-1891-1,1891,1,First Division,None,M-1891-1-080,Derby County vs Aston Villa,T-006,Derby County,T-002,Aston Villa,4-2,4,2,2,-2,home team win,1,0,0
+477,S-1891-1,1891,1,First Division,None,M-1891-1-081,Derby County vs Blackburn Rovers,T-006,Derby County,T-003,Blackburn Rovers,1-1,1,1,0,0,draw,0,0,1
+478,S-1891-1,1891,1,First Division,None,M-1891-1-082,Derby County vs Bolton Wanderers,T-006,Derby County,T-004,Bolton Wanderers,3-2,3,2,1,-1,home team win,1,0,0
+479,S-1891-1,1891,1,First Division,None,M-1891-1-083,Derby County vs Burnley,T-006,Derby County,T-005,Burnley,0-1,0,1,-1,1,away team win,0,1,0
+480,S-1891-1,1891,1,First Division,None,M-1891-1-084,Derby County vs Darwen,T-006,Derby County,T-014,Darwen,7-0,7,0,7,-7,home team win,1,0,0
+481,S-1891-1,1891,1,First Division,None,M-1891-1-085,Derby County vs Everton,T-006,Derby County,T-007,Everton,0-3,0,3,-3,3,away team win,0,1,0
+482,S-1891-1,1891,1,First Division,None,M-1891-1-086,Derby County vs Notts County,T-006,Derby County,T-008,Notts County,3-0,3,0,3,-3,home team win,1,0,0
+483,S-1891-1,1891,1,First Division,None,M-1891-1-087,Derby County vs Preston North End,T-006,Derby County,T-009,Preston North End,1-2,1,2,-1,1,away team win,0,1,0
+484,S-1891-1,1891,1,First Division,None,M-1891-1-088,Derby County vs Stoke,T-006,Derby County,T-010,Stoke,3-3,3,3,0,0,draw,0,0,1
+485,S-1891-1,1891,1,First Division,None,M-1891-1-089,Derby County vs Sunderland,T-006,Derby County,T-013,Sunderland,0-1,0,1,-1,1,away team win,0,1,0
+486,S-1891-1,1891,1,First Division,None,M-1891-1-090,Derby County vs West Bromwich Albion,T-006,Derby County,T-011,West Bromwich Albion,1-1,1,1,0,0,draw,0,0,1
+487,S-1891-1,1891,1,First Division,None,M-1891-1-091,Derby County vs Wolverhampton Wanderers,T-006,Derby County,T-012,Wolverhampton Wanderers,2-1,2,1,1,-1,home team win,1,0,0
+488,S-1891-1,1891,1,First Division,None,M-1891-1-092,Everton vs Accrington,T-007,Everton,T-001,Accrington,3-0,3,0,3,-3,home team win,1,0,0
+489,S-1891-1,1891,1,First Division,None,M-1891-1-093,Everton vs Aston Villa,T-007,Everton,T-002,Aston Villa,5-1,5,1,4,-4,home team win,1,0,0
+490,S-1891-1,1891,1,First Division,None,M-1891-1-094,Everton vs Blackburn Rovers,T-007,Everton,T-003,Blackburn Rovers,3-1,3,1,2,-2,home team win,1,0,0
+491,S-1891-1,1891,1,First Division,None,M-1891-1-095,Everton vs Bolton Wanderers,T-007,Everton,T-004,Bolton Wanderers,2-5,2,5,-3,3,away team win,0,1,0
+492,S-1891-1,1891,1,First Division,None,M-1891-1-096,Everton vs Burnley,T-007,Everton,T-005,Burnley,1-1,1,1,0,0,draw,0,0,1
+493,S-1891-1,1891,1,First Division,None,M-1891-1-097,Everton vs Darwen,T-007,Everton,T-014,Darwen,5-3,5,3,2,-2,home team win,1,0,0
+494,S-1891-1,1891,1,First Division,None,M-1891-1-098,Everton vs Derby County,T-007,Everton,T-006,Derby County,1-2,1,2,-1,1,away team win,0,1,0
+495,S-1891-1,1891,1,First Division,None,M-1891-1-099,Everton vs Notts County,T-007,Everton,T-008,Notts County,4-0,4,0,4,-4,home team win,1,0,0
+496,S-1891-1,1891,1,First Division,None,M-1891-1-100,Everton vs Preston North End,T-007,Everton,T-009,Preston North End,1-1,1,1,0,0,draw,0,0,1
+497,S-1891-1,1891,1,First Division,None,M-1891-1-101,Everton vs Stoke,T-007,Everton,T-010,Stoke,1-0,1,0,1,-1,home team win,1,0,0
+498,S-1891-1,1891,1,First Division,None,M-1891-1-102,Everton vs Sunderland,T-007,Everton,T-013,Sunderland,0-4,0,4,-4,4,away team win,0,1,0
+499,S-1891-1,1891,1,First Division,None,M-1891-1-103,Everton vs West Bromwich Albion,T-007,Everton,T-011,West Bromwich Albion,4-3,4,3,1,-1,home team win,1,0,0
+500,S-1891-1,1891,1,First Division,None,M-1891-1-104,Everton vs Wolverhampton Wanderers,T-007,Everton,T-012,Wolverhampton Wanderers,2-1,2,1,1,-1,home team win,1,0,0
+501,S-1891-1,1891,1,First Division,None,M-1891-1-105,Notts County vs Accrington,T-008,Notts County,T-001,Accrington,9-0,9,0,9,-9,home team win,1,0,0
+502,S-1891-1,1891,1,First Division,None,M-1891-1-106,Notts County vs Aston Villa,T-008,Notts County,T-002,Aston Villa,5-2,5,2,3,-3,home team win,1,0,0
+503,S-1891-1,1891,1,First Division,None,M-1891-1-107,Notts County vs Blackburn Rovers,T-008,Notts County,T-003,Blackburn Rovers,2-2,2,2,0,0,draw,0,0,1
+504,S-1891-1,1891,1,First Division,None,M-1891-1-108,Notts County vs Bolton Wanderers,T-008,Notts County,T-004,Bolton Wanderers,2-0,2,0,2,-2,home team win,1,0,0
+505,S-1891-1,1891,1,First Division,None,M-1891-1-109,Notts County vs Burnley,T-008,Notts County,T-005,Burnley,5-1,5,1,4,-4,home team win,1,0,0
+506,S-1891-1,1891,1,First Division,None,M-1891-1-110,Notts County vs Darwen,T-008,Notts County,T-014,Darwen,5-0,5,0,5,-5,home team win,1,0,0
+507,S-1891-1,1891,1,First Division,None,M-1891-1-111,Notts County vs Derby County,T-008,Notts County,T-006,Derby County,2-1,2,1,1,-1,home team win,1,0,0
+508,S-1891-1,1891,1,First Division,None,M-1891-1-112,Notts County vs Everton,T-008,Notts County,T-007,Everton,1-3,1,3,-2,2,away team win,0,1,0
+509,S-1891-1,1891,1,First Division,None,M-1891-1-113,Notts County vs Preston North End,T-008,Notts County,T-009,Preston North End,2-0,2,0,2,-2,home team win,1,0,0
+510,S-1891-1,1891,1,First Division,None,M-1891-1-114,Notts County vs Stoke,T-008,Notts County,T-010,Stoke,1-1,1,1,0,0,draw,0,0,1
+511,S-1891-1,1891,1,First Division,None,M-1891-1-115,Notts County vs Sunderland,T-008,Notts County,T-013,Sunderland,1-0,1,0,1,-1,home team win,1,0,0
+512,S-1891-1,1891,1,First Division,None,M-1891-1-116,Notts County vs West Bromwich Albion,T-008,Notts County,T-011,West Bromwich Albion,4-0,4,0,4,-4,home team win,1,0,0
+513,S-1891-1,1891,1,First Division,None,M-1891-1-117,Notts County vs Wolverhampton Wanderers,T-008,Notts County,T-012,Wolverhampton Wanderers,2-2,2,2,0,0,draw,0,0,1
+514,S-1891-1,1891,1,First Division,None,M-1891-1-118,Preston North End vs Accrington,T-009,Preston North End,T-001,Accrington,4-1,4,1,3,-3,home team win,1,0,0
+515,S-1891-1,1891,1,First Division,None,M-1891-1-119,Preston North End vs Aston Villa,T-009,Preston North End,T-002,Aston Villa,0-1,0,1,-1,1,away team win,0,1,0
+516,S-1891-1,1891,1,First Division,None,M-1891-1-120,Preston North End vs Blackburn Rovers,T-009,Preston North End,T-003,Blackburn Rovers,3-2,3,2,1,-1,home team win,1,0,0
+517,S-1891-1,1891,1,First Division,None,M-1891-1-121,Preston North End vs Bolton Wanderers,T-009,Preston North End,T-004,Bolton Wanderers,4-0,4,0,4,-4,home team win,1,0,0
+518,S-1891-1,1891,1,First Division,None,M-1891-1-122,Preston North End vs Burnley,T-009,Preston North End,T-005,Burnley,5-1,5,1,4,-4,home team win,1,0,0
+519,S-1891-1,1891,1,First Division,None,M-1891-1-123,Preston North End vs Darwen,T-009,Preston North End,T-014,Darwen,4-0,4,0,4,-4,home team win,1,0,0
+520,S-1891-1,1891,1,First Division,None,M-1891-1-124,Preston North End vs Derby County,T-009,Preston North End,T-006,Derby County,3-0,3,0,3,-3,home team win,1,0,0
+521,S-1891-1,1891,1,First Division,None,M-1891-1-125,Preston North End vs Everton,T-009,Preston North End,T-007,Everton,4-0,4,0,4,-4,home team win,1,0,0
+522,S-1891-1,1891,1,First Division,None,M-1891-1-126,Preston North End vs Notts County,T-009,Preston North End,T-008,Notts County,6-0,6,0,6,-6,home team win,1,0,0
+523,S-1891-1,1891,1,First Division,None,M-1891-1-127,Preston North End vs Stoke,T-009,Preston North End,T-010,Stoke,3-2,3,2,1,-1,home team win,1,0,0
+524,S-1891-1,1891,1,First Division,None,M-1891-1-128,Preston North End vs Sunderland,T-009,Preston North End,T-013,Sunderland,3-1,3,1,2,-2,home team win,1,0,0
+525,S-1891-1,1891,1,First Division,None,M-1891-1-129,Preston North End vs West Bromwich Albion,T-009,Preston North End,T-011,West Bromwich Albion,1-0,1,0,1,-1,home team win,1,0,0
+526,S-1891-1,1891,1,First Division,None,M-1891-1-130,Preston North End vs Wolverhampton Wanderers,T-009,Preston North End,T-012,Wolverhampton Wanderers,2-0,2,0,2,-2,home team win,1,0,0
+527,S-1891-1,1891,1,First Division,None,M-1891-1-131,Stoke vs Accrington,T-010,Stoke,T-001,Accrington,3-1,3,1,2,-2,home team win,1,0,0
+528,S-1891-1,1891,1,First Division,None,M-1891-1-132,Stoke vs Aston Villa,T-010,Stoke,T-002,Aston Villa,2-3,2,3,-1,1,away team win,0,1,0
+529,S-1891-1,1891,1,First Division,None,M-1891-1-133,Stoke vs Blackburn Rovers,T-010,Stoke,T-003,Blackburn Rovers,0-1,0,1,-1,1,away team win,0,1,0
+530,S-1891-1,1891,1,First Division,None,M-1891-1-134,Stoke vs Bolton Wanderers,T-010,Stoke,T-004,Bolton Wanderers,0-1,0,1,-1,1,away team win,0,1,0
+531,S-1891-1,1891,1,First Division,None,M-1891-1-135,Stoke vs Burnley,T-010,Stoke,T-005,Burnley,3-0,3,0,3,-3,home team win,1,0,0
+532,S-1891-1,1891,1,First Division,None,M-1891-1-136,Stoke vs Darwen,T-010,Stoke,T-014,Darwen,5-1,5,1,4,-4,home team win,1,0,0
+533,S-1891-1,1891,1,First Division,None,M-1891-1-137,Stoke vs Derby County,T-010,Stoke,T-006,Derby County,2-1,2,1,1,-1,home team win,1,0,0
+534,S-1891-1,1891,1,First Division,None,M-1891-1-138,Stoke vs Everton,T-010,Stoke,T-007,Everton,0-1,0,1,-1,1,away team win,0,1,0
+535,S-1891-1,1891,1,First Division,None,M-1891-1-139,Stoke vs Notts County,T-010,Stoke,T-008,Notts County,1-3,1,3,-2,2,away team win,0,1,0
+536,S-1891-1,1891,1,First Division,None,M-1891-1-140,Stoke vs Preston North End,T-010,Stoke,T-009,Preston North End,0-1,0,1,-1,1,away team win,0,1,0
+537,S-1891-1,1891,1,First Division,None,M-1891-1-141,Stoke vs Sunderland,T-010,Stoke,T-013,Sunderland,1-3,1,3,-2,2,away team win,0,1,0
+538,S-1891-1,1891,1,First Division,None,M-1891-1-142,Stoke vs West Bromwich Albion,T-010,Stoke,T-011,West Bromwich Albion,1-0,1,0,1,-1,home team win,1,0,0
+539,S-1891-1,1891,1,First Division,None,M-1891-1-143,Stoke vs Wolverhampton Wanderers,T-010,Stoke,T-012,Wolverhampton Wanderers,1-3,1,3,-2,2,away team win,0,1,0
+540,S-1891-1,1891,1,First Division,None,M-1891-1-144,Sunderland vs Accrington,T-013,Sunderland,T-001,Accrington,4-1,4,1,3,-3,home team win,1,0,0
+541,S-1891-1,1891,1,First Division,None,M-1891-1-145,Sunderland vs Aston Villa,T-013,Sunderland,T-002,Aston Villa,2-1,2,1,1,-1,home team win,1,0,0
+542,S-1891-1,1891,1,First Division,None,M-1891-1-146,Sunderland vs Blackburn Rovers,T-013,Sunderland,T-003,Blackburn Rovers,6-1,6,1,5,-5,home team win,1,0,0
+543,S-1891-1,1891,1,First Division,None,M-1891-1-147,Sunderland vs Bolton Wanderers,T-013,Sunderland,T-004,Bolton Wanderers,4-1,4,1,3,-3,home team win,1,0,0
+544,S-1891-1,1891,1,First Division,None,M-1891-1-148,Sunderland vs Burnley,T-013,Sunderland,T-005,Burnley,2-1,2,1,1,-1,home team win,1,0,0
+545,S-1891-1,1891,1,First Division,None,M-1891-1-149,Sunderland vs Darwen,T-013,Sunderland,T-014,Darwen,7-0,7,0,7,-7,home team win,1,0,0
+546,S-1891-1,1891,1,First Division,None,M-1891-1-150,Sunderland vs Derby County,T-013,Sunderland,T-006,Derby County,7-1,7,1,6,-6,home team win,1,0,0
+547,S-1891-1,1891,1,First Division,None,M-1891-1-151,Sunderland vs Everton,T-013,Sunderland,T-007,Everton,2-1,2,1,1,-1,home team win,1,0,0
+548,S-1891-1,1891,1,First Division,None,M-1891-1-152,Sunderland vs Notts County,T-013,Sunderland,T-008,Notts County,4-0,4,0,4,-4,home team win,1,0,0
+549,S-1891-1,1891,1,First Division,None,M-1891-1-153,Sunderland vs Preston North End,T-013,Sunderland,T-009,Preston North End,4-1,4,1,3,-3,home team win,1,0,0
+550,S-1891-1,1891,1,First Division,None,M-1891-1-154,Sunderland vs Stoke,T-013,Sunderland,T-010,Stoke,4-1,4,1,3,-3,home team win,1,0,0
+551,S-1891-1,1891,1,First Division,None,M-1891-1-155,Sunderland vs West Bromwich Albion,T-013,Sunderland,T-011,West Bromwich Albion,4-0,4,0,4,-4,home team win,1,0,0
+552,S-1891-1,1891,1,First Division,None,M-1891-1-156,Sunderland vs Wolverhampton Wanderers,T-013,Sunderland,T-012,Wolverhampton Wanderers,5-2,5,2,3,-3,home team win,1,0,0
+553,S-1891-1,1891,1,First Division,None,M-1891-1-157,West Bromwich Albion vs Accrington,T-011,West Bromwich Albion,T-001,Accrington,3-1,3,1,2,-2,home team win,1,0,0
+554,S-1891-1,1891,1,First Division,None,M-1891-1-158,West Bromwich Albion vs Aston Villa,T-011,West Bromwich Albion,T-002,Aston Villa,0-3,0,3,-3,3,away team win,0,1,0
+555,S-1891-1,1891,1,First Division,None,M-1891-1-159,West Bromwich Albion vs Blackburn Rovers,T-011,West Bromwich Albion,T-003,Blackburn Rovers,2-2,2,2,0,0,draw,0,0,1
+556,S-1891-1,1891,1,First Division,None,M-1891-1-160,West Bromwich Albion vs Bolton Wanderers,T-011,West Bromwich Albion,T-004,Bolton Wanderers,0-2,0,2,-2,2,away team win,0,1,0
+557,S-1891-1,1891,1,First Division,None,M-1891-1-161,West Bromwich Albion vs Burnley,T-011,West Bromwich Albion,T-005,Burnley,1-0,1,0,1,-1,home team win,1,0,0
+558,S-1891-1,1891,1,First Division,None,M-1891-1-162,West Bromwich Albion vs Darwen,T-011,West Bromwich Albion,T-014,Darwen,12-0,12,0,12,-12,home team win,1,0,0
+559,S-1891-1,1891,1,First Division,None,M-1891-1-163,West Bromwich Albion vs Derby County,T-011,West Bromwich Albion,T-006,Derby County,4-2,4,2,2,-2,home team win,1,0,0
+560,S-1891-1,1891,1,First Division,None,M-1891-1-164,West Bromwich Albion vs Everton,T-011,West Bromwich Albion,T-007,Everton,4-0,4,0,4,-4,home team win,1,0,0
+561,S-1891-1,1891,1,First Division,None,M-1891-1-165,West Bromwich Albion vs Notts County,T-011,West Bromwich Albion,T-008,Notts County,2-2,2,2,0,0,draw,0,0,1
+562,S-1891-1,1891,1,First Division,None,M-1891-1-166,West Bromwich Albion vs Preston North End,T-011,West Bromwich Albion,T-009,Preston North End,1-2,1,2,-1,1,away team win,0,1,0
+563,S-1891-1,1891,1,First Division,None,M-1891-1-167,West Bromwich Albion vs Stoke,T-011,West Bromwich Albion,T-010,Stoke,2-2,2,2,0,0,draw,0,0,1
+564,S-1891-1,1891,1,First Division,None,M-1891-1-168,West Bromwich Albion vs Sunderland,T-011,West Bromwich Albion,T-013,Sunderland,2-5,2,5,-3,3,away team win,0,1,0
+565,S-1891-1,1891,1,First Division,None,M-1891-1-169,West Bromwich Albion vs Wolverhampton Wanderers,T-011,West Bromwich Albion,T-012,Wolverhampton Wanderers,4-3,4,3,1,-1,home team win,1,0,0
+566,S-1891-1,1891,1,First Division,None,M-1891-1-170,Wolverhampton Wanderers vs Accrington,T-012,Wolverhampton Wanderers,T-001,Accrington,5-0,5,0,5,-5,home team win,1,0,0
+567,S-1891-1,1891,1,First Division,None,M-1891-1-171,Wolverhampton Wanderers vs Aston Villa,T-012,Wolverhampton Wanderers,T-002,Aston Villa,2-0,2,0,2,-2,home team win,1,0,0
+568,S-1891-1,1891,1,First Division,None,M-1891-1-172,Wolverhampton Wanderers vs Blackburn Rovers,T-012,Wolverhampton Wanderers,T-003,Blackburn Rovers,6-1,6,1,5,-5,home team win,1,0,0
+569,S-1891-1,1891,1,First Division,None,M-1891-1-173,Wolverhampton Wanderers vs Bolton Wanderers,T-012,Wolverhampton Wanderers,T-004,Bolton Wanderers,1-2,1,2,-1,1,away team win,0,1,0
+570,S-1891-1,1891,1,First Division,None,M-1891-1-174,Wolverhampton Wanderers vs Burnley,T-012,Wolverhampton Wanderers,T-005,Burnley,0-0,0,0,0,0,draw,0,0,1
+571,S-1891-1,1891,1,First Division,None,M-1891-1-175,Wolverhampton Wanderers vs Darwen,T-012,Wolverhampton Wanderers,T-014,Darwen,2-2,2,2,0,0,draw,0,0,1
+572,S-1891-1,1891,1,First Division,None,M-1891-1-176,Wolverhampton Wanderers vs Derby County,T-012,Wolverhampton Wanderers,T-006,Derby County,1-3,1,3,-2,2,away team win,0,1,0
+573,S-1891-1,1891,1,First Division,None,M-1891-1-177,Wolverhampton Wanderers vs Everton,T-012,Wolverhampton Wanderers,T-007,Everton,5-1,5,1,4,-4,home team win,1,0,0
+574,S-1891-1,1891,1,First Division,None,M-1891-1-178,Wolverhampton Wanderers vs Notts County,T-012,Wolverhampton Wanderers,T-008,Notts County,2-1,2,1,1,-1,home team win,1,0,0
+575,S-1891-1,1891,1,First Division,None,M-1891-1-179,Wolverhampton Wanderers vs Preston North End,T-012,Wolverhampton Wanderers,T-009,Preston North End,3-0,3,0,3,-3,home team win,1,0,0
+576,S-1891-1,1891,1,First Division,None,M-1891-1-180,Wolverhampton Wanderers vs Stoke,T-012,Wolverhampton Wanderers,T-010,Stoke,4-1,4,1,3,-3,home team win,1,0,0
+577,S-1891-1,1891,1,First Division,None,M-1891-1-181,Wolverhampton Wanderers vs Sunderland,T-012,Wolverhampton Wanderers,T-013,Sunderland,1-3,1,3,-2,2,away team win,0,1,0
+578,S-1891-1,1891,1,First Division,None,M-1891-1-182,Wolverhampton Wanderers vs West Bromwich Albion,T-012,Wolverhampton Wanderers,T-011,West Bromwich Albion,2-1,2,1,1,-1,home team win,1,0,0
+579,S-1892-1,1892,1,First Division,None,M-1892-1-001,Accrington vs Aston Villa,T-001,Accrington,T-002,Aston Villa,1-1,1,1,0,0,draw,0,0,1
+580,S-1892-1,1892,1,First Division,None,M-1892-1-002,Accrington vs Blackburn Rovers,T-001,Accrington,T-003,Blackburn Rovers,1-1,1,1,0,0,draw,0,0,1
+581,S-1892-1,1892,1,First Division,None,M-1892-1-003,Accrington vs Bolton Wanderers,T-001,Accrington,T-004,Bolton Wanderers,1-1,1,1,0,0,draw,0,0,1
+582,S-1892-1,1892,1,First Division,None,M-1892-1-004,Accrington vs Burnley,T-001,Accrington,T-005,Burnley,0-4,0,4,-4,4,away team win,0,1,0
+583,S-1892-1,1892,1,First Division,None,M-1892-1-005,Accrington vs Derby County,T-001,Accrington,T-006,Derby County,0-3,0,3,-3,3,away team win,0,1,0
+584,S-1892-1,1892,1,First Division,None,M-1892-1-006,Accrington vs Everton,T-001,Accrington,T-007,Everton,0-3,0,3,-3,3,away team win,0,1,0
+585,S-1892-1,1892,1,First Division,None,M-1892-1-007,Accrington vs Newton Heath,T-001,Accrington,T-022,Newton Heath,2-2,2,2,0,0,draw,0,0,1
+586,S-1892-1,1892,1,First Division,None,M-1892-1-008,Accrington vs Nottingham Forest,T-001,Accrington,T-024,Nottingham Forest,1-1,1,1,0,0,draw,0,0,1
+587,S-1892-1,1892,1,First Division,None,M-1892-1-009,Accrington vs Notts County,T-001,Accrington,T-008,Notts County,4-2,4,2,2,-2,home team win,1,0,0
+588,S-1892-1,1892,1,First Division,None,M-1892-1-010,Accrington vs Preston North End,T-001,Accrington,T-009,Preston North End,1-2,1,2,-1,1,away team win,0,1,0
+589,S-1892-1,1892,1,First Division,None,M-1892-1-011,Accrington vs Stoke,T-001,Accrington,T-010,Stoke,5-2,5,2,3,-3,home team win,1,0,0
+590,S-1892-1,1892,1,First Division,None,M-1892-1-012,Accrington vs Sunderland,T-001,Accrington,T-013,Sunderland,0-6,0,6,-6,6,away team win,0,1,0
+591,S-1892-1,1892,1,First Division,None,M-1892-1-013,Accrington vs The Wednesday,T-001,Accrington,T-027,The Wednesday,4-2,4,2,2,-2,home team win,1,0,0
+592,S-1892-1,1892,1,First Division,None,M-1892-1-014,Accrington vs West Bromwich Albion,T-001,Accrington,T-011,West Bromwich Albion,5-4,5,4,1,-1,home team win,1,0,0
+593,S-1892-1,1892,1,First Division,None,M-1892-1-015,Accrington vs Wolverhampton Wanderers,T-001,Accrington,T-012,Wolverhampton Wanderers,4-0,4,0,4,-4,home team win,1,0,0
+594,S-1892-1,1892,1,First Division,None,M-1892-1-016,Aston Villa vs Accrington,T-002,Aston Villa,T-001,Accrington,6-4,6,4,2,-2,home team win,1,0,0
+595,S-1892-1,1892,1,First Division,None,M-1892-1-017,Aston Villa vs Blackburn Rovers,T-002,Aston Villa,T-003,Blackburn Rovers,4-1,4,1,3,-3,home team win,1,0,0
+596,S-1892-1,1892,1,First Division,None,M-1892-1-018,Aston Villa vs Bolton Wanderers,T-002,Aston Villa,T-004,Bolton Wanderers,1-1,1,1,0,0,draw,0,0,1
+597,S-1892-1,1892,1,First Division,None,M-1892-1-019,Aston Villa vs Burnley,T-002,Aston Villa,T-005,Burnley,1-3,1,3,-2,2,away team win,0,1,0
+598,S-1892-1,1892,1,First Division,None,M-1892-1-020,Aston Villa vs Derby County,T-002,Aston Villa,T-006,Derby County,6-1,6,1,5,-5,home team win,1,0,0
+599,S-1892-1,1892,1,First Division,None,M-1892-1-021,Aston Villa vs Everton,T-002,Aston Villa,T-007,Everton,4-1,4,1,3,-3,home team win,1,0,0
+600,S-1892-1,1892,1,First Division,None,M-1892-1-022,Aston Villa vs Newton Heath,T-002,Aston Villa,T-022,Newton Heath,2-0,2,0,2,-2,home team win,1,0,0
+601,S-1892-1,1892,1,First Division,None,M-1892-1-023,Aston Villa vs Nottingham Forest,T-002,Aston Villa,T-024,Nottingham Forest,1-0,1,0,1,-1,home team win,1,0,0
+602,S-1892-1,1892,1,First Division,None,M-1892-1-024,Aston Villa vs Notts County,T-002,Aston Villa,T-008,Notts County,3-1,3,1,2,-2,home team win,1,0,0
+603,S-1892-1,1892,1,First Division,None,M-1892-1-025,Aston Villa vs Preston North End,T-002,Aston Villa,T-009,Preston North End,3-1,3,1,2,-2,home team win,1,0,0
+604,S-1892-1,1892,1,First Division,None,M-1892-1-026,Aston Villa vs Stoke,T-002,Aston Villa,T-010,Stoke,3-2,3,2,1,-1,home team win,1,0,0
+605,S-1892-1,1892,1,First Division,None,M-1892-1-027,Aston Villa vs Sunderland,T-002,Aston Villa,T-013,Sunderland,1-6,1,6,-5,5,away team win,0,1,0
+606,S-1892-1,1892,1,First Division,None,M-1892-1-028,Aston Villa vs The Wednesday,T-002,Aston Villa,T-027,The Wednesday,5-1,5,1,4,-4,home team win,1,0,0
+607,S-1892-1,1892,1,First Division,None,M-1892-1-029,Aston Villa vs West Bromwich Albion,T-002,Aston Villa,T-011,West Bromwich Albion,5-2,5,2,3,-3,home team win,1,0,0
+608,S-1892-1,1892,1,First Division,None,M-1892-1-030,Aston Villa vs Wolverhampton Wanderers,T-002,Aston Villa,T-012,Wolverhampton Wanderers,5-0,5,0,5,-5,home team win,1,0,0
+609,S-1892-1,1892,1,First Division,None,M-1892-1-031,Blackburn Rovers vs Accrington,T-003,Blackburn Rovers,T-001,Accrington,3-3,3,3,0,0,draw,0,0,1
+610,S-1892-1,1892,1,First Division,None,M-1892-1-032,Blackburn Rovers vs Aston Villa,T-003,Blackburn Rovers,T-002,Aston Villa,2-2,2,2,0,0,draw,0,0,1
+611,S-1892-1,1892,1,First Division,None,M-1892-1-033,Blackburn Rovers vs Bolton Wanderers,T-003,Blackburn Rovers,T-004,Bolton Wanderers,3-0,3,0,3,-3,home team win,1,0,0
+612,S-1892-1,1892,1,First Division,None,M-1892-1-034,Blackburn Rovers vs Burnley,T-003,Blackburn Rovers,T-005,Burnley,2-0,2,0,2,-2,home team win,1,0,0
+613,S-1892-1,1892,1,First Division,None,M-1892-1-035,Blackburn Rovers vs Derby County,T-003,Blackburn Rovers,T-006,Derby County,2-2,2,2,0,0,draw,0,0,1
+614,S-1892-1,1892,1,First Division,None,M-1892-1-036,Blackburn Rovers vs Everton,T-003,Blackburn Rovers,T-007,Everton,2-2,2,2,0,0,draw,0,0,1
+615,S-1892-1,1892,1,First Division,None,M-1892-1-037,Blackburn Rovers vs Newton Heath,T-003,Blackburn Rovers,T-022,Newton Heath,4-3,4,3,1,-1,home team win,1,0,0
+616,S-1892-1,1892,1,First Division,None,M-1892-1-038,Blackburn Rovers vs Nottingham Forest,T-003,Blackburn Rovers,T-024,Nottingham Forest,0-1,0,1,-1,1,away team win,0,1,0
+617,S-1892-1,1892,1,First Division,None,M-1892-1-039,Blackburn Rovers vs Notts County,T-003,Blackburn Rovers,T-008,Notts County,1-0,1,0,1,-1,home team win,1,0,0
+618,S-1892-1,1892,1,First Division,None,M-1892-1-040,Blackburn Rovers vs Preston North End,T-003,Blackburn Rovers,T-009,Preston North End,0-0,0,0,0,0,draw,0,0,1
+619,S-1892-1,1892,1,First Division,None,M-1892-1-041,Blackburn Rovers vs Stoke,T-003,Blackburn Rovers,T-010,Stoke,3-3,3,3,0,0,draw,0,0,1
+620,S-1892-1,1892,1,First Division,None,M-1892-1-042,Blackburn Rovers vs Sunderland,T-003,Blackburn Rovers,T-013,Sunderland,2-2,2,2,0,0,draw,0,0,1
+621,S-1892-1,1892,1,First Division,None,M-1892-1-043,Blackburn Rovers vs The Wednesday,T-003,Blackburn Rovers,T-027,The Wednesday,0-2,0,2,-2,2,away team win,0,1,0
+622,S-1892-1,1892,1,First Division,None,M-1892-1-044,Blackburn Rovers vs West Bromwich Albion,T-003,Blackburn Rovers,T-011,West Bromwich Albion,2-1,2,1,1,-1,home team win,1,0,0
+623,S-1892-1,1892,1,First Division,None,M-1892-1-045,Blackburn Rovers vs Wolverhampton Wanderers,T-003,Blackburn Rovers,T-012,Wolverhampton Wanderers,3-3,3,3,0,0,draw,0,0,1
+624,S-1892-1,1892,1,First Division,None,M-1892-1-046,Bolton Wanderers vs Accrington,T-004,Bolton Wanderers,T-001,Accrington,5-2,5,2,3,-3,home team win,1,0,0
+625,S-1892-1,1892,1,First Division,None,M-1892-1-047,Bolton Wanderers vs Aston Villa,T-004,Bolton Wanderers,T-002,Aston Villa,5-0,5,0,5,-5,home team win,1,0,0
+626,S-1892-1,1892,1,First Division,None,M-1892-1-048,Bolton Wanderers vs Blackburn Rovers,T-004,Bolton Wanderers,T-003,Blackburn Rovers,2-1,2,1,1,-1,home team win,1,0,0
+627,S-1892-1,1892,1,First Division,None,M-1892-1-049,Bolton Wanderers vs Burnley,T-004,Bolton Wanderers,T-005,Burnley,1-0,1,0,1,-1,home team win,1,0,0
+628,S-1892-1,1892,1,First Division,None,M-1892-1-050,Bolton Wanderers vs Derby County,T-004,Bolton Wanderers,T-006,Derby County,0-3,0,3,-3,3,away team win,0,1,0
+629,S-1892-1,1892,1,First Division,None,M-1892-1-051,Bolton Wanderers vs Everton,T-004,Bolton Wanderers,T-007,Everton,4-1,4,1,3,-3,home team win,1,0,0
+630,S-1892-1,1892,1,First Division,None,M-1892-1-052,Bolton Wanderers vs Newton Heath,T-004,Bolton Wanderers,T-022,Newton Heath,4-1,4,1,3,-3,home team win,1,0,0
+631,S-1892-1,1892,1,First Division,None,M-1892-1-053,Bolton Wanderers vs Nottingham Forest,T-004,Bolton Wanderers,T-024,Nottingham Forest,3-1,3,1,2,-2,home team win,1,0,0
+632,S-1892-1,1892,1,First Division,None,M-1892-1-054,Bolton Wanderers vs Notts County,T-004,Bolton Wanderers,T-008,Notts County,4-1,4,1,3,-3,home team win,1,0,0
+633,S-1892-1,1892,1,First Division,None,M-1892-1-055,Bolton Wanderers vs Preston North End,T-004,Bolton Wanderers,T-009,Preston North End,2-4,2,4,-2,2,away team win,0,1,0
+634,S-1892-1,1892,1,First Division,None,M-1892-1-056,Bolton Wanderers vs Stoke,T-004,Bolton Wanderers,T-010,Stoke,4-4,4,4,0,0,draw,0,0,1
+635,S-1892-1,1892,1,First Division,None,M-1892-1-057,Bolton Wanderers vs Sunderland,T-004,Bolton Wanderers,T-013,Sunderland,2-1,2,1,1,-1,home team win,1,0,0
+636,S-1892-1,1892,1,First Division,None,M-1892-1-058,Bolton Wanderers vs The Wednesday,T-004,Bolton Wanderers,T-027,The Wednesday,1-0,1,0,1,-1,home team win,1,0,0
+637,S-1892-1,1892,1,First Division,None,M-1892-1-059,Bolton Wanderers vs West Bromwich Albion,T-004,Bolton Wanderers,T-011,West Bromwich Albion,3-1,3,1,2,-2,home team win,1,0,0
+638,S-1892-1,1892,1,First Division,None,M-1892-1-060,Bolton Wanderers vs Wolverhampton Wanderers,T-004,Bolton Wanderers,T-012,Wolverhampton Wanderers,3-1,3,1,2,-2,home team win,1,0,0
+639,S-1892-1,1892,1,First Division,None,M-1892-1-061,Burnley vs Accrington,T-005,Burnley,T-001,Accrington,1-3,1,3,-2,2,away team win,0,1,0
+640,S-1892-1,1892,1,First Division,None,M-1892-1-062,Burnley vs Aston Villa,T-005,Burnley,T-002,Aston Villa,0-2,0,2,-2,2,away team win,0,1,0
+641,S-1892-1,1892,1,First Division,None,M-1892-1-063,Burnley vs Blackburn Rovers,T-005,Burnley,T-003,Blackburn Rovers,0-0,0,0,0,0,draw,0,0,1
+642,S-1892-1,1892,1,First Division,None,M-1892-1-064,Burnley vs Bolton Wanderers,T-005,Burnley,T-004,Bolton Wanderers,3-0,3,0,3,-3,home team win,1,0,0
+643,S-1892-1,1892,1,First Division,None,M-1892-1-065,Burnley vs Derby County,T-005,Burnley,T-006,Derby County,2-1,2,1,1,-1,home team win,1,0,0
+644,S-1892-1,1892,1,First Division,None,M-1892-1-066,Burnley vs Everton,T-005,Burnley,T-007,Everton,3-0,3,0,3,-3,home team win,1,0,0
+645,S-1892-1,1892,1,First Division,None,M-1892-1-067,Burnley vs Newton Heath,T-005,Burnley,T-022,Newton Heath,4-1,4,1,3,-3,home team win,1,0,0
+646,S-1892-1,1892,1,First Division,None,M-1892-1-068,Burnley vs Nottingham Forest,T-005,Burnley,T-024,Nottingham Forest,1-1,1,1,0,0,draw,0,0,1
+647,S-1892-1,1892,1,First Division,None,M-1892-1-069,Burnley vs Notts County,T-005,Burnley,T-008,Notts County,3-0,3,0,3,-3,home team win,1,0,0
+648,S-1892-1,1892,1,First Division,None,M-1892-1-070,Burnley vs Preston North End,T-005,Burnley,T-009,Preston North End,4-2,4,2,2,-2,home team win,1,0,0
+649,S-1892-1,1892,1,First Division,None,M-1892-1-071,Burnley vs Stoke,T-005,Burnley,T-010,Stoke,3-2,3,2,1,-1,home team win,1,0,0
+650,S-1892-1,1892,1,First Division,None,M-1892-1-072,Burnley vs Sunderland,T-005,Burnley,T-013,Sunderland,2-3,2,3,-1,1,away team win,0,1,0
+651,S-1892-1,1892,1,First Division,None,M-1892-1-073,Burnley vs The Wednesday,T-005,Burnley,T-027,The Wednesday,4-0,4,0,4,-4,home team win,1,0,0
+652,S-1892-1,1892,1,First Division,None,M-1892-1-074,Burnley vs West Bromwich Albion,T-005,Burnley,T-011,West Bromwich Albion,5-0,5,0,5,-5,home team win,1,0,0
+653,S-1892-1,1892,1,First Division,None,M-1892-1-075,Burnley vs Wolverhampton Wanderers,T-005,Burnley,T-012,Wolverhampton Wanderers,2-0,2,0,2,-2,home team win,1,0,0
+654,S-1892-1,1892,1,First Division,None,M-1892-1-076,Derby County vs Accrington,T-006,Derby County,T-001,Accrington,3-3,3,3,0,0,draw,0,0,1
+655,S-1892-1,1892,1,First Division,None,M-1892-1-077,Derby County vs Aston Villa,T-006,Derby County,T-002,Aston Villa,2-1,2,1,1,-1,home team win,1,0,0
+656,S-1892-1,1892,1,First Division,None,M-1892-1-078,Derby County vs Blackburn Rovers,T-006,Derby County,T-003,Blackburn Rovers,3-0,3,0,3,-3,home team win,1,0,0
+657,S-1892-1,1892,1,First Division,None,M-1892-1-079,Derby County vs Bolton Wanderers,T-006,Derby County,T-004,Bolton Wanderers,1-1,1,1,0,0,draw,0,0,1
+658,S-1892-1,1892,1,First Division,None,M-1892-1-080,Derby County vs Burnley,T-006,Derby County,T-005,Burnley,1-0,1,0,1,-1,home team win,1,0,0
+659,S-1892-1,1892,1,First Division,None,M-1892-1-081,Derby County vs Everton,T-006,Derby County,T-007,Everton,1-6,1,6,-5,5,away team win,0,1,0
+660,S-1892-1,1892,1,First Division,None,M-1892-1-082,Derby County vs Newton Heath,T-006,Derby County,T-022,Newton Heath,5-1,5,1,4,-4,home team win,1,0,0
+661,S-1892-1,1892,1,First Division,None,M-1892-1-083,Derby County vs Nottingham Forest,T-006,Derby County,T-024,Nottingham Forest,2-3,2,3,-1,1,away team win,0,1,0
+662,S-1892-1,1892,1,First Division,None,M-1892-1-084,Derby County vs Notts County,T-006,Derby County,T-008,Notts County,4-5,4,5,-1,1,away team win,0,1,0
+663,S-1892-1,1892,1,First Division,None,M-1892-1-085,Derby County vs Preston North End,T-006,Derby County,T-009,Preston North End,1-2,1,2,-1,1,away team win,0,1,0
+664,S-1892-1,1892,1,First Division,None,M-1892-1-086,Derby County vs Stoke,T-006,Derby County,T-010,Stoke,1-0,1,0,1,-1,home team win,1,0,0
+665,S-1892-1,1892,1,First Division,None,M-1892-1-087,Derby County vs Sunderland,T-006,Derby County,T-013,Sunderland,1-1,1,1,0,0,draw,0,0,1
+666,S-1892-1,1892,1,First Division,None,M-1892-1-088,Derby County vs The Wednesday,T-006,Derby County,T-027,The Wednesday,2-2,2,2,0,0,draw,0,0,1
+667,S-1892-1,1892,1,First Division,None,M-1892-1-089,Derby County vs West Bromwich Albion,T-006,Derby County,T-011,West Bromwich Albion,1-1,1,1,0,0,draw,0,0,1
+668,S-1892-1,1892,1,First Division,None,M-1892-1-090,Derby County vs Wolverhampton Wanderers,T-006,Derby County,T-012,Wolverhampton Wanderers,2-2,2,2,0,0,draw,0,0,1
+669,S-1892-1,1892,1,First Division,None,M-1892-1-091,Everton vs Accrington,T-007,Everton,T-001,Accrington,1-1,1,1,0,0,draw,0,0,1
+670,S-1892-1,1892,1,First Division,None,M-1892-1-092,Everton vs Aston Villa,T-007,Everton,T-002,Aston Villa,1-0,1,0,1,-1,home team win,1,0,0
+671,S-1892-1,1892,1,First Division,None,M-1892-1-093,Everton vs Blackburn Rovers,T-007,Everton,T-003,Blackburn Rovers,4-0,4,0,4,-4,home team win,1,0,0
+672,S-1892-1,1892,1,First Division,None,M-1892-1-094,Everton vs Bolton Wanderers,T-007,Everton,T-004,Bolton Wanderers,3-0,3,0,3,-3,home team win,1,0,0
+673,S-1892-1,1892,1,First Division,None,M-1892-1-095,Everton vs Burnley,T-007,Everton,T-005,Burnley,0-1,0,1,-1,1,away team win,0,1,0
+674,S-1892-1,1892,1,First Division,None,M-1892-1-096,Everton vs Derby County,T-007,Everton,T-006,Derby County,5-0,5,0,5,-5,home team win,1,0,0
+675,S-1892-1,1892,1,First Division,None,M-1892-1-097,Everton vs Newton Heath,T-007,Everton,T-022,Newton Heath,6-0,6,0,6,-6,home team win,1,0,0
+676,S-1892-1,1892,1,First Division,None,M-1892-1-098,Everton vs Nottingham Forest,T-007,Everton,T-024,Nottingham Forest,2-2,2,2,0,0,draw,0,0,1
+677,S-1892-1,1892,1,First Division,None,M-1892-1-099,Everton vs Notts County,T-007,Everton,T-008,Notts County,6-0,6,0,6,-6,home team win,1,0,0
+678,S-1892-1,1892,1,First Division,None,M-1892-1-100,Everton vs Preston North End,T-007,Everton,T-009,Preston North End,6-0,6,0,6,-6,home team win,1,0,0
+679,S-1892-1,1892,1,First Division,None,M-1892-1-101,Everton vs Stoke,T-007,Everton,T-010,Stoke,2-2,2,2,0,0,draw,0,0,1
+680,S-1892-1,1892,1,First Division,None,M-1892-1-102,Everton vs Sunderland,T-007,Everton,T-013,Sunderland,1-4,1,4,-3,3,away team win,0,1,0
+681,S-1892-1,1892,1,First Division,None,M-1892-1-103,Everton vs The Wednesday,T-007,Everton,T-027,The Wednesday,3-5,3,5,-2,2,away team win,0,1,0
+682,S-1892-1,1892,1,First Division,None,M-1892-1-104,Everton vs West Bromwich Albion,T-007,Everton,T-011,West Bromwich Albion,1-0,1,0,1,-1,home team win,1,0,0
+683,S-1892-1,1892,1,First Division,None,M-1892-1-105,Everton vs Wolverhampton Wanderers,T-007,Everton,T-012,Wolverhampton Wanderers,3-2,3,2,1,-1,home team win,1,0,0
+684,S-1892-1,1892,1,First Division,None,M-1892-1-106,Newton Heath vs Accrington,T-022,Newton Heath,T-001,Accrington,3-3,3,3,0,0,draw,0,0,1
+685,S-1892-1,1892,1,First Division,None,M-1892-1-107,Newton Heath vs Aston Villa,T-022,Newton Heath,T-002,Aston Villa,2-0,2,0,2,-2,home team win,1,0,0
+686,S-1892-1,1892,1,First Division,None,M-1892-1-108,Newton Heath vs Blackburn Rovers,T-022,Newton Heath,T-003,Blackburn Rovers,4-4,4,4,0,0,draw,0,0,1
+687,S-1892-1,1892,1,First Division,None,M-1892-1-109,Newton Heath vs Bolton Wanderers,T-022,Newton Heath,T-004,Bolton Wanderers,1-0,1,0,1,-1,home team win,1,0,0
+688,S-1892-1,1892,1,First Division,None,M-1892-1-110,Newton Heath vs Burnley,T-022,Newton Heath,T-005,Burnley,1-1,1,1,0,0,draw,0,0,1
+689,S-1892-1,1892,1,First Division,None,M-1892-1-111,Newton Heath vs Derby County,T-022,Newton Heath,T-006,Derby County,7-1,7,1,6,-6,home team win,1,0,0
+690,S-1892-1,1892,1,First Division,None,M-1892-1-112,Newton Heath vs Everton,T-022,Newton Heath,T-007,Everton,3-4,3,4,-1,1,away team win,0,1,0
+691,S-1892-1,1892,1,First Division,None,M-1892-1-113,Newton Heath vs Nottingham Forest,T-022,Newton Heath,T-024,Nottingham Forest,1-3,1,3,-2,2,away team win,0,1,0
+692,S-1892-1,1892,1,First Division,None,M-1892-1-114,Newton Heath vs Notts County,T-022,Newton Heath,T-008,Notts County,1-3,1,3,-2,2,away team win,0,1,0
+693,S-1892-1,1892,1,First Division,None,M-1892-1-115,Newton Heath vs Preston North End,T-022,Newton Heath,T-009,Preston North End,2-1,2,1,1,-1,home team win,1,0,0
+694,S-1892-1,1892,1,First Division,None,M-1892-1-116,Newton Heath vs Stoke,T-022,Newton Heath,T-010,Stoke,1-0,1,0,1,-1,home team win,1,0,0
+695,S-1892-1,1892,1,First Division,None,M-1892-1-117,Newton Heath vs Sunderland,T-022,Newton Heath,T-013,Sunderland,0-5,0,5,-5,5,away team win,0,1,0
+696,S-1892-1,1892,1,First Division,None,M-1892-1-118,Newton Heath vs The Wednesday,T-022,Newton Heath,T-027,The Wednesday,1-5,1,5,-4,4,away team win,0,1,0
+697,S-1892-1,1892,1,First Division,None,M-1892-1-119,Newton Heath vs West Bromwich Albion,T-022,Newton Heath,T-011,West Bromwich Albion,2-4,2,4,-2,2,away team win,0,1,0
+698,S-1892-1,1892,1,First Division,None,M-1892-1-120,Newton Heath vs Wolverhampton Wanderers,T-022,Newton Heath,T-012,Wolverhampton Wanderers,10-1,10,1,9,-9,home team win,1,0,0
+699,S-1892-1,1892,1,First Division,None,M-1892-1-121,Nottingham Forest vs Accrington,T-024,Nottingham Forest,T-001,Accrington,3-0,3,0,3,-3,home team win,1,0,0
+700,S-1892-1,1892,1,First Division,None,M-1892-1-122,Nottingham Forest vs Aston Villa,T-024,Nottingham Forest,T-002,Aston Villa,4-5,4,5,-1,1,away team win,0,1,0
+701,S-1892-1,1892,1,First Division,None,M-1892-1-123,Nottingham Forest vs Blackburn Rovers,T-024,Nottingham Forest,T-003,Blackburn Rovers,0-1,0,1,-1,1,away team win,0,1,0
+702,S-1892-1,1892,1,First Division,None,M-1892-1-124,Nottingham Forest vs Bolton Wanderers,T-024,Nottingham Forest,T-004,Bolton Wanderers,2-0,2,0,2,-2,home team win,1,0,0
+703,S-1892-1,1892,1,First Division,None,M-1892-1-125,Nottingham Forest vs Burnley,T-024,Nottingham Forest,T-005,Burnley,2-2,2,2,0,0,draw,0,0,1
+704,S-1892-1,1892,1,First Division,None,M-1892-1-126,Nottingham Forest vs Derby County,T-024,Nottingham Forest,T-006,Derby County,1-0,1,0,1,-1,home team win,1,0,0
+705,S-1892-1,1892,1,First Division,None,M-1892-1-127,Nottingham Forest vs Everton,T-024,Nottingham Forest,T-007,Everton,2-1,2,1,1,-1,home team win,1,0,0
+706,S-1892-1,1892,1,First Division,None,M-1892-1-128,Nottingham Forest vs Newton Heath,T-024,Nottingham Forest,T-022,Newton Heath,1-1,1,1,0,0,draw,0,0,1
+707,S-1892-1,1892,1,First Division,None,M-1892-1-129,Nottingham Forest vs Notts County,T-024,Nottingham Forest,T-008,Notts County,3-1,3,1,2,-2,home team win,1,0,0
+708,S-1892-1,1892,1,First Division,None,M-1892-1-130,Nottingham Forest vs Preston North End,T-024,Nottingham Forest,T-009,Preston North End,1-2,1,2,-1,1,away team win,0,1,0
+709,S-1892-1,1892,1,First Division,None,M-1892-1-131,Nottingham Forest vs Stoke,T-024,Nottingham Forest,T-010,Stoke,3-4,3,4,-1,1,away team win,0,1,0
+710,S-1892-1,1892,1,First Division,None,M-1892-1-132,Nottingham Forest vs Sunderland,T-024,Nottingham Forest,T-013,Sunderland,0-5,0,5,-5,5,away team win,0,1,0
+711,S-1892-1,1892,1,First Division,None,M-1892-1-133,Nottingham Forest vs The Wednesday,T-024,Nottingham Forest,T-027,The Wednesday,2-0,2,0,2,-2,home team win,1,0,0
+712,S-1892-1,1892,1,First Division,None,M-1892-1-134,Nottingham Forest vs West Bromwich Albion,T-024,Nottingham Forest,T-011,West Bromwich Albion,3-4,3,4,-1,1,away team win,0,1,0
+713,S-1892-1,1892,1,First Division,None,M-1892-1-135,Nottingham Forest vs Wolverhampton Wanderers,T-024,Nottingham Forest,T-012,Wolverhampton Wanderers,3-1,3,1,2,-2,home team win,1,0,0
+714,S-1892-1,1892,1,First Division,None,M-1892-1-136,Notts County vs Accrington,T-008,Notts County,T-001,Accrington,2-0,2,0,2,-2,home team win,1,0,0
+715,S-1892-1,1892,1,First Division,None,M-1892-1-137,Notts County vs Aston Villa,T-008,Notts County,T-002,Aston Villa,1-4,1,4,-3,3,away team win,0,1,0
+716,S-1892-1,1892,1,First Division,None,M-1892-1-138,Notts County vs Blackburn Rovers,T-008,Notts County,T-003,Blackburn Rovers,0-0,0,0,0,0,draw,0,0,1
+717,S-1892-1,1892,1,First Division,None,M-1892-1-139,Notts County vs Bolton Wanderers,T-008,Notts County,T-004,Bolton Wanderers,2-2,2,2,0,0,draw,0,0,1
+718,S-1892-1,1892,1,First Division,None,M-1892-1-140,Notts County vs Burnley,T-008,Notts County,T-005,Burnley,3-1,3,1,2,-2,home team win,1,0,0
+719,S-1892-1,1892,1,First Division,None,M-1892-1-141,Notts County vs Derby County,T-008,Notts County,T-006,Derby County,1-1,1,1,0,0,draw,0,0,1
+720,S-1892-1,1892,1,First Division,None,M-1892-1-142,Notts County vs Everton,T-008,Notts County,T-007,Everton,1-2,1,2,-1,1,away team win,0,1,0
+721,S-1892-1,1892,1,First Division,None,M-1892-1-143,Notts County vs Newton Heath,T-008,Notts County,T-022,Newton Heath,4-0,4,0,4,-4,home team win,1,0,0
+722,S-1892-1,1892,1,First Division,None,M-1892-1-144,Notts County vs Nottingham Forest,T-008,Notts County,T-024,Nottingham Forest,3-0,3,0,3,-3,home team win,1,0,0
+723,S-1892-1,1892,1,First Division,None,M-1892-1-145,Notts County vs Preston North End,T-008,Notts County,T-009,Preston North End,3-1,3,1,2,-2,home team win,1,0,0
+724,S-1892-1,1892,1,First Division,None,M-1892-1-146,Notts County vs Stoke,T-008,Notts County,T-010,Stoke,0-1,0,1,-1,1,away team win,0,1,0
+725,S-1892-1,1892,1,First Division,None,M-1892-1-147,Notts County vs Sunderland,T-008,Notts County,T-013,Sunderland,3-1,3,1,2,-2,home team win,1,0,0
+726,S-1892-1,1892,1,First Division,None,M-1892-1-148,Notts County vs The Wednesday,T-008,Notts County,T-027,The Wednesday,0-1,0,1,-1,1,away team win,0,1,0
+727,S-1892-1,1892,1,First Division,None,M-1892-1-149,Notts County vs West Bromwich Albion,T-008,Notts County,T-011,West Bromwich Albion,8-1,8,1,7,-7,home team win,1,0,0
+728,S-1892-1,1892,1,First Division,None,M-1892-1-150,Notts County vs Wolverhampton Wanderers,T-008,Notts County,T-012,Wolverhampton Wanderers,3-0,3,0,3,-3,home team win,1,0,0
+729,S-1892-1,1892,1,First Division,None,M-1892-1-151,Preston North End vs Accrington,T-009,Preston North End,T-001,Accrington,0-0,0,0,0,0,draw,0,0,1
+730,S-1892-1,1892,1,First Division,None,M-1892-1-152,Preston North End vs Aston Villa,T-009,Preston North End,T-002,Aston Villa,4-1,4,1,3,-3,home team win,1,0,0
+731,S-1892-1,1892,1,First Division,None,M-1892-1-153,Preston North End vs Blackburn Rovers,T-009,Preston North End,T-003,Blackburn Rovers,2-1,2,1,1,-1,home team win,1,0,0
+732,S-1892-1,1892,1,First Division,None,M-1892-1-154,Preston North End vs Bolton Wanderers,T-009,Preston North End,T-004,Bolton Wanderers,2-1,2,1,1,-1,home team win,1,0,0
+733,S-1892-1,1892,1,First Division,None,M-1892-1-155,Preston North End vs Burnley,T-009,Preston North End,T-005,Burnley,2-0,2,0,2,-2,home team win,1,0,0
+734,S-1892-1,1892,1,First Division,None,M-1892-1-156,Preston North End vs Derby County,T-009,Preston North End,T-006,Derby County,0-1,0,1,-1,1,away team win,0,1,0
+735,S-1892-1,1892,1,First Division,None,M-1892-1-157,Preston North End vs Everton,T-009,Preston North End,T-007,Everton,5-0,5,0,5,-5,home team win,1,0,0
+736,S-1892-1,1892,1,First Division,None,M-1892-1-158,Preston North End vs Newton Heath,T-009,Preston North End,T-022,Newton Heath,2-1,2,1,1,-1,home team win,1,0,0
+737,S-1892-1,1892,1,First Division,None,M-1892-1-159,Preston North End vs Nottingham Forest,T-009,Preston North End,T-024,Nottingham Forest,1-0,1,0,1,-1,home team win,1,0,0
+738,S-1892-1,1892,1,First Division,None,M-1892-1-160,Preston North End vs Notts County,T-009,Preston North End,T-008,Notts County,4-0,4,0,4,-4,home team win,1,0,0
+739,S-1892-1,1892,1,First Division,None,M-1892-1-161,Preston North End vs Stoke,T-009,Preston North End,T-010,Stoke,2-1,2,1,1,-1,home team win,1,0,0
+740,S-1892-1,1892,1,First Division,None,M-1892-1-162,Preston North End vs Sunderland,T-009,Preston North End,T-013,Sunderland,1-2,1,2,-1,1,away team win,0,1,0
+741,S-1892-1,1892,1,First Division,None,M-1892-1-163,Preston North End vs The Wednesday,T-009,Preston North End,T-027,The Wednesday,4-1,4,1,3,-3,home team win,1,0,0
+742,S-1892-1,1892,1,First Division,None,M-1892-1-164,Preston North End vs West Bromwich Albion,T-009,Preston North End,T-011,West Bromwich Albion,1-1,1,1,0,0,draw,0,0,1
+743,S-1892-1,1892,1,First Division,None,M-1892-1-165,Preston North End vs Wolverhampton Wanderers,T-009,Preston North End,T-012,Wolverhampton Wanderers,4-0,4,0,4,-4,home team win,1,0,0
+744,S-1892-1,1892,1,First Division,None,M-1892-1-166,Stoke vs Accrington,T-010,Stoke,T-001,Accrington,2-2,2,2,0,0,draw,0,0,1
+745,S-1892-1,1892,1,First Division,None,M-1892-1-167,Stoke vs Aston Villa,T-010,Stoke,T-002,Aston Villa,0-1,0,1,-1,1,away team win,0,1,0
+746,S-1892-1,1892,1,First Division,None,M-1892-1-168,Stoke vs Blackburn Rovers,T-010,Stoke,T-003,Blackburn Rovers,2-2,2,2,0,0,draw,0,0,1
+747,S-1892-1,1892,1,First Division,None,M-1892-1-169,Stoke vs Bolton Wanderers,T-010,Stoke,T-004,Bolton Wanderers,6-0,6,0,6,-6,home team win,1,0,0
+748,S-1892-1,1892,1,First Division,None,M-1892-1-170,Stoke vs Burnley,T-010,Stoke,T-005,Burnley,4-1,4,1,3,-3,home team win,1,0,0
+749,S-1892-1,1892,1,First Division,None,M-1892-1-171,Stoke vs Derby County,T-010,Stoke,T-006,Derby County,1-3,1,3,-2,2,away team win,0,1,0
+750,S-1892-1,1892,1,First Division,None,M-1892-1-172,Stoke vs Everton,T-010,Stoke,T-007,Everton,0-1,0,1,-1,1,away team win,0,1,0
+751,S-1892-1,1892,1,First Division,None,M-1892-1-173,Stoke vs Newton Heath,T-010,Stoke,T-022,Newton Heath,7-1,7,1,6,-6,home team win,1,0,0
+752,S-1892-1,1892,1,First Division,None,M-1892-1-174,Stoke vs Nottingham Forest,T-010,Stoke,T-024,Nottingham Forest,3-0,3,0,3,-3,home team win,1,0,0
+753,S-1892-1,1892,1,First Division,None,M-1892-1-175,Stoke vs Notts County,T-010,Stoke,T-008,Notts County,1-0,1,0,1,-1,home team win,1,0,0
+754,S-1892-1,1892,1,First Division,None,M-1892-1-176,Stoke vs Preston North End,T-010,Stoke,T-009,Preston North End,2-1,2,1,1,-1,home team win,1,0,0
+755,S-1892-1,1892,1,First Division,None,M-1892-1-177,Stoke vs Sunderland,T-010,Stoke,T-013,Sunderland,0-1,0,1,-1,1,away team win,0,1,0
+756,S-1892-1,1892,1,First Division,None,M-1892-1-178,Stoke vs The Wednesday,T-010,Stoke,T-027,The Wednesday,2-0,2,0,2,-2,home team win,1,0,0
+757,S-1892-1,1892,1,First Division,None,M-1892-1-179,Stoke vs West Bromwich Albion,T-010,Stoke,T-011,West Bromwich Albion,1-2,1,2,-1,1,away team win,0,1,0
+758,S-1892-1,1892,1,First Division,None,M-1892-1-180,Stoke vs Wolverhampton Wanderers,T-010,Stoke,T-012,Wolverhampton Wanderers,2-1,2,1,1,-1,home team win,1,0,0
+759,S-1892-1,1892,1,First Division,None,M-1892-1-181,Sunderland vs Accrington,T-013,Sunderland,T-001,Accrington,4-2,4,2,2,-2,home team win,1,0,0
+760,S-1892-1,1892,1,First Division,None,M-1892-1-182,Sunderland vs Aston Villa,T-013,Sunderland,T-002,Aston Villa,6-0,6,0,6,-6,home team win,1,0,0
+761,S-1892-1,1892,1,First Division,None,M-1892-1-183,Sunderland vs Blackburn Rovers,T-013,Sunderland,T-003,Blackburn Rovers,5-0,5,0,5,-5,home team win,1,0,0
+762,S-1892-1,1892,1,First Division,None,M-1892-1-184,Sunderland vs Bolton Wanderers,T-013,Sunderland,T-004,Bolton Wanderers,3-3,3,3,0,0,draw,0,0,1
+763,S-1892-1,1892,1,First Division,None,M-1892-1-185,Sunderland vs Burnley,T-013,Sunderland,T-005,Burnley,2-0,2,0,2,-2,home team win,1,0,0
+764,S-1892-1,1892,1,First Division,None,M-1892-1-186,Sunderland vs Derby County,T-013,Sunderland,T-006,Derby County,3-1,3,1,2,-2,home team win,1,0,0
+765,S-1892-1,1892,1,First Division,None,M-1892-1-187,Sunderland vs Everton,T-013,Sunderland,T-007,Everton,4-3,4,3,1,-1,home team win,1,0,0
+766,S-1892-1,1892,1,First Division,None,M-1892-1-188,Sunderland vs Newton Heath,T-013,Sunderland,T-022,Newton Heath,6-0,6,0,6,-6,home team win,1,0,0
+767,S-1892-1,1892,1,First Division,None,M-1892-1-189,Sunderland vs Nottingham Forest,T-013,Sunderland,T-024,Nottingham Forest,1-0,1,0,1,-1,home team win,1,0,0
+768,S-1892-1,1892,1,First Division,None,M-1892-1-190,Sunderland vs Notts County,T-013,Sunderland,T-008,Notts County,2-2,2,2,0,0,draw,0,0,1
+769,S-1892-1,1892,1,First Division,None,M-1892-1-191,Sunderland vs Preston North End,T-013,Sunderland,T-009,Preston North End,2-0,2,0,2,-2,home team win,1,0,0
+770,S-1892-1,1892,1,First Division,None,M-1892-1-192,Sunderland vs Stoke,T-013,Sunderland,T-010,Stoke,3-1,3,1,2,-2,home team win,1,0,0
+771,S-1892-1,1892,1,First Division,None,M-1892-1-193,Sunderland vs The Wednesday,T-013,Sunderland,T-027,The Wednesday,4-2,4,2,2,-2,home team win,1,0,0
+772,S-1892-1,1892,1,First Division,None,M-1892-1-194,Sunderland vs West Bromwich Albion,T-013,Sunderland,T-011,West Bromwich Albion,8-1,8,1,7,-7,home team win,1,0,0
+773,S-1892-1,1892,1,First Division,None,M-1892-1-195,Sunderland vs Wolverhampton Wanderers,T-013,Sunderland,T-012,Wolverhampton Wanderers,5-2,5,2,3,-3,home team win,1,0,0
+774,S-1892-1,1892,1,First Division,None,M-1892-1-196,The Wednesday vs Accrington,T-027,The Wednesday,T-001,Accrington,5-2,5,2,3,-3,home team win,1,0,0
+775,S-1892-1,1892,1,First Division,None,M-1892-1-197,The Wednesday vs Aston Villa,T-027,The Wednesday,T-002,Aston Villa,5-3,5,3,2,-2,home team win,1,0,0
+776,S-1892-1,1892,1,First Division,None,M-1892-1-198,The Wednesday vs Blackburn Rovers,T-027,The Wednesday,T-003,Blackburn Rovers,0-3,0,3,-3,3,away team win,0,1,0
+777,S-1892-1,1892,1,First Division,None,M-1892-1-199,The Wednesday vs Bolton Wanderers,T-027,The Wednesday,T-004,Bolton Wanderers,4-2,4,2,2,-2,home team win,1,0,0
+778,S-1892-1,1892,1,First Division,None,M-1892-1-200,The Wednesday vs Burnley,T-027,The Wednesday,T-005,Burnley,2-0,2,0,2,-2,home team win,1,0,0
+779,S-1892-1,1892,1,First Division,None,M-1892-1-201,The Wednesday vs Derby County,T-027,The Wednesday,T-006,Derby County,3-3,3,3,0,0,draw,0,0,1
+780,S-1892-1,1892,1,First Division,None,M-1892-1-202,The Wednesday vs Everton,T-027,The Wednesday,T-007,Everton,0-2,0,2,-2,2,away team win,0,1,0
+781,S-1892-1,1892,1,First Division,None,M-1892-1-203,The Wednesday vs Newton Heath,T-027,The Wednesday,T-022,Newton Heath,1-0,1,0,1,-1,home team win,1,0,0
+782,S-1892-1,1892,1,First Division,None,M-1892-1-204,The Wednesday vs Nottingham Forest,T-027,The Wednesday,T-024,Nottingham Forest,2-2,2,2,0,0,draw,0,0,1
+783,S-1892-1,1892,1,First Division,None,M-1892-1-205,The Wednesday vs Notts County,T-027,The Wednesday,T-008,Notts County,3-2,3,2,1,-1,home team win,1,0,0
+784,S-1892-1,1892,1,First Division,None,M-1892-1-206,The Wednesday vs Preston North End,T-027,The Wednesday,T-009,Preston North End,0-5,0,5,-5,5,away team win,0,1,0
+785,S-1892-1,1892,1,First Division,None,M-1892-1-207,The Wednesday vs Stoke,T-027,The Wednesday,T-010,Stoke,0-1,0,1,-1,1,away team win,0,1,0
+786,S-1892-1,1892,1,First Division,None,M-1892-1-208,The Wednesday vs Sunderland,T-027,The Wednesday,T-013,Sunderland,3-2,3,2,1,-1,home team win,1,0,0
+787,S-1892-1,1892,1,First Division,None,M-1892-1-209,The Wednesday vs West Bromwich Albion,T-027,The Wednesday,T-011,West Bromwich Albion,6-0,6,0,6,-6,home team win,1,0,0
+788,S-1892-1,1892,1,First Division,None,M-1892-1-210,The Wednesday vs Wolverhampton Wanderers,T-027,The Wednesday,T-012,Wolverhampton Wanderers,0-1,0,1,-1,1,away team win,0,1,0
+789,S-1892-1,1892,1,First Division,None,M-1892-1-211,West Bromwich Albion vs Accrington,T-011,West Bromwich Albion,T-001,Accrington,4-0,4,0,4,-4,home team win,1,0,0
+790,S-1892-1,1892,1,First Division,None,M-1892-1-212,West Bromwich Albion vs Aston Villa,T-011,West Bromwich Albion,T-002,Aston Villa,3-2,3,2,1,-1,home team win,1,0,0
+791,S-1892-1,1892,1,First Division,None,M-1892-1-213,West Bromwich Albion vs Blackburn Rovers,T-011,West Bromwich Albion,T-003,Blackburn Rovers,1-2,1,2,-1,1,away team win,0,1,0
+792,S-1892-1,1892,1,First Division,None,M-1892-1-214,West Bromwich Albion vs Bolton Wanderers,T-011,West Bromwich Albion,T-004,Bolton Wanderers,1-0,1,0,1,-1,home team win,1,0,0
+793,S-1892-1,1892,1,First Division,None,M-1892-1-215,West Bromwich Albion vs Burnley,T-011,West Bromwich Albion,T-005,Burnley,7-1,7,1,6,-6,home team win,1,0,0
+794,S-1892-1,1892,1,First Division,None,M-1892-1-216,West Bromwich Albion vs Derby County,T-011,West Bromwich Albion,T-006,Derby County,3-1,3,1,2,-2,home team win,1,0,0
+795,S-1892-1,1892,1,First Division,None,M-1892-1-217,West Bromwich Albion vs Everton,T-011,West Bromwich Albion,T-007,Everton,3-0,3,0,3,-3,home team win,1,0,0
+796,S-1892-1,1892,1,First Division,None,M-1892-1-218,West Bromwich Albion vs Newton Heath,T-011,West Bromwich Albion,T-022,Newton Heath,0-0,0,0,0,0,draw,0,0,1
+797,S-1892-1,1892,1,First Division,None,M-1892-1-219,West Bromwich Albion vs Nottingham Forest,T-011,West Bromwich Albion,T-024,Nottingham Forest,2-2,2,2,0,0,draw,0,0,1
+798,S-1892-1,1892,1,First Division,None,M-1892-1-220,West Bromwich Albion vs Notts County,T-011,West Bromwich Albion,T-008,Notts County,4-2,4,2,2,-2,home team win,1,0,0
+799,S-1892-1,1892,1,First Division,None,M-1892-1-221,West Bromwich Albion vs Preston North End,T-011,West Bromwich Albion,T-009,Preston North End,0-1,0,1,-1,1,away team win,0,1,0
+800,S-1892-1,1892,1,First Division,None,M-1892-1-222,West Bromwich Albion vs Stoke,T-011,West Bromwich Albion,T-010,Stoke,1-2,1,2,-1,1,away team win,0,1,0
+801,S-1892-1,1892,1,First Division,None,M-1892-1-223,West Bromwich Albion vs Sunderland,T-011,West Bromwich Albion,T-013,Sunderland,1-3,1,3,-2,2,away team win,0,1,0
+802,S-1892-1,1892,1,First Division,None,M-1892-1-224,West Bromwich Albion vs The Wednesday,T-011,West Bromwich Albion,T-027,The Wednesday,3-0,3,0,3,-3,home team win,1,0,0
+803,S-1892-1,1892,1,First Division,None,M-1892-1-225,West Bromwich Albion vs Wolverhampton Wanderers,T-011,West Bromwich Albion,T-012,Wolverhampton Wanderers,2-1,2,1,1,-1,home team win,1,0,0
+804,S-1892-1,1892,1,First Division,None,M-1892-1-226,Wolverhampton Wanderers vs Accrington,T-012,Wolverhampton Wanderers,T-001,Accrington,5-3,5,3,2,-2,home team win,1,0,0
+805,S-1892-1,1892,1,First Division,None,M-1892-1-227,Wolverhampton Wanderers vs Aston Villa,T-012,Wolverhampton Wanderers,T-002,Aston Villa,2-1,2,1,1,-1,home team win,1,0,0
+806,S-1892-1,1892,1,First Division,None,M-1892-1-228,Wolverhampton Wanderers vs Blackburn Rovers,T-012,Wolverhampton Wanderers,T-003,Blackburn Rovers,4-2,4,2,2,-2,home team win,1,0,0
+807,S-1892-1,1892,1,First Division,None,M-1892-1-229,Wolverhampton Wanderers vs Bolton Wanderers,T-012,Wolverhampton Wanderers,T-004,Bolton Wanderers,1-2,1,2,-1,1,away team win,0,1,0
+808,S-1892-1,1892,1,First Division,None,M-1892-1-230,Wolverhampton Wanderers vs Burnley,T-012,Wolverhampton Wanderers,T-005,Burnley,1-0,1,0,1,-1,home team win,1,0,0
+809,S-1892-1,1892,1,First Division,None,M-1892-1-231,Wolverhampton Wanderers vs Derby County,T-012,Wolverhampton Wanderers,T-006,Derby County,2-1,2,1,1,-1,home team win,1,0,0
+810,S-1892-1,1892,1,First Division,None,M-1892-1-232,Wolverhampton Wanderers vs Everton,T-012,Wolverhampton Wanderers,T-007,Everton,2-4,2,4,-2,2,away team win,0,1,0
+811,S-1892-1,1892,1,First Division,None,M-1892-1-233,Wolverhampton Wanderers vs Newton Heath,T-012,Wolverhampton Wanderers,T-022,Newton Heath,2-0,2,0,2,-2,home team win,1,0,0
+812,S-1892-1,1892,1,First Division,None,M-1892-1-234,Wolverhampton Wanderers vs Nottingham Forest,T-012,Wolverhampton Wanderers,T-024,Nottingham Forest,2-2,2,2,0,0,draw,0,0,1
+813,S-1892-1,1892,1,First Division,None,M-1892-1-235,Wolverhampton Wanderers vs Notts County,T-012,Wolverhampton Wanderers,T-008,Notts County,3-0,3,0,3,-3,home team win,1,0,0
+814,S-1892-1,1892,1,First Division,None,M-1892-1-236,Wolverhampton Wanderers vs Preston North End,T-012,Wolverhampton Wanderers,T-009,Preston North End,2-1,2,1,1,-1,home team win,1,0,0
+815,S-1892-1,1892,1,First Division,None,M-1892-1-237,Wolverhampton Wanderers vs Stoke,T-012,Wolverhampton Wanderers,T-010,Stoke,1-0,1,0,1,-1,home team win,1,0,0
+816,S-1892-1,1892,1,First Division,None,M-1892-1-238,Wolverhampton Wanderers vs Sunderland,T-012,Wolverhampton Wanderers,T-013,Sunderland,2-0,2,0,2,-2,home team win,1,0,0
+817,S-1892-1,1892,1,First Division,None,M-1892-1-239,Wolverhampton Wanderers vs The Wednesday,T-012,Wolverhampton Wanderers,T-027,The Wednesday,2-0,2,0,2,-2,home team win,1,0,0
+818,S-1892-1,1892,1,First Division,None,M-1892-1-240,Wolverhampton Wanderers vs West Bromwich Albion,T-012,Wolverhampton Wanderers,T-011,West Bromwich Albion,1-1,1,1,0,0,draw,0,0,1
+819,S-1892-2,1892,2,Second Division,None,M-1892-2-001,Ardwick vs Bootle,T-021,Ardwick,T-016,Bootle,7-0,7,0,7,-7,home team win,1,0,0
+820,S-1892-2,1892,2,Second Division,None,M-1892-2-002,Ardwick vs Burslem Port Vale,T-021,Ardwick,T-025,Burslem Port Vale,2-0,2,0,2,-2,home team win,1,0,0
+821,S-1892-2,1892,2,Second Division,None,M-1892-2-003,Ardwick vs Burton Swifts,T-021,Ardwick,T-017,Burton Swifts,1-1,1,1,0,0,draw,0,0,1
+822,S-1892-2,1892,2,Second Division,None,M-1892-2-004,Ardwick vs Crewe Alexandra,T-021,Ardwick,T-018,Crewe Alexandra,3-1,3,1,2,-2,home team win,1,0,0
+823,S-1892-2,1892,2,Second Division,None,M-1892-2-005,Ardwick vs Darwen,T-021,Ardwick,T-014,Darwen,4-2,4,2,2,-2,home team win,1,0,0
+824,S-1892-2,1892,2,Second Division,None,M-1892-2-006,Ardwick vs Grimsby Town,T-021,Ardwick,T-019,Grimsby Town,0-3,0,3,-3,3,away team win,0,1,0
+825,S-1892-2,1892,2,Second Division,None,M-1892-2-007,Ardwick vs Lincoln City,T-021,Ardwick,T-020,Lincoln City,3-1,3,1,2,-2,home team win,1,0,0
+826,S-1892-2,1892,2,Second Division,None,M-1892-2-008,Ardwick vs Northwich Victoria,T-021,Ardwick,T-023,Northwich Victoria,1-1,1,1,0,0,draw,0,0,1
+827,S-1892-2,1892,2,Second Division,None,M-1892-2-009,Ardwick vs Sheffield United,T-021,Ardwick,T-026,Sheffield United,2-3,2,3,-1,1,away team win,0,1,0
+828,S-1892-2,1892,2,Second Division,None,M-1892-2-010,Ardwick vs Small Heath,T-021,Ardwick,T-015,Small Heath,2-2,2,2,0,0,draw,0,0,1
+829,S-1892-2,1892,2,Second Division,None,M-1892-2-011,Ardwick vs Walsall Town Swifts,T-021,Ardwick,T-028,Walsall Town Swifts,2-0,2,0,2,-2,home team win,1,0,0
+830,S-1892-2,1892,2,Second Division,None,M-1892-2-012,Bootle vs Ardwick,T-016,Bootle,T-021,Ardwick,5-3,5,3,2,-2,home team win,1,0,0
+831,S-1892-2,1892,2,Second Division,None,M-1892-2-013,Bootle vs Burslem Port Vale,T-016,Bootle,T-025,Burslem Port Vale,1-1,1,1,0,0,draw,0,0,1
+832,S-1892-2,1892,2,Second Division,None,M-1892-2-014,Bootle vs Burton Swifts,T-016,Bootle,T-017,Burton Swifts,3-2,3,2,1,-1,home team win,1,0,0
+833,S-1892-2,1892,2,Second Division,None,M-1892-2-015,Bootle vs Crewe Alexandra,T-016,Bootle,T-018,Crewe Alexandra,2-1,2,1,1,-1,home team win,1,0,0
+834,S-1892-2,1892,2,Second Division,None,M-1892-2-016,Bootle vs Darwen,T-016,Bootle,T-014,Darwen,5-1,5,1,4,-4,home team win,1,0,0
+835,S-1892-2,1892,2,Second Division,None,M-1892-2-017,Bootle vs Grimsby Town,T-016,Bootle,T-019,Grimsby Town,3-1,3,1,2,-2,home team win,1,0,0
+836,S-1892-2,1892,2,Second Division,None,M-1892-2-018,Bootle vs Lincoln City,T-016,Bootle,T-020,Lincoln City,4-1,4,1,3,-3,home team win,1,0,0
+837,S-1892-2,1892,2,Second Division,None,M-1892-2-019,Bootle vs Northwich Victoria,T-016,Bootle,T-023,Northwich Victoria,2-5,2,5,-3,3,away team win,0,1,0
+838,S-1892-2,1892,2,Second Division,None,M-1892-2-020,Bootle vs Sheffield United,T-016,Bootle,T-026,Sheffield United,2-0,2,0,2,-2,home team win,1,0,0
+839,S-1892-2,1892,2,Second Division,None,M-1892-2-021,Bootle vs Small Heath,T-016,Bootle,T-015,Small Heath,1-4,1,4,-3,3,away team win,0,1,0
+840,S-1892-2,1892,2,Second Division,None,M-1892-2-022,Bootle vs Walsall Town Swifts,T-016,Bootle,T-028,Walsall Town Swifts,7-1,7,1,6,-6,home team win,1,0,0
+841,S-1892-2,1892,2,Second Division,None,M-1892-2-023,Burslem Port Vale vs Ardwick,T-025,Burslem Port Vale,T-021,Ardwick,1-2,1,2,-1,1,away team win,0,1,0
+842,S-1892-2,1892,2,Second Division,None,M-1892-2-024,Burslem Port Vale vs Bootle,T-025,Burslem Port Vale,T-016,Bootle,0-0,0,0,0,0,draw,0,0,1
+843,S-1892-2,1892,2,Second Division,None,M-1892-2-025,Burslem Port Vale vs Burton Swifts,T-025,Burslem Port Vale,T-017,Burton Swifts,1-0,1,0,1,-1,home team win,1,0,0
+844,S-1892-2,1892,2,Second Division,None,M-1892-2-026,Burslem Port Vale vs Crewe Alexandra,T-025,Burslem Port Vale,T-018,Crewe Alexandra,4-1,4,1,3,-3,home team win,1,0,0
+845,S-1892-2,1892,2,Second Division,None,M-1892-2-027,Burslem Port Vale vs Darwen,T-025,Burslem Port Vale,T-014,Darwen,2-4,2,4,-2,2,away team win,0,1,0
+846,S-1892-2,1892,2,Second Division,None,M-1892-2-028,Burslem Port Vale vs Grimsby Town,T-025,Burslem Port Vale,T-019,Grimsby Town,0-1,0,1,-1,1,away team win,0,1,0
+847,S-1892-2,1892,2,Second Division,None,M-1892-2-029,Burslem Port Vale vs Lincoln City,T-025,Burslem Port Vale,T-020,Lincoln City,1-2,1,2,-1,1,away team win,0,1,0
+848,S-1892-2,1892,2,Second Division,None,M-1892-2-030,Burslem Port Vale vs Northwich Victoria,T-025,Burslem Port Vale,T-023,Northwich Victoria,4-0,4,0,4,-4,home team win,1,0,0
+849,S-1892-2,1892,2,Second Division,None,M-1892-2-031,Burslem Port Vale vs Sheffield United,T-025,Burslem Port Vale,T-026,Sheffield United,0-10,0,10,-10,10,away team win,0,1,0
+850,S-1892-2,1892,2,Second Division,None,M-1892-2-032,Burslem Port Vale vs Small Heath,T-025,Burslem Port Vale,T-015,Small Heath,0-3,0,3,-3,3,away team win,0,1,0
+851,S-1892-2,1892,2,Second Division,None,M-1892-2-033,Burslem Port Vale vs Walsall Town Swifts,T-025,Burslem Port Vale,T-028,Walsall Town Swifts,3-0,3,0,3,-3,home team win,1,0,0
+852,S-1892-2,1892,2,Second Division,None,M-1892-2-034,Burton Swifts vs Ardwick,T-017,Burton Swifts,T-021,Ardwick,2-0,2,0,2,-2,home team win,1,0,0
+853,S-1892-2,1892,2,Second Division,None,M-1892-2-035,Burton Swifts vs Bootle,T-017,Burton Swifts,T-016,Bootle,2-1,2,1,1,-1,home team win,1,0,0
+854,S-1892-2,1892,2,Second Division,None,M-1892-2-036,Burton Swifts vs Burslem Port Vale,T-017,Burton Swifts,T-025,Burslem Port Vale,3-3,3,3,0,0,draw,0,0,1
+855,S-1892-2,1892,2,Second Division,None,M-1892-2-037,Burton Swifts vs Crewe Alexandra,T-017,Burton Swifts,T-018,Crewe Alexandra,7-1,7,1,6,-6,home team win,1,0,0
+856,S-1892-2,1892,2,Second Division,None,M-1892-2-038,Burton Swifts vs Darwen,T-017,Burton Swifts,T-014,Darwen,0-2,0,2,-2,2,away team win,0,1,0
+857,S-1892-2,1892,2,Second Division,None,M-1892-2-039,Burton Swifts vs Grimsby Town,T-017,Burton Swifts,T-019,Grimsby Town,5-1,5,1,4,-4,home team win,1,0,0
+858,S-1892-2,1892,2,Second Division,None,M-1892-2-040,Burton Swifts vs Lincoln City,T-017,Burton Swifts,T-020,Lincoln City,4-2,4,2,2,-2,home team win,1,0,0
+859,S-1892-2,1892,2,Second Division,None,M-1892-2-041,Burton Swifts vs Northwich Victoria,T-017,Burton Swifts,T-023,Northwich Victoria,2-0,2,0,2,-2,home team win,1,0,0
+860,S-1892-2,1892,2,Second Division,None,M-1892-2-042,Burton Swifts vs Sheffield United,T-017,Burton Swifts,T-026,Sheffield United,0-3,0,3,-3,3,away team win,0,1,0
+861,S-1892-2,1892,2,Second Division,None,M-1892-2-043,Burton Swifts vs Small Heath,T-017,Burton Swifts,T-015,Small Heath,2-3,2,3,-1,1,away team win,0,1,0
+862,S-1892-2,1892,2,Second Division,None,M-1892-2-044,Burton Swifts vs Walsall Town Swifts,T-017,Burton Swifts,T-028,Walsall Town Swifts,3-2,3,2,1,-1,home team win,1,0,0
+863,S-1892-2,1892,2,Second Division,None,M-1892-2-045,Crewe Alexandra vs Ardwick,T-018,Crewe Alexandra,T-021,Ardwick,4-1,4,1,3,-3,home team win,1,0,0
+864,S-1892-2,1892,2,Second Division,None,M-1892-2-046,Crewe Alexandra vs Bootle,T-018,Crewe Alexandra,T-016,Bootle,2-1,2,1,1,-1,home team win,1,0,0
+865,S-1892-2,1892,2,Second Division,None,M-1892-2-047,Crewe Alexandra vs Burslem Port Vale,T-018,Crewe Alexandra,T-025,Burslem Port Vale,5-0,5,0,5,-5,home team win,1,0,0
+866,S-1892-2,1892,2,Second Division,None,M-1892-2-048,Crewe Alexandra vs Burton Swifts,T-018,Crewe Alexandra,T-017,Burton Swifts,2-4,2,4,-2,2,away team win,0,1,0
+867,S-1892-2,1892,2,Second Division,None,M-1892-2-049,Crewe Alexandra vs Darwen,T-018,Crewe Alexandra,T-014,Darwen,2-2,2,2,0,0,draw,0,0,1
+868,S-1892-2,1892,2,Second Division,None,M-1892-2-050,Crewe Alexandra vs Grimsby Town,T-018,Crewe Alexandra,T-019,Grimsby Town,1-0,1,0,1,-1,home team win,1,0,0
+869,S-1892-2,1892,2,Second Division,None,M-1892-2-051,Crewe Alexandra vs Lincoln City,T-018,Crewe Alexandra,T-020,Lincoln City,4-1,4,1,3,-3,home team win,1,0,0
+870,S-1892-2,1892,2,Second Division,None,M-1892-2-052,Crewe Alexandra vs Northwich Victoria,T-018,Crewe Alexandra,T-023,Northwich Victoria,4-2,4,2,2,-2,home team win,1,0,0
+871,S-1892-2,1892,2,Second Division,None,M-1892-2-053,Crewe Alexandra vs Sheffield United,T-018,Crewe Alexandra,T-026,Sheffield United,0-4,0,4,-4,4,away team win,0,1,0
+872,S-1892-2,1892,2,Second Division,None,M-1892-2-054,Crewe Alexandra vs Small Heath,T-018,Crewe Alexandra,T-015,Small Heath,1-3,1,3,-2,2,away team win,0,1,0
+873,S-1892-2,1892,2,Second Division,None,M-1892-2-055,Crewe Alexandra vs Walsall Town Swifts,T-018,Crewe Alexandra,T-028,Walsall Town Swifts,5-6,5,6,-1,1,away team win,0,1,0
+874,S-1892-2,1892,2,Second Division,None,M-1892-2-056,Darwen vs Ardwick,T-014,Darwen,T-021,Ardwick,3-1,3,1,2,-2,home team win,1,0,0
+875,S-1892-2,1892,2,Second Division,None,M-1892-2-057,Darwen vs Bootle,T-014,Darwen,T-016,Bootle,3-0,3,0,3,-3,home team win,1,0,0
+876,S-1892-2,1892,2,Second Division,None,M-1892-2-058,Darwen vs Burslem Port Vale,T-014,Darwen,T-025,Burslem Port Vale,4-1,4,1,3,-3,home team win,1,0,0
+877,S-1892-2,1892,2,Second Division,None,M-1892-2-059,Darwen vs Burton Swifts,T-014,Darwen,T-017,Burton Swifts,2-3,2,3,-1,1,away team win,0,1,0
+878,S-1892-2,1892,2,Second Division,None,M-1892-2-060,Darwen vs Crewe Alexandra,T-014,Darwen,T-018,Crewe Alexandra,7-3,7,3,4,-4,home team win,1,0,0
+879,S-1892-2,1892,2,Second Division,None,M-1892-2-061,Darwen vs Grimsby Town,T-014,Darwen,T-019,Grimsby Town,6-1,6,1,5,-5,home team win,1,0,0
+880,S-1892-2,1892,2,Second Division,None,M-1892-2-062,Darwen vs Lincoln City,T-014,Darwen,T-020,Lincoln City,3-1,3,1,2,-2,home team win,1,0,0
+881,S-1892-2,1892,2,Second Division,None,M-1892-2-063,Darwen vs Northwich Victoria,T-014,Darwen,T-023,Northwich Victoria,3-1,3,1,2,-2,home team win,1,0,0
+882,S-1892-2,1892,2,Second Division,None,M-1892-2-064,Darwen vs Sheffield United,T-014,Darwen,T-026,Sheffield United,3-1,3,1,2,-2,home team win,1,0,0
+883,S-1892-2,1892,2,Second Division,None,M-1892-2-065,Darwen vs Small Heath,T-014,Darwen,T-015,Small Heath,4-3,4,3,1,-1,home team win,1,0,0
+884,S-1892-2,1892,2,Second Division,None,M-1892-2-066,Darwen vs Walsall Town Swifts,T-014,Darwen,T-028,Walsall Town Swifts,5-0,5,0,5,-5,home team win,1,0,0
+885,S-1892-2,1892,2,Second Division,None,M-1892-2-067,Grimsby Town vs Ardwick,T-019,Grimsby Town,T-021,Ardwick,2-0,2,0,2,-2,home team win,1,0,0
+886,S-1892-2,1892,2,Second Division,None,M-1892-2-068,Grimsby Town vs Bootle,T-019,Grimsby Town,T-016,Bootle,3-0,3,0,3,-3,home team win,1,0,0
+887,S-1892-2,1892,2,Second Division,None,M-1892-2-069,Grimsby Town vs Burslem Port Vale,T-019,Grimsby Town,T-025,Burslem Port Vale,2-0,2,0,2,-2,home team win,1,0,0
+888,S-1892-2,1892,2,Second Division,None,M-1892-2-070,Grimsby Town vs Burton Swifts,T-019,Grimsby Town,T-017,Burton Swifts,4-0,4,0,4,-4,home team win,1,0,0
+889,S-1892-2,1892,2,Second Division,None,M-1892-2-071,Grimsby Town vs Crewe Alexandra,T-019,Grimsby Town,T-018,Crewe Alexandra,4-0,4,0,4,-4,home team win,1,0,0
+890,S-1892-2,1892,2,Second Division,None,M-1892-2-072,Grimsby Town vs Darwen,T-019,Grimsby Town,T-014,Darwen,0-1,0,1,-1,1,away team win,0,1,0
+891,S-1892-2,1892,2,Second Division,None,M-1892-2-073,Grimsby Town vs Lincoln City,T-019,Grimsby Town,T-020,Lincoln City,2-2,2,2,0,0,draw,0,0,1
+892,S-1892-2,1892,2,Second Division,None,M-1892-2-074,Grimsby Town vs Northwich Victoria,T-019,Grimsby Town,T-023,Northwich Victoria,2-1,2,1,1,-1,home team win,1,0,0
+893,S-1892-2,1892,2,Second Division,None,M-1892-2-075,Grimsby Town vs Sheffield United,T-019,Grimsby Town,T-026,Sheffield United,0-1,0,1,-1,1,away team win,0,1,0
+894,S-1892-2,1892,2,Second Division,None,M-1892-2-076,Grimsby Town vs Small Heath,T-019,Grimsby Town,T-015,Small Heath,3-2,3,2,1,-1,home team win,1,0,0
+895,S-1892-2,1892,2,Second Division,None,M-1892-2-077,Grimsby Town vs Walsall Town Swifts,T-019,Grimsby Town,T-028,Walsall Town Swifts,3-0,3,0,3,-3,home team win,1,0,0
+896,S-1892-2,1892,2,Second Division,None,M-1892-2-078,Lincoln City vs Ardwick,T-020,Lincoln City,T-021,Ardwick,2-1,2,1,1,-1,home team win,1,0,0
+897,S-1892-2,1892,2,Second Division,None,M-1892-2-079,Lincoln City vs Bootle,T-020,Lincoln City,T-016,Bootle,5-1,5,1,4,-4,home team win,1,0,0
+898,S-1892-2,1892,2,Second Division,None,M-1892-2-080,Lincoln City vs Burslem Port Vale,T-020,Lincoln City,T-025,Burslem Port Vale,3-4,3,4,-1,1,away team win,0,1,0
+899,S-1892-2,1892,2,Second Division,None,M-1892-2-081,Lincoln City vs Burton Swifts,T-020,Lincoln City,T-017,Burton Swifts,5-1,5,1,4,-4,home team win,1,0,0
+900,S-1892-2,1892,2,Second Division,None,M-1892-2-082,Lincoln City vs Crewe Alexandra,T-020,Lincoln City,T-018,Crewe Alexandra,1-1,1,1,0,0,draw,0,0,1
+901,S-1892-2,1892,2,Second Division,None,M-1892-2-083,Lincoln City vs Darwen,T-020,Lincoln City,T-014,Darwen,1-1,1,1,0,0,draw,0,0,1
+902,S-1892-2,1892,2,Second Division,None,M-1892-2-084,Lincoln City vs Grimsby Town,T-020,Lincoln City,T-019,Grimsby Town,1-3,1,3,-2,2,away team win,0,1,0
+903,S-1892-2,1892,2,Second Division,None,M-1892-2-085,Lincoln City vs Northwich Victoria,T-020,Lincoln City,T-023,Northwich Victoria,5-1,5,1,4,-4,home team win,1,0,0
+904,S-1892-2,1892,2,Second Division,None,M-1892-2-086,Lincoln City vs Sheffield United,T-020,Lincoln City,T-026,Sheffield United,1-0,1,0,1,-1,home team win,1,0,0
+905,S-1892-2,1892,2,Second Division,None,M-1892-2-087,Lincoln City vs Small Heath,T-020,Lincoln City,T-015,Small Heath,3-4,3,4,-1,1,away team win,0,1,0
+906,S-1892-2,1892,2,Second Division,None,M-1892-2-088,Lincoln City vs Walsall Town Swifts,T-020,Lincoln City,T-028,Walsall Town Swifts,3-1,3,1,2,-2,home team win,1,0,0
+907,S-1892-2,1892,2,Second Division,None,M-1892-2-089,Northwich Victoria vs Ardwick,T-023,Northwich Victoria,T-021,Ardwick,0-3,0,3,-3,3,away team win,0,1,0
+908,S-1892-2,1892,2,Second Division,None,M-1892-2-090,Northwich Victoria vs Bootle,T-023,Northwich Victoria,T-016,Bootle,3-2,3,2,1,-1,home team win,1,0,0
+909,S-1892-2,1892,2,Second Division,None,M-1892-2-091,Northwich Victoria vs Burslem Port Vale,T-023,Northwich Victoria,T-025,Burslem Port Vale,2-4,2,4,-2,2,away team win,0,1,0
+910,S-1892-2,1892,2,Second Division,None,M-1892-2-092,Northwich Victoria vs Burton Swifts,T-023,Northwich Victoria,T-017,Burton Swifts,2-1,2,1,1,-1,home team win,1,0,0
+911,S-1892-2,1892,2,Second Division,None,M-1892-2-093,Northwich Victoria vs Crewe Alexandra,T-023,Northwich Victoria,T-018,Crewe Alexandra,4-1,4,1,3,-3,home team win,1,0,0
+912,S-1892-2,1892,2,Second Division,None,M-1892-2-094,Northwich Victoria vs Darwen,T-023,Northwich Victoria,T-014,Darwen,1-0,1,0,1,-1,home team win,1,0,0
+913,S-1892-2,1892,2,Second Division,None,M-1892-2-095,Northwich Victoria vs Grimsby Town,T-023,Northwich Victoria,T-019,Grimsby Town,5-3,5,3,2,-2,home team win,1,0,0
+914,S-1892-2,1892,2,Second Division,None,M-1892-2-096,Northwich Victoria vs Lincoln City,T-023,Northwich Victoria,T-020,Lincoln City,2-1,2,1,1,-1,home team win,1,0,0
+915,S-1892-2,1892,2,Second Division,None,M-1892-2-097,Northwich Victoria vs Sheffield United,T-023,Northwich Victoria,T-026,Sheffield United,1-3,1,3,-2,2,away team win,0,1,0
+916,S-1892-2,1892,2,Second Division,None,M-1892-2-098,Northwich Victoria vs Small Heath,T-023,Northwich Victoria,T-015,Small Heath,0-6,0,6,-6,6,away team win,0,1,0
+917,S-1892-2,1892,2,Second Division,None,M-1892-2-099,Northwich Victoria vs Walsall Town Swifts,T-023,Northwich Victoria,T-028,Walsall Town Swifts,5-2,5,2,3,-3,home team win,1,0,0
+918,S-1892-2,1892,2,Second Division,None,M-1892-2-100,Sheffield United vs Ardwick,T-026,Sheffield United,T-021,Ardwick,2-1,2,1,1,-1,home team win,1,0,0
+919,S-1892-2,1892,2,Second Division,None,M-1892-2-101,Sheffield United vs Bootle,T-026,Sheffield United,T-016,Bootle,8-3,8,3,5,-5,home team win,1,0,0
+920,S-1892-2,1892,2,Second Division,None,M-1892-2-102,Sheffield United vs Burslem Port Vale,T-026,Sheffield United,T-025,Burslem Port Vale,4-0,4,0,4,-4,home team win,1,0,0
+921,S-1892-2,1892,2,Second Division,None,M-1892-2-103,Sheffield United vs Burton Swifts,T-026,Sheffield United,T-017,Burton Swifts,3-1,3,1,2,-2,home team win,1,0,0
+922,S-1892-2,1892,2,Second Division,None,M-1892-2-104,Sheffield United vs Crewe Alexandra,T-026,Sheffield United,T-018,Crewe Alexandra,4-0,4,0,4,-4,home team win,1,0,0
+923,S-1892-2,1892,2,Second Division,None,M-1892-2-105,Sheffield United vs Darwen,T-026,Sheffield United,T-014,Darwen,2-0,2,0,2,-2,home team win,1,0,0
+924,S-1892-2,1892,2,Second Division,None,M-1892-2-106,Sheffield United vs Grimsby Town,T-026,Sheffield United,T-019,Grimsby Town,2-0,2,0,2,-2,home team win,1,0,0
+925,S-1892-2,1892,2,Second Division,None,M-1892-2-107,Sheffield United vs Lincoln City,T-026,Sheffield United,T-020,Lincoln City,4-2,4,2,2,-2,home team win,1,0,0
+926,S-1892-2,1892,2,Second Division,None,M-1892-2-108,Sheffield United vs Northwich Victoria,T-026,Sheffield United,T-023,Northwich Victoria,1-1,1,1,0,0,draw,0,0,1
+927,S-1892-2,1892,2,Second Division,None,M-1892-2-109,Sheffield United vs Small Heath,T-026,Sheffield United,T-015,Small Heath,2-0,2,0,2,-2,home team win,1,0,0
+928,S-1892-2,1892,2,Second Division,None,M-1892-2-110,Sheffield United vs Walsall Town Swifts,T-026,Sheffield United,T-028,Walsall Town Swifts,3-0,3,0,3,-3,home team win,1,0,0
+929,S-1892-2,1892,2,Second Division,None,M-1892-2-111,Small Heath vs Ardwick,T-015,Small Heath,T-021,Ardwick,3-2,3,2,1,-1,home team win,1,0,0
+930,S-1892-2,1892,2,Second Division,None,M-1892-2-112,Small Heath vs Bootle,T-015,Small Heath,T-016,Bootle,6-2,6,2,4,-4,home team win,1,0,0
+931,S-1892-2,1892,2,Second Division,None,M-1892-2-113,Small Heath vs Burslem Port Vale,T-015,Small Heath,T-025,Burslem Port Vale,5-1,5,1,4,-4,home team win,1,0,0
+932,S-1892-2,1892,2,Second Division,None,M-1892-2-114,Small Heath vs Burton Swifts,T-015,Small Heath,T-017,Burton Swifts,3-2,3,2,1,-1,home team win,1,0,0
+933,S-1892-2,1892,2,Second Division,None,M-1892-2-115,Small Heath vs Crewe Alexandra,T-015,Small Heath,T-018,Crewe Alexandra,6-0,6,0,6,-6,home team win,1,0,0
+934,S-1892-2,1892,2,Second Division,None,M-1892-2-116,Small Heath vs Darwen,T-015,Small Heath,T-014,Darwen,3-2,3,2,1,-1,home team win,1,0,0
+935,S-1892-2,1892,2,Second Division,None,M-1892-2-117,Small Heath vs Grimsby Town,T-015,Small Heath,T-019,Grimsby Town,8-3,8,3,5,-5,home team win,1,0,0
+936,S-1892-2,1892,2,Second Division,None,M-1892-2-118,Small Heath vs Lincoln City,T-015,Small Heath,T-020,Lincoln City,4-1,4,1,3,-3,home team win,1,0,0
+937,S-1892-2,1892,2,Second Division,None,M-1892-2-119,Small Heath vs Northwich Victoria,T-015,Small Heath,T-023,Northwich Victoria,6-2,6,2,4,-4,home team win,1,0,0
+938,S-1892-2,1892,2,Second Division,None,M-1892-2-120,Small Heath vs Sheffield United,T-015,Small Heath,T-026,Sheffield United,1-1,1,1,0,0,draw,0,0,1
+939,S-1892-2,1892,2,Second Division,None,M-1892-2-121,Small Heath vs Walsall Town Swifts,T-015,Small Heath,T-028,Walsall Town Swifts,12-0,12,0,12,-12,home team win,1,0,0
+940,S-1892-2,1892,2,Second Division,None,M-1892-2-122,Walsall Town Swifts vs Ardwick,T-028,Walsall Town Swifts,T-021,Ardwick,2-4,2,4,-2,2,away team win,0,1,0
+941,S-1892-2,1892,2,Second Division,None,M-1892-2-123,Walsall Town Swifts vs Bootle,T-028,Walsall Town Swifts,T-016,Bootle,4-4,4,4,0,0,draw,0,0,1
+942,S-1892-2,1892,2,Second Division,None,M-1892-2-124,Walsall Town Swifts vs Burslem Port Vale,T-028,Walsall Town Swifts,T-025,Burslem Port Vale,3-0,3,0,3,-3,home team win,1,0,0
+943,S-1892-2,1892,2,Second Division,None,M-1892-2-125,Walsall Town Swifts vs Burton Swifts,T-028,Walsall Town Swifts,T-017,Burton Swifts,3-2,3,2,1,-1,home team win,1,0,0
+944,S-1892-2,1892,2,Second Division,None,M-1892-2-126,Walsall Town Swifts vs Crewe Alexandra,T-028,Walsall Town Swifts,T-018,Crewe Alexandra,3-3,3,3,0,0,draw,0,0,1
+945,S-1892-2,1892,2,Second Division,None,M-1892-2-127,Walsall Town Swifts vs Darwen,T-028,Walsall Town Swifts,T-014,Darwen,1-2,1,2,-1,1,away team win,0,1,0
+946,S-1892-2,1892,2,Second Division,None,M-1892-2-128,Walsall Town Swifts vs Grimsby Town,T-028,Walsall Town Swifts,T-019,Grimsby Town,3-1,3,1,2,-2,home team win,1,0,0
+947,S-1892-2,1892,2,Second Division,None,M-1892-2-129,Walsall Town Swifts vs Lincoln City,T-028,Walsall Town Swifts,T-020,Lincoln City,2-1,2,1,1,-1,home team win,1,0,0
+948,S-1892-2,1892,2,Second Division,None,M-1892-2-130,Walsall Town Swifts vs Northwich Victoria,T-028,Walsall Town Swifts,T-023,Northwich Victoria,2-3,2,3,-1,1,away team win,0,1,0
+949,S-1892-2,1892,2,Second Division,None,M-1892-2-131,Walsall Town Swifts vs Sheffield United,T-028,Walsall Town Swifts,T-026,Sheffield United,1-1,1,1,0,0,draw,0,0,1
+950,S-1892-2,1892,2,Second Division,None,M-1892-2-132,Walsall Town Swifts vs Small Heath,T-028,Walsall Town Swifts,T-015,Small Heath,1-3,1,3,-2,2,away team win,0,1,0
+951,S-1893-1,1893,1,First Division,None,M-1893-1-001,Aston Villa vs Blackburn Rovers,T-002,Aston Villa,T-003,Blackburn Rovers,2-1,2,1,1,-1,home team win,1,0,0
+952,S-1893-1,1893,1,First Division,None,M-1893-1-002,Aston Villa vs Bolton Wanderers,T-002,Aston Villa,T-004,Bolton Wanderers,2-3,2,3,-1,1,away team win,0,1,0
+953,S-1893-1,1893,1,First Division,None,M-1893-1-003,Aston Villa vs Burnley,T-002,Aston Villa,T-005,Burnley,4-0,4,0,4,-4,home team win,1,0,0
+954,S-1893-1,1893,1,First Division,None,M-1893-1-004,Aston Villa vs Darwen,T-002,Aston Villa,T-014,Darwen,9-0,9,0,9,-9,home team win,1,0,0
+955,S-1893-1,1893,1,First Division,None,M-1893-1-005,Aston Villa vs Derby County,T-002,Aston Villa,T-006,Derby County,1-1,1,1,0,0,draw,0,0,1
+956,S-1893-1,1893,1,First Division,None,M-1893-1-006,Aston Villa vs Everton,T-002,Aston Villa,T-007,Everton,3-1,3,1,2,-2,home team win,1,0,0
+957,S-1893-1,1893,1,First Division,None,M-1893-1-007,Aston Villa vs Newton Heath,T-002,Aston Villa,T-022,Newton Heath,5-1,5,1,4,-4,home team win,1,0,0
+958,S-1893-1,1893,1,First Division,None,M-1893-1-008,Aston Villa vs Nottingham Forest,T-002,Aston Villa,T-024,Nottingham Forest,3-1,3,1,2,-2,home team win,1,0,0
+959,S-1893-1,1893,1,First Division,None,M-1893-1-009,Aston Villa vs Preston North End,T-002,Aston Villa,T-009,Preston North End,2-0,2,0,2,-2,home team win,1,0,0
+960,S-1893-1,1893,1,First Division,None,M-1893-1-010,Aston Villa vs Sheffield United,T-002,Aston Villa,T-026,Sheffield United,4-0,4,0,4,-4,home team win,1,0,0
+961,S-1893-1,1893,1,First Division,None,M-1893-1-011,Aston Villa vs Stoke,T-002,Aston Villa,T-010,Stoke,5-1,5,1,4,-4,home team win,1,0,0
+962,S-1893-1,1893,1,First Division,None,M-1893-1-012,Aston Villa vs Sunderland,T-002,Aston Villa,T-013,Sunderland,2-1,2,1,1,-1,home team win,1,0,0
+963,S-1893-1,1893,1,First Division,None,M-1893-1-013,Aston Villa vs The Wednesday,T-002,Aston Villa,T-027,The Wednesday,3-0,3,0,3,-3,home team win,1,0,0
+964,S-1893-1,1893,1,First Division,None,M-1893-1-014,Aston Villa vs West Bromwich Albion,T-002,Aston Villa,T-011,West Bromwich Albion,3-2,3,2,1,-1,home team win,1,0,0
+965,S-1893-1,1893,1,First Division,None,M-1893-1-015,Aston Villa vs Wolverhampton Wanderers,T-002,Aston Villa,T-012,Wolverhampton Wanderers,1-1,1,1,0,0,draw,0,0,1
+966,S-1893-1,1893,1,First Division,None,M-1893-1-016,Blackburn Rovers vs Aston Villa,T-003,Blackburn Rovers,T-002,Aston Villa,2-0,2,0,2,-2,home team win,1,0,0
+967,S-1893-1,1893,1,First Division,None,M-1893-1-017,Blackburn Rovers vs Bolton Wanderers,T-003,Blackburn Rovers,T-004,Bolton Wanderers,0-1,0,1,-1,1,away team win,0,1,0
+968,S-1893-1,1893,1,First Division,None,M-1893-1-018,Blackburn Rovers vs Burnley,T-003,Blackburn Rovers,T-005,Burnley,3-2,3,2,1,-1,home team win,1,0,0
+969,S-1893-1,1893,1,First Division,None,M-1893-1-019,Blackburn Rovers vs Darwen,T-003,Blackburn Rovers,T-014,Darwen,4-1,4,1,3,-3,home team win,1,0,0
+970,S-1893-1,1893,1,First Division,None,M-1893-1-020,Blackburn Rovers vs Derby County,T-003,Blackburn Rovers,T-006,Derby County,0-2,0,2,-2,2,away team win,0,1,0
+971,S-1893-1,1893,1,First Division,None,M-1893-1-021,Blackburn Rovers vs Everton,T-003,Blackburn Rovers,T-007,Everton,4-3,4,3,1,-1,home team win,1,0,0
+972,S-1893-1,1893,1,First Division,None,M-1893-1-022,Blackburn Rovers vs Newton Heath,T-003,Blackburn Rovers,T-022,Newton Heath,4-0,4,0,4,-4,home team win,1,0,0
+973,S-1893-1,1893,1,First Division,None,M-1893-1-023,Blackburn Rovers vs Nottingham Forest,T-003,Blackburn Rovers,T-024,Nottingham Forest,6-1,6,1,5,-5,home team win,1,0,0
+974,S-1893-1,1893,1,First Division,None,M-1893-1-024,Blackburn Rovers vs Preston North End,T-003,Blackburn Rovers,T-009,Preston North End,1-0,1,0,1,-1,home team win,1,0,0
+975,S-1893-1,1893,1,First Division,None,M-1893-1-025,Blackburn Rovers vs Sheffield United,T-003,Blackburn Rovers,T-026,Sheffield United,4-1,4,1,3,-3,home team win,1,0,0
+976,S-1893-1,1893,1,First Division,None,M-1893-1-026,Blackburn Rovers vs Stoke,T-003,Blackburn Rovers,T-010,Stoke,5-0,5,0,5,-5,home team win,1,0,0
+977,S-1893-1,1893,1,First Division,None,M-1893-1-027,Blackburn Rovers vs Sunderland,T-003,Blackburn Rovers,T-013,Sunderland,4-3,4,3,1,-1,home team win,1,0,0
+978,S-1893-1,1893,1,First Division,None,M-1893-1-028,Blackburn Rovers vs The Wednesday,T-003,Blackburn Rovers,T-027,The Wednesday,5-1,5,1,4,-4,home team win,1,0,0
+979,S-1893-1,1893,1,First Division,None,M-1893-1-029,Blackburn Rovers vs West Bromwich Albion,T-003,Blackburn Rovers,T-011,West Bromwich Albion,3-0,3,0,3,-3,home team win,1,0,0
+980,S-1893-1,1893,1,First Division,None,M-1893-1-030,Blackburn Rovers vs Wolverhampton Wanderers,T-003,Blackburn Rovers,T-012,Wolverhampton Wanderers,3-0,3,0,3,-3,home team win,1,0,0
+981,S-1893-1,1893,1,First Division,None,M-1893-1-031,Bolton Wanderers vs Aston Villa,T-004,Bolton Wanderers,T-002,Aston Villa,0-1,0,1,-1,1,away team win,0,1,0
+982,S-1893-1,1893,1,First Division,None,M-1893-1-032,Bolton Wanderers vs Blackburn Rovers,T-004,Bolton Wanderers,T-003,Blackburn Rovers,2-1,2,1,1,-1,home team win,1,0,0
+983,S-1893-1,1893,1,First Division,None,M-1893-1-033,Bolton Wanderers vs Burnley,T-004,Bolton Wanderers,T-005,Burnley,2-0,2,0,2,-2,home team win,1,0,0
+984,S-1893-1,1893,1,First Division,None,M-1893-1-034,Bolton Wanderers vs Darwen,T-004,Bolton Wanderers,T-014,Darwen,1-0,1,0,1,-1,home team win,1,0,0
+985,S-1893-1,1893,1,First Division,None,M-1893-1-035,Bolton Wanderers vs Derby County,T-004,Bolton Wanderers,T-006,Derby County,1-1,1,1,0,0,draw,0,0,1
+986,S-1893-1,1893,1,First Division,None,M-1893-1-036,Bolton Wanderers vs Everton,T-004,Bolton Wanderers,T-007,Everton,0-1,0,1,-1,1,away team win,0,1,0
+987,S-1893-1,1893,1,First Division,None,M-1893-1-037,Bolton Wanderers vs Newton Heath,T-004,Bolton Wanderers,T-022,Newton Heath,2-0,2,0,2,-2,home team win,1,0,0
+988,S-1893-1,1893,1,First Division,None,M-1893-1-038,Bolton Wanderers vs Nottingham Forest,T-004,Bolton Wanderers,T-024,Nottingham Forest,1-1,1,1,0,0,draw,0,0,1
+989,S-1893-1,1893,1,First Division,None,M-1893-1-039,Bolton Wanderers vs Preston North End,T-004,Bolton Wanderers,T-009,Preston North End,0-3,0,3,-3,3,away team win,0,1,0
+990,S-1893-1,1893,1,First Division,None,M-1893-1-040,Bolton Wanderers vs Sheffield United,T-004,Bolton Wanderers,T-026,Sheffield United,0-1,0,1,-1,1,away team win,0,1,0
+991,S-1893-1,1893,1,First Division,None,M-1893-1-041,Bolton Wanderers vs Stoke,T-004,Bolton Wanderers,T-010,Stoke,4-1,4,1,3,-3,home team win,1,0,0
+992,S-1893-1,1893,1,First Division,None,M-1893-1-042,Bolton Wanderers vs Sunderland,T-004,Bolton Wanderers,T-013,Sunderland,2-0,2,0,2,-2,home team win,1,0,0
+993,S-1893-1,1893,1,First Division,None,M-1893-1-043,Bolton Wanderers vs The Wednesday,T-004,Bolton Wanderers,T-027,The Wednesday,1-1,1,1,0,0,draw,0,0,1
+994,S-1893-1,1893,1,First Division,None,M-1893-1-044,Bolton Wanderers vs West Bromwich Albion,T-004,Bolton Wanderers,T-011,West Bromwich Albion,0-3,0,3,-3,3,away team win,0,1,0
+995,S-1893-1,1893,1,First Division,None,M-1893-1-045,Bolton Wanderers vs Wolverhampton Wanderers,T-004,Bolton Wanderers,T-012,Wolverhampton Wanderers,2-0,2,0,2,-2,home team win,1,0,0
+996,S-1893-1,1893,1,First Division,None,M-1893-1-046,Burnley vs Aston Villa,T-005,Burnley,T-002,Aston Villa,3-6,3,6,-3,3,away team win,0,1,0
+997,S-1893-1,1893,1,First Division,None,M-1893-1-047,Burnley vs Blackburn Rovers,T-005,Burnley,T-003,Blackburn Rovers,1-0,1,0,1,-1,home team win,1,0,0
+998,S-1893-1,1893,1,First Division,None,M-1893-1-048,Burnley vs Bolton Wanderers,T-005,Burnley,T-004,Bolton Wanderers,2-1,2,1,1,-1,home team win,1,0,0
+999,S-1893-1,1893,1,First Division,None,M-1893-1-049,Burnley vs Darwen,T-005,Burnley,T-014,Darwen,5-1,5,1,4,-4,home team win,1,0,0
+1000,S-1893-1,1893,1,First Division,None,M-1893-1-050,Burnley vs Derby County,T-005,Burnley,T-006,Derby County,3-1,3,1,2,-2,home team win,1,0,0
