@@ -8,7 +8,7 @@ input_directory = 'football/csv'
 output_directory = 'football/simpified_csv'
 
 # Number of samples to keep from each CSV
-samples_to_keep = 1000  # Adjust 'x' to your desired number
+samples_to_keep = 50000  # Adjust 'x' to your desired number
 
 # Create the output directory if it doesn't exist
 os.makedirs(output_directory, exist_ok=True)

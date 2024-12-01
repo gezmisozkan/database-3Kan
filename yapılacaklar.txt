@@ -1,0 +1,6 @@
+loginde şifre girmezsek kod patlıyor. Şifreyi required yapmak gerekiyor
+
+logouttan sonra geri bildirim eklenebilir
+giriş yapılmamışken home a tıklayınca hata veriyor
+hesap oluşturulduktan sonra logout yapıp tekrar login yapılamıyor
+ana sayfa oluşturulup giriş yapıldıktan sonra oraya yönlendirme yapılabilir

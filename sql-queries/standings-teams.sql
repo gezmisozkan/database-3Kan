@@ -23,7 +23,7 @@ CREATE TABLE standings (
     point_adjustment INT NOT NULL DEFAULT 0
 
     -- FOREIGN KEY (team_name) REFERENCES teams(team_name),
-    -- FOREIGN KEY (team_id) REFERENCES teams(team_id)
+    FOREIGN KEY (team_id) REFERENCES teams(team_id)
 );
 
 CREATE TABLE teams (
