@@ -15,8 +15,8 @@ Follow these steps to set up and use the project on your local machine:
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/your-repository.git
-cd your-repository
+git clone https://github.com/gezmisozkan/database-3Kan.git
+cd database-3Kan
 ```
 
 ### Install the necessary Python packages using pip:
@@ -26,12 +26,13 @@ pip install -r requirements.txt
 
 ### To set up the MySQL and SQLite databases:
 Ensure you have MySQL installed and running on your system.
-Build MySQL Database
+#### Build MySQL Database
 Run the script in the utils directory to build the database:
+This script will drop the old database (if any), create a new one, and define the schema.
+
 ```bash
 python utils/build_database.py
 ```
-
 
 
 
