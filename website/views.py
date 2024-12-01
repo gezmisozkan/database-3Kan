@@ -24,7 +24,7 @@ def teams():
     # Open a connection to the MySQL database
     with mysql_engine.connect() as connection:
         # Fetch all team names
-        query = "SELECT DISTINCT home_team_name FROM matches ORDER BY home_team_name"
+        query = "SELECT DISTINCT home_team_name FROM matches"
         result = connection.execute(text(query))
         teams = [row[0] for row in result]
 
@@ -37,7 +37,6 @@ def teams():
             FROM matches
             WHERE home_team_name = :team OR away_team_name = :team
             ORDER BY match_id DESC
-            LIMIT 10  # Limit the number of matches to display
             """
             result = connection.execute(text(match_query), {"team": selected_team})
             matches = result.fetchall()
