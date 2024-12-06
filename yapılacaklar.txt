@@ -2,7 +2,6 @@ loginde şifre girmezsek kod patlıyor. Şifreyi required yapmak gerekiyor
 
 logouttan sonra geri bildirim eklenebilir
 giriş yapılmamışken home a tıklayınca hata veriyor
-hesap oluşturulduktan sonra logout yapıp tekrar login yapılamıyor
 ana sayfa oluşturulup giriş yapıldıktan sonra oraya yönlendirme yapılabilir
 
 footer'daki linkler işlevselleştirilmeli
@@ -12,3 +11,11 @@ FRONTEND'DE ACİL ÇALIŞMA GEREK --- AYRICA KODU LÜTFEN İNGİLİZCE YORUMLARL
 seasons henüz bitmedi, üzerinde çalışılacak
 
 iki kişi aynı ada, emaile ve parolaya sahipse error sayfası çıkıyor --- kötüye kullanılabilir
+
+Sql Alchemy kaldır
+Login şifre kurallarını info kısmı oluşturup kullanıcıya göstermek daha iyi olur
+Sayfalara page ekleyip daha güzel hale getir
+Admin özelliği ekle
+Admin yorumları silebilsin
+Yorum atma özelliği gelsin
+Foreign key kullanarak tablolar oluştur
