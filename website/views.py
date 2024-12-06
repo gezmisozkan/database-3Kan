@@ -42,3 +42,32 @@ def teams():
             matches = result.fetchall()
 
     return render_template("teams.html", teams=teams, matches=matches, selected_team=selected_team)
+
+@views.route('/seasons', methods=['GET'])
+def seasons():
+    query = "SELECT * FROM Seasons WHERE 1=1"
+    params = []
+
+    # Filter conditions
+    season = request.args.get('season')
+    if season:
+        query += " AND season LIKE ?"
+        params.append(f"%{season}%")
+
+    tier = request.args.get('tier')
+    if tier:
+        query += " AND tier LIKE ?"
+        params.append(f"%{tier}%")
+
+    division = request.args.get('division')
+    if division:
+        query += " AND division LIKE ?"
+        params.append(f"%{division}%")
+
+    # Execute the query using a cursor
+    cur = get_db().cursor()
+    cur.execute(query, params)
+    seasons = cur.fetchall()
+
+    # Pass the result to the template
+    return render_template('seasons.html', seasons=seasons)
