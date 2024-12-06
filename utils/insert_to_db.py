@@ -12,7 +12,7 @@ database = '3kan'
 engine = create_engine(f'mysql+mysqlconnector://{user}:{password}@{host}/{database}')
 
 # Directory containing your CSV files
-csv_directory = 'football/simpified_csv'
+csv_directory = '../football/simpified_csv'
 
 # Loop through each CSV file in the directory
 for filename in os.listdir(csv_directory):

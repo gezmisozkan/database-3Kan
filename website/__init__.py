@@ -6,7 +6,7 @@ from flask_login import LoginManager
 from sqlalchemy import create_engine
 
 db = SQLAlchemy() #Database objesi oluşturuldu
-DB_NAME = "database.db" # Database ismi belirlendi
+DB_NAME = "../database.db" # Database ismi belirlendi
 
 # MySQL connection string
 MYSQL_DB_URI = 'mysql+mysqlconnector://root:1234@localhost/3kan'

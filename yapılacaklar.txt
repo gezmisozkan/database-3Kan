@@ -4,3 +4,9 @@ logouttan sonra geri bildirim eklenebilir
 giriş yapılmamışken home a tıklayınca hata veriyor
 hesap oluşturulduktan sonra logout yapıp tekrar login yapılamıyor
 ana sayfa oluşturulup giriş yapıldıktan sonra oraya yönlendirme yapılabilir
+
+FRONTEND'DE ACİL ÇALIŞMA GEREK --- AYRICA KODU LÜTFEN İNGİLİZCE YORUMLARLA AÇIKLAYIN
+
+seasons henüz bitmedi, üzerinde çalışılacak
+
+iki kişi aynı ada, emaile ve parolaya sahipse error sayfası çıkıyor --- kötüye kullanılabilir
