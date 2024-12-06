@@ -5,6 +5,8 @@ giriş yapılmamışken home a tıklayınca hata veriyor
 hesap oluşturulduktan sonra logout yapıp tekrar login yapılamıyor
 ana sayfa oluşturulup giriş yapıldıktan sonra oraya yönlendirme yapılabilir
 
+footer'daki linkler işlevselleştirilmeli
+
 FRONTEND'DE ACİL ÇALIŞMA GEREK --- AYRICA KODU LÜTFEN İNGİLİZCE YORUMLARLA AÇIKLAYIN
 
 seasons henüz bitmedi, üzerinde çalışılacak
