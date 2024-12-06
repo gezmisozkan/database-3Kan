@@ -44,30 +44,31 @@ def teams():
     return render_template("teams.html", teams=teams, matches=matches, selected_team=selected_team)
 
 @views.route('/seasons', methods=['GET'])
-def seasons():
-    query = "SELECT * FROM Seasons WHERE 1=1"
-    params = []
+def search_seasons():
+    mysql_engine = current_app.mysql_engine
 
-    # Filter conditions
+    # Get search parameters from the request
     season = request.args.get('season')
-    if season:
-        query += " AND season LIKE ?"
-        params.append(f"%{season}%")
-
     tier = request.args.get('tier')
-    if tier:
-        query += " AND tier LIKE ?"
-        params.append(f"%{tier}%")
-
     division = request.args.get('division')
+
+    # Build the query dynamically
+    query = "SELECT key_id, season_id, season, tier, division, subdivision, winner, count_teams FROM Seasons WHERE 1=1"
+    params = {}
+
+    if season:
+        query += " AND season = :season"
+        params['season'] = season
+    if tier:
+        query += " AND tier = :tier"
+        params['tier'] = tier
     if division:
-        query += " AND division LIKE ?"
-        params.append(f"%{division}%")
+        query += " AND division = :division"
+        params['division'] = division
 
-    # Execute the query using a cursor
-    cur = get_db().cursor()
-    cur.execute(query, params)
-    seasons = cur.fetchall()
+    # Execute the query
+    with mysql_engine.connect() as connection:
+        seasons = connection.execute(text(query), params)
 
-    # Pass the result to the template
+    # Render the template with filtered data
     return render_template('seasons.html', seasons=seasons)
