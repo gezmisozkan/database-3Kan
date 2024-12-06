@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-h3 {
+h1 {
     text-align: center;
     font-family: 'Russo One', sans-serif;
     color: #FFD700;
@@ -25,36 +25,24 @@ body {
   }
 }
 
-/* Form Styling */
-form {
-    max-width: 400px;
-    margin: 100px auto;
-    padding: 20px;
+/* Container Styling */
+.container.mt-5 {
+    max-width: 1000px; /* Increased size to fit the table */
+    margin: 50px auto;
     background: rgba(0, 0, 0, 0.85);
+    padding: 30px; /* Added extra padding for better spacing */
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
-    text-align: center;
 }
 
-h3 {
-    font-family: 'Russo One', sans-serif;
-    color: #FFD700;
+/* Form Styling */
+form {
     margin-bottom: 20px;
 }
 
-/* Label Styling */
-label {
-    font-weight: bold;
-    font-size: 14px;
-    color: #CCCCCC;
-    text-transform: uppercase;
-}
-
-/* Input Fields */
-input[type="email"], input[type="password"] {
+input[type="text"] {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
     border: 2px solid #FFD700;
     border-radius: 5px;
     background-color: #F5F5F5;
@@ -63,7 +51,7 @@ input[type="email"], input[type="password"] {
     transition: transform 0.3s ease;
 }
 
-input[type="email"]:focus, input[type="password"]:focus {
+input[type="text"]:focus {
     border-color: #00FF00;
     outline: none;
     transform: scale(1.05);
@@ -71,7 +59,6 @@ input[type="email"]:focus, input[type="password"]:focus {
 
 /* Button Styling */
 button {
-    width: 100%;
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
@@ -83,9 +70,9 @@ button {
     text-transform: uppercase;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: all 0.5s linear;
-    position: relative; /* Ensure the button is a containing block for the pseudo-element */
-    overflow: hidden; /* Prevent the glow from spilling outside the button */
-    display: inline-block; /* Ensure proper sizing of the button */
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
 }
 
 button:hover {
@@ -94,7 +81,7 @@ button:hover {
     color: #000000;
 }
 
-/* Button Reflective Glow Effect */
+/* Button Glow Effect */
 button:hover:before {
     content: '';
     position: absolute;
@@ -104,24 +91,47 @@ button:hover:before {
     height: 140%; /* Scale the glow to cover the button */
     background: radial-gradient(circle, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 80%);
     animation: glow 1.00s infinite ease-in-out;
-    z-index: -1; /* Keep the glow behind the button text */
-    pointer-events: none; /* Prevent the pseudo-element from interfering with hover */
+    z-index: -1;
+    pointer-events: none;
 }
 
-/* Glow Animation */
 @keyframes glow {
     0% {
-        transform: translateX(-100%);
+        transform: translateX(-100%)
     }
     100% {
         transform: translateX(100%);
     }
 }
 
-/* Form Group */
-.form-group {
-    margin-bottom: 15px;
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
     text-align: left;
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    color: #FFFFFF;
+}
+
+table th {
+    background-color: #FFD700;
+    color: #333333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+table tbody tr:hover {
+    background-color: rgba(255, 255, 0, 0.2);
+    cursor: pointer;
 }
 
 /* Placeholder Styling */
@@ -131,12 +141,16 @@ input::placeholder {
 
 /* Responsive Design */
 @media (max-width: 600px) {
-    form {
+    .container {
         width: 90%;
         padding: 15px;
     }
 
     button {
         font-size: 14px;
+    }
+
+    table th, table td {
+        font-size: 12px;
     }
 }

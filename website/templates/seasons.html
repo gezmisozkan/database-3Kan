@@ -1,51 +1,50 @@
 {%extends "base.html"%} {% block title %}Seasons{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <h1 class="mb-4">Seasons Table</h1>
-    <form action="/seasons" method="GET" class="mb-4">
-        <div class="row g-3">
-            <div class="col">
-                <input type="text" name="season" class="form-control" placeholder="Season (e.g., 2002)">
-            </div>
-            <div class="col">
-                <input type="text" name="tier" class="form-control" placeholder="Tier (e.g., 3)">
-            </div>
-            <div class="col">
-                <input type="text" name="division" class="form-control" placeholder="Division (e.g., First Division)">
-            </div>
-            <div class="col">
-                <button type="submit" class="btn btn-primary">Search</button>
-            </div>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/seasons.css') }}">
+<h1 class="mb-4">Seasons Table</h1>
+<form action="/seasons" method="GET" class="mb-4">
+    <div class="row g-3">
+        <div class="col">
+            <input type="text" name="season" class="form-control" placeholder="Season (e.g., 2002)">
         </div>
-    </form>
+        <div class="col">
+            <input type="text" name="tier" class="form-control" placeholder="Tier (e.g., 3)">
+        </div>
+        <div class="col">
+            <input type="text" name="division" class="form-control" placeholder="Division (e.g., First Division)">
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+</form>
 
-    {% if seasons %}
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Key ID</th>
-                <th>Season ID</th>
-                <th>Season</th>
-                <th>Tier</th>
-                <th>Division</th>
-                <th>Subdivision</th>
-                <th>Winner</th>
-                <th>Team Count</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for season in seasons %}
-            <tr>
-                {% for attribute in season %}
-                <td>{{ attribute }}</td>
-                {% endfor %}
-            </tr>
+{% if seasons %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Key ID</th>
+            <th>Season ID</th>
+            <th>Season</th>
+            <th>Tier</th>
+            <th>Division</th>
+            <th>Subdivision</th>
+            <th>Winner</th>
+            <th>Team Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for season in seasons %}
+        <tr>
+            {% for attribute in season %}
+            <td>{{ attribute }}</td>
             {% endfor %}
-        </tbody>
-    </table>
-    {% else %}
-    <p>No results found.</p>
-    {% endif %}
-</div>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No results found.</p>
+{% endif %}
 {% endblock content %}
