@@ -3,6 +3,7 @@
 {% block title %}Team Details - {{ team['team_name'] }}{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/team_details.css') }}">
 <h1>{{ team['team_name'] }} Details</h1>
 
 <h2>Recent Matches</h2>

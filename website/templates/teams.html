@@ -3,6 +3,7 @@
 {% block title %}Teams List{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/teams.css') }}">
 <h1 class="mb-4">Teams</h1>
 
 <form method="GET" action="/teams" class="form-inline mb-4">

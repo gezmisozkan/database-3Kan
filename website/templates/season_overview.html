@@ -3,6 +3,7 @@
 {% block title %}Season Overview - {{ season['season'] }}{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/season_overview.css') }}">
 <h1 class="mb-4">Season Overview: {{ season['season'] }} - {{ season['tier'] }}</h1>
 
 <h2>Basic Info</h2>

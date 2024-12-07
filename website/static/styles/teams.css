@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+h1 {
+    text-align: center;
+    font-family: 'Russo One', sans-serif;
+    color: #FFD700;
+    margin-bottom: 20px;
+}
+
+/* General Body Styling */
+body {
+    background: linear-gradient(45deg, #0B6623, #FFFFFF, #21618C);
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    animation: fade-in 0.5s ease-in forwards;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Container Styling */
+.container.mt-5 {
+    max-width: 1000px;
+    margin: 50px auto;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Form Styling */
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+    font-size: 14px;
+    color: #333333;
+    transition: transform 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #00FF00;
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #FF4500, #FFD700);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s linear;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+button:hover {
+    box-shadow: 0 0 15px #FFD700, 0 0 25px #FF4500;
+    filter: blur(0) brightness(1.1);
+    color: #000000;
+}
+
+/* Button Glow Effect */
+button:hover:before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 80%);
+    animation: glow 1.00s infinite ease-in-out;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes glow {
+    0% {
+        transform: translateX(-100%)
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    color: #FFFFFF;
+}
+
+table th {
+    background-color: #FFD700;
+    color: #333333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+table tbody tr:hover {
+    background-color: rgba(255, 255, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Link Button Styling */
+a.btn-info {
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00BFFF, #1E90FF);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s linear;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+a.btn-info:hover {
+    box-shadow: 0 0 15px #1E90FF, 0 0 25px #00BFFF;
+    filter: blur(0) brightness(1.1);
+    color: #000000;
+}
+
+/* Placeholder Styling */
+input::placeholder {
+    color: #888888;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    table th, table td {
+        font-size: 12px;
+    }
+}

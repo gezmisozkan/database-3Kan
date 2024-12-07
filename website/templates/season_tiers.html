@@ -3,6 +3,7 @@
 {% block title %}Tiers for {{ year }}{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/season_tiers.css') }}">
 <h1 class="mb-4">Available Tiers for {{ year }}</h1>
 
 {% if tiers %}
