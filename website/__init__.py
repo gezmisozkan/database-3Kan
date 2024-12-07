@@ -1,52 +1,60 @@
-# Bu init dosyası, website klasörünü bir Python paketi haline getirir.
 from os import path
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, g
 from flask_login import LoginManager
-from sqlalchemy import create_engine
+import mysql.connector
 
-db = SQLAlchemy() #Database objesi oluşturuldu
-DB_NAME = "../database.db" # Database ismi belirlendi
-
-# MySQL connection string
-MYSQL_DB_URI = 'mysql+mysqlconnector://root:1234@localhost/3kan'
+DB_NAME = "../database.db"  # Unused, but kept for reference
 
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'Hakan1234'
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}' # Database bağlantısı yapıldı
-    db.init_app(app) # Database objesi app ile ilişkilendirildi 
-
-    # MySQL configuration (create a separate engine)
-    mysql_engine = create_engine(MYSQL_DB_URI)
-    
     # Blueprints for modularity
     from .views import views
     from .auth import auth
 
-
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
 
-    from .models import User, Note 
-    with app.app_context():
-        db.create_all()
-    
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
     login_manager.init_app(app)
-    
+
     @login_manager.user_loader
-    def load_user(id):
-        return User.query.get(int(id))
+    def load_user(user_id):
+        try:
+            cursor = g.db.cursor(dictionary=True)
+            query = "SELECT * FROM User WHERE id = %s"
+            cursor.execute(query, (user_id,))
+            user = cursor.fetchone()
+        except mysql.connector.Error as e:
+            print(f"MySQL error occurred: {e}")
+            user = None
+        finally:
+            cursor.close()
 
-    def create_database(app): # Database yoksa oluşturulacak
-        if not path.exists('website/' + DB_NAME):
-            db.create_all(app=app)
-            print('Created Database!')
+        return user
 
-    # Attach MySQL engine for direct SQL execution
-    app.mysql_engine = mysql_engine
-    
+    @app.before_request
+    def connect_to_database():
+        """
+        Establishes a connection to the MySQL database before each request.
+        """
+        if 'db' not in g:
+            g.db = mysql.connector.connect(
+                host='localhost',
+                user='root',
+                password='1234',
+                database='3kan'
+            )
+
+    @app.teardown_request
+    def close_database_connection(exception=None):
+        """
+        Closes the MySQL connection after each request.
+        """
+        db = g.pop('db', None)
+        if db is not None:
+            db.close()
+
     return app

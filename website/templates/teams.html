@@ -20,12 +20,12 @@
     <tbody>
         {% for team in teams %}
         <tr>
-            <td>{{ team.team_name }}</td>
+            <td>{{ team['team_name'] }}</td>  <!-- Corrected dictionary access -->
             <td>
-                <a class="btn btn-info btn-sm" href="{{ url_for('views.team_details', team_id=team.team_id) }}">View Details</a>
+                <a class="btn btn-info btn-sm" href="{{ url_for('views.team_details', team_id=team['team_id']) }}">View Details</a>
             </td>
         </tr>
-        {% endfor %}
+        {% endfor %}        
     </tbody>
 </table>
 

@@ -13,7 +13,7 @@ config = {
 DATABASE_NAME = '3kan'
 
 # Path to your folder containing the additional .sql files
-sql_files_directory = '../sql-queries'
+sql_files_directory = 'sql-queries'
 
 def rebuild_database(config, database_name, sql_files_directory):
     try:

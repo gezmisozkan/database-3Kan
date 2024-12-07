@@ -26,25 +26,32 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/teams">Teams</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="/matches">All Matches</a>
+                </li>
                 <!-- Dropdown for Seasons -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="seasonsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Seasons
                     </a>
                     <div class="dropdown-menu" aria-labelledby="seasonsDropdown">
-                        
-                        <!-- Display each recent season as a link -->
-                        {% for season in g.recent_seasons %}
-                            <a class="dropdown-item" href="{{ url_for('views.season_tiers', year=season) }}">
-                                {{ season }}
-                            </a>
-                        {% endfor %}
                 
-                        <div class="dropdown-divider"></div>
+                        {% if g.recent_seasons %}
+                            <!-- Display each recent season as a link -->
+                            {% for season in g.recent_seasons %}
+                                <a class="dropdown-item" href="{{ url_for('views.season_tiers', year=season) }}">
+                                    {{ season }}
+                                </a>
+                            {% endfor %}
+                            <div class="dropdown-divider"></div>
+                        {% else %}
+                            <a class="dropdown-item disabled">No Recent Seasons Available</a>
+                        {% endif %}
+                
                         <a class="dropdown-item" href="/seasons">View All Seasons</a>
                     </div>
                 </li>
+                
 
             <ul class="navbar-nav ml-auto">
                 {% if current_user.is_authenticated %}
