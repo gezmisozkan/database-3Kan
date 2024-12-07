@@ -6,26 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>
-        {% block title %}Home{% endblock %}
-    </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>{% block title %}Home{% endblock %}</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">FootballDB</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
-            <span class="navbar-toggler-icon" style="color: black;"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbar">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" href="/login">Login</a>
-                <a class="nav-item nav-link" href="/sign-up">Sign Up</a>
-                <a class="nav-item nav-link" href="/logout">Logout</a>
-                <a class="nav-item nav-link" href="/home">Home</a>
-                <a class="nav-item nav-link" href="/teams">Teams</a>
-                <a class="nav-item nav-link" href="/seasons">Seasons</a>
-            </div>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/teams">Teams</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/matches">All Matches</a>
+                </li>
+                <!-- Dropdown for Seasons -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="seasonsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Seasons
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="seasonsDropdown">
+                
+                        {% if g.recent_seasons %}
+                            <!-- Display each recent season as a link -->
+                            {% for season in g.recent_seasons %}
+                                <a class="dropdown-item" href="{{ url_for('views.season_tiers', year=season) }}">
+                                    {{ season }}
+                                </a>
+                            {% endfor %}
+                            <div class="dropdown-divider"></div>
+                        {% else %}
+                            <a class="dropdown-item disabled">No Recent Seasons Available</a>
+                        {% endif %}
+                
+                        <a class="dropdown-item" href="/seasons">View All Seasons</a>
+                    </div>
+                </li>
+                
+
+            <ul class="navbar-nav ml-auto">
+                {% if current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sign-up">Sign Up</a>
+                    </li>
+                {% endif %}
+            </ul>
         </div>
     </nav>
 
@@ -73,17 +114,10 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
-
 </body>
 
 </html>

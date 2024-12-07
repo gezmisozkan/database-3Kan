@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Team Details - {{ team['team_name'] }}{% endblock %}
+
+{% block content %}
+<h1>{{ team['team_name'] }} Details</h1>
+
+<h2>Recent Matches</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Match</th>
+            <th>Home Team</th>
+            <th>Away Team</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for match in matches %}
+        <tr>
+            <td><a href="{{ url_for('views.match_details', match_id=match['match_id']) }}">{{ match['match_name'] }}</a></td>
+            <td><a 
+                href="{{ url_for('views.team_details', team_id=match['home_team_id']) }}" 
+                onclick="if(window.location.pathname === this.pathname) location.reload();">
+                {{ match['home_team'] }}
+            </a></td>
+            <td><a 
+                href="{{ url_for('views.team_details', team_id=match['away_team_id']) }}" 
+                onclick="if(window.location.pathname === this.pathname) location.reload();">
+                {{ match['away_team'] }}
+            </a></td>
+            <td>{{ match['score'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{{ url_for('views.teams') }}" class="btn btn-dark mt-4">Back to Teams</a>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}Season Overview - {{ season['season'] }}{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Season Overview: {{ season['season'] }} - {{ season['tier'] }}</h1>
+
+<h2>Basic Info</h2>
+<ul class="list-group mb-4">
+    <li class="list-group-item"><strong>Tier:</strong> {{ season['tier'] }}</li>
+    <li class="list-group-item"><strong>Division:</strong> {{ season['division'] }}</li>
+    <li class="list-group-item"><strong>Subdivision:</strong> {{ season['subdivision'] or 'None' }}</li>
+    <li class="list-group-item"><strong>Winner:</strong> {{ season['winner'] }}</li>
+    <li class="list-group-item"><strong>Number of Teams:</strong> {{ season['count_teams'] }}</li>
+</ul>
+
+<h2>Matches</h2>
+<table class="table table-bordered table-striped mb-4">
+    <thead>
+        <tr>
+            <th>Match</th>
+            <th>Home Team</th>
+            <th>Away Team</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for match in matches %}
+        <tr>
+            <td><a href="{{ url_for('views.match_details', match_id=match['match_id']) }}">{{ match['match_name'] }}</a></td>
+            <td>{{ match['home_team'] }}</td>
+            <td>{{ match['away_team'] }}</td>
+            <td>{{ match['score'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h2>Standings</h2>
+<table class="table table-bordered table-striped mb-4">
+    <thead>
+        <tr>
+            <th>Team</th>
+            <th>Position</th>
+            <th>Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for standing in standings %}
+        <tr>
+            <td><a href="{{ url_for('views.team_details', team_id=standing['team_id']) }}">{{ standing['team_name'] }}</a></td>
+            <td>{{ standing['position'] }}</td>
+            <td>{{ standing['points'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a class="btn btn-dark mt-4" href="{{ url_for('views.home') }}">Back to Home</a>
+{% endblock %}
