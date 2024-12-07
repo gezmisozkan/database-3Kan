@@ -1,49 +1,33 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+
+{% block title %}Teams List{% endblock %}
 
 {% block content %}
-<h1 class="mb-4">Football Matches</h1>
-<form method="post" class="mb-4">
-    <div class="row">
-        <div class="col-md-6">
-            <select name="team" class="form-select" required>
-                <option value="" disabled selected>Select a team</option>
-                {% for team in teams %}
-                    <option value="{{ team }}" {% if team == selected_team %}selected{% endif %}>{{ team }}</option>
-                {% endfor %}
-            </select>
-        </div>
-        <div class="col-md-2">
-            <button type="submit" class="btn btn-primary">Show Matches</button>
-        </div>
-    </div>
+<h1 class="mb-4">Teams</h1>
+
+<form method="GET" action="/teams" class="form-inline mb-4">
+    <input type="text" name="search" class="form-control mr-2" value="{{ search_query }}" placeholder="Search teams">
+    <button type="submit" class="btn btn-primary">Search</button>
 </form>
 
-{% if matches %}
-    <h2>Matches for {{ selected_team }}</h2>
-    <table class="table table-striped">
-        <thead>
+<table class="table table-bordered table-striped">
+    <thead>
         <tr>
-            <th>Match ID</th>
-            <th>Home Team</th>
-            <th>Away Team</th>
-            <th>Home Goals</th>
-            <th>Away Goals</th>
+            <th>Team Name</th>
+            <th>Actions</th>
         </tr>
-        </thead>
-        <tbody>
-        {% for match in matches %}
-            <tr>
-                <td>{{ match[0] }}</td>
-                <td>{{ match[1] }}</td>
-                <td>{{ match[2] }}</td>
-                <td>{{ match[3] }}</td>
-                <td>{{ match[4] }}</td>
-                <td>{{ match[5] }}</td>
-            </tr>
+    </thead>
+    <tbody>
+        {% for team in teams %}
+        <tr>
+            <td>{{ team.team_name }}</td>
+            <td>
+                <a class="btn btn-info btn-sm" href="{{ url_for('views.team_details', team_id=team.team_id) }}">View Details</a>
+            </td>
+        </tr>
         {% endfor %}
-        </tbody>
-    </table>
-{% elif selected_team %}
-    <p>No matches found for {{ selected_team }}.</p>
-{% endif %}
+    </tbody>
+</table>
+
+<a href="{{ url_for('views.home') }}" class="btn btn-dark mt-4">Back to Home</a>
 {% endblock %}

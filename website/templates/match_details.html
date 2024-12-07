@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Match Details - {{ match.match_name }}{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Match Details: {{ match.match_name }}</h1>
+
+<h2>Basic Info</h2>
+<ul class="list-group mb-4">
+    <li class="list-group-item"><strong>Home Team:</strong> 
+        <a href="{{ url_for('views.team_details', team_id=match.home_team_id) }}">{{ match.home_team }}</a>
+    </li>
+    <li class="list-group-item"><strong>Away Team:</strong> 
+        <a href="{{ url_for('views.team_details', team_id=match.away_team_id) }}">{{ match.away_team }}</a>
+    </li>
+    <li class="list-group-item"><strong>Score:</strong> {{ match.score }}</li>
+</ul>
+
+<h2>Player Appearances</h2>
+<table class="table table-bordered table-striped mb-4">
+    <thead>
+        <tr>
+            <th>Team</th>
+            <th>Goals For</th>
+            <th>Goals Against</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for appearance in appearances %}
+        <tr>
+            <td><a href="{{ url_for('views.team_details', team_id=appearance.team_id) }}">{{ appearance.team_name }}</a></td>
+            <td>{{ appearance.goals_for }}</td>
+            <td>{{ appearance.goals_against }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a class="btn btn-dark mt-4" href="{{ url_for('views.home') }}">Back to Home</a>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Tiers for {{ year }}{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Available Tiers for {{ year }}</h1>
+
+{% if tiers %}
+    <ul class="list-group">
+        {% for tier in tiers %}
+            <li class="list-group-item">
+                <a href="{{ url_for('views.season_overview', season_id=tier.season_id) }}">
+                    Tier {{ tier.tier }} 
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No tiers available for this season.</p>
+{% endif %}
+
+<a href="{{ url_for('views.home') }}" class="btn btn-dark mt-4">Back to Home</a>
+{% endblock %}
