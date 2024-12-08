@@ -18,21 +18,21 @@ def login():
             query = "SELECT * FROM User WHERE email = %s"
             cursor.execute(query, (email,))
             user_data = cursor.fetchone()
-            
-            if user_data:
-                user = User.from_dict(user_data)  # Convert dictionary to User object
-                if check_password_hash(user.password, password):
-                    flash('Logged in successfully!', category='success')
-                    login_user(user, remember=True)  # Pass the User object, not the dictionary
-                    return redirect(url_for('views.home'))
-                else:
-                    flash('Incorrect password, try again.', category='error')
-            else:
-                flash('Email does not exist.', category='error')
         except mysql.connector.Error as e:
             print(f"MySQL error occurred: {e}")
         finally:
             cursor.close()
+        
+        if user_data:
+            user = User.from_dict(user_data)  # Convert dictionary to User object
+            if user.password == password:  # Assuming plain text password for simplicity
+                flash('Logged in successfully!', category='success')
+                login_user(user, remember=True)  # Pass the User object to login_user()
+                return redirect(url_for('views.home'))
+            else:
+                flash('Incorrect password, try again.', category='error')
+        else:
+            flash('Email does not exist.', category='error')
     
     return render_template('login.html')
 
