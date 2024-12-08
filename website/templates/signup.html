@@ -5,21 +5,22 @@
 <form method="POST">
     <h3 align="center">Sign up</h3>
     <div class="form-group">
-        <label for="email">Email Address</label> <!-- Inputun idsi ile eşleşmeli-->
-        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email"/>
+        <label for="email">Email Address</label> 
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required
+        value="{{ form_data['email'] if form_data and form_data['email'] else '' }}" />
     </div>
-        <!-- Name attribute ise server'a gönderilen key değeridir.-->
     <div class="form-group">
         <label for="firstName">First Name</label>
-        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter first name"/>
+        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter first name" required
+        value="{{ form_data['first_name'] if form_data and form_data['first_name'] else '' }}" />
     </div>
     <div class="form-group">
         <label for="password1">Password</label>
-        <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter password"/>
+        <input type="password" class="form-control" id="password1" name="password1" placeholder="Enter password" required/>
     </div>
     <div class="form-group">
         <label for="password2">Password</label>
-        <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm password "/>
+        <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm password" required/>
     </div>
     <br/> 
     <button type="submit" class="btn btn-primary">

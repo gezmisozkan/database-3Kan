@@ -1,0 +1,21 @@
+- SQL komutları ile tablo oluşturma işlemleri yapıldı
+- Var olan tablolar: 
+| appearances    |
+| matches        |
+| seasons        |
+| standings      |
+| teams          |
+| user           | -> kullanıcı verilerini tutuyor. Mail, isim ve hashlenmiş password
+- MySQL python ile database'e veriyi csv'lerden insert edilebiliyor
+- Login, logout ve signup yapılabiliyor
+- Kullanıcılar login olmadan da her şeyi görebiliyorlar
+- Tablolarda SQL limit komutu kullanılarak çok fazla veri yüklemenin önüne geçildi
+- Navbar ve footer bütün siteye eklendi
+- SQLAlchemy kaldırıldı, her şey MySQL ile oluyor
+- Base html sayfası bütün htmllerin temeli, hepsi onun üstüne inşa ediliyor
+- Login ve logouttan sonra geri bildirim eklendi
+- Login ve singupta gerekli bilgiler required oldu, bunları doldurmadan form gönderilemiyor
+- Şifreye plain text değil hashli olarak tutuluyor, kullanıcıdan başka kimse şifreyi bilemez
+- Signup olurken eğer şifre yetersizse site baştan yüklenip bütün mail ve isim bilgileri silinmiyor, girilen bilgiler devam ediyor. 
+Kullanıcının sadece yeni şifre girmesi gerekiyor
+- CSS bütün sayfalara eklendi

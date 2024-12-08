@@ -12,6 +12,11 @@ def login():
     if request.method == 'POST':
         email = request.form.get('email')
         password = request.form.get('password')
+
+        # Check if the password is empty
+        if not password:
+            flash('Password is required.', category='error')
+            return render_template('login.html')
         
         try:
             cursor = g.db.cursor(dictionary=True)
@@ -21,11 +26,12 @@ def login():
         except mysql.connector.Error as e:
             print(f"MySQL error occurred: {e}")
         finally:
-            cursor.close()
+            if cursor:
+                cursor.close()
         
         if user_data:
             user = User.from_dict(user_data)  # Convert dictionary to User object
-            if user.password == password:  # Assuming plain text password for simplicity
+            if check_password_hash(user.password, password):  # Use check_password_hash
                 flash('Logged in successfully!', category='success')
                 login_user(user, remember=True)  # Pass the User object to login_user()
                 return redirect(url_for('views.home'))
@@ -41,16 +47,28 @@ def login():
 @login_required
 def logout():
     logout_user()
+    flash('You have been logged out successfully.', category='success')
     return redirect(url_for('auth.login'))
 
 
 @auth.route('/sign-up', methods=['GET', 'POST'])
 def sign_up():
+    # Initialize form_data to ensure it exists even if an error occurs
+    form_data = {
+        'email': '',
+        'first_name': ''
+    }
     if request.method == 'POST': 
         email = request.form.get('email')
         first_name = request.form.get('firstName')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
+
+        # 🔥 Update form_data with current form inputs
+        form_data = {
+            'email': email,
+            'first_name': first_name
+        }
 
         try:
             cursor = g.db.cursor(dictionary=True)
@@ -68,6 +86,7 @@ def sign_up():
             elif len(password1) < 7:
                 flash('Password must be greater than 6 characters.', category='error')
             else:
+                #  Ensure the password is hashed properly
                 hashed_password = generate_password_hash(password1, method='scrypt')
                 insert_query = """
                     INSERT INTO User (email, password, first_name) 
@@ -85,6 +104,7 @@ def sign_up():
         except mysql.connector.Error as e:
             print(f"MySQL error occurred: {e}")
         finally:
-            cursor.close()
+            if cursor:
+                cursor.close()
     
-    return render_template('signup.html')
+    return render_template('signup.html', form_data=form_data)
