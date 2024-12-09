@@ -154,6 +154,17 @@ input::placeholder {
     display: inline-block;
 }
 
+.signup-link a:hover {
+  animation: shake 0.67s ease-in-out;
+}
+
+/* Shake Animation */
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  20%, 60% { transform: rotate(2deg); }
+  40%, 80% { transform: rotate(-2deg); }
+}
+
 .signup-link a::after {
     content: '';
     position: absolute;
