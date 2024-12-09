@@ -11,3 +11,5 @@ Admin yorumları silebilsin
 Yorum atma özelliği gelsin
 Foreign key kullanarak tablolar oluştur
 
+teams sayfasında css kötü
+
