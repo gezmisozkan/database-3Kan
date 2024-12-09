@@ -2,8 +2,6 @@ footer'daki linkler işlevselleştirilmeli
 
 home page sayfası boş, yeni bir şeyler eklenmeli ve css home page için çalışmıyor
 
-FRONTEND'DE ACİL ÇALIŞMA GEREK --- AYRICA KODU LÜTFEN İNGİLİZCE YORUMLARLA AÇIKLAYIN
-
 seasons henüz bitmedi, üzerinde çalışılacak
 
 Login şifre kurallarını info kısmı oluşturup kullanıcıya göstermek daha iyi olur

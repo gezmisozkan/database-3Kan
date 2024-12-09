@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+
+<div class="home-container">
+    <header class="hero">
+        <h1>Welcome to FootballDB</h1>
+        <p>Your comprehensive hub for exploring the world of football—players, teams, matches, and beyond.</p>
+    </header>
+
+    <section class="about">
+        <h2>About the Database</h2>
+        <p>
+            This football database provides enthusiasts, analysts, and professionals with a vast repository of football information. From historical records to up-to-date statistics, it covers all aspects of the beautiful game.
+        </p>
+        <p>
+            Whether you’re searching for player profiles, tracking team performance, or analyzing match results, this is your ultimate platform for all things football.
+        </p>
+    </section>
+
+    <section class="contributors">
+        <h2>The Team Behind the Database</h2>
+        <p>This project is brought to you by:</p>
+        <ul class="contributors-list">
+            <li><strong>Okan Zagor A.</strong> – Developer and System Analyst</li>
+            <li><strong>Hakan Cetinkaya</strong> – Football Enthusiast and Database Designer</li>
+            <li><strong>Ozkan Gezmis</strong> – Data Specialist and Backend Developer</li>
+        </ul>
+        <p>We are passionate about creating a tool that celebrates and supports the global football community.</p>
+    </section>
+
+    <section class="cta">
+        <h2>Get Started</h2>
+        <p>
+            Dive into the database, explore player stats, analyze match history, and stay ahead in the game.
+        </p>
+        <a href="{{ url_for('auth.login') }}" class="btn btn-primary">Login to Explore</a>
+    </section>
+</div>
+{% endblock %}

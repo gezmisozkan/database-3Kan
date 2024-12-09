@@ -1,51 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+/* General Body Styling */
+body {
+    background: linear-gradient(45deg, #0B6623, #FFFFFF, #21618C);
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    animation: fade-in 0.5s ease-in forwards;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Form Styling */
 form {
-    max-width: 500px;
-    margin: 50px auto;
+    max-width: 400px;
+    margin: 100px auto;
     padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+    text-align: center;
 }
 
 h3 {
-    color: #343a40;
+    text-align: center;
+    font-family: 'Russo One', sans-serif;
+    color: #FFD700;
     margin-bottom: 20px;
 }
 
-.form-group {
-    margin-bottom: 15px;
+/* Label Styling */
+label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #CCCCCC;
+    text-transform: uppercase;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #495057;
-}
-
-.form-control {
+/* Input Fields */
+input[type="email"], input[type="text"], input[type="password"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    box-sizing: border-box;
+    margin: 10px 0;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    background-color: #F5F5F5;
+    font-size: 14px;
+    color: #333333;
+    transition: transform 0.3s ease;
 }
 
-.form-control:focus {
-    border-color: #80bdff;
+input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #00FF00;
     outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    transform: scale(1.05);
 }
 
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+/* Button Styling */
+button {
+    width: 100%;
     padding: 10px 20px;
-    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #FF4500, #FFD700);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s linear;
+    position: relative; /* Ensure the button is a containing block for the pseudo-element */
+    overflow: hidden; /* Prevent the glow from spilling outside the button */
+    display: inline-block; /* Ensure proper sizing of the button */
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #004085;
+button:hover {
+    box-shadow: 0 0 15px #FFD700, 0 0 25px #FF4500;
+    filter: blur(0) brightness(1.1);
+    color: #000000;
+}
+
+/* Button Reflective Glow Effect */
+button:hover:before {
+    content: '';
+    position: absolute;
+    top: -20%; /* Slightly extend beyond the button boundaries */
+    left: -20%; /* Slightly extend beyond the button boundaries */
+    width: 140%; /* Scale the glow to cover the button */
+    height: 140%; /* Scale the glow to cover the button */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 80%);
+    animation: glow 1.00s infinite ease-in-out;
+    z-index: -1; /* Keep the glow behind the button text */
+    pointer-events: none; /* Prevent the pseudo-element from interfering with hover */
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Placeholder Styling */
+input::placeholder {
+    color: #888888;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+        padding: 15px;
+    }
+
+    button {
+        font-size: 14px;
+    }
 }

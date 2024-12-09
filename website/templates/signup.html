@@ -1,7 +1,7 @@
 {%extends "base.html"%} {% block title %}Sign up{% endblock %}
 
 {% block content %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/login.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/signup.css') }}">
 <form method="POST">
     <h3 align="center">Sign up</h3>
     <div class="form-group">
@@ -10,9 +10,9 @@
         value="{{ form_data['email'] if form_data and form_data['email'] else '' }}" />
     </div>
     <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter first name" required
-        value="{{ form_data['first_name'] if form_data and form_data['first_name'] else '' }}" />
+        <label for="fullName">Full Name</label>
+        <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your name" required
+        value="{{ form_data['full_name'] if form_data and form_data['full_name'] else '' }}" />
     </div>
     <div class="form-group">
         <label for="password1">Password</label>

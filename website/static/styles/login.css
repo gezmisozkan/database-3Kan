@@ -140,3 +140,26 @@ input::placeholder {
         font-size: 14px;
     }
 }
+
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-link a {
+    text-decoration: none;
+    color: #00ff00; /* Adjust the color to your preference */
+    font-size: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.signup-link a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dotted;
+    bottom: -2px;
+    left: 0;
+}

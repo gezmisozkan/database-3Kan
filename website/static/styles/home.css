@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* General Body Styling */
+body {
+    background: linear-gradient(45deg, #0B6623, #FFFFFF, #21618C);
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    animation: fade-in 0.5s ease-in forwards;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+/* General Typography */
+h1, h2 {
+    font-family: 'Russo One', sans-serif;
+    color: #FFD700;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #FFFFFF;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Container */
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 10px;
+    margin-bottom: 50px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.hero:hover {
+    transform: translateY(-5px); /* Slight upward movement */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8); /* Enhance shadow on hover */
+}
+
+/* Sections Styling */
+.about, .contributors, .cta {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 50px 20px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.about:hover, .contributors:hover, .cta:hover {
+    transform: translateY(-5px); /* Slight upward movement */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8); /* Enhance shadow on hover */
+}
+
+/* List Styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contributors-list li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+.contributors-list li::before {
+    content: '• ';
+    color: #FFD700;
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #FF4500, #FFD700);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s linear;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    box-shadow: 0 0 15px #FFD700, 0 0 25px #FF4500;
+    filter: brightness(1.1);
+    color: #000000;
+}
+
+.btn:hover::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 80%);
+    animation: glow 1s infinite ease-in-out;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes glow {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .hero, .about, .contributors, .cta {
+        padding: 30px 15px;
+    }
+
+    h1, h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}

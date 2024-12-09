@@ -56,18 +56,18 @@ def sign_up():
     # Initialize form_data to ensure it exists even if an error occurs
     form_data = {
         'email': '',
-        'first_name': ''
+        'full_name': ''
     }
     if request.method == 'POST': 
         email = request.form.get('email')
-        first_name = request.form.get('firstName')
+        full_name = request.form.get('fullName')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
 
         # 🔥 Update form_data with current form inputs
         form_data = {
             'email': email,
-            'first_name': first_name
+            'full_name': full_name
         }
 
         try:
@@ -76,23 +76,23 @@ def sign_up():
             user_data = cursor.fetchone()
 
             if user_data:
-                flash('Email already exists.', category='error')
+                flash('This email is already registered.', category='error')
             elif len(email) < 4:
-                flash('Email must be greater than 3 characters.', category='error')
-            elif len(first_name) < 2:
-                flash('First name must be greater than 1 character.', category='error')
+                flash('Email must be longer than 3 characters.', category='error')
+            elif len(full_name) < 2:
+                flash('Your name must be longer than 1 character.', category='error')
             elif password1 != password2:
                 flash('Passwords do not match.', category='error')
-            elif len(password1) < 7:
-                flash('Password must be greater than 6 characters.', category='error')
+            elif len(password1) < 6:
+                flash('Password must be at least 6 characters long.', category='error')
             else:
                 #  Ensure the password is hashed properly
                 hashed_password = generate_password_hash(password1, method='scrypt')
                 insert_query = """
-                    INSERT INTO User (email, password, first_name) 
+                    INSERT INTO User (email, password, full_name) 
                     VALUES (%s, %s, %s)
                 """
-                cursor.execute(insert_query, (email, hashed_password, first_name))
+                cursor.execute(insert_query, (email, hashed_password, full_name))
                 g.db.commit()
 
                 cursor.execute("SELECT * FROM User WHERE email = %s", (email,))

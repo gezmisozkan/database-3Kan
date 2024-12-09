@@ -1,11 +1,11 @@
 from flask_login import UserMixin
 
 class User(UserMixin):
-    def __init__(self, id, email, password, first_name):
+    def __init__(self, id, email, password, full_name):
         self.id = id
         self.email = email
         self.password = password
-        self.first_name = first_name
+        self.full_name = full_name
 
     @classmethod
     def from_dict(cls, user_dict):
@@ -16,7 +16,7 @@ class User(UserMixin):
             id=user_dict['id'],
             email=user_dict['email'],
             password=user_dict['password'],
-            first_name=user_dict['first_name']
+            full_name=user_dict['full_name']
         )
 
     def get_id(self):

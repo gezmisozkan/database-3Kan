@@ -10,7 +10,7 @@ def connect_to_database():
         g.db = mysql.connector.connect(
             host='localhost',
             user='root',
-            password='1234',
+            password='root',
             database='3kan'
         )
 
@@ -20,10 +20,12 @@ def close_database_connection(exception=None):
     if db is not None:
         db.close()
 
-@views.route('/', methods=['GET'])
-@views.route('/home', methods=['GET'])
+@views.route("/")
 def home():
-    return render_template("base.html", user=current_user)
+    """
+    Renders the home page for the football database.
+    """
+    return render_template("home.html")  # Assumes the homepage template is named 'home.html'
 
 @views.before_app_request
 def load_recent_seasons():

@@ -46,7 +46,7 @@ def create_app():
             g.db = mysql.connector.connect(
                 host='localhost',
                 user='root',
-                password='1234',
+                password='root',
                 database='3kan'
             )
 
