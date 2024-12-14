@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Panel{% endblock %}
+
+{% block content %}
+<h1>Admin Panel</h1>
+
+<h2>Manage Teams</h2>
+<a href="{{ url_for('views.teams') }}" class="btn btn-primary mb-4">Manage Teams</a>
+
+<h2>Manage Matches</h2>
+<a href="{{ url_for('views.matches') }}" class="btn btn-primary mb-4">Manage Matches</a>
+
+<h2>Manage Seasons</h2>
+<a href="{{ url_for('views.search_seasons') }}" class="btn btn-primary mb-4">Manage Seasons</a>
+
+{% endblock %}

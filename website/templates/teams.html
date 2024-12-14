@@ -20,14 +20,20 @@
         </tr>
     </thead>
     <tbody>
-        {% for team in teams %}
-        <tr>
-            <td>{{ team['team_name'] }}</td>
-            <td>
-                <a class="btn btn-info btn-sm" href="{{ url_for('views.team_details', team_id=team['team_id']) }}">View Details</a>
-            </td>
-        </tr>
-        {% endfor %}
+      {% for team in teams %}
+      <tr>
+          <td>{{ team['team_name'] }}</td>
+          <td>
+              <a class="btn btn-info btn-sm" href="{{ url_for('views.team_details', team_id=team['team_id']) }}">View Details</a>
+              
+              {% if current_user.is_authenticated and current_user.role == 'admin' %}
+              <form method="POST" action="{{ url_for('views.delete_team', team_id=team['team_id']) }}" style="display:inline;">
+                  <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+              </form>
+              {% endif %}
+          </td>
+      </tr>
+      {% endfor %}
     </tbody>
 </table>
 

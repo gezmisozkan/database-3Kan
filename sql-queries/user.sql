@@ -1,6 +1,8 @@
 CREATE TABLE User (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(150) UNIQUE NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
-    full_name VARCHAR(150) NOT NULL
+    full_name VARCHAR(100) NOT NULL,
+    role ENUM('admin', 'user') DEFAULT 'user',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

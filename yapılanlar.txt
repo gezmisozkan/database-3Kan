@@ -20,3 +20,5 @@
 Kullanıcının sadece yeni şifre girmesi gerekiyor
 - CSS bütün sayfalara eklendi
 -- Pagination eklendi
+-- Admin panel eklendi
+-- Admin maçları, sezonları ve takımları silebiliyor, buton sadece admine görünüyor

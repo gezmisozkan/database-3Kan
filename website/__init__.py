@@ -21,6 +21,8 @@ def create_app():
     from .models import User  # Import the User class
     @login_manager.user_loader
     def load_user(user_id):
+        if user_id == '1':  # Do not restore the admin user
+            return None
         try:
             cursor = g.db.cursor(dictionary=True)
             query = "SELECT * FROM User WHERE id = %s"

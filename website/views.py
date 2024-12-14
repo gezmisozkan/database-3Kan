@@ -1,5 +1,5 @@
 import mysql.connector
-from flask import Blueprint, render_template, request, g, redirect, url_for
+from flask import Blueprint, render_template, request, g, redirect, url_for, flash
 from flask_login import login_required, current_user
 
 views = Blueprint('views', __name__)
@@ -42,7 +42,7 @@ def load_recent_seasons():
     finally:
         cursor.close()
         
-@views.route('/seasons/<int:year>', methods=['GET'])
+@views.route('/seasons/<year>', methods=['GET'])
 def season_tiers(year):
     """
     This view displays all available tiers for the selected season year.
@@ -145,11 +145,22 @@ def matches():
             total_results = cursor.fetchone()['total']
             total_pages = (total_results // per_page) + (1 if total_results % per_page > 0 else 0)
 
+            # Get match details and team IDs
             match_query = """
-                SELECT match_id, home_team_name, away_team_name, home_team_score, away_team_score
-                FROM matches
-                WHERE home_team_name = %s OR away_team_name = %s
-                ORDER BY match_id DESC 
+                SELECT 
+                    m.match_id, 
+                    m.match_name,
+                    m.home_team_name, 
+                    m.away_team_name, 
+                    t1.team_id AS home_team_id, 
+                    t2.team_id AS away_team_id, 
+                    m.home_team_score, 
+                    m.away_team_score
+                FROM matches m
+                JOIN teams t1 ON m.home_team_name = t1.team_name 
+                JOIN teams t2 ON m.away_team_name = t2.team_name 
+                WHERE m.home_team_name = %s OR m.away_team_name = %s
+                ORDER BY m.match_id DESC 
                 LIMIT %s OFFSET %s
             """
             cursor.execute(match_query, (selected_team, selected_team, per_page, offset))
@@ -296,3 +307,87 @@ def match_details(match_id):
 
     return render_template("match_details.html", match=match_info)
 
+
+@views.route('/delete-team/<team_id>', methods=['POST'])
+@login_required
+def delete_team(team_id):
+    if current_user.role != 'admin':
+        flash('Only admins can delete teams.', 'error')
+        return redirect(url_for('views.teams'))
+    
+    try:
+        cursor = g.db.cursor()
+        cursor.execute("DELETE FROM teams WHERE team_id = %s", (team_id,))
+        g.db.commit()
+        flash(f'Team deleted successfully!', 'success')
+    except mysql.connector.Error as e:
+        flash(f'Failed to delete team: {e}', 'error')
+    finally:
+        cursor.close()
+    
+    return redirect(url_for('views.teams'))
+
+@views.route('/delete-match/<match_id>', methods=['POST'])
+@login_required
+def delete_match(match_id):
+    """
+    Route to delete a match from the database.
+    The user is redirected back to the current page for the selected team.
+    """
+    if current_user.role != 'admin':
+        flash('Only admins can delete matches.', 'error')
+        return redirect(url_for('views.matches'))
+
+    page = request.form.get('page', 1)
+    selected_team = request.form.get('selected_team')
+
+    try:
+        cursor = g.db.cursor()
+        
+        # Delete the match from the Matches table
+        cursor.execute("DELETE FROM Matches WHERE match_id = %s", (match_id,))
+        g.db.commit()
+        
+        flash(f'Match {match_id} deleted successfully!', 'success')
+    except mysql.connector.Error as e:
+        flash(f'An error occurred while deleting match {match_id}: {e}', 'error')
+    finally:
+        cursor.close()
+    
+    return redirect(url_for('views.matches', page=page, selected_team=selected_team))
+
+
+@views.route('/admin', methods=['GET'])
+@login_required
+def admin_dashboard():
+    if current_user.role != 'admin':
+        flash('Only admins can access the admin panel.', 'error')
+        return redirect(url_for('views.home'))
+    
+    return render_template('admin.html')
+
+@views.route('/delete-season/<season_id>', methods=['POST'])
+@login_required
+def delete_season(season_id):
+    """
+    Route to delete a season from the database.
+    Only admin users can delete a season.
+    """
+    if current_user.role != 'admin':
+        flash('Only admins can delete seasons.', 'error')
+        return redirect(url_for('views.search_seasons'))
+
+    try:
+        cursor = g.db.cursor()
+        
+        # Delete the season from the Seasons table
+        cursor.execute("DELETE FROM Seasons WHERE season_id = %s", (season_id,))
+        g.db.commit()
+        
+        flash(f'Season {season_id} deleted successfully!', 'success')
+    except mysql.connector.Error as e:
+        flash(f'An error occurred while deleting season {season_id}: {e}', 'error')
+    finally:
+        cursor.close()
+    
+    return redirect(url_for('views.search_seasons'))

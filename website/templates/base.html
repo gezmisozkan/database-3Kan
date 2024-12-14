@@ -63,6 +63,11 @@
                         <a class="nav-link" href="/sign-up">Sign Up</a>
                     </li>
                 {% endif %}
+                {% if current_user.role == 'admin' %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin">Admin Panel</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
