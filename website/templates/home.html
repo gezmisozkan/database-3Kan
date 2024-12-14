@@ -25,18 +25,28 @@
         <p>This project is brought to you by:</p>
         <ul class="contributors-list">
             <li><strong>Okan Zagor A.</strong> – Developer and System Analyst</li>
-            <li><strong>Hakan Cetinkaya</strong> – Football Enthusiast and Database Designer</li>
-            <li><strong>Ozkan Gezmis</strong> – Data Specialist and Backend Developer</li>
+            <li><strong>Hakan Çetinkaya</strong> – Football Enthusiast and Database Designer</li>
+            <li><strong>Özkan Gezmiş</strong> – Data Specialist and Backend Developer</li>
         </ul>
         <p>We are passionate about creating a tool that celebrates and supports the global football community.</p>
     </section>
 
-    <section class="cta">
-        <h2>Get Started</h2>
-        <p>
-            Dive into the database, explore player stats, analyze match history, and stay ahead in the game.
-        </p>
-        <a href="{{ url_for('auth.login') }}" class="btn btn-primary">Login to Explore</a>
-    </section>
+    {% if current_user.is_authenticated %}
+        <section class="cta">
+            <h2>Explore the Database</h2>
+            <p>
+                Dive into the database, explore player stats, analyze match history, and stay ahead in the game.
+            </p>
+            <a href="{{ url_for('views.teams') }}" class="btn btn-primary">View Teams</a>
+        </section>
+    {% else %}
+        <section class="cta">
+            <h2>Get Started</h2>
+            <p>
+                Dive into the database, explore player stats, analyze match history, and stay ahead in the game.
+            </p>
+            <a href="{{ url_for('auth.login') }}" class="btn btn-primary">Login to Explore</a>
+        </section>
+    {% endif %}
 </div>
 {% endblock %}

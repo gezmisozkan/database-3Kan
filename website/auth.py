@@ -64,7 +64,7 @@ def sign_up():
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
 
-        # 🔥 Update form_data with current form inputs
+        # Update form_data with current form inputs
         form_data = {
             'email': email,
             'full_name': full_name

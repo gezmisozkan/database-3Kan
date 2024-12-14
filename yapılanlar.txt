@@ -19,3 +19,4 @@
 - Signup olurken eğer şifre yetersizse site baştan yüklenip bütün mail ve isim bilgileri silinmiyor, girilen bilgiler devam ediyor. 
 Kullanıcının sadece yeni şifre girmesi gerekiyor
 - CSS bütün sayfalara eklendi
+-- Pagination eklendi

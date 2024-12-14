@@ -7,11 +7,11 @@
     <div class="row">
         <div class="col-md-6">
             <select name="team" class="form-select" required>
-                <option value="" disabled selected>Select a team</option>
+                <option value="" disabled {% if not selected_team %}selected{% endif %}>Select a team</option>
                 {% for team in teams %}
-                    <option value="{{ team }}" {% if team == selected_team %}selected{% endif %}>{{ team }}</option>
+                  <option value="{{ team }}" {% if team == selected_team %}selected{% endif %}>{{ team }}</option>
                 {% endfor %}
-            </select>
+             </select>             
         </div>
         <div class="col-md-2">
             <button type="submit" class="btn btn-primary">Show Matches</button>
@@ -44,6 +44,54 @@
             
         </tbody>
     </table>
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+          <!-- Previous button -->
+          {% if page > 1 %}
+            <li class="page-item">
+              <a class="page-link" href="{{ url_for('views.matches', page=page-1, selected_team=selected_team) }}">Previous</a>
+            </li>
+          {% endif %}
+      
+          <!-- Always show first page -->
+          {% if page > 3 %}
+            <li class="page-item">
+              <a class="page-link" href="{{ url_for('views.matches', page=1, selected_team=selected_team) }}">1</a>
+            </li>
+            {% if page > 4 %}
+              <li class="page-item disabled"><span class="page-link">...</span></li>
+            {% endif %}
+          {% endif %}
+      
+          <!-- Dynamic range of pages near the current page -->
+          {% for p in range(page - 2, page + 3) %}
+            {% if p > 0 and p <= total_pages %}
+              <li class="page-item {% if page == p %}active{% endif %}">
+                <a class="page-link" href="{{ url_for('views.matches', page=p, selected_team=selected_team) }}">{{ p }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+      
+          <!-- Always show last page -->
+          {% if page < total_pages - 2 %}
+            {% if page < total_pages - 3 %}
+              <li class="page-item disabled"><span class="page-link">...</span></li>
+            {% endif %}
+            <li class="page-item">
+              <a class="page-link" href="{{ url_for('views.matches', page=total_pages, selected_team=selected_team) }}">{{ total_pages }}</a>
+            </li>
+          {% endif %}
+      
+          <!-- Next button -->
+          {% if page < total_pages %}
+            <li class="page-item">
+              <a class="page-link" href="{{ url_for('views.matches', page=page+1, selected_team=selected_team) }}">Next</a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>          
+      
 {% elif selected_team %}
     <p>No matches found for {{ selected_team }}.</p>
 {% endif %}

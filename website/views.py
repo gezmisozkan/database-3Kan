@@ -25,7 +25,7 @@ def home():
     """
     Renders the home page for the football database.
     """
-    return render_template("home.html")  # Assumes the homepage template is named 'home.html'
+    return render_template("home.html")  # homepage template is named 'home.html'
 
 @views.before_app_request
 def load_recent_seasons():
@@ -72,61 +72,112 @@ def season_tiers(year):
 def teams():
     teams = []
     search_query = request.args.get('search', '')
+    page = int(request.args.get('page', 1))
+    per_page = 20
+    offset = (page - 1) * per_page
 
     try:
-        cursor = g.db.cursor(dictionary=True)  # Use dictionary=True
+        cursor = g.db.cursor(dictionary=True)
+        
         if search_query:
-            team_query = "SELECT team_id, team_name FROM teams WHERE team_name LIKE %s ORDER BY team_name"
-            cursor.execute(team_query, (f'%{search_query}%',))
+            count_query = "SELECT COUNT(*) as total FROM teams WHERE team_name LIKE %s"
+            cursor.execute(count_query, (f'%{search_query}%',))
         else:
-            team_query = "SELECT team_id, team_name FROM teams ORDER BY team_name"
-            cursor.execute(team_query)
-            
-        teams = cursor.fetchall()  # List of dictionaries
-        print("Teams Data:", teams)  # Debug
+            count_query = "SELECT COUNT(*) as total FROM teams"
+            cursor.execute(count_query)
+        
+        total_results = cursor.fetchone()['total']
+        total_pages = (total_results // per_page) + (1 if total_results % per_page > 0 else 0)
+
+        if search_query:
+            team_query = """
+                SELECT team_id, team_name 
+                FROM teams 
+                WHERE team_name LIKE %s 
+                ORDER BY team_name 
+                LIMIT %s OFFSET %s
+            """
+            cursor.execute(team_query, (f'%{search_query}%', per_page, offset))
+        else:
+            team_query = """
+                SELECT team_id, team_name 
+                FROM teams 
+                ORDER BY team_name 
+                LIMIT %s OFFSET %s
+            """
+            cursor.execute(team_query, (per_page, offset))
+
+        teams = cursor.fetchall()
     except mysql.connector.Error as e:
         print(f"MySQL error occurred: {e}")
     finally:
         cursor.close()
 
-    return render_template("teams.html", teams=teams, search_query=search_query)
-
+    return render_template("teams.html", teams=teams, search_query=search_query, page=page, total_pages=total_pages)
 
 @views.route('/matches', methods=['GET', 'POST'])
 def matches():
     teams, matches, selected_team = [], [], None
+    page = int(request.args.get('page', 1))
+    per_page = 20
+    offset = (page - 1) * per_page
 
     try:
-        cursor = g.db.cursor(dictionary=True)  # Use dictionary=True
+        cursor = g.db.cursor(dictionary=True)
+
         query = "SELECT DISTINCT home_team_name FROM matches"
         cursor.execute(query)
         teams = [row['home_team_name'] for row in cursor.fetchall()]
 
+        # Handle form submission and query parameters for selected team
         if request.method == 'POST':
             selected_team = request.form['team']
+        else:
+            selected_team = request.args.get('selected_team')
+        total_pages = 0
+        if selected_team:
+            count_query = """
+                SELECT COUNT(*) as total 
+                FROM matches 
+                WHERE home_team_name = %s OR away_team_name = %s
+            """
+            cursor.execute(count_query, (selected_team, selected_team))
+            total_results = cursor.fetchone()['total']
+            total_pages = (total_results // per_page) + (1 if total_results % per_page > 0 else 0)
+
             match_query = """
                 SELECT match_id, home_team_name, away_team_name, home_team_score, away_team_score
                 FROM matches
                 WHERE home_team_name = %s OR away_team_name = %s
-                ORDER BY match_id DESC
+                ORDER BY match_id DESC 
+                LIMIT %s OFFSET %s
             """
-            cursor.execute(match_query, (selected_team, selected_team))
+            cursor.execute(match_query, (selected_team, selected_team, per_page, offset))
             matches = cursor.fetchall()
     except mysql.connector.Error as e:
         print(f"MySQL error occurred: {e}")
     finally:
         cursor.close()
 
-    return render_template("matches.html", teams=teams, matches=matches, selected_team=selected_team)
+    return render_template("matches.html", teams=teams, matches=matches, selected_team=selected_team, page=page, total_pages=total_pages)
 
 
 @views.route('/seasons', methods=['GET'])
 def search_seasons():
+    page = int(request.args.get('page', 1))
+    per_page = 20
+    offset = (page - 1) * per_page
+
     try:
-        cursor = g.db.cursor(dictionary=True)  # Use dictionary=True
+        cursor = g.db.cursor(dictionary=True)
         season = request.args.get('season')
         tier = request.args.get('tier')
         division = request.args.get('division')
+
+        count_query = "SELECT COUNT(*) as total FROM seasons"
+        cursor.execute(count_query)
+        total_results = cursor.fetchone()['total']
+        total_pages = (total_results // per_page) + (1 if total_results % per_page > 0 else 0)
 
         query = """
         SELECT key_id, season_id, season, tier, division, subdivision, winner, count_teams 
@@ -145,6 +196,9 @@ def search_seasons():
             query += " AND division = %s"
             params.append(division)
 
+        query += " ORDER BY season_id LIMIT %s OFFSET %s"
+        params.extend([per_page, offset])
+
         cursor.execute(query, params)
         seasons = cursor.fetchall()
     except mysql.connector.Error as e:
@@ -152,37 +206,45 @@ def search_seasons():
     finally:
         cursor.close()
 
-    return render_template('seasons.html', seasons=seasons)
+    return render_template('seasons.html', seasons=seasons, page=page, total_pages=total_pages)
 
 
 @views.route('/team-details/<team_id>', methods=['GET'])
 def team_details(team_id):
+    page = int(request.args.get('page', 1))
+    per_page = 20
+    offset = (page - 1) * per_page
+
     try:
         cursor = g.db.cursor(dictionary=True)
         
+        count_query = "SELECT COUNT(*) as total FROM matches WHERE home_team_id = %s OR away_team_id = %s"
+        cursor.execute(count_query, (team_id, team_id))
+        total_results = cursor.fetchone()['total']
+        total_pages = (total_results // per_page) + (1 if total_results % per_page > 0 else 0)
+
         query = "SELECT * FROM teams WHERE team_id = %s"
         cursor.execute(query, (team_id,))
         team_info = cursor.fetchone()
-        print("Team Info:", team_info)  # Debug print
 
         match_query = """
             SELECT 
-                m.match_id, m.match_name, t1.team_name AS home_team, t2.team_name AS away_team, t1.team_id AS home_team_id,t2.team_id AS away_team_id,m.score
+                m.match_id, m.match_name, t1.team_name AS home_team, t2.team_name AS away_team, t1.team_id AS home_team_id, t2.team_id AS away_team_id, m.score
             FROM matches m
             JOIN teams t1 ON m.home_team_id = t1.team_id
             JOIN teams t2 ON m.away_team_id = t2.team_id
             WHERE m.home_team_id = %s OR m.away_team_id = %s
             ORDER BY m.match_id DESC
+            LIMIT %s OFFSET %s
         """
-        cursor.execute(match_query, (team_id, team_id))
+        cursor.execute(match_query, (team_id, team_id, per_page, offset))
         matches = cursor.fetchall()
-        print("Matches for Team", team_id, ":", matches)  # Debug print
     except mysql.connector.Error as e:
         print(f"MySQL error occurred: {e}")
     finally:
         cursor.close()
 
-    return render_template("team_details.html", team=team_info, matches=matches)
+    return render_template("team_details.html", team=team_info, matches=matches, page=page, total_pages=total_pages)
 
 
 
