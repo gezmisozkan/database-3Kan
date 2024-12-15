@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}My Comments{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/comments.css') }}">
+<h1>My Comments</h1>
+
+<h2>Match Comments</h2>
+{% if match_comments %}
+<ul class="list-group mt-4">
+    {% for comment in match_comments %}
+    <li class="list-group-item">
+        <strong>{{ comment['match_name'] }}</strong> <small class="text-muted">{{ comment['created_at'] }}</small>
+        <p>{{ comment['comment'] }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No match comments yet.</p>
+{% endif %}
+
+<h2>Team Comments</h2>
+{% if team_comments %}
+<ul class="list-group mt-4">
+    {% for comment in team_comments %}
+    <li class="list-group-item">
+        <strong>{{ comment['team_name'] }}</strong> <small class="text-muted">{{ comment['created_at'] }}</small>
+        <p>{{ comment['comment'] }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No team comments yet.</p>
+{% endif %}
+
+<a class="btn btn-dark mt-4" href="{{ url_for('views.home') }}">Back to Home</a>
+{% endblock %}

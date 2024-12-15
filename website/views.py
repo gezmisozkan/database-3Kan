@@ -219,25 +219,50 @@ def search_seasons():
 
     return render_template('seasons.html', seasons=seasons, page=page, total_pages=total_pages)
 
-
-@views.route('/team-details/<team_id>', methods=['GET'])
+@views.route('/team-details/<team_id>', methods=['GET', 'POST'])
 def team_details(team_id):
     page = int(request.args.get('page', 1))
     per_page = 20
     offset = (page - 1) * per_page
 
+    if request.method == 'POST':
+        if not current_user.is_authenticated:
+            flash('You need to be logged in to post a comment.', 'error')
+            return redirect(url_for('views.team_details', team_id=team_id))
+
+        comment_text = request.form.get('comment')
+        if not comment_text:
+            flash('Comment cannot be empty.', 'error')
+            return redirect(url_for('views.team_details', team_id=team_id))
+
+        try:
+            cursor = g.db.cursor()
+            cursor.execute("""
+                INSERT INTO team_comments (team_id, user_id, comment)
+                VALUES (%s, %s, %s)
+            """, (team_id, current_user.id, comment_text))
+            g.db.commit()
+            flash('Comment posted successfully!', 'success')
+        except mysql.connector.Error as e:
+            flash(f'An error occurred while posting the comment: {e}', 'error')
+        finally:
+            cursor.close()
+
     try:
         cursor = g.db.cursor(dictionary=True)
         
+        # Fetch total number of matches for pagination
         count_query = "SELECT COUNT(*) as total FROM matches WHERE home_team_id = %s OR away_team_id = %s"
         cursor.execute(count_query, (team_id, team_id))
         total_results = cursor.fetchone()['total']
         total_pages = (total_results // per_page) + (1 if total_results % per_page > 0 else 0)
 
+        # Fetch team details
         query = "SELECT * FROM teams WHERE team_id = %s"
         cursor.execute(query, (team_id,))
         team_info = cursor.fetchone()
 
+        # Fetch recent matches with pagination
         match_query = """
             SELECT 
                 m.match_id, m.match_name, t1.team_name AS home_team, t2.team_name AS away_team, t1.team_id AS home_team_id, t2.team_id AS away_team_id, m.score
@@ -250,82 +275,27 @@ def team_details(team_id):
         """
         cursor.execute(match_query, (team_id, team_id, per_page, offset))
         matches = cursor.fetchall()
+
+        # Fetch comments
+        cursor.execute("""
+            SELECT c.comment, c.created_at, u.full_name AS username
+            FROM team_comments c
+            JOIN User u ON c.user_id = u.id
+            WHERE c.team_id = %s
+            ORDER BY c.created_at DESC
+        """, (team_id,))
+        comments = cursor.fetchall()
     except mysql.connector.Error as e:
-        print(f"MySQL error occurred: {e}")
+        flash(f'An error occurred while fetching team details: {e}', 'error')
+        team_info = {}
+        matches = []
+        comments = []
+        total_pages = 1
     finally:
         cursor.close()
 
-    return render_template("team_details.html", team=team_info, matches=matches, page=page, total_pages=total_pages)
+    return render_template("team_details.html", team=team_info, matches=matches, comments=comments, page=page, total_pages=total_pages)
 
-
-
-@views.route('/season/<season_id>', methods=['GET'])
-def season_overview(season_id):
-    try:
-        cursor = g.db.cursor(dictionary=True)
-        
-        query = "SELECT * FROM seasons WHERE season_id = %s"
-        cursor.execute(query, (season_id,))
-        season_info = cursor.fetchone()
-
-        match_query = """
-            SELECT m.match_id, m.match_name, t1.team_name AS home_team, t2.team_name AS away_team, m.score
-            FROM matches m
-            JOIN teams t1 ON m.home_team_id = t1.team_id
-            JOIN teams t2 ON m.away_team_id = t2.team_id
-            WHERE m.season_id = %s
-        """
-        cursor.execute(match_query, (season_id,))
-        matches = cursor.fetchall()
-    except mysql.connector.Error as e:
-        print(f"MySQL error occurred: {e}")
-    finally:
-        cursor.close()
-
-    return render_template("season_overview.html", season=season_info, matches=matches)
-
-@views.route('/match-details/<match_id>', methods=['GET'])
-def match_details(match_id):
-    try:
-        cursor = g.db.cursor(dictionary=True)
-        
-        query = """
-            SELECT 
-                m.match_id, m.match_name, t1.team_name AS home_team, t2.team_name AS away_team, t1.team_id AS home_team_id,t2.team_id AS away_team_id,m.score
-            FROM matches m
-            JOIN teams t1 ON m.home_team_id = t1.team_id
-            JOIN teams t2 ON m.away_team_id = t2.team_id
-            WHERE m.match_id = %s
-        """
-        cursor.execute(query, (match_id,))
-        match_info = cursor.fetchone()  # Use fetchone() for single row
-        print("Match Info:", match_info)  # Debug print
-    except mysql.connector.Error as e:
-        print(f"MySQL error occurred: {e}")
-    finally:
-        cursor.close()
-
-    return render_template("match_details.html", match=match_info)
-
-
-@views.route('/delete-team/<team_id>', methods=['POST'])
-@login_required
-def delete_team(team_id):
-    if current_user.role != 'admin':
-        flash('Only admins can delete teams.', 'error')
-        return redirect(url_for('views.teams'))
-    
-    try:
-        cursor = g.db.cursor()
-        cursor.execute("DELETE FROM teams WHERE team_id = %s", (team_id,))
-        g.db.commit()
-        flash(f'Team deleted successfully!', 'success')
-    except mysql.connector.Error as e:
-        flash(f'Failed to delete team: {e}', 'error')
-    finally:
-        cursor.close()
-    
-    return redirect(url_for('views.teams'))
 
 @views.route('/delete-match/<match_id>', methods=['POST'])
 @login_required
@@ -472,3 +442,97 @@ def delete_standing(key_id):
         cursor.close()
     
     return redirect(url_for('views.standings'))
+
+@views.route('/match-details/<match_id>', methods=['GET', 'POST'])
+def match_details(match_id):
+    if request.method == 'POST':
+        if not current_user.is_authenticated:
+            flash('You need to be logged in to post a comment.', 'error')
+            return redirect(url_for('views.match_details', match_id=match_id))
+
+        comment_text = request.form.get('comment')
+        if not comment_text:
+            flash('Comment cannot be empty.', 'error')
+            return redirect(url_for('views.match_details', match_id=match_id))
+
+        try:
+            cursor = g.db.cursor()
+            cursor.execute("""
+                INSERT INTO comments (match_id, user_id, comment)
+                VALUES (%s, %s, %s)
+            """, (match_id, current_user.id, comment_text))
+            g.db.commit()
+            flash('Comment posted successfully!', 'success')
+        except mysql.connector.Error as e:
+            flash(f'An error occurred while posting the comment: {e}', 'error')
+        finally:
+            cursor.close()
+
+    try:
+        cursor = g.db.cursor(dictionary=True)
+        
+        # Fetch match details
+        query = """
+            SELECT 
+                m.match_id, m.match_name, t1.team_name AS home_team, t2.team_name AS away_team, t1.team_id AS home_team_id, t2.team_id AS away_team_id, m.score
+            FROM matches m
+            JOIN teams t1 ON m.home_team_id = t1.team_id
+            JOIN teams t2 ON m.away_team_id = t2.team_id
+            WHERE m.match_id = %s
+        """
+        cursor.execute(query, (match_id,))
+        match_info = cursor.fetchone()  # Use fetchone() for single row
+        print("Match Info:", match_info)  # Debug print
+
+        # Fetch comments
+        cursor.execute("""
+            SELECT c.comment, c.created_at, u.full_name AS username
+            FROM comments c
+            JOIN User u ON c.user_id = u.id
+            WHERE c.match_id = %s
+            ORDER BY c.created_at DESC
+        """, (match_id,))
+        comments = cursor.fetchall()
+    except mysql.connector.Error as e:
+        flash(f'An error occurred while fetching match details: {e}', 'error')
+        match_info = {}
+        comments = []
+    finally:
+        cursor.close()
+
+    return render_template("match_details.html", match=match_info, comments=comments)
+
+
+@views.route('/comments', methods=['GET'])
+@login_required
+def user_comments():
+    try:
+        cursor = g.db.cursor(dictionary=True)
+        
+        # Fetch user's match comments
+        cursor.execute("""
+            SELECT c.comment, c.created_at, m.match_name
+            FROM comments c
+            JOIN matches m ON c.match_id = m.match_id
+            WHERE c.user_id = %s
+            ORDER BY c.created_at DESC
+        """, (current_user.id,))
+        match_comments = cursor.fetchall()
+
+        # Fetch user's team comments
+        cursor.execute("""
+            SELECT c.comment, c.created_at, t.team_name
+            FROM team_comments c
+            JOIN teams t ON c.team_id = t.team_id
+            WHERE c.user_id = %s
+            ORDER BY c.created_at DESC
+        """, (current_user.id,))
+        team_comments = cursor.fetchall()
+    except mysql.connector.Error as e:
+        flash(f'An error occurred while fetching comments: {e}', 'error')
+        match_comments = []
+        team_comments = []
+    finally:
+        cursor.close()
+
+    return render_template("comments.html", match_comments=match_comments, team_comments=team_comments)

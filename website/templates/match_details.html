@@ -1,49 +1,52 @@
 {% extends 'base.html' %}
 
-{% block title %}Match Details - {{ match['match_name'] }}{% endblock %}
+
+{% block title %}Match Details{% endblock %}
 
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/match_details.css') }}">
-<h1 class="mb-4">Match Details: {{ match['match_name'] }}</h1>
+<h1>Match Details</h1>
 
-<h2>Basic Info</h2>
 <ul class="list-group mb-4">
     <li class="list-group-item"><strong>Home Team:</strong> 
-        <a 
-        href="{{ url_for('views.team_details', team_id=match['home_team_id']) }}" 
-        onclick="if(window.location.pathname === this.pathname) location.reload();">
-        {{ match['home_team'] }}
+        <a href="{{ url_for('views.team_details', team_id=match['home_team_id']) }}" 
+           onclick="if(window.location.pathname === this.pathname) location.reload();">
+           {{ match['home_team'] }}
         </a>
     </li>
     <li class="list-group-item"><strong>Away Team:</strong> 
-        <a 
-        href="{{ url_for('views.team_details', team_id=match['away_team_id']) }}" 
-        onclick="if(window.location.pathname === this.pathname) location.reload();">
-        {{ match['away_team'] }}
+        <a href="{{ url_for('views.team_details', team_id=match['away_team_id']) }}" 
+           onclick="if(window.location.pathname === this.pathname) location.reload();">
+           {{ match['away_team'] }}
         </a>
     </li>
     <li class="list-group-item"><strong>Score:</strong> {{ match['score'] }}</li>
 </ul>
 
-<h2>Player Appearances</h2>
-<table class="table table-bordered table-striped mb-4">
-    <thead>
-        <tr>
-            <th>Team</th>
-            <th>Goals For</th>
-            <th>Goals Against</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for appearance in appearances %}
-        <tr>
-            <td><a href="{{ url_for('views.team_details', team_id=appearance['team_id']) }}">{{ appearance['team_name'] }}</a></td>
-            <td>{{ appearance['goals_for'] }}</td>
-            <td>{{ appearance['goals_against'] }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<h2>Comments</h2>
+{% if current_user.is_authenticated %}
+<form method="POST" action="{{ url_for('views.match_details', match_id=match['match_id']) }}">
+    <div class="form-group">
+        <textarea name="comment" class="form-control" rows="3" placeholder="Add a comment..."></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Post Comment</button>
+</form>
+{% else %}
+<p>You need to <a href="{{ url_for('auth.login') }}">log in</a> to post a comment.</p>
+{% endif %}
+
+{% if comments %}
+<ul class="list-group mt-4">
+    {% for comment in comments %}
+    <li class="list-group-item">
+        <strong>{{ comment['username'] }}</strong> <small class="text-muted">{{ comment['created_at'] }}</small>
+        <p>{{ comment['comment'] }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No comments yet.</p>
+{% endif %}
 
 <a class="btn btn-dark mt-4" href="{{ url_for('views.home') }}">Back to Home</a>
 {% endblock %}
