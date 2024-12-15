@@ -421,8 +421,7 @@ def standings():
     finally:
         cursor.close()
 
-    return render_template('standings.html', standings=standings, search_query=search_query, page=page, total_pages=total_pages)
-
+    return render_template('standings.html', standings=standings, search_query=search_query, page=page, total_pages=total_pages, max=max, min=min)
 @views.route('/standing-details/<key_id>', methods=['GET'])
 def standing_details(key_id):
     """
