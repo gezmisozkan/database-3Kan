@@ -391,3 +391,85 @@ def delete_season(season_id):
         cursor.close()
     
     return redirect(url_for('views.search_seasons'))
+
+@views.route('/standings', methods=['GET'])
+def standings():
+    """
+    Route to display the standings.
+    """
+    search_query = request.args.get('search', '')
+    page = request.args.get('page', 1, type=int)
+    per_page = 10  # Number of items per page
+
+    try:
+        cursor = g.db.cursor(dictionary=True)
+        
+        # Build the query with search functionality
+        query = "SELECT * FROM standings WHERE team_name LIKE %s OR season LIKE %s OR division LIKE %s"
+        cursor.execute(query, (f"%{search_query}%", f"%{search_query}%", f"%{search_query}%"))
+        standings = cursor.fetchall()
+
+        # Pagination logic
+        total_items = len(standings)
+        total_pages = (total_items + per_page - 1) // per_page
+        standings = standings[(page - 1) * per_page: page * per_page]
+
+    except mysql.connector.Error as e:
+        flash(f'An error occurred while fetching standings: {e}', 'error')
+        standings = []
+        total_pages = 1
+    finally:
+        cursor.close()
+
+    return render_template('standings.html', standings=standings, search_query=search_query, page=page, total_pages=total_pages)
+
+@views.route('/standing-details/<key_id>', methods=['GET'])
+def standing_details(key_id):
+    """
+    Route to display the details of a specific standing.
+    """
+    try:
+        cursor = g.db.cursor(dictionary=True)
+        
+        # Query to fetch the standing details
+        query = "SELECT * FROM standings WHERE key_id = %s"
+        cursor.execute(query, (key_id,))
+        standing = cursor.fetchone()
+        
+        if not standing:
+            flash(f'Standing with key_id {key_id} not found.', 'error')
+            return redirect(url_for('views.standings'))
+        
+    except mysql.connector.Error as e:
+        flash(f'An error occurred while fetching standing details: {e}', 'error')
+        return redirect(url_for('views.standings'))
+    finally:
+        cursor.close()
+
+    return render_template("standing_details.html", standing=standing)
+
+@views.route('/delete_standing/<key_id>', methods=['POST'])
+@login_required
+def delete_standing(key_id):
+    """
+    Route to delete a standing from the database.
+    Only admin users can delete a standing.
+    """
+    if current_user.role != 'admin':
+        flash('Only admins can delete standings.', 'error')
+        return redirect(url_for('views.standings'))
+
+    try:
+        cursor = g.db.cursor()
+        
+        # Delete the standing from the standings table
+        cursor.execute("DELETE FROM standings WHERE key_id = %s", (key_id,))
+        g.db.commit()
+        
+        flash(f'Standing {key_id} deleted successfully!', 'success')
+    except mysql.connector.Error as e:
+        flash(f'An error occurred while deleting standing {key_id}: {e}', 'error')
+    finally:
+        cursor.close()
+    
+    return redirect(url_for('views.standings'))

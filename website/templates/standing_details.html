@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}Standing Details{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/standing_details.css') }}">
+<h1 class="mb-4">Standing Details</h1>
+
+<table class="table table-bordered table-striped">
+    <tbody>
+        <tr>
+            <th>Season ID</th>
+            <td>{{ standing['season_id'] }}</td>
+        </tr>
+        <tr>
+            <th>Season</th>
+            <td>{{ standing['season'] }}</td>
+        </tr>
+        <tr>
+            <th>Tier</th>
+            <td>{{ standing['tier'] }}</td>
+        </tr>
+        <tr>
+            <th>Division</th>
+            <td>{{ standing['division'] }}</td>
+        </tr>
+        <tr>
+            <th>Subdivision</th>
+            <td>{{ standing['subdivision'] }}</td>
+        </tr>
+        <tr>
+            <th>Position</th>
+            <td>{{ standing['position'] }}</td>
+        </tr>
+        <tr>
+            <th>Team ID</th>
+            <td>{{ standing['team_id'] }}</td>
+        </tr>
+        <tr>
+            <th>Team Name</th>
+            <td>{{ standing['team_name'] }}</td>
+        </tr>
+        <tr>
+            <th>Played</th>
+            <td>{{ standing['played'] }}</td>
+        </tr>
+        <tr>
+            <th>Wins</th>
+            <td>{{ standing['wins'] }}</td>
+        </tr>
+        <tr>
+            <th>Draws</th>
+            <td>{{ standing['draws'] }}</td>
+        </tr>
+        <tr>
+            <th>Losses</th>
+            <td>{{ standing['losses'] }}</td>
+        </tr>
+        <tr>
+            <th>Goals For</th>
+            <td>{{ standing['goals_for'] }}</td>
+        </tr>
+        <tr>
+            <th>Goals Against</th>
+            <td>{{ standing['goals_against'] }}</td>
+        </tr>
+        <tr>
+            <th>Goal Difference</th>
+            <td>{{ standing['goal_difference'] }}</td>
+        </tr>
+        <tr>
+            <th>Points</th>
+            <td>{{ standing['points'] }}</td>
+        </tr>
+        <tr>
+            <th>Point Adjustment</th>
+            <td>{{ standing['point_adjustment'] }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="{{ url_for('views.standings') }}" class="btn btn-dark mt-4">Back to Standings</a>
+{% endblock %}
