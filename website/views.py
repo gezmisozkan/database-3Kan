@@ -294,8 +294,59 @@ def team_details(team_id):
     finally:
         cursor.close()
 
-    return render_template("team_details.html", team=team_info, matches=matches, comments=comments, page=page, total_pages=total_pages)
+    return render_template(
+        "team_details.html", 
+        team=team_info, 
+        matches=matches, 
+        comments=comments, 
+        page=page, 
+        total_pages=total_pages
+    )
 
+
+@views.route('/season/<season_id>', methods=['GET'])
+def season_overview(season_id):
+    try:
+        cursor = g.db.cursor(dictionary=True)
+        
+        query = "SELECT * FROM seasons WHERE season_id = %s"
+        cursor.execute(query, (season_id,))
+        season_info = cursor.fetchone()
+
+        match_query = """
+            SELECT m.match_id, m.match_name, t1.team_name AS home_team, t2.team_name AS away_team, m.score
+            FROM matches m
+            JOIN teams t1 ON m.home_team_id = t1.team_id
+            JOIN teams t2 ON m.away_team_id = t2.team_id
+            WHERE m.season_id = %s
+        """
+        cursor.execute(match_query, (season_id,))
+        matches = cursor.fetchall()
+    except mysql.connector.Error as e:
+        print(f"MySQL error occurred: {e}")
+    finally:
+        cursor.close()
+
+    return render_template("season_overview.html", season=season_info, matches=matches)
+
+@views.route('/delete-team/<team_id>', methods=['POST'])
+@login_required
+def delete_team(team_id):
+    if current_user.role != 'admin':
+        flash('Only admins can delete teams.', 'error')
+        return redirect(url_for('views.teams'))
+    
+    try:
+        cursor = g.db.cursor()
+        cursor.execute("DELETE FROM teams WHERE team_id = %s", (team_id,))
+        g.db.commit()
+        flash(f'Team deleted successfully!', 'success')
+    except mysql.connector.Error as e:
+        flash(f'Failed to delete team: {e}', 'error')
+    finally:
+        cursor.close()
+    
+    return redirect(url_for('views.teams'))
 
 @views.route('/delete-match/<match_id>', methods=['POST'])
 @login_required

@@ -1,8 +1,7 @@
-import os
 import pandas as pd
 import mysql.connector
+import os
 from werkzeug.security import generate_password_hash
-
 # Database connection details
 user = 'root'
 password = '1234'
@@ -46,27 +45,142 @@ for filename in os.listdir(csv_directory):
         # Get the table name by removing '.csv' from the filename
         table_name = filename.split('.csv')[0]
         
-        # Read the CSV file into a DataFrame
+        # Read the CSV file into a DataFrame with specified data types
         file_path = os.path.join(csv_directory, filename)
+        
+        if filename == 'appearances.csv':
+            dtype = {
+                'key_id': int,
+                'season_id': str,
+                'season': str,
+                'tier': int,
+                'division': str,
+                'subdivision': str,
+                'match_id': str,
+                'match_name': str,
+                'team_id': str,
+                'team_name': str,
+                'opponent_id': str,
+                'opponent_name': str,
+                'home_team': bool,
+                'away_team': bool,
+                'goals_for': int,
+                'goals_against': int,
+                'goal_difference': int,
+                'result': str,
+                'win': bool,
+                'lose': bool,
+                'draw': bool,
+                'points': int
+            }
+            df = pd.read_csv(file_path, dtype=dtype, na_values=['nan', 'NaN'])
+            df = df.fillna({
+                'subdivision': 'None',
+                'match_name': '',
+                'goal_difference': 0,
+                'points': 0,
+                'home_team': False,
+                'away_team': False,
+                'win': False,
+                'lose': False,
+                'draw': False
+            })
+        elif filename == 'matches.csv':
+            dtype = {
+                'key_id': int,
+                'season_id': str,
+                'season': str,
+                'tier': int,
+                'division': str,
+                'subdivision': str,
+                'match_id': str,
+                'match_name': str,
+                'home_team_id': str,
+                'home_team_name': str,
+                'away_team_id': str,
+                'away_team_name': str,
+                'score': str,
+                'home_team_score': int,
+                'away_team_score': int,
+                'home_team_score_margin': int,
+                'away_team_score_margin': int,
+                'result': str,
+                'home_team_win': bool,
+                'away_team_win': bool,
+                'draw': bool
+            }
+            df = pd.read_csv(file_path, dtype=dtype, na_values=['nan', 'NaN'])
+            df = df.fillna({
+                'subdivision': 'None',
+                'match_name': '',
+                'score': '',
+                'home_team_score': 0,
+                'away_team_score': 0,
+                'home_team_score_margin': 0,
+                'away_team_score_margin': 0,
+                'home_team_win': False,
+                'away_team_win': False,
+                'draw': False
+            })
+        elif filename == 'seasons.csv':
+            dtype = {
+                'key_id': int,
+                'season_id': str,
+                'season': str,
+                'tier': int,
+                'division': str,
+                'subdivision': str,
+                'winner': str,
+                'count_teams': int
+            }
+            df = pd.read_csv(file_path, dtype=dtype, na_values=['nan', 'NaN'])
+            df = df.fillna({
+                'subdivision': 'None',
+                'winner': ''
+            })
+        elif filename == 'standings.csv':
+            dtype = {
+                'key_id': int,
+                'season_id': str,
+                'season': int,
+                'tier': int,
+                'division': str,
+                'subdivision': str,
+                'position': int,
+                'team_id': str,
+                'team_name': str,
+                'played': int,
+                'wins': int,
+                'draws': int,
+                'losses': int,
+                'goals_for': int,
+                'goals_against': int,
+                'goal_difference': int,
+                'points': int,
+                'point_adjustment': int
+            }
+            df = pd.read_csv(file_path, dtype=dtype, na_values=['nan', 'NaN'])
+            df = df.fillna({
+                'subdivision': 'None'
+            })
+        elif filename == 'teams.csv':
+            dtype = {
+                'key_id': int,
+                'team_id': str,
+                'team_name': str,
+                'former_team_names': str,
+                'current': bool,
+                'former': bool,
+                'defunct': bool,
+                'first_appearance': int
+            }
+            df = pd.read_csv(file_path, dtype=dtype, na_values=['nan', 'NaN'])
+            df = df.fillna({
+                'former_team_names': ''
+            })
+        else:
+            df = pd.read_csv(file_path)
 
-       # Adjust this dictionary to specify dtypes for each column that might have issues
-        dtype_mapping = {
-            'appearances.csv': {'column_5': 'str'},
-            'matches.csv': {'column_5': 'str'},
-            'seasons.csv': {'column_5': 'str'},
-            'standings.csv': {'column_5': 'str'},
-            'teams.csv': {'column_5': 'int'}
-        }
-        
-        try:
-            if filename in dtype_mapping:
-                df = pd.read_csv(file_path, dtype=dtype_mapping[filename])
-            else:
-                df = pd.read_csv(file_path)
-        except Exception as e:
-            print(f"Error reading {filename}: {e}")
-            continue
-        
         try:
             cursor.execute("SET FOREIGN_KEY_CHECKS = 0")
             
@@ -86,7 +200,7 @@ for filename in os.listdir(csv_directory):
             print(f"An error occurred while inserting data from {filename} into table '{table_name}': {e}")
         finally:
             cursor.execute("SET FOREIGN_KEY_CHECKS = 1")
-        
+
 # Close the cursor and the database connection at the end of the script
 cursor.close()
 db.close()
