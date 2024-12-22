@@ -1,16 +1,7 @@
 footer'daki linkler işlevselleştirilmeli
 front-end'de önemli rötuşlar
 
-home page sayfası boş, yeni bir şeyler eklenmeli ve css home page için çalışmıyor
-
-seasons henüz bitmedi, üzerinde çalışılacak
-
-Login şifre kurallarını info kısmı oluşturup kullanıcıya göstermek daha iyi olur
-Sayfalara page ekleyip daha güzel hale getir
-Admin özelliği ekle
-Admin yorumları silebilsin
-Yorum atma özelliği gelsin
-Foreign key kullanarak tablolar oluştur
+Foreign key kullanarak tablolar oluştur (bu ne demek???)
 
 insert, update, delete eklenmeli
 siteye artan mı azalan mı sırada görüntülenmesini soran bir buton eklenmeli

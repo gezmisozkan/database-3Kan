@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+
 /* General Body Styling */
 body {
     background: linear-gradient(45deg, #0B6623, #FFFFFF, #21618C);
@@ -45,7 +46,9 @@ label {
 }
 
 /* Input Fields */
-input[type="email"], input[type="text"], input[type="password"] {
+input[type="email"],
+input[type="text"],
+input[type="password"] {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -57,7 +60,9 @@ input[type="email"], input[type="text"], input[type="password"] {
     transition: transform 0.3s ease;
 }
 
-input[type="email"]:focus, input[type="text"]:focus, input[type="password"]:focus {
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus {
     border-color: #00FF00;
     outline: none;
     transform: scale(1.05);
@@ -77,9 +82,9 @@ button {
     text-transform: uppercase;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: all 0.5s linear;
-    position: relative; /* Ensure the button is a containing block for the pseudo-element */
-    overflow: hidden; /* Prevent the glow from spilling outside the button */
-    display: inline-block; /* Ensure proper sizing of the button */
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
 }
 
 button:hover {
@@ -92,17 +97,16 @@ button:hover {
 button:hover:before {
     content: '';
     position: absolute;
-    top: -20%; /* Slightly extend beyond the button boundaries */
-    left: -20%; /* Slightly extend beyond the button boundaries */
-    width: 140%; /* Scale the glow to cover the button */
-    height: 140%; /* Scale the glow to cover the button */
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 80%);
     animation: glow 1.00s infinite ease-in-out;
-    z-index: -1; /* Keep the glow behind the button text */
-    pointer-events: none; /* Prevent the pseudo-element from interfering with hover */
+    z-index: -1;
+    pointer-events: none;
 }
 
-/* Glow Animation */
 @keyframes glow {
     0% {
         transform: translateX(-100%);
@@ -121,6 +125,62 @@ button:hover:before {
 /* Placeholder Styling */
 input::placeholder {
     color: #888888;
+}
+
+/* 
+   =========================
+   PASSWORD TOOLTIP STYLES
+   ========================= 
+*/
+
+/* Container around password input + tooltip */
+.password-container {
+    position: relative; /* helps position the tooltip absolutely */
+}
+
+/* The tooltip itself */
+.password-info {
+    position: absolute;
+    bottom: 100%;           /* position above the input */
+    left: 0;
+    display: none;          /* hidden by default */
+    width: 220px;
+    background: #444444;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    transform: translateY(-5px);
+    opacity: 0;
+    transition: 
+       opacity 0.3s ease,
+       transform 0.3s ease;
+    z-index: 999;
+}
+
+/* The little arrow pointing down to the input */
+.tooltip-arrow {
+    position: absolute;
+    bottom: -6px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #444444; 
+}
+
+/* Show/Hide logic:
+   - On focus: we can use the ":focus-within" pseudo-class 
+   - Or show on hover. Let's do BOTH for demonstration:
+*/
+.password-container:hover .password-info,
+.password-container:focus-within .password-info {
+    display: block;
+    opacity: 1;
+    transform: translateY(-10px);
 }
 
 /* Responsive Design */
