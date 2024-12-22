@@ -1,4 +1,5 @@
 footer'daki linkler işlevselleştirilmeli
+front-end'de önemli rötuşlar
 
 home page sayfası boş, yeni bir şeyler eklenmeli ve css home page için çalışmıyor
 

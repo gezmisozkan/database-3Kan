@@ -10,7 +10,7 @@ def connect_to_database():
         g.db = mysql.connector.connect(
             host='localhost',
             user='root',
-            password='1234',
+            password='root',
             database='3kan'
         )
 
@@ -179,20 +179,34 @@ def search_seasons():
     per_page = 20
     offset = (page - 1) * per_page
 
+    # Capture the sorting column and order
+    sort = request.args.get('sort', 'season_id')
+    order = request.args.get('order', 'asc')
+
+    # Sanitize/validate sort and order, so we don't allow invalid column or injection
+    valid_columns = {'key_id', 'season_id', 'season', 'tier', 'division', 'subdivision', 'winner', 'count_teams'}
+    if sort not in valid_columns:
+        sort = 'season_id'
+    if order not in ['asc', 'desc']:
+        order = 'asc'
+
+    season = request.args.get('season')
+    tier = request.args.get('tier')
+    division = request.args.get('division')
+
     try:
         cursor = g.db.cursor(dictionary=True)
-        season = request.args.get('season')
-        tier = request.args.get('tier')
-        division = request.args.get('division')
 
+        # Get total count (for pagination)
         count_query = "SELECT COUNT(*) as total FROM seasons"
         cursor.execute(count_query)
         total_results = cursor.fetchone()['total']
         total_pages = (total_results // per_page) + (1 if total_results % per_page > 0 else 0)
 
+        # Build the main query
         query = """
-        SELECT key_id, season_id, season, tier, division, subdivision, winner, count_teams 
-        FROM seasons 
+        SELECT key_id, season_id, season, tier, division, subdivision, winner, count_teams
+        FROM seasons
         WHERE 1=1
         """
         params = []
@@ -207,17 +221,31 @@ def search_seasons():
             query += " AND division = %s"
             params.append(division)
 
-        query += " ORDER BY season_id LIMIT %s OFFSET %s"
+        # Add sorting and pagination
+        query += f" ORDER BY {sort} {order} LIMIT %s OFFSET %s"
         params.extend([per_page, offset])
 
         cursor.execute(query, params)
         seasons = cursor.fetchall()
+
     except mysql.connector.Error as e:
         print(f"MySQL error occurred: {e}")
+        seasons = []
+        total_pages = 1
     finally:
         cursor.close()
 
-    return render_template('seasons.html', seasons=seasons, page=page, total_pages=total_pages)
+    return render_template(
+        'seasons.html',
+        seasons=seasons,
+        page=page,
+        total_pages=total_pages,
+        sort=sort,
+        order=order,
+        season=season,
+        tier=tier,
+        division=division
+    )
 
 @views.route('/team-details/<team_id>', methods=['GET', 'POST'])
 def team_details(team_id):
@@ -413,26 +441,55 @@ def delete_season(season_id):
     
     return redirect(url_for('views.search_seasons'))
 
+
 @views.route('/standings', methods=['GET'])
 def standings():
     """
-    Route to display the standings.
+    Route to display the standings with optional searching and sorting.
     """
     search_query = request.args.get('search', '')
     page = request.args.get('page', 1, type=int)
     per_page = 10  # Number of items per page
 
+    # New: Sort parameters
+    sort_by = request.args.get('sort_by', 'season')  # default sort by season
+    sort_order = request.args.get('sort_order', 'asc')  # default ascending
+    valid_sort_columns = ['season', 'tier', 'division', 'team_name', 'position']
+
+    # Validate columns
+    if sort_by not in valid_sort_columns:
+        sort_by = 'season'
+
+    # Validate sort order
+    if sort_order not in ['asc', 'desc']:
+        sort_order = 'asc'
+
     try:
         cursor = g.db.cursor(dictionary=True)
-        
-        # Build the query with search functionality
-        query = "SELECT * FROM standings WHERE team_name LIKE %s OR season LIKE %s OR division LIKE %s"
-        cursor.execute(query, (f"%{search_query}%", f"%{search_query}%", f"%{search_query}%"))
+
+        # Build the query with search and sorting
+        # IMPORTANT: Use placeholders only for user-submitted *values*, not columns
+        query = f"""
+            SELECT * 
+            FROM standings 
+            WHERE team_name LIKE %s
+               OR season LIKE %s
+               OR division LIKE %s
+            ORDER BY {sort_by} {sort_order}
+        """
+
+        cursor.execute(query, (
+            f"%{search_query}%",
+            f"%{search_query}%",
+            f"%{search_query}%"
+        ))
         standings = cursor.fetchall()
 
         # Pagination logic
         total_items = len(standings)
         total_pages = (total_items + per_page - 1) // per_page
+
+        # Slice the data for the page
         standings = standings[(page - 1) * per_page: page * per_page]
 
     except mysql.connector.Error as e:
@@ -442,7 +499,19 @@ def standings():
     finally:
         cursor.close()
 
-    return render_template('standings.html', standings=standings, search_query=search_query, page=page, total_pages=total_pages, max=max, min=min)
+    return render_template(
+        'standings.html',
+        standings=standings,
+        search_query=search_query,
+        page=page,
+        total_pages=total_pages,
+        sort_by=sort_by,
+        sort_order=sort_order,
+        max=max,
+        min=min
+    )
+
+
 @views.route('/standing-details/<key_id>', methods=['GET'])
 def standing_details(key_id):
     """

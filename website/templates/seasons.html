@@ -1,4 +1,5 @@
-{%extends "base.html"%} {% block title %}Seasons{% endblock %}
+{% extends "base.html" %}
+{% block title %}Seasons{% endblock %}
 
 {% block content %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/seasons.css') }}">
@@ -6,14 +7,16 @@
 <form action="/seasons" method="GET" class="mb-4">
     <div class="row g-3">
         <div class="col">
-            <input type="text" name="season" class="form-control" placeholder="Season (e.g., 2002)">
+            <input type="text" name="season" class="form-control" placeholder="Season (e.g., 2002)" value="{{ season or '' }}">
         </div>
         <div class="col">
-            <input type="text" name="tier" class="form-control" placeholder="Tier (e.g., 3)">
+            <input type="text" name="tier" class="form-control" placeholder="Tier (e.g., 3)" value="{{ tier or '' }}">
         </div>
         <div class="col">
-            <input type="text" name="division" class="form-control" placeholder="Division (e.g., First Division)">
+            <input type="text" name="division" class="form-control" placeholder="Division (e.g., First Division)" value="{{ division or '' }}">
         </div>
+        <input type="hidden" name="sort" value="{{ sort }}">
+        <input type="hidden" name="order" value="{{ order }}">
         <div class="col">
             <button type="submit" class="btn btn-primary">Search</button>
         </div>
@@ -24,58 +27,209 @@
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>Key ID</th>
-            <th>Season ID</th>
-            <th>Season</th>
-            <th>Tier</th>
-            <th>Division</th>
-            <th>Subdivision</th>
-            <th>Winner</th>
-            <th>Team Count</th>
+            <!-- Example of clickable sorting with toggle for Key ID -->
+            <th>
+                <a href="{{ url_for('views.search_seasons',
+                                    page=page,
+                                    season=season,
+                                    tier=tier,
+                                    division=division,
+                                    sort='key_id',
+                                    order='desc' if (sort=='key_id' and order=='asc') else 'asc') }}">
+                    Key ID
+                    {% if sort == 'key_id' %}
+                        {{ '▲' if order == 'asc' else '▼' }}
+                    {% endif %}
+                </a>
+            </th>
+
+            <th>
+                <a href="{{ url_for('views.search_seasons',
+                                    page=page,
+                                    season=season,
+                                    tier=tier,
+                                    division=division,
+                                    sort='season_id',
+                                    order='desc' if (sort=='season_id' and order=='asc') else 'asc') }}">
+                    Season ID
+                    {% if sort == 'season_id' %}
+                        {{ '▲' if order == 'asc' else '▼' }}
+                    {% endif %}
+                </a>
+            </th>
+
+            <th>
+                <a href="{{ url_for('views.search_seasons',
+                                    page=page,
+                                    season=season,
+                                    tier=tier,
+                                    division=division,
+                                    sort='season',
+                                    order='desc' if (sort=='season' and order=='asc') else 'asc') }}">
+                    Season
+                    {% if sort == 'season' %}
+                        {{ '▲' if order == 'asc' else '▼' }}
+                    {% endif %}
+                </a>
+            </th>
+
+            <th>
+                <a href="{{ url_for('views.search_seasons',
+                                    page=page,
+                                    season=season,
+                                    tier=tier,
+                                    division=division,
+                                    sort='tier',
+                                    order='desc' if (sort=='tier' and order=='asc') else 'asc') }}">
+                    Tier
+                    {% if sort == 'tier' %}
+                        {{ '▲' if order == 'asc' else '▼' }}
+                    {% endif %}
+                </a>
+            </th>
+
+            <th>
+                <a href="{{ url_for('views.search_seasons',
+                                    page=page,
+                                    season=season,
+                                    tier=tier,
+                                    division=division,
+                                    sort='division',
+                                    order='desc' if (sort=='division' and order=='asc') else 'asc') }}">
+                    Division
+                    {% if sort == 'division' %}
+                        {{ '▲' if order == 'asc' else '▼' }}
+                    {% endif %}
+                </a>
+            </th>
+
+            <th>
+                <a href="{{ url_for('views.search_seasons',
+                                    page=page,
+                                    season=season,
+                                    tier=tier,
+                                    division=division,
+                                    sort='subdivision',
+                                    order='desc' if (sort=='subdivision' and order=='asc') else 'asc') }}">
+                    Subdivision
+                    {% if sort == 'subdivision' %}
+                        {{ '▲' if order == 'asc' else '▼' }}
+                    {% endif %}
+                </a>
+            </th>
+
+            <th>
+                <a href="{{ url_for('views.search_seasons',
+                                    page=page,
+                                    season=season,
+                                    tier=tier,
+                                    division=division,
+                                    sort='winner',
+                                    order='desc' if (sort=='winner' and order=='asc') else 'asc') }}">
+                    Winner
+                    {% if sort == 'winner' %}
+                        {{ '▲' if order == 'asc' else '▼' }}
+                    {% endif %}
+                </a>
+            </th>
+
+            <th>
+                <a href="{{ url_for('views.search_seasons',
+                                    page=page,
+                                    season=season,
+                                    tier=tier,
+                                    division=division,
+                                    sort='count_teams',
+                                    order='desc' if (sort=='count_teams' and order=='asc') else 'asc') }}">
+                    Team Count
+                    {% if sort == 'count_teams' %}
+                        {{ '▲' if order == 'asc' else '▼' }}
+                    {% endif %}
+                </a>
+            </th>
+
             {% if current_user.is_authenticated and current_user.role == 'admin' %}
             <th>Actions</th>
             {% endif %}
         </tr>
     </thead>
     <tbody>
-        {% for season in seasons %}
+        {% for s in seasons %}
         <tr>
-            <td>{{ season['key_id'] }}</td>
-            <td><a href="{{ url_for('views.season_overview', season_id=season['season_id']) }}">{{ season['season_id'] }}</a></td>
-            <td><a href="{{ url_for('views.season_tiers', year=season['season']) }}">{{ season['season'] }}</a></td>
-            <td>{{ season['tier'] }}</td>
-            <td>{{ season['division'] }}</td>
-            <td>{{ season['subdivision'] }}</td>
-            <td>{{ season['winner'] }}</td>
-            <td>{{ season['count_teams'] }}</td>
+            <td>{{ s['key_id'] }}</td>
+            <td>
+                <a href="{{ url_for('views.season_overview', season_id=s['season_id']) }}">
+                    {{ s['season_id'] }}
+                </a>
+            </td>
+            <td>
+                <a href="{{ url_for('views.season_tiers', year=s['season']) }}">
+                    {{ s['season'] }}
+                </a>
+            </td>
+            <td>{{ s['tier'] }}</td>
+            <td>{{ s['division'] }}</td>
+            <td>{{ s['subdivision'] }}</td>
+            <td>{{ s['winner'] }}</td>
+            <td>{{ s['count_teams'] }}</td>
             {% if current_user.is_authenticated and current_user.role == 'admin' %}
             <td>
-                <form method="POST" action="{{ url_for('views.delete_season', season_id=season['season_id']) }}" style="display:inline;">
-                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this season?');">Delete</button>
+                <form method="POST" action="{{ url_for('views.delete_season', season_id=s['season_id']) }}" style="display:inline;">
+                    <button type="submit" class="btn btn-danger btn-sm"
+                            onclick="return confirm('Are you sure you want to delete this season?');">
+                        Delete
+                    </button>
                 </form>
             </td>
             {% endif %}
         </tr>
-        {% endfor %}     
+        {% endfor %}
     </tbody>
 </table>
 
 <nav aria-label="Page navigation">
     <ul class="pagination">
       {% if page > 1 %}
-        <li class="page-item"><a class="page-link" href="{{ url_for('views.search_seasons', page=page-1, season=season, tier=tier, division=division) }}">Previous</a></li>
+        <li class="page-item">
+          <a class="page-link" href="{{ url_for('views.search_seasons',
+                                                page=page-1,
+                                                season=season,
+                                                tier=tier,
+                                                division=division,
+                                                sort=sort,
+                                                order=order) }}">
+            Previous
+          </a>
+        </li>
       {% endif %}
       {% for p in range(1, total_pages + 1) %}
         <li class="page-item {% if page == p %}active{% endif %}">
-          <a class="page-link" href="{{ url_for('views.search_seasons', page=p, season=season, tier=tier, division=division) }}">{{ p }}</a>
+          <a class="page-link" href="{{ url_for('views.search_seasons',
+                                                page=p,
+                                                season=season,
+                                                tier=tier,
+                                                division=division,
+                                                sort=sort,
+                                                order=order) }}">
+            {{ p }}
+          </a>
         </li>
       {% endfor %}
       {% if page < total_pages %}
-        <li class="page-item"><a class="page-link" href="{{ url_for('views.search_seasons', page=page+1, season=season, tier=tier, division=division) }}">Next</a></li>
+        <li class="page-item">
+          <a class="page-link" href="{{ url_for('views.search_seasons',
+                                                page=page+1,
+                                                season=season,
+                                                tier=tier,
+                                                division=division,
+                                                sort=sort,
+                                                order=order) }}">
+            Next
+          </a>
+        </li>
       {% endif %}
     </ul>
-</nav>  
-
+</nav>
 {% else %}
 <p>No results found.</p>
 {% endif %}

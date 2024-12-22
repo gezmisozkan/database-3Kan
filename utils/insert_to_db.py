@@ -4,7 +4,7 @@ import os
 from werkzeug.security import generate_password_hash
 # Database connection details
 user = 'root'
-password = '1234'
+password = 'root'
 host = 'localhost'
 database = '3kan'
 
@@ -37,7 +37,7 @@ except mysql.connector.Error as e:
     print(f"Error inserting admin user: {e}")
 
 # Part 2: Insert CSV Data into Database
-csv_directory = 'football/simpified_csv'
+csv_directory = '../football/simpified_csv'
 
 # Loop through each CSV file in the directory
 for filename in os.listdir(csv_directory):
