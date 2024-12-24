@@ -9,16 +9,20 @@
 {% if tiers %}
     <ul class="list-group">
         {% for tier in tiers %}
-        <li class="list-group-item">
-            <a href="{{ url_for('views.season_overview', season_id=tier['season_id']) }}">
-                Tier {{ tier['tier'] }} 
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span>Tier {{ tier['tier'] }}</span>
+            <a href="{{ url_for('views.season_overview', season_id=tier['season_id']) }}" class="btn btn-primary btn-sm">
+                View Tier
             </a>
         </li>
-    {% endfor %}    
+        {% endfor %}    
     </ul>
 {% else %}
     <p>No tiers available for this season.</p>
 {% endif %}
 
-<a href="{{ url_for('views.home') }}" class="btn btn-dark mt-4">Back to Home</a>
+<div class="mt-4">
+    <a href="{{ url_for('views.home') }}" class="btn btn-dark">Back to Home</a>
+    <a href="{{ url_for('views.search_seasons') }}" class="btn btn-secondary">All Seasons</a>
+</div>
 {% endblock %}

@@ -116,9 +116,9 @@ def teams():
 
     return render_template("teams.html", teams=teams, search_query=search_query, page=page, total_pages=total_pages)
 
-@views.route('/matches', methods=['GET', 'POST'])
+@views.route('/matches', methods=['GET'])
 def matches():
-    teams, matches, selected_team = [], [], None
+    teams, matches, selected_team, search_query, sort, order = [], [], None, None, None, None
     page = int(request.args.get('page', 1))
     per_page = 20
     offset = (page - 1) * per_page
@@ -126,52 +126,84 @@ def matches():
     try:
         cursor = g.db.cursor(dictionary=True)
 
-        query = "SELECT DISTINCT home_team_name FROM matches"
-        cursor.execute(query)
+        # Fetch distinct home team names for dropdown
+        team_query = "SELECT DISTINCT home_team_name FROM matches"
+        cursor.execute(team_query)
         teams = [row['home_team_name'] for row in cursor.fetchall()]
 
-        # Handle form submission and query parameters for selected team
-        if request.method == 'POST':
-            selected_team = request.form['team']
-        else:
-            selected_team = request.args.get('selected_team')
-        total_pages = 0
-        if selected_team:
-            count_query = """
-                SELECT COUNT(*) as total 
-                FROM matches 
-                WHERE home_team_name = %s OR away_team_name = %s
-            """
-            cursor.execute(count_query, (selected_team, selected_team))
-            total_results = cursor.fetchone()['total']
-            total_pages = (total_results // per_page) + (1 if total_results % per_page > 0 else 0)
+        # Get search and sort parameters
+        selected_team = request.args.get('team', None)
+        search_query = request.args.get('search', '').strip()
+        sort = request.args.get('sort', 'match_id')  # Default sorting by match_id
+        order = request.args.get('order', 'asc')  # Default order is ascending
 
-            # Get match details and team IDs
-            match_query = """
-                SELECT 
-                    m.match_id, 
-                    m.match_name,
-                    m.home_team_name, 
-                    m.away_team_name, 
-                    t1.team_id AS home_team_id, 
-                    t2.team_id AS away_team_id, 
-                    m.home_team_score, 
-                    m.away_team_score
-                FROM matches m
-                JOIN teams t1 ON m.home_team_name = t1.team_name 
-                JOIN teams t2 ON m.away_team_name = t2.team_name 
-                WHERE m.home_team_name = %s OR m.away_team_name = %s
-                ORDER BY m.match_id DESC 
-                LIMIT %s OFFSET %s
-            """
-            cursor.execute(match_query, (selected_team, selected_team, per_page, offset))
-            matches = cursor.fetchall()
+        # Build base query for matches
+        base_query = """
+            SELECT 
+                m.match_id, 
+                m.match_name,
+                m.home_team_name, 
+                m.away_team_name, 
+                t1.team_id AS home_team_id, 
+                t2.team_id AS away_team_id, 
+                m.home_team_score, 
+                m.away_team_score,
+                s.season AS season_year,
+                s.tier AS season_tier,
+                s.season_id
+            FROM matches m
+            JOIN teams t1 ON m.home_team_name = t1.team_name 
+            JOIN teams t2 ON m.away_team_name = t2.team_name
+            LEFT JOIN seasons s ON m.season_id = s.season_id
+            WHERE 1=1 # Placeholder for additional filters
+        """
+
+        # Add filters based on search inputs
+        filters = []
+        params = []
+        if selected_team:
+            filters.append("(m.home_team_name = %s OR m.away_team_name = %s)")
+            params.extend([selected_team, selected_team])
+        if search_query:
+            filters.append("m.match_name LIKE %s")
+            params.append(f"%{search_query}%")
+
+        # Combine filters into the base query
+        if filters:
+            base_query += " AND " + " AND ".join(filters)
+
+        # Add sorting and pagination
+        base_query += f" ORDER BY {sort} {order} LIMIT %s OFFSET %s"
+        params.extend([per_page, offset])
+
+        # Execute query and fetch results
+        cursor.execute(base_query, params)
+        matches = cursor.fetchall()
+
+        # Count total results for pagination
+        count_query = "SELECT COUNT(*) as total FROM matches m WHERE 1=1"
+        if filters:
+            count_query += " AND " + " AND ".join(filters)
+        cursor.execute(count_query, params[:-2])  # Exclude LIMIT and OFFSET from params
+        total_results = cursor.fetchone()['total']
+        total_pages = (total_results // per_page) + (1 if total_results % per_page > 0 else 0)
+
     except mysql.connector.Error as e:
         print(f"MySQL error occurred: {e}")
     finally:
         cursor.close()
 
-    return render_template("matches.html", teams=teams, matches=matches, selected_team=selected_team, page=page, total_pages=total_pages)
+    return render_template(
+        "matches.html", 
+        teams=teams, 
+        matches=matches, 
+        selected_team=selected_team, 
+        search_query=search_query, 
+        sort=sort, 
+        order=order, 
+        page=page, 
+        total_pages=total_pages
+    )
 
 
 @views.route('/seasons', methods=['GET'])
@@ -287,17 +319,26 @@ def team_details(team_id):
         total_pages = (total_results // per_page) + (1 if total_results % per_page > 0 else 0)
 
         # Fetch team details
-        query = "SELECT * FROM teams WHERE team_id = %s"
-        cursor.execute(query, (team_id,))
+        team_query = "SELECT * FROM teams WHERE team_id = %s"
+        cursor.execute(team_query, (team_id,))
         team_info = cursor.fetchone()
 
-        # Fetch recent matches with pagination
+        # Fetch recent matches with season info
         match_query = """
             SELECT 
-                m.match_id, m.match_name, t1.team_name AS home_team, t2.team_name AS away_team, t1.team_id AS home_team_id, t2.team_id AS away_team_id, m.score
+                m.match_id, 
+                m.match_name, 
+                t1.team_name AS home_team, 
+                t2.team_name AS away_team, 
+                t1.team_id AS home_team_id, 
+                t2.team_id AS away_team_id, 
+                m.score,
+                s.season AS season_year,
+                s.tier AS season_tier
             FROM matches m
             JOIN teams t1 ON m.home_team_id = t1.team_id
             JOIN teams t2 ON m.away_team_id = t2.team_id
+            LEFT JOIN seasons s ON m.season_id = s.season_id
             WHERE m.home_team_id = %s OR m.away_team_id = %s
             ORDER BY m.match_id DESC
             LIMIT %s OFFSET %s
@@ -306,13 +347,14 @@ def team_details(team_id):
         matches = cursor.fetchall()
 
         # Fetch comments
-        cursor.execute("""
+        comment_query = """
             SELECT c.comment, c.created_at, u.full_name AS username
             FROM team_comments c
             JOIN User u ON c.user_id = u.id
             WHERE c.team_id = %s
             ORDER BY c.created_at DESC
-        """, (team_id,))
+        """
+        cursor.execute(comment_query, (team_id,))
         comments = cursor.fetchall()
     except mysql.connector.Error as e:
         flash(f'An error occurred while fetching team details: {e}', 'error')
@@ -342,21 +384,12 @@ def season_overview(season_id):
         cursor.execute(query, (season_id,))
         season_info = cursor.fetchone()
 
-        match_query = """
-            SELECT m.match_id, m.match_name, t1.team_name AS home_team, t2.team_name AS away_team, m.score
-            FROM matches m
-            JOIN teams t1 ON m.home_team_id = t1.team_id
-            JOIN teams t2 ON m.away_team_id = t2.team_id
-            WHERE m.season_id = %s
-        """
-        cursor.execute(match_query, (season_id,))
-        matches = cursor.fetchall()
     except mysql.connector.Error as e:
         print(f"MySQL error occurred: {e}")
     finally:
         cursor.close()
 
-    return render_template("season_overview.html", season=season_info, matches=matches)
+    return render_template("season_overview.html", season=season_info)
 
 @views.route('/delete-team/<team_id>', methods=['POST'])
 @login_required

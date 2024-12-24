@@ -5,54 +5,123 @@
 
 <h1 class="mb-4">Football Matches</h1>
 
-<form method="post" class="mb-4">
-    <div class="row">
-        <div class="col-md-6">
-            <select name="team" class="form-select" required>
-                <option value="" disabled {% if not selected_team %}selected{% endif %}>Select a team</option>
-                {% for team in teams %}
-                  <option value="{{ team }}" {% if team == selected_team %}selected{% endif %}>{{ team }}</option>
-                {% endfor %}
-             </select>             
+<!-- Search Form -->
+<form method="GET" action="/matches" class="mb-4">
+    <div class="row g-3">
+        <!-- Search by Match Name -->
+        <div class="col-md-4">
+            <input type="text" name="search" class="form-control" placeholder="Match Name" value="{{ search_query }}">
         </div>
+
+        <!-- Filter by Team -->
+        <div class="col-md-4">
+            <select name="team" class="form-select">
+                <option value="" {% if not selected_team %}selected{% endif %}>Select a Team</option>
+                {% for team in teams %}
+                <option value="{{ team }}" {% if team == selected_team %}selected{% endif %}>{{ team }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Search Button -->
         <div class="col-md-2">
-            <button type="submit" class="btn btn-primary">Show Matches</button>
+            <button type="submit" class="btn btn-primary">Search</button>
         </div>
     </div>
 </form>
 
 {% if matches %}
-    <h2>Matches for {{ selected_team }}</h2>
-    <table class="table table-striped">
+    <h2 class="mb-4">{% if selected_team %}Matches for {{ selected_team }}{% else %}All Matches{% endif %}</h2>
+
+    <!-- Matches Table -->
+    <table class="table table-striped table-bordered">
         <thead>
-          <tr>
-            <th>Match</th>
-            <th>Home Team</th>
-            <th>Away Team</th>
-            <th>Home Goals</th>
-            <th>Away Goals</th>
-            {% if current_user.is_authenticated and current_user.role == 'admin' %}
-            <th>Actions</th>
-            {% endif %}
-        </tr>
+            <tr>
+                <!-- Sortable Match ID -->
+                <th>
+                    <a href="{{ url_for('views.matches', page=page, search=search_query, team=selected_team, sort='match_id', order='desc' if (sort=='match_id' and order=='asc') else 'asc') }}">
+                        Match ID
+                        {% if sort == 'match_id' %}
+                            {{ '▲' if order == 'asc' else '▼' }}
+                        {% endif %}
+                    </a>
+                </th>
+
+                <!-- Sortable Match Name -->
+                <th>
+                    <a href="{{ url_for('views.matches', page=page, search=search_query, team=selected_team, sort='match_name', order='desc' if (sort=='match_name' and order=='asc') else 'asc') }}">
+                        Match Name
+                        {% if sort == 'match_name' %}
+                            {{ '▲' if order == 'asc' else '▼' }}
+                        {% endif %}
+                    </a>
+                </th>
+
+                <!-- Home Team -->
+                <th>Home Team</th>
+
+                <!-- Away Team -->
+                <th>Away Team</th>
+
+                <!-- Sortable Home Goals -->
+                <th>
+                    <a href="{{ url_for('views.matches', page=page, search=search_query, team=selected_team, sort='home_team_score', order='desc' if (sort=='home_team_score' and order=='asc') else 'asc') }}">
+                        Home Goals
+                        {% if sort == 'home_team_score' %}
+                            {{ '▲' if order == 'asc' else '▼' }}
+                        {% endif %}
+                    </a>
+                </th>
+
+                <!-- Sortable Away Goals -->
+                <th>
+                    <a href="{{ url_for('views.matches', page=page, search=search_query, team=selected_team, sort='away_team_score', order='desc' if (sort=='away_team_score' and order=='asc') else 'asc') }}">
+                        Away Goals
+                        {% if sort == 'away_team_score' %}
+                            {{ '▲' if order == 'asc' else '▼' }}
+                        {% endif %}
+                    </a>
+                </th>
+
+                <!-- Season -->
+                <th>Season</th>
+
+                <!-- Tier -->
+                <th>Tier</th>
+
+                <!-- Admin Actions -->
+                {% if current_user.is_authenticated and current_user.role == 'admin' %}
+                <th>Actions</th>
+                {% endif %}
+            </tr>
         </thead>
         <tbody>
             {% for match in matches %}
             <tr>
-                <td><a href="{{ url_for('views.match_details', match_id=match['match_id']) }}">{{ match['match_id'] }}</a></td>
+                <td>{{ match['match_id'] }}</td>
+                <td><a href="{{ url_for('views.match_details', match_id=match['match_id']) }}">{{ match['match_name'] }}</a></td>
                 <td><a href="{{ url_for('views.team_details', team_id=match['home_team_id']) }}">{{ match['home_team_name'] }}</a></td>
                 <td><a href="{{ url_for('views.team_details', team_id=match['away_team_id']) }}">{{ match['away_team_name'] }}</a></td>
-                <td>{{ match['home_team_score'] }}</td>  
-                <td>{{ match['away_team_score'] }}</td> 
-                
+                <td>{{ match['home_team_score'] }}</td>
+                <td>{{ match['away_team_score'] }}</td>
+                <td>
+                    <a href="{{ url_for('views.season_tiers', year=match['season_year']) }}">
+                        {{ match['season_year'] }}
+                    </a>
+                </td>
+                <td>
+                    <a href="{{ url_for('views.season_overview', season_id=match['season_id']) }}">
+                        Tier {{ match['season_tier'] }}
+                    </a>
+                </td>
                 {% if current_user.is_authenticated and current_user.role == 'admin' %}
                 <td>
-                  <form method="POST" action="{{ url_for('views.delete_match', match_id=match['match_id']) }}" style="display:inline;">
-                      <input type="hidden" name="page" value="{{ page }}">
-                      <input type="hidden" name="selected_team" value="{{ selected_team }}">
-                      <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this match?');">Delete</button>
-                  </form>
-              </td>
+                    <form method="POST" action="{{ url_for('views.delete_match', match_id=match['match_id']) }}" style="display:inline;">
+                        <input type="hidden" name="page" value="{{ page }}">
+                        <input type="hidden" name="selected_team" value="{{ selected_team }}">
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this match?');">Delete</button>
+                    </form>
+                </td>
                 {% endif %}
             </tr>
             {% endfor %}

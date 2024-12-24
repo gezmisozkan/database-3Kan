@@ -14,6 +14,8 @@
             <th>Home Team</th>
             <th>Away Team</th>
             <th>Score</th>
+            <th>Season</th>
+            <th>Tier</th>
         </tr>
     </thead>
     <tbody>
@@ -31,6 +33,15 @@
                 {{ match['away_team'] }}
             </a></td>
             <td>{{ match['score'] }}</td>
+            <!-- Season -->
+            <td>
+                <a href="{{ url_for('views.season_tiers', year=match['season_year']) }}">
+                    {{ match['season_year'] }}
+                </a>
+            </td>
+            <td>
+                Tier {{ match['season_tier'] }}
+            </td>
         </tr>
         {% endfor %}
     </tbody>
