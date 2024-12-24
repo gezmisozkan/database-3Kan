@@ -2,18 +2,14 @@ import pandas as pd
 import mysql.connector
 import os
 from werkzeug.security import generate_password_hash
-# Database connection details
-user = 'root'
-password = 'root'
-host = 'localhost'
-database = '3kan'
+from build_database import Config
 
-# Connect to MySQL database
+# Database connection details
 db = mysql.connector.connect(
-    host=host,
-    user=user,
-    password=password,
-    database=database
+    host=Config.DB_HOST,
+    user=Config.DB_USER,
+    password=Config.DB_PASSWORD,
+    database=Config.DB_NAME
 )
 
 # Use a single cursor for all queries
@@ -37,7 +33,7 @@ except mysql.connector.Error as e:
     print(f"Error inserting admin user: {e}")
 
 # Part 2: Insert CSV Data into Database
-csv_directory = '../football/simpified_csv'
+csv_directory = 'football/simpified_csv'
 
 # Loop through each CSV file in the directory
 for filename in os.listdir(csv_directory):

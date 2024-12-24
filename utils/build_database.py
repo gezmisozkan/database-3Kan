@@ -2,15 +2,32 @@ import os
 import mysql.connector
 from mysql.connector import errorcode
 
+class Config:
+    DB_HOST = 'localhost'
+    DB_USER = 'root'
+    DB_PASSWORD = '1234'
+    DB_NAME = '3kan'
+
+
 # Database connection configuration
 config = {
-    'user': 'root',
-    'password': 'root',
-    'host': 'localhost'
+    'user': Config.DB_USER,
+    'password': Config.DB_PASSWORD,
+    'host': Config.DB_HOST
 }
 
+DATABASE_NAME = Config.DB_NAME
+
+# # Database connection configuration
+# config = {
+#     'user': 'root',
+#     'password': 'root',
+#     'host': 'localhost'
+# }
+
+
 # Name of the database to drop and recreate
-DATABASE_NAME = '3kan'
+# DATABASE_NAME = '3kan'
 
 # Path to your folder containing the additional .sql files
 sql_files_directory = 'sql-queries'

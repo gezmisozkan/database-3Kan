@@ -1,6 +1,7 @@
 import mysql.connector
 from flask import Blueprint, render_template, request, g, redirect, url_for, flash
 from flask_login import login_required, current_user
+from utils.build_database import Config
 
 views = Blueprint('views', __name__)
 
@@ -8,10 +9,10 @@ views = Blueprint('views', __name__)
 def connect_to_database():
     if 'db' not in g:
         g.db = mysql.connector.connect(
-            host='localhost',
-            user='root',
-            password='root',
-            database='3kan'
+            host=Config.DB_HOST,
+            user=Config.DB_USER,
+            password=Config.DB_PASSWORD,
+            database=Config.DB_NAME
         )
 
 @views.teardown_request
