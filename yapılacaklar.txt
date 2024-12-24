@@ -3,14 +3,9 @@ front-end'de önemli rötuşlar
 
 Foreign key kullanarak tablolar oluştur (bu ne demek???)
 
-insert, update, delete eklenmeli
-siteye artan mı azalan mı sırada görüntülenmesini soran bir buton eklenmeli
-admin panele user kısmı da eklenmeli
-
-admin panel css düzenlenmeli
+! admin panel css düzenlenmeli
 teams sayfasında css kötü
 
-team details sayfa düzeni değişmeli, kaç senedir ligde olduğu, kaç şampiyonluğu olduğu eklenebilir
+! team details sayfa düzeni değişmeli, kaç senedir ligde olduğu, kaç şampiyonluğu olduğu eklenebilir
 macth details sayfası düzeltilmeli
 
-season overview pagination eklenmeli

@@ -690,3 +690,149 @@ def user_comments():
         cursor.close()
 
     return render_template("comments.html", match_comments=match_comments, team_comments=team_comments)
+
+@views.route('/admin/comments', methods=['GET'])
+@login_required
+def admin_comments():
+    if current_user.role != 'admin':
+        flash('Only admins can access this page.', 'error')
+        return redirect(url_for('views.home'))
+
+    # Pagination setup
+    page = int(request.args.get('page', 1))
+    per_page = 10
+    offset = (page - 1) * per_page
+
+    try:
+        cursor = g.db.cursor(dictionary=True)
+
+        # Fetch total match comments for pagination
+        match_count_query = "SELECT COUNT(*) AS total FROM comments"
+        cursor.execute(match_count_query)
+        match_total = cursor.fetchone()['total']
+
+        # Fetch match comments (paginated)
+        match_query = """
+            SELECT 
+                c.comment_id, 
+                c.comment, 
+                c.created_at, 
+                m.match_name, 
+                u.full_name AS user_name,
+                u.id AS user_id
+            FROM comments c
+            JOIN matches m ON c.match_id = m.match_id
+            JOIN User u ON c.user_id = u.id
+            ORDER BY c.created_at DESC
+            LIMIT %s OFFSET %s
+        """
+        cursor.execute(match_query, (per_page, offset))
+        match_comments = cursor.fetchall()
+
+        # Group match comments by user
+        grouped_match_comments = {}
+        for comment in match_comments:
+            user_id = comment['user_id']
+            user_name = comment['user_name']
+            if user_id not in grouped_match_comments:
+                grouped_match_comments[user_id] = {
+                    'user_name': user_name,
+                    'comments': []
+                }
+            grouped_match_comments[user_id]['comments'].append(comment)
+
+        # Fetch total team comments for pagination
+        team_count_query = "SELECT COUNT(*) AS total FROM team_comments"
+        cursor.execute(team_count_query)
+        team_total = cursor.fetchone()['total']
+
+        # Fetch team comments (paginated)
+        team_query = """
+            SELECT 
+                c.comment_id, 
+                c.comment, 
+                c.created_at, 
+                t.team_name, 
+                u.full_name AS user_name,
+                u.id AS user_id
+            FROM team_comments c
+            JOIN teams t ON c.team_id = t.team_id
+            JOIN User u ON c.user_id = u.id
+            ORDER BY c.created_at DESC
+            LIMIT %s OFFSET %s
+        """
+        cursor.execute(team_query, (per_page, offset))
+        team_comments = cursor.fetchall()
+
+        # Group team comments by user
+        grouped_team_comments = {}
+        for comment in team_comments:
+            user_id = comment['user_id']
+            user_name = comment['user_name']
+            if user_id not in grouped_team_comments:
+                grouped_team_comments[user_id] = {
+                    'user_name': user_name,
+                    'comments': []
+                }
+            grouped_team_comments[user_id]['comments'].append(comment)
+
+        # Calculate total pages (optional: based on combined or individual totals)
+        total_pages = max(
+            (match_total + per_page - 1) // per_page,
+            (team_total + per_page - 1) // per_page
+        )
+
+    except mysql.connector.Error as e:
+        flash(f"Error fetching comments: {e}", "error")
+        grouped_match_comments, grouped_team_comments, total_pages = {}, {}, 1
+    finally:
+        cursor.close()
+
+    return render_template(
+        'admin_comments.html',
+        match_comments=grouped_match_comments.values(),
+        team_comments=grouped_team_comments.values(),
+        page=page,
+        total_pages=total_pages
+    )
+
+
+@views.route('/admin/comments/delete/<int:comment_id>', methods=['POST'])
+@login_required
+def delete_match_comment(comment_id):
+    if current_user.role != 'admin':
+        flash('Only admins can delete comments.', 'error')
+        return redirect(url_for('views.admin_comments'))
+
+    try:
+        cursor = g.db.cursor()
+        query = "DELETE FROM comments WHERE comment_id = %s"
+        cursor.execute(query, (comment_id,))
+        g.db.commit()
+        flash('Match comment deleted successfully.', 'success')
+    except mysql.connector.Error as e:
+        flash(f"Error deleting match comment: {e}", "error")
+    finally:
+        cursor.close()
+
+    return redirect(url_for('views.admin_comments'))
+
+@views.route('/admin/team-comments/delete/<int:comment_id>', methods=['POST'])
+@login_required
+def delete_team_comment(comment_id):
+    if current_user.role != 'admin':
+        flash('Only admins can delete comments.', 'error')
+        return redirect(url_for('views.admin_comments'))
+
+    try:
+        cursor = g.db.cursor()
+        query = "DELETE FROM team_comments WHERE comment_id = %s"
+        cursor.execute(query, (comment_id,))
+        g.db.commit()
+        flash('Team comment deleted successfully.', 'success')
+    except mysql.connector.Error as e:
+        flash(f"Error deleting team comment: {e}", "error")
+    finally:
+        cursor.close()
+
+    return redirect(url_for('views.admin_comments'))

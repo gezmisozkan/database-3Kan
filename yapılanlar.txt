@@ -22,3 +22,6 @@ Kullanıcının sadece yeni şifre girmesi gerekiyor
 -- Pagination eklendi
 -- Admin panel eklendi
 -- Admin maçları, sezonları ve takımları silebiliyor, buton sadece admine görünüyor
+
+foreign key olarak, maç görünümlerinde seasons ve teams tablolarıyla join yaparak veriyi getiriyoruz. Buna gerek yok aslında ama join kullanmak için böyle yaptık
+admin panele comment silme eklendi
