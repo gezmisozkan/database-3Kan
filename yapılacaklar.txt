@@ -18,3 +18,8 @@ Bu insert ve update için yeni sayfalar oluşturulabilir.
 tablolar arasındaki key ilişkileri incelenmeli.
 
 ER diagram gösterilmeli. 
+
+standing kısmında insert edilirken season id max 2021 'e kadar olunca çalışıyor. S-2050-2 gibi bir değeri eklemiyor, hata da vermiyor.
+
+standing insert sayfasının css'i eklenecek. 
+Aynı sayfaya placeholder'larla admine bilgi sağlanacak. 

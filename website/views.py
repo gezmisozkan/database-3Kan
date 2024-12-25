@@ -836,3 +836,91 @@ def delete_team_comment(comment_id):
         cursor.close()
 
     return redirect(url_for('views.admin_comments'))
+
+
+@views.route('/standings_insert')
+@login_required
+def standings_insert():
+    if current_user.role != 'admin':
+        flash('You do not have permission to access this page.', 'danger')
+        return redirect(url_for('views.standings'))
+    return render_template('standings_insert.html')
+
+@views.route('/insert_standing', methods=['POST'])
+@login_required
+def insert_standing():
+    if current_user.role != 'admin':
+        flash('You do not have permission to perform this action.', 'danger')
+        return redirect(url_for('views.standings'))
+
+    season_data = {
+        'season_id': request.form.get('season_id'),
+        'season': request.form.get('season'),
+        'tier': request.form.get('tier'),
+        'division': request.form.get('division'),
+        'subdivision': request.form.get('subdivision', 'None')
+    }
+
+    team_data = {
+        'team_id': request.form.get('team_id'),
+        'team_name': request.form.get('team_name'),
+        'current': True,
+        'former': False,
+        'defunct': False,
+        'first_appearance': request.form.get('season')
+    }
+
+    standing_data = {
+        'season_id': request.form.get('season_id'),
+        'season': request.form.get('season'),
+        'tier': request.form.get('tier'),
+        'division': request.form.get('division'),
+        'subdivision': request.form.get('subdivision', 'None'),
+        'position': request.form.get('position'),
+        'team_id': request.form.get('team_id'),
+        'team_name': request.form.get('team_name'),
+        'played': request.form.get('played'),
+        'wins': request.form.get('wins'),
+        'draws': request.form.get('draws'),
+        'losses': request.form.get('losses'),
+        'goals_for': request.form.get('goals_for'),
+        'goals_against': request.form.get('goals_against'),
+        'goal_difference': request.form.get('goal_difference'),
+        'points': request.form.get('points'),
+        'point_adjustment': request.form.get('point_adjustment', 0)
+    }
+
+    try:
+        cursor = g.db.cursor()
+
+        # Insert into seasons table if season_id does not exist
+        cursor.execute("SELECT COUNT(*) FROM seasons WHERE season_id = %s", (season_data['season_id'],))
+        if cursor.fetchone()[0] == 0:
+            cursor.execute("""
+                INSERT INTO seasons (season_id, season, tier, division, subdivision)
+                VALUES (%(season_id)s, %(season)s, %(tier)s, %(division)s, %(subdivision)s)
+            """, season_data)
+
+        # Insert into teams table if team_id does not exist
+        cursor.execute("SELECT COUNT(*) FROM teams WHERE team_id = %s", (team_data['team_id'],))
+        if cursor.fetchone()[0] == 0:
+            cursor.execute("""
+                INSERT INTO teams (team_id, team_name, current, former, defunct, first_appearance)
+                VALUES (%(team_id)s, %(team_name)s, %(current)s, %(former)s, %(defunct)s, %(first_appearance)s)
+            """, team_data)
+
+        # Insert into standings table
+        cursor.execute("""
+            INSERT INTO standings (season_id, season, tier, division, subdivision, position, team_id, team_name, played, wins, draws, losses, goals_for, goals_against, goal_difference, points, point_adjustment)
+            VALUES (%(season_id)s, %(season)s, %(tier)s, %(division)s, %(subdivision)s, %(position)s, %(team_id)s, %(team_name)s, %(played)s, %(wins)s, %(draws)s, %(losses)s, %(goals_for)s, %(goals_against)s, %(goal_difference)s, %(points)s, %(point_adjustment)s)
+        """, standing_data)
+
+        g.db.commit()
+        flash('Team data inserted successfully!', 'success')
+    except mysql.connector.Error as e:
+        g.db.rollback()
+        flash(f'An error occurred: {e}', 'danger')
+    finally:
+        cursor.close()
+
+    return redirect(url_for('views.standings'))

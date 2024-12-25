@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}Insert Standing Data{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Insert Standing Data</h1>
+    <form action="{{ url_for('views.insert_standing') }}" method="POST">
+        <div class="form-group">
+            <label for="season_id">Season ID:</label>
+            <input type="text" id="season_id" name="season_id" class="form-control" pattern="^S-[0-9]{4}-[0-9]+(-[A-Z])?$" required>
+        </div>
+        <div class="form-group">
+            <label for="season">Season:</label>
+            <input type="text" id="season" name="season" class="form-control" maxlength="4" required>
+        </div>
+        <div class="form-group">
+            <label for="tier">Tier:</label>
+            <input type="number" id="tier" name="tier" class="form-control" min="1" max="4" required>
+        </div>
+        <div class="form-group">
+            <label for="division">Division:</label>
+            <input type="text" id="division" name="division" class="form-control" maxlength="50" required>
+        </div>
+        <div class="form-group">
+            <label for="subdivision">Subdivision:</label>
+            <input type="text" id="subdivision" name="subdivision" class="form-control" maxlength="50">
+        </div>
+        <div class="form-group">
+            <label for="position">Position:</label>
+            <input type="number" id="position" name="position" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="team_id">Team ID:</label>
+            <input type="text" id="team_id" name="team_id" class="form-control" maxlength="20" required>
+        </div>
+        <div class="form-group">
+            <label for="team_name">Team Name:</label>
+            <input type="text" id="team_name" name="team_name" class="form-control" maxlength="100" required>
+        </div>
+        <div class="form-group">
+            <label for="played">Played:</label>
+            <input type="number" id="played" name="played" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="wins">Wins:</label>
+            <input type="number" id="wins" name="wins" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="draws">Draws:</label>
+            <input type="number" id="draws" name="draws" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="losses">Losses:</label>
+            <input type="number" id="losses" name="losses" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="goals_for">Goals For:</label>
+            <input type="number" id="goals_for" name="goals_for" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="goals_against">Goals Against:</label>
+            <input type="number" id="goals_against" name="goals_against" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="goal_difference">Goal Difference:</label>
+            <input type="number" id="goal_difference" name="goal_difference" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="points">Points:</label>
+            <input type="number" id="points" name="points" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="point_adjustment">Point Adjustment:</label>
+            <input type="number" id="point_adjustment" name="point_adjustment" class="form-control" value="0">
+        </div>
+        <button type="submit" class="btn btn-primary">Insert</button>
+    </form>
+    <a href="{{ url_for('views.standings') }}" class="btn btn-dark mt-4">Back to Standings</a>
+</div>
+{% endblock %}

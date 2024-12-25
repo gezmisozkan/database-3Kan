@@ -174,5 +174,9 @@
 <p>No standings found.</p>
 {% endif %}
 
+{% if current_user.is_authenticated and current_user.role == 'admin' %}
+<a href="{{ url_for('views.standings_insert') }}" class="btn btn-primary btn float-right ">Insert</a>
+{% endif %}
+
 <a href="{{ url_for('views.home') }}" class="btn btn-dark mt-4">Back to Home</a>
 {% endblock %}
