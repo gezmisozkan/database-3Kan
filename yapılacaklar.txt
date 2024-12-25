@@ -9,3 +9,12 @@ teams sayfasında css kötü
 ! team details sayfa düzeni değişmeli, kaç senedir ligde olduğu, kaç şampiyonluğu olduğu eklenebilir
 macth details sayfası düzeltilmeli
 
+standings tablosunda takıma tıklayınca teams detailse geçmeli 
+
+team details, match details, standing details admin user için insert ve update işlemleri yapılmalı
+
+Bu insert ve update için yeni sayfalar oluşturulabilir. 
+
+tablolar arasındaki key ilişkileri incelenmeli.
+
+ER diagram gösterilmeli. 
