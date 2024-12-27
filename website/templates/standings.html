@@ -100,7 +100,11 @@
           <td>{{ standing['season'] }}</td>
           <td>{{ standing['tier'] }}</td>
           <td>{{ standing['division'] }}</td>
-          <td>{{ standing['team_name'] }}</td>
+          <td>
+            <a href="{{ url_for('views.team_details', team_id=standing['team_id']) }}">
+                {{ standing['team_name'] }}
+            </a>
+        </td>
           <td>{{ standing['position'] }}</td>
           <td>
               <a class="btn btn-info btn-sm" href="{{ url_for('views.standing_details', key_id=standing['key_id']) }}">View Details</a>

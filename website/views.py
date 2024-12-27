@@ -358,6 +358,15 @@ def team_details(team_id):
         cursor.execute(league_years_query, (team_id,))
         league_years = cursor.fetchone()
 
+        # Total Points Gathered
+        total_points_query = """
+            SELECT SUM(points) AS total_points
+            FROM standings
+            WHERE team_id = %s
+        """
+        cursor.execute(total_points_query, (team_id,))
+        total_points = cursor.fetchone()
+
         # Times as Champion
         championships_query = """
             SELECT COUNT(*) AS championships
@@ -415,6 +424,7 @@ def team_details(team_id):
         best_season = {}
         most_goals_season = {}
         league_years = {}
+        total_points = {}
         championships = {}
         biggest_rival = {}
         total_matches = {}
@@ -429,12 +439,14 @@ def team_details(team_id):
         best_season=best_season,
         most_goals_season=most_goals_season,
         league_years=league_years,
+        total_points=total_points,
         championships=championships,
         biggest_rival=biggest_rival,
         total_matches=total_matches,
         average_points=average_points,
         comments=comments,
     )
+
 
 @views.route('/season/<season_id>', methods=['GET'])
 def season_overview(season_id):
