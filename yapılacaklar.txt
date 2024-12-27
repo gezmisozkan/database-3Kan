@@ -1,5 +1,3 @@
-footer'daki linkler işlevselleştirilmeli
-front-end'de önemli rötuşlar
 
 Foreign key kullanarak tablolar oluştur (bu ne demek???)
 
@@ -19,11 +17,11 @@ standing kısmında insert edilirken season id max 2021 'e kadar olunca çalış
 
 readme güncellenmeli
 
-!! standing insert sayfasının css'i eklenecek. 
-!! Aynı sayfaya placeholder'larla admine bilgi sağlanacak. 
+
+
 !! match-details sayfası css düzenlenmeli
 !! update-match sayfası css düzenlenmeli
-!! insert-match sayfası css düzenlenmeli
+
 !! adminin gördüğü comments sayfsası css yorum yokken kötü görünüyor
 !! admin panel yani /admin sayfası css düzenlenmeli
 !! admin/comments yani manage comments css düzeltilmeli
