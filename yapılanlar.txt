@@ -28,3 +28,4 @@ admin panele comment silme eklendi
 
 matches tablosuna edit ve insert eklendi, atılan gol değiştirildiğinde veya yeni maç eklendiğinde standings tablosundaki değerler güncelleniyor (trigger execution)(show triggers; yazdığında görülüyor)
 team details sayfasının mantığı değişti, şampiyınluk sayısı, oynanan maç, atılan goller etc. eklendi
+seasons verilerinden birisi silindiğinde trigger ile standingsteki bilgileri güncelliyoruz

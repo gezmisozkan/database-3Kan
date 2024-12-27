@@ -3,12 +3,6 @@ front-end'de önemli rötuşlar
 
 Foreign key kullanarak tablolar oluştur (bu ne demek???)
 
-! admin panel css düzenlenmeli
-teams sayfasında css kötü
-
-! team details sayfa düzeni değişmeli, kaç senedir ligde olduğu, kaç şampiyonluğu olduğu eklenebilir
-macth details sayfası düzeltilmeli
-
 standings tablosunda takıma tıklayınca teams detailse geçmeli 
 
 team details, match details, standing details admin user için insert ve update işlemleri yapılmalı
@@ -21,5 +15,11 @@ ER diagram gösterilmeli.
 
 standing kısmında insert edilirken season id max 2021 'e kadar olunca çalışıyor. S-2050-2 gibi bir değeri eklemiyor, hata da vermiyor.
 
-standing insert sayfasının css'i eklenecek. 
-Aynı sayfaya placeholder'larla admine bilgi sağlanacak. 
+!! standing insert sayfasının css'i eklenecek. 
+!! Aynı sayfaya placeholder'larla admine bilgi sağlanacak. 
+!! match-details sayfası css düzenlenmeli
+!! update-match sayfası css düzenlenmeli
+!! insert-match sayfası css düzenlenmeli
+!! adminin gördüğü comments sayfsası css yorum yokken kötü görünüyor
+!! admin panel yani /admin sayfası css düzenlenmeli
+!! admin/comments yani manage comments css düzeltilmeli

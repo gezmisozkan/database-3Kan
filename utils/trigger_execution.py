@@ -133,7 +133,88 @@ BEGIN
     WHERE team_id = OLD.away_team_id;
 END;
 """
+trigger_after_season_delete = """
+CREATE TRIGGER after_season_delete
+AFTER DELETE ON seasons
+FOR EACH ROW
+BEGIN
+    -- Reverse all matches related to the season
+    DELETE FROM matches WHERE season_id = OLD.season_id;
 
+    -- Recalculate standings
+    UPDATE standings
+    SET 
+        played = (
+            SELECT COUNT(*) 
+            FROM matches 
+            WHERE matches.home_team_id = standings.team_id OR matches.away_team_id = standings.team_id
+        ),
+        wins = (
+            SELECT SUM(home_team_win) 
+            FROM matches 
+            WHERE matches.home_team_id = standings.team_id
+        ) + (
+            SELECT SUM(away_team_win)
+            FROM matches
+            WHERE matches.away_team_id = standings.team_id
+        ),
+        losses = (
+            SELECT SUM(away_team_win) 
+            FROM matches 
+            WHERE matches.home_team_id = standings.team_id
+        ) + (
+            SELECT SUM(home_team_win)
+            FROM matches
+            WHERE matches.away_team_id = standings.team_id
+        ),
+        draws = (
+            SELECT SUM(draw) 
+            FROM matches 
+            WHERE matches.home_team_id = standings.team_id OR matches.away_team_id = standings.team_id
+        ),
+        goals_for = (
+            SELECT SUM(home_team_score) 
+            FROM matches 
+            WHERE matches.home_team_id = standings.team_id
+        ) + (
+            SELECT SUM(away_team_score)
+            FROM matches
+            WHERE matches.away_team_id = standings.team_id
+        ),
+        goals_against = (
+            SELECT SUM(away_team_score) 
+            FROM matches 
+            WHERE matches.home_team_id = standings.team_id
+        ) + (
+            SELECT SUM(home_team_score)
+            FROM matches
+            WHERE matches.away_team_id = standings.team_id
+        ),
+        goal_difference = (
+            SELECT SUM(home_team_score - away_team_score) 
+            FROM matches 
+            WHERE matches.home_team_id = standings.team_id
+        ) + (
+            SELECT SUM(away_team_score - home_team_score)
+            FROM matches
+            WHERE matches.away_team_id = standings.team_id
+        ),
+        points = (
+            SELECT SUM(3 * home_team_win + draw) 
+            FROM matches 
+            WHERE matches.home_team_id = standings.team_id
+        ) + (
+            SELECT SUM(3 * away_team_win + draw)
+            FROM matches
+            WHERE matches.away_team_id = standings.team_id
+        )
+    WHERE team_id IN (
+        SELECT DISTINCT team_id 
+        FROM matches 
+        WHERE matches.season_id = OLD.season_id
+    );
+END;
+"""
 # Function to execute the trigger creation
 def execute_trigger_creation():
     try:
@@ -151,6 +232,9 @@ def execute_trigger_creation():
             cursor.execute("DROP TRIGGER IF EXISTS after_match_insert;")
             cursor.execute("DROP TRIGGER IF EXISTS after_match_update;")
             cursor.execute("DROP TRIGGER IF EXISTS after_match_delete;")
+            cursor.execute("DROP TRIGGER IF EXISTS after_season_delete;")
+
+            print("Triggers dropped successfully!")
 
             # Execute the trigger creation statements
             print("Creating AFTER INSERT trigger...")
@@ -161,9 +245,13 @@ def execute_trigger_creation():
             cursor.execute(trigger_after_update)
             print("AFTER UPDATE trigger created successfully!")
 
-            print("Creating AFTER DELETE trigger...")
+            print("Creating AFTER DELETE trigger for matches...")
             cursor.execute(trigger_after_delete)
-            print("AFTER DELETE trigger created successfully!")
+            print("AFTER DELETE trigger for matches created successfully!")
+
+            print("Creating AFTER DELETE trigger for seasons...")
+            cursor.execute(trigger_after_season_delete)
+            print("AFTER DELETE trigger for seasons created successfully!")
 
             # Commit the changes
             connection.commit()
