@@ -1,6 +1,8 @@
+/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+/* Heading Styling */
 h1 {
     text-align: center;
     font-family: 'Russo One', sans-serif;
@@ -95,16 +97,11 @@ button:hover:before {
     pointer-events: none;
 }
 
-@keyframes glow {
-    0% {
-        transform: translateX(-100%)
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-.green-button {
+/* Green Button Styling */
+#insert {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
     background: linear-gradient(90deg, #32CD32, #00FF00); /* Green gradient */
     color: #FFFFFF;
     border: none;
@@ -118,14 +115,14 @@ button:hover:before {
     display: inline-block;
 }
 
-.green-button:hover {
+#insert:hover {
     box-shadow: 0 0 15px #00FF00, 0 0 25px #32CD32;
     filter: blur(0) brightness(1.1);
     color: #000000;
 }
 
 /* Button Glow Effect */
-.green-button:hover:before {
+#insert:hover:before {
     content: '';
     position: absolute;
     top: -20%;
@@ -138,34 +135,13 @@ button:hover:before {
     pointer-events: none;
 }
 
-/* Table Styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table th, table td {
-    text-align: left;
-    padding: 10px;
-    border: 1px solid #CCCCCC;
-    color: #FFFFFF;
-}
-
-table th {
-    background-color: #FFD700;
-    color: #333333;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-table tbody tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-table tbody tr:hover {
-    background-color: rgba(255, 255, 0, 0.2);
-    cursor: pointer;
+@keyframes glow {
+    0% {
+        transform: translateX(-100%)
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 /* Placeholder Styling */
@@ -182,9 +158,5 @@ input::placeholder {
 
     button {
         font-size: 14px;
-    }
-
-    table th, table td {
-        font-size: 12px;
     }
 }

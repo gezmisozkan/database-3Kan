@@ -1,6 +1,8 @@
+/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+/* Heading Styling */
 h1 {
     text-align: center;
     font-family: 'Russo One', sans-serif;
@@ -40,7 +42,7 @@ form {
     margin-bottom: 20px;
 }
 
-input.form-control {
+input.form-control, select.form-control {
     width: 100%;
     padding: 10px;
     border: 2px solid #FFD700;
@@ -51,7 +53,7 @@ input.form-control {
     transition: transform 0.3s ease;
 }
 
-input.form-control:focus {
+input.form-control:focus, select.form-control:focus {
     border-color: #00FF00;
     outline: none;
     transform: scale(1.05);
@@ -95,16 +97,11 @@ button:hover:before {
     pointer-events: none;
 }
 
-@keyframes glow {
-    0% {
-        transform: translateX(-100%)
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-
+/* Green Button Styling */
 .green-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
     background: linear-gradient(90deg, #32CD32, #00FF00); /* Green gradient */
     color: #FFFFFF;
     border: none;
@@ -138,34 +135,22 @@ button:hover:before {
     pointer-events: none;
 }
 
-/* Table Styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+@keyframes glow {
+    0% {
+        transform: translateX(-100%)
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }
 
-table th, table td {
-    text-align: left;
-    padding: 10px;
-    border: 1px solid #CCCCCC;
-    color: #FFFFFF;
-}
-
-table th {
-    background-color: #FFD700;
-    color: #333333;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-table tbody tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-table tbody tr:hover {
-    background-color: rgba(255, 255, 0, 0.2);
-    cursor: pointer;
+@keyframes glow {
+    0% {
+        transform: translateX(-100%)
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 /* Placeholder Styling */
@@ -182,9 +167,5 @@ input::placeholder {
 
     button {
         font-size: 14px;
-    }
-
-    table th, table td {
-        font-size: 12px;
     }
 }

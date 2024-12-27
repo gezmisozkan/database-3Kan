@@ -2,6 +2,7 @@
 {% block title %}Insert Match{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/insert_match.css') }}">
 <h1>Insert Match</h1>
 <form method="POST" action="{{ url_for('views.insert_match') }}">
     <div class="form-group">
@@ -55,7 +56,7 @@
         <label for="away_team_score">Away Team Score:</label>
         <input type="number" name="away_team_score" id="away_team_score" class="form-control" value="{{ away_team_score }}" min="0" required>
     </div>
-    <button type="submit" class="btn btn-primary">Insert Match</button>
+    <button type="submit" class="btn green-button">Insert Match</button>
 </form>
 
 <script>
