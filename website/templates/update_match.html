@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Update Match{% endblock %}
+
+{% block content %}
+<h1>Update Match</h1>
+<form method="POST" action="{{ url_for('views.update_match', match_id=match['match_id']) }}">
+    <div class="form-group">
+        <label for="match_name">Match Name:</label>
+        <input type="text" name="match_name" id="match_name" class="form-control" value="{{ match['match_name'] }}" readonly>
+    </div>
+    <div class="form-group">
+        <label for="home_team_score">Home Team Score:</label>
+        <input type="number" name="home_team_score" id="home_team_score" class="form-control" value="{{ match['home_team_score'] }}" min="0" required>
+    </div>
+    <div class="form-group">
+        <label for="away_team_score">Away Team Score:</label>
+        <input type="number" name="away_team_score" id="away_team_score" class="form-control" value="{{ match['away_team_score'] }}" min="0" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Match</button>
+</form>
+{% endblock %}

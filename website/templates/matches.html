@@ -116,6 +116,7 @@
                 </td>
                 {% if current_user.is_authenticated and current_user.role == 'admin' %}
                 <td>
+                    <a href="{{ url_for('views.update_match', match_id=match['match_id']) }}" class="btn btn-warning btn-sm">Edit</a>
                     <form method="POST" action="{{ url_for('views.delete_match', match_id=match['match_id']) }}" style="display:inline;">
                         <input type="hidden" name="page" value="{{ page }}">
                         <input type="hidden" name="selected_team" value="{{ selected_team }}">
@@ -173,6 +174,9 @@
             </li>
           {% endif %}
         </ul>
+        {% if current_user.is_authenticated and current_user.role == 'admin' %}
+        <a href="{{ url_for('views.insert_match') }}" class="btn btn-success mb-3">Insert Match</a>
+        {% endif %}
       </nav>          
       
 {% elif selected_team %}

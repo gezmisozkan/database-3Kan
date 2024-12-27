@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %}Insert Match{% endblock %}
+
+{% block content %}
+<h1>Insert Match</h1>
+<form method="POST" action="{{ url_for('views.insert_match') }}">
+    <div class="form-group">
+        <label for="season_id">Season ID:</label>
+        <select name="season_id" id="season_id" class="form-control" required>
+            <option value="" disabled selected>Select a season</option>
+            {% for season in seasons %}
+            <option value="{{ season }}" {% if season == selected_season %}selected{% endif %}>{{ season }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="year">Year:</label>
+        <input type="text" id="year" class="form-control" value="Select a season to view year" disabled>
+    </div>
+    <div class="form-group">
+        <label for="tier">Tier:</label>
+        <input type="text" id="tier" class="form-control" value="Select a season to view tier" disabled>
+    </div>
+    <div class="form-group">
+        <label for="division">Division:</label>
+        <input type="text" id="division" class="form-control" value="Select a season to view division" disabled>
+    </div>
+    <div class="form-group">
+        <label for="subdivision">Subdivision:</label>
+        <input type="text" id="subdivision" class="form-control" value="Select a season to view subdivision" disabled>
+    </div>
+    <div class="form-group">
+        <label for="home_team_name">Home Team:</label>
+        <select name="home_team_name" id="home_team_name" class="form-control" required>
+            <option value="" disabled selected>Select a team</option>
+            {% for team in teams %}
+            <option value="{{ team }}" {% if team == selected_home_team %}selected{% endif %}>{{ team }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="away_team_name">Away Team:</label>
+        <select name="away_team_name" id="away_team_name" class="form-control" required>
+            <option value="" disabled selected>Select a team</option>
+            {% for team in teams %}
+            <option value="{{ team }}" {% if team == selected_away_team %}selected{% endif %}>{{ team }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="home_team_score">Home Team Score:</label>
+        <input type="number" name="home_team_score" id="home_team_score" class="form-control" value="{{ home_team_score }}" min="0" required>
+    </div>
+    <div class="form-group">
+        <label for="away_team_score">Away Team Score:</label>
+        <input type="number" name="away_team_score" id="away_team_score" class="form-control" value="{{ away_team_score }}" min="0" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Insert Match</button>
+</form>
+
+<script>
+    document.getElementById('season_id').addEventListener('change', function () {
+        const seasonId = this.value;
+
+        // Fetch season info from the backend
+        fetch(`/fetch-season-info/${seasonId}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert(data.error);
+                } else {
+                    document.getElementById('year').value = data.year || "Not available";
+                    document.getElementById('tier').value = data.tier || "Not available";
+                    document.getElementById('division').value = data.division || "Not available";
+                    document.getElementById('subdivision').value = data.subdivision || "Not available";
+                }
+            })
+            .catch(error => console.error('Error fetching season info:', error));
+    });
+</script>
+{% endblock %}

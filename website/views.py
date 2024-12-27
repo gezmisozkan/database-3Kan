@@ -924,3 +924,206 @@ def insert_standing():
         cursor.close()
 
     return redirect(url_for('views.standings'))
+
+def get_season_ids():
+    try:
+        cursor = g.db.cursor(dictionary=True)
+        cursor.execute("SELECT DISTINCT season_id FROM seasons")
+        seasons = [row['season_id'] for row in cursor.fetchall()]
+        return seasons
+    except mysql.connector.Error:
+        return []
+    finally:
+        cursor.close()
+
+
+def get_team_names():
+    try:
+        cursor = g.db.cursor(dictionary=True)
+        cursor.execute("SELECT team_name FROM teams")
+        teams = [row['team_name'] for row in cursor.fetchall()]
+        return teams
+    except mysql.connector.Error:
+        return []
+    finally:
+        cursor.close()
+
+@views.route('/insert-match', methods=['GET', 'POST'])
+@login_required
+def insert_match():
+    if current_user.role != 'admin':
+        flash('Only admins can insert matches.', 'error')
+        return redirect(url_for('views.matches'))
+
+    if request.method == 'POST':
+        season_id = request.form.get('season_id')
+        home_team_name = request.form.get('home_team_name')
+        away_team_name = request.form.get('away_team_name')
+        home_team_score = request.form.get('home_team_score', '')
+        away_team_score = request.form.get('away_team_score', '')
+
+        try:
+            cursor = g.db.cursor(dictionary=True)
+
+            # Fetch team IDs based on team names
+            cursor.execute("SELECT team_id FROM teams WHERE team_name = %s", (home_team_name,))
+            home_team_id = cursor.fetchone()['team_id']
+
+            cursor.execute("SELECT team_id FROM teams WHERE team_name = %s", (away_team_name,))
+            away_team_id = cursor.fetchone()['team_id']
+
+            # Restrict same team IDs
+            if home_team_id == away_team_id:
+                flash("Home and away teams cannot be the same.", "error")
+                return render_template(
+                    'insert_match.html',
+                    seasons=get_season_ids(),
+                    teams=get_team_names(),
+                    selected_season=season_id,
+                    selected_home_team=home_team_name,
+                    selected_away_team=away_team_name,
+                    home_team_score=home_team_score,
+                    away_team_score=away_team_score,
+                )
+
+            # Fetch season details
+            cursor.execute("SELECT season, tier, division, subdivision FROM seasons WHERE season_id = %s", (season_id,))
+            season_info = cursor.fetchone()
+
+            # Calculate the next match ID for the season
+            cursor.execute("SELECT COUNT(*) AS total_matches FROM matches WHERE season_id = %s", (season_id,))
+            total_matches = cursor.fetchone()['total_matches']
+            match_id = f"M-{season_id}-{total_matches + 1:03d}"
+
+            # Generate match_name
+            match_name = f"{home_team_name} vs {away_team_name}"
+
+            # Calculate result and margins
+            home_team_score_margin = int(home_team_score) - int(away_team_score)
+            away_team_score_margin = int(away_team_score) - int(home_team_score)
+            result = (
+                'draw' if home_team_score == away_team_score else
+                'home team win' if int(home_team_score) > int(away_team_score) else
+                'away team win'
+            )
+            home_team_win = int(int(home_team_score) > int(away_team_score))
+            away_team_win = int(int(away_team_score) > int(home_team_score))
+            draw = int(int(home_team_score) == int(away_team_score))
+
+            # Generate key_id
+            cursor.execute("SELECT IFNULL(MAX(key_id), 0) + 1 AS next_key_id FROM matches")
+            key_id = cursor.fetchone()['next_key_id']
+
+            # Insert match into the database
+            insert_query = """
+                INSERT INTO matches (
+                    key_id, season_id, season, tier, division, subdivision, match_id, match_name,
+                    home_team_id, home_team_name, away_team_id, away_team_name, score,
+                    home_team_score, away_team_score, home_team_score_margin, away_team_score_margin,
+                    result, home_team_win, away_team_win, draw
+                ) VALUES (
+                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
+                    %s, %s, %s, %s, %s, %s, %s, %s
+                )
+            """
+            cursor.execute(insert_query, (
+                key_id, season_id, season_info['season'], season_info['tier'], season_info['division'],
+                season_info['subdivision'], match_id, match_name, home_team_id, home_team_name,
+                away_team_id, away_team_name, f"{home_team_score}-{away_team_score}",
+                int(home_team_score), int(away_team_score), home_team_score_margin,
+                away_team_score_margin, result, home_team_win, away_team_win, draw
+            ))
+            g.db.commit()
+            flash('Match inserted successfully!', 'success')
+        except mysql.connector.Error as e:
+            g.db.rollback()
+            flash(f'Error inserting match: {e}', 'error')
+        finally:
+            cursor.close()
+        return redirect(url_for('views.matches'))
+
+    return render_template(
+        'insert_match.html',
+        seasons=get_season_ids(),
+        teams=get_team_names(),
+    )
+
+
+
+@views.route('/fetch-season-info/<season_id>', methods=['GET'])
+@login_required
+def fetch_season_info(season_id):
+    try:
+        cursor = g.db.cursor(dictionary=True)
+        query = """
+            SELECT season AS year, tier, division, subdivision
+            FROM seasons
+            WHERE season_id = %s
+        """
+        cursor.execute(query, (season_id,))
+        season_info = cursor.fetchone()
+        if season_info:
+            return season_info, 200
+        else:
+            return {"error": "Season not found"}, 404
+    except mysql.connector.Error as e:
+        return {"error": str(e)}, 500
+    finally:
+        cursor.close()
+
+
+
+@views.route('/update-match/<match_id>', methods=['GET', 'POST'])
+@login_required
+def update_match(match_id):
+    if current_user.role != 'admin':
+        flash('Only admins can update matches.', 'error')
+        return redirect(url_for('views.matches'))
+    
+    if request.method == 'POST':
+        home_team_score = request.form.get('home_team_score')
+        away_team_score = request.form.get('away_team_score')
+
+        # Validate inputs to ensure non-negative numbers
+        try:
+            home_team_score = int(home_team_score)
+            away_team_score = int(away_team_score)
+
+            if home_team_score < 0 or away_team_score < 0:
+                flash('Scores cannot be negative.', 'error')
+                return redirect(url_for('views.update_match', match_id=match_id))
+        except ValueError:
+            flash('Scores must be valid numbers.', 'error')
+            return redirect(url_for('views.update_match', match_id=match_id))
+
+        try:
+            cursor = g.db.cursor()
+            query = """
+                UPDATE matches
+                SET home_team_score = %s, away_team_score = %s
+                WHERE match_id = %s
+            """
+            cursor.execute(query, (home_team_score, away_team_score, match_id))
+            g.db.commit()
+            flash('Match updated successfully!', 'success')
+        except mysql.connector.Error as e:
+            g.db.rollback()
+            flash(f'Error updating match: {e}', 'error')
+        finally:
+            cursor.close()
+        return redirect(url_for('views.matches'))
+
+    # Fetch match details for prefilling the form
+    try:
+        cursor = g.db.cursor(dictionary=True)
+        query = "SELECT * FROM matches WHERE match_id = %s"
+        cursor.execute(query, (match_id,))
+        match = cursor.fetchone()
+    except mysql.connector.Error as e:
+        flash(f'Error fetching match details: {e}', 'error')
+        return redirect(url_for('views.matches'))
+    finally:
+        cursor.close()
+
+    return render_template('update_match.html', match=match)
+
