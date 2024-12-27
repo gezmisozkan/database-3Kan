@@ -74,7 +74,7 @@ def teams():
     teams = []
     search_query = request.args.get('search', '')
     page = int(request.args.get('page', 1))
-    per_page = 20
+    per_page = 10
     offset = (page - 1) * per_page
 
     try:
@@ -120,7 +120,7 @@ def teams():
 def matches():
     teams, matches, selected_team, search_query, sort, order = [], [], None, None, None, None
     page = int(request.args.get('page', 1))
-    per_page = 20
+    per_page = 10
     offset = (page - 1) * per_page
 
     try:
@@ -172,6 +172,21 @@ def matches():
         if filters:
             base_query += " AND " + " AND ".join(filters)
 
+        # Count total results for pagination
+        count_query = "SELECT COUNT(*) as total FROM matches m WHERE 1=1"
+        if filters:
+            count_query += " AND " + " AND ".join(filters)
+        cursor.execute(count_query, params)  # Exclude LIMIT and OFFSET from params
+        total_results = cursor.fetchone()['total']
+        total_pages = (total_results // per_page) + (1 if total_results % per_page > 0 else 0)
+
+        # Adjust the current page if it exceeds total pages
+        if page > total_pages and total_pages > 0:
+            page = total_pages
+
+        # Recalculate offset after adjusting page
+        offset = (page - 1) * per_page
+
         # Add sorting and pagination
         base_query += f" ORDER BY {sort} {order} LIMIT %s OFFSET %s"
         params.extend([per_page, offset])
@@ -179,14 +194,6 @@ def matches():
         # Execute query and fetch results
         cursor.execute(base_query, params)
         matches = cursor.fetchall()
-
-        # Count total results for pagination
-        count_query = "SELECT COUNT(*) as total FROM matches m WHERE 1=1"
-        if filters:
-            count_query += " AND " + " AND ".join(filters)
-        cursor.execute(count_query, params[:-2])  # Exclude LIMIT and OFFSET from params
-        total_results = cursor.fetchone()['total']
-        total_pages = (total_results // per_page) + (1 if total_results % per_page > 0 else 0)
 
     except mysql.connector.Error as e:
         print(f"MySQL error occurred: {e}")
@@ -206,10 +213,11 @@ def matches():
     )
 
 
+
 @views.route('/seasons', methods=['GET'])
 def search_seasons():
     page = int(request.args.get('page', 1))
-    per_page = 20
+    per_page = 10
     offset = (page - 1) * per_page
 
     # Capture the sorting column and order
@@ -282,69 +290,113 @@ def search_seasons():
 
 @views.route('/team-details/<team_id>', methods=['GET', 'POST'])
 def team_details(team_id):
-    page = int(request.args.get('page', 1))
-    per_page = 20
-    offset = (page - 1) * per_page
-
-    if request.method == 'POST':
-        if not current_user.is_authenticated:
-            flash('You need to be logged in to post a comment.', 'error')
-            return redirect(url_for('views.team_details', team_id=team_id))
-
-        comment_text = request.form.get('comment')
-        if not comment_text:
-            flash('Comment cannot be empty.', 'error')
-            return redirect(url_for('views.team_details', team_id=team_id))
-
-        try:
-            cursor = g.db.cursor()
-            cursor.execute("""
-                INSERT INTO team_comments (team_id, user_id, comment)
-                VALUES (%s, %s, %s)
-            """, (team_id, current_user.id, comment_text))
-            g.db.commit()
-            flash('Comment posted successfully!', 'success')
-        except mysql.connector.Error as e:
-            flash(f'An error occurred while posting the comment: {e}', 'error')
-        finally:
-            cursor.close()
-
     try:
         cursor = g.db.cursor(dictionary=True)
-        
-        # Fetch total number of matches for pagination
-        count_query = "SELECT COUNT(*) as total FROM matches WHERE home_team_id = %s OR away_team_id = %s"
-        cursor.execute(count_query, (team_id, team_id))
-        total_results = cursor.fetchone()['total']
-        total_pages = (total_results // per_page) + (1 if total_results % per_page > 0 else 0)
+
+        # Handle POST for adding comments
+        if request.method == 'POST':
+            if not current_user.is_authenticated:
+                flash('You need to be logged in to post a comment.', 'error')
+                return redirect(url_for('views.team_details', team_id=team_id))
+
+            comment_text = request.form.get('comment')
+            if not comment_text.strip():
+                flash('Comment cannot be empty.', 'error')
+                return redirect(url_for('views.team_details', team_id=team_id))
+
+            try:
+                cursor.execute("""
+                    INSERT INTO team_comments (team_id, user_id, comment)
+                    VALUES (%s, %s, %s)
+                """, (team_id, current_user.id, comment_text.strip()))
+                g.db.commit()
+                flash('Comment posted successfully!', 'success')
+            except mysql.connector.Error as e:
+                flash(f'Error posting comment: {e}', 'error')
 
         # Fetch team details
         team_query = "SELECT * FROM teams WHERE team_id = %s"
         cursor.execute(team_query, (team_id,))
         team_info = cursor.fetchone()
 
-        # Fetch recent matches with season info
-        match_query = """
+        # Season with Most Points
+        best_season_query = """
             SELECT 
-                m.match_id, 
-                m.match_name, 
-                t1.team_name AS home_team, 
-                t2.team_name AS away_team, 
-                t1.team_id AS home_team_id, 
-                t2.team_id AS away_team_id, 
-                m.score,
-                s.season AS season_year,
-                s.tier AS season_tier
-            FROM matches m
-            JOIN teams t1 ON m.home_team_id = t1.team_id
-            JOIN teams t2 ON m.away_team_id = t2.team_id
-            LEFT JOIN seasons s ON m.season_id = s.season_id
-            WHERE m.home_team_id = %s OR m.away_team_id = %s
-            ORDER BY m.match_id DESC
-            LIMIT %s OFFSET %s
+                season_id AS best_season_id,
+                season AS best_season_year,
+                points AS most_points
+            FROM standings
+            WHERE team_id = %s
+            ORDER BY points DESC
+            LIMIT 1
         """
-        cursor.execute(match_query, (team_id, team_id, per_page, offset))
-        matches = cursor.fetchall()
+        cursor.execute(best_season_query, (team_id,))
+        best_season = cursor.fetchone()
+
+        # Season with Most Goals
+        most_goals_query = """
+            SELECT 
+                season_id AS goals_season_id,
+                season AS goals_season_year,
+                goals_for AS most_goals
+            FROM standings
+            WHERE team_id = %s
+            ORDER BY goals_for DESC
+            LIMIT 1
+        """
+        cursor.execute(most_goals_query, (team_id,))
+        most_goals_season = cursor.fetchone()
+
+        # Years in League with First Appearance
+        league_years_query = """
+            SELECT 
+                COUNT(DISTINCT season) AS league_years,
+                MIN(season) AS first_season
+            FROM standings
+            WHERE team_id = %s
+        """
+        cursor.execute(league_years_query, (team_id,))
+        league_years = cursor.fetchone()
+
+        # Times as Champion
+        championships_query = """
+            SELECT COUNT(*) AS championships
+            FROM standings
+            WHERE team_id = %s AND position = 1
+        """
+        cursor.execute(championships_query, (team_id,))
+        championships = cursor.fetchone()
+
+        # Biggest Rival
+        rival_query = """
+            SELECT opponent_name, COUNT(*) AS matches
+            FROM appearances
+            WHERE team_id = %s
+            GROUP BY opponent_name
+            ORDER BY matches DESC
+            LIMIT 1
+        """
+        cursor.execute(rival_query, (team_id,))
+        biggest_rival = cursor.fetchone()
+
+        # Total Matches Played
+        total_matches_query = """
+            SELECT COUNT(*) AS total_matches
+            FROM appearances
+            WHERE team_id = %s
+        """
+        cursor.execute(total_matches_query, (team_id,))
+        total_matches = cursor.fetchone()
+
+        # Average Points Per Season
+        average_points_query = """
+            SELECT 
+                ROUND(SUM(points) / COUNT(DISTINCT season), 2) AS average_points
+            FROM standings
+            WHERE team_id = %s
+        """
+        cursor.execute(average_points_query, (team_id,))
+        average_points = cursor.fetchone()
 
         # Fetch comments
         comment_query = """
@@ -356,24 +408,33 @@ def team_details(team_id):
         """
         cursor.execute(comment_query, (team_id,))
         comments = cursor.fetchall()
+
     except mysql.connector.Error as e:
         flash(f'An error occurred while fetching team details: {e}', 'error')
         team_info = {}
-        matches = []
+        best_season = {}
+        most_goals_season = {}
+        league_years = {}
+        championships = {}
+        biggest_rival = {}
+        total_matches = {}
+        average_points = {}
         comments = []
-        total_pages = 1
     finally:
         cursor.close()
 
     return render_template(
-        "team_details.html", 
-        team=team_info, 
-        matches=matches, 
-        comments=comments, 
-        page=page, 
-        total_pages=total_pages
+        "team_details.html",
+        team=team_info,
+        best_season=best_season,
+        most_goals_season=most_goals_season,
+        league_years=league_years,
+        championships=championships,
+        biggest_rival=biggest_rival,
+        total_matches=total_matches,
+        average_points=average_points,
+        comments=comments,
     )
-
 
 @views.route('/season/<season_id>', methods=['GET'])
 def season_overview(season_id):

@@ -33,10 +33,19 @@ except mysql.connector.Error as e:
     print(f"Error inserting admin user: {e}")
 
 # Part 2: Insert CSV Data into Database
-csv_directory = 'football/simpified_csv'
+csv_directory = 'football/csv'
+
+# Define the order of CSV files to be processed
+csv_files_order = [
+    'seasons.csv',
+    'teams.csv',
+    'standings.csv',
+    'matches.csv',
+    'appearances.csv'
+]
 
 # Loop through each CSV file in the directory
-for filename in os.listdir(csv_directory):
+for filename in csv_files_order:
     if filename.endswith('.csv'):
         # Get the table name by removing '.csv' from the filename
         table_name = filename.split('.csv')[0]

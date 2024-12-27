@@ -155,3 +155,35 @@ a:hover {
     }
 }
 
+.stats-section {
+    background-color: #343a40;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.stats-section ul li {
+    background-color: #495057;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.stats-section ul li .stat-icon {
+    color: #ffc107;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.stats-section ul li .stat-icon {
+    color: #ffc107; /* Gold icons */
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.stats-section ul li:nth-child(8) {
+    background-color: #17a2b8; /* Highlight average points stat */
+    color: #ffffff; /* White text for contrast */
+}
+

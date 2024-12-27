@@ -6,100 +6,54 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/team_details.css') }}">
 <h1>{{ team['team_name'] }} Details</h1>
 
-<h2>Recent Matches</h2>
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Match</th>
-            <th>Home Team</th>
-            <th>Away Team</th>
-            <th>Score</th>
-            <th>Season</th>
-            <th>Tier</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for match in matches %}
-        <tr>
-            <td><a href="{{ url_for('views.match_details', match_id=match['match_id']) }}">{{ match['match_name'] }}</a></td>
-            <td><a 
-                href="{{ url_for('views.team_details', team_id=match['home_team_id']) }}" 
-                onclick="if(window.location.pathname === this.pathname) location.reload();">
-                {{ match['home_team'] }}
-            </a></td>
-            <td><a 
-                href="{{ url_for('views.team_details', team_id=match['away_team_id']) }}" 
-                onclick="if(window.location.pathname === this.pathname) location.reload();">
-                {{ match['away_team'] }}
-            </a></td>
-            <td>{{ match['score'] }}</td>
-            <!-- Season -->
-            <td>
-                <a href="{{ url_for('views.season_tiers', year=match['season_year']) }}">
-                    {{ match['season_year'] }}
-                </a>
-            </td>
-            <td>
-                Tier {{ match['season_tier'] }}
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
-<nav aria-label="Page navigation">
-    <ul class="pagination">
-        <!-- Previous Button -->
-        {% if page > 1 %}
-        <li class="page-item">
-            <a class="page-link" href="{{ url_for('views.team_details', team_id=team['team_id'], page=page-1) }}">Previous</a>
+<h2>Team Insights</h2>
+<div class="stats-section">
+    <h2>Key Statistics</h2>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <span class="stat-icon"><i class="fas fa-calendar-alt"></i></span>
+            <strong>Season with Most Points:</strong>
+            <a href="{{ url_for('views.season_overview', season_id=best_season['best_season_id']) }}">
+                {{ best_season['best_season_year'] }}
+            </a> ({{ best_season['most_points'] }} points)
         </li>
-        {% endif %}
-
-        <!-- First Page -->
-        {% if page > 3 %}
-            <li class="page-item">
-                <a class="page-link" href="{{ url_for('views.team_details', team_id=team['team_id'], page=1) }}">1</a>
-            </li>
-            {% if page > 4 %}
-            <li class="page-item disabled"><span class="page-link">...</span></li>
-            {% endif %}
-        {% endif %}
-
-        <!-- Middle Page Numbers -->
-        {% for p in range(page - 2, page + 3) %}
-            {% if p > 0 and p <= total_pages %}
-                <li class="page-item {% if page == p %}active{% endif %}">
-                    <a class="page-link" href="{{ url_for('views.team_details', team_id=team['team_id'], page=p) }}">{{ p }}</a>
-                </li>
-            {% endif %}
-        {% endfor %}
-
-        <!-- Last Page -->
-        {% if page < total_pages - 2 %}
-            {% if page < total_pages - 3 %}
-            <li class="page-item disabled"><span class="page-link">...</span></li>
-            {% endif %}
-            <li class="page-item">
-                <a class="page-link" href="{{ url_for('views.team_details', team_id=team['team_id'], page=total_pages) }}">{{ total_pages }}</a>
-            </li>
-        {% endif %}
-
-        <!-- Next Button -->
-        {% if page < total_pages %}
-        <li class="page-item">
-            <a class="page-link" href="{{ url_for('views.team_details', team_id=team['team_id'], page=page+1) }}">Next</a>
+        <li class="list-group-item">
+            <span class="stat-icon"><i class="fas fa-futbol"></i></span>
+            <strong>Season with Most Goals:</strong>
+            <a href="{{ url_for('views.season_overview', season_id=most_goals_season['goals_season_id']) }}">
+                {{ most_goals_season['goals_season_year'] }}
+            </a> ({{ most_goals_season['most_goals'] }} goals)
         </li>
-        {% endif %}
+        <li class="list-group-item">
+            <span class="stat-icon"><i class="fas fa-history"></i></span>
+            <strong>Years in League:</strong> {{ league_years['league_years'] }} 
+            <small>(since {{ league_years['first_season'] }})</small>
+        </li>
+        <li class="list-group-item">
+            <span class="stat-icon"><i class="fas fa-trophy"></i></span>
+            <strong>Times as Champion:</strong> {{ championships['championships'] }}
+        </li>
+        <li class="list-group-item">
+            <span class="stat-icon"><i class="fas fa-users"></i></span>
+            <strong>Biggest Rival:</strong> {{ biggest_rival['opponent_name'] }} ({{ biggest_rival['matches'] }} matches)
+        </li>
+        <li class="list-group-item">
+            <span class="stat-icon"><i class="fas fa-table"></i></span>
+            <strong>Total Matches Played:</strong> {{ total_matches['total_matches'] }}
+        </li>
+        <li class="list-group-item">
+            <span class="stat-icon"><i class="fas fa-calculator"></i></span>
+            <strong>Average Points Per Season:</strong> {{ average_points['average_points'] }}
+        </li>
     </ul>
-</nav>
+</div>
 
 
 <h2>Comments</h2>
 {% if current_user.is_authenticated %}
 <form method="POST" action="{{ url_for('views.team_details', team_id=team['team_id']) }}">
     <div class="form-group">
-        <textarea name="comment" class="form-control" rows="3" placeholder="Add a comment..."></textarea>
+        <textarea name="comment" class="form-control" rows="3" placeholder="Add a comment..." required></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Post Comment</button>
 </form>
@@ -111,7 +65,8 @@
 <ul class="list-group mt-4">
     {% for comment in comments %}
     <li class="list-group-item">
-        <strong>{{ comment['username'] }}</strong> <small class="text-muted">{{ comment['created_at'] }}</small>
+        <strong>{{ comment['username'] }}</strong>
+        <small class="text-muted">{{ comment['created_at'] }}</small>
         <p>{{ comment['comment'] }}</p>
     </li>
     {% endfor %}
@@ -119,6 +74,7 @@
 {% else %}
 <p>No comments yet.</p>
 {% endif %}
+
 
 <a class="btn btn-dark mt-4" href="{{ url_for('views.home') }}">Back to Home</a>
 {% endblock %}
