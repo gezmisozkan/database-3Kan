@@ -3,7 +3,7 @@ standing kısmında insert edilirken season id max 2021 'e kadar olunca çalış
 
 !!!! matches sayfasında total pages doğru hesaplanıyor ancak o sayfaya gidilmiyor, son sayfa orada gösterilenden çok daha az, çok mantıksız bir hata ama çözemedim
 
-readme güncellenmeli
+
 
 standing kısmına update özelliği eklenecek. 
 seasons CRUD işlemleri yapılacak. Insert ve Update yok. 
