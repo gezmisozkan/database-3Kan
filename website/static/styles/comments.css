@@ -39,6 +39,10 @@ body {
     color: #CCCCCC;
 }
 
+.black-text {
+    color: #000000; /* Change the paragraph text color to black */
+}
+
 /* Button Styling */
 .btn-dark {
     padding: 10px 20px;

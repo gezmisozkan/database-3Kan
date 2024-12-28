@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 /* Heading Styling */
-h1, h2 {
+h1 {
     text-align: center;
     font-family: 'Russo One', sans-serif;
     color: #FFD700;
@@ -37,27 +37,26 @@ body {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
 }
 
-/* List Group Styling */
-.list-group-item {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid #FFD700;
-    color: #FFFFFF;
-    margin-bottom: 10px;
+/* Form Styling */
+form {
+    margin-bottom: 20px;
+}
+
+input.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #FFD700;
     border-radius: 5px;
+    background-color: #F5F5F5;
+    font-size: 14px;
+    color: #333333;
+    transition: transform 0.3s ease;
 }
 
-.list-group-item p {
-    margin: 0;
-}
-
-.list-group-item .btn-danger {
-    background-color: #FF4500;
-    border: none;
-    transition: background-color 0.3s ease;
-}
-
-.list-group-item .btn-danger:hover {
-    background-color: #FF6347;
+input.form-control:focus {
+    border-color: #00FF00;
+    outline: none;
+    transform: scale(1.05);
 }
 
 /* Button Styling */
@@ -66,7 +65,7 @@ button {
     font-size: 16px;
     font-weight: bold;
     background: linear-gradient(90deg, #FF4500, #FFD700);
-    color: #000000; /* Change the button text color */
+    color: #FFFFFF;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -81,7 +80,7 @@ button {
 button:hover {
     box-shadow: 0 0 15px #FFD700, 0 0 25px #FF4500;
     filter: blur(0) brightness(1.1);
-    color: #FFFFFF; /* Change the button text color on hover */
+    color: #000000;
 }
 
 /* Button Glow Effect */
@@ -107,24 +106,6 @@ button:hover:before {
     }
 }
 
-/* Pagination Styling */
-.pagination .page-item .page-link {
-    color: #FFD700;
-    background-color: rgba(0, 0, 0, 0.85);
-    border: 1px solid #FFD700;
-}
-
-.pagination .page-item.active .page-link {
-    background-color: #FFD700;
-    color: #333333;
-    border: 1px solid #FFD700;
-}
-
-.pagination .page-item .page-link:hover {
-    background-color: #FF4500;
-    color: #FFFFFF;
-}
-
 /* Placeholder Styling */
 input::placeholder {
     color: #888888;
@@ -140,9 +121,4 @@ input::placeholder {
     button {
         font-size: 14px;
     }
-}
-
-/* Specific styling for .btn-link to change text color to black */
-.btn-link {
-    color: #000000; /* Change the button text color to black */
 }

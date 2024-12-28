@@ -1,4 +1,3 @@
-
 Foreign key kullanarak tablolar oluştur (bu ne demek???)
 
 standings tablosunda takıma tıklayınca teams detailse geçmeli 
@@ -19,9 +18,5 @@ readme güncellenmeli
 
 
 
-!! match-details sayfası css düzenlenmeli
-!! update-match sayfası css düzenlenmeli
-
-!! adminin gördüğü comments sayfsası css yorum yokken kötü görünüyor
-!! admin panel yani /admin sayfası css düzenlenmeli
-!! admin/comments yani manage comments css düzeltilmeli
+standing kısmına update özelliği eklenecek. 
+sunum hazırlanacak.

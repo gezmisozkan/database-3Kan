@@ -2,6 +2,7 @@
 {% block title %}Update Match{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/update_match.css') }}">
 <h1>Update Match</h1>
 <form method="POST" action="{{ url_for('views.update_match', match_id=match['match_id']) }}">
     <div class="form-group">
