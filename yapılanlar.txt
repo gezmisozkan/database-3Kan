@@ -23,9 +23,14 @@ Kullanıcının sadece yeni şifre girmesi gerekiyor
 -- Admin panel eklendi
 -- Admin maçları, sezonları ve takımları silebiliyor, buton sadece admine görünüyor
 
+Kullanıcılar ve admin için comment yapma özelliği eklendi. 
 foreign key olarak, maç görünümlerinde seasons ve teams tablolarıyla join yaparak veriyi getiriyoruz. Buna gerek yok aslında ama join kullanmak için böyle yaptık
 admin panele comment silme eklendi
 
 matches tablosuna edit ve insert eklendi, atılan gol değiştirildiğinde veya yeni maç eklendiğinde standings tablosundaki değerler güncelleniyor (trigger execution)(show triggers; yazdığında görülüyor)
 team details sayfasının mantığı değişti, şampiyınluk sayısı, oynanan maç, atılan goller etc. eklendi
 seasons verilerinden birisi silindiğinde trigger ile standingsteki bilgileri güncelliyoruz
+
+Tüm frontend bitti. 
+ER diagram çıkarıldı. 
+standings tablosuna query eklendi bu sayede her ligdeki top 3 team görülebiliyor. 
