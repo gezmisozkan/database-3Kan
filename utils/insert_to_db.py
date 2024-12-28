@@ -53,7 +53,22 @@ for filename in csv_files_order:
         # Read the CSV file into a DataFrame with specified data types
         file_path = os.path.join(csv_directory, filename)
         
-        if filename == 'appearances.csv':
+        if filename == 'teams.csv':
+            dtype = {
+                'key_id': int,
+                'team_id': str,
+                'team_name': str,
+                'former_team_names': str,
+                'current': bool,
+                'former': bool,
+                'defunct': bool,
+                'first_appearance': int
+            }
+            df = pd.read_csv(file_path, dtype=dtype, na_values=['nan', 'NaN'])
+            df = df.fillna({
+                'former_team_names': 'None'
+            })
+        elif filename == 'seasons.csv':
             dtype = {
                 'key_id': int,
                 'season_id': str,
@@ -61,34 +76,39 @@ for filename in csv_files_order:
                 'tier': int,
                 'division': str,
                 'subdivision': str,
-                'match_id': str,
-                'match_name': str,
-                'team_id': str,
-                'team_name': str,
-                'opponent_id': str,
-                'opponent_name': str,
-                'home_team': bool,
-                'away_team': bool,
-                'goals_for': int,
-                'goals_against': int,
-                'goal_difference': int,
-                'result': str,
-                'win': bool,
-                'lose': bool,
-                'draw': bool,
-                'points': int
+                'winner': str,
+                'count_teams': int
             }
             df = pd.read_csv(file_path, dtype=dtype, na_values=['nan', 'NaN'])
             df = df.fillna({
                 'subdivision': 'None',
-                'match_name': '',
-                'goal_difference': 0,
-                'points': 0,
-                'home_team': False,
-                'away_team': False,
-                'win': False,
-                'lose': False,
-                'draw': False
+                'winner': ''
+            })
+        elif filename == 'standings.csv':
+            dtype = {
+                'key_id': int,
+                'season_id': str,
+                'season': str,
+                'tier': int,
+                'division': str,
+                'subdivision': str,
+                'position': int,
+                'team_id': str,
+                'team_name': str,
+                'played': int,
+                'wins': int,
+                'draws': int,
+                'losses': int,
+                'goals_for': int,
+                'goals_against': int,
+                'goal_difference': int,
+                'points': int,
+                'point_adjustment': int
+            }
+            df = pd.read_csv(file_path, dtype=dtype, na_values=['nan', 'NaN'])
+            df = df.fillna({
+                'subdivision': 'None',
+                'point_adjustment': 0
             })
         elif filename == 'matches.csv':
             dtype = {
@@ -127,7 +147,7 @@ for filename in csv_files_order:
                 'away_team_win': False,
                 'draw': False
             })
-        elif filename == 'seasons.csv':
+        elif filename == 'appearances.csv':
             dtype = {
                 'key_id': int,
                 'season_id': str,
@@ -135,53 +155,31 @@ for filename in csv_files_order:
                 'tier': int,
                 'division': str,
                 'subdivision': str,
-                'winner': str,
-                'count_teams': int
+                'match_id': str,
+                'match_name': str,
+                'team_id': str,
+                'team_name': str,
+                'opponent_id': str,
+                'opponent_name': str,
+                'home_team': bool,
+                'away_team': bool,
+                'goals_for': int,
+                'goals_against': int,
+                'goal_difference': int,
+                'result': str,
+                'win': bool,
+                'lose': bool,
+                'draw': bool,
+                'points': int
             }
             df = pd.read_csv(file_path, dtype=dtype, na_values=['nan', 'NaN'])
             df = df.fillna({
                 'subdivision': 'None',
-                'winner': ''
-            })
-        elif filename == 'standings.csv':
-            dtype = {
-                'key_id': int,
-                'season_id': str,
-                'season': int,
-                'tier': int,
-                'division': str,
-                'subdivision': str,
-                'position': int,
-                'team_id': str,
-                'team_name': str,
-                'played': int,
-                'wins': int,
-                'draws': int,
-                'losses': int,
-                'goals_for': int,
-                'goals_against': int,
-                'goal_difference': int,
-                'points': int,
-                'point_adjustment': int
-            }
-            df = pd.read_csv(file_path, dtype=dtype, na_values=['nan', 'NaN'])
-            df = df.fillna({
-                'subdivision': 'None'
-            })
-        elif filename == 'teams.csv':
-            dtype = {
-                'key_id': int,
-                'team_id': str,
-                'team_name': str,
-                'former_team_names': str,
-                'current': bool,
-                'former': bool,
-                'defunct': bool,
-                'first_appearance': int
-            }
-            df = pd.read_csv(file_path, dtype=dtype, na_values=['nan', 'NaN'])
-            df = df.fillna({
-                'former_team_names': ''
+                'match_name': '',
+                'goals_for': 0,
+                'goals_against': 0,
+                'goal_difference': 0,
+                'points': 0
             })
         else:
             df = pd.read_csv(file_path)

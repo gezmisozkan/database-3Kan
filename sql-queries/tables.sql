@@ -7,13 +7,12 @@ CREATE TABLE seasons (
     subdivision VARCHAR(50) DEFAULT 'None',
     winner VARCHAR(100),
     count_teams INT CHECK (count_teams > 0),
-    
-	CHECK (season_id REGEXP '^S-[0-9]{4}-[0-9]+(-[A-Z])?$')
+   
+    CHECK (season_id REGEXP '^S-[0-9]{4}-[0-9]+(-[A-Z])?$')
 );
 
-
 CREATE TABLE teams (
-    key_id INT AUTO_INCREMENT UNIQUE PRIMARY KEY,
+    key_id INT AUTO_INCREMENT PRIMARY KEY,
     team_id VARCHAR(20) NOT NULL UNIQUE,
     team_name VARCHAR(100) UNIQUE NOT NULL,
     former_team_names VARCHAR(255),
@@ -23,11 +22,10 @@ CREATE TABLE teams (
     first_appearance INT NOT NULL
 );
 
-
 CREATE TABLE standings (
     key_id INT AUTO_INCREMENT PRIMARY KEY,
     season_id VARCHAR(20) NOT NULL,
-    season INT NOT NULL,
+    season CHAR(4) NOT NULL,
     tier INT NOT NULL,
     division VARCHAR(100) NOT NULL,
     subdivision VARCHAR(100) DEFAULT 'None',
@@ -43,13 +41,17 @@ CREATE TABLE standings (
     goal_difference INT NOT NULL,
     points INT NOT NULL,
     point_adjustment INT NOT NULL DEFAULT 0,
-
+    
     FOREIGN KEY (team_id) REFERENCES teams(team_id) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (season_id) REFERENCES seasons(season_id) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (season_id) REFERENCES seasons(season_id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (team_name) REFERENCES teams(team_name) ON DELETE CASCADE ON UPDATE CASCADE,
+    
+    CHECK (played = wins + draws + losses),
+    CHECK (goal_difference = goals_for - goals_against)
+    
 );
 
-
-create table matches(
+CREATE TABLE matches (
     key_id INT PRIMARY KEY,
     season_id VARCHAR(20) NOT NULL,
     season CHAR(4) NOT NULL,
@@ -103,18 +105,15 @@ CREATE TABLE appearances (
     lose BOOLEAN NOT NULL,
     draw BOOLEAN NOT NULL,
     points INT DEFAULT 0,
-
+   
     FOREIGN KEY (match_id) REFERENCES matches(match_id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (season_id) REFERENCES seasons(season_id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (team_id) REFERENCES teams(team_id) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (opponent_id) REFERENCES teams(team_id) ON DELETE CASCADE ON UPDATE CASCADE,
-	
+   
     CHECK (win + lose + draw = 1),
     CHECK (home_team + away_team = 1)
 );
 
-CREATE INDEX season_id_index
- ON seasons(season_id);
-
-CREATE INDEX team_id_index
- ON teams(team_id );
+CREATE INDEX season_id_index ON seasons(season_id);
+CREATE INDEX team_id_index ON teams(team_id);

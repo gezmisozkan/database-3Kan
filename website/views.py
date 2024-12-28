@@ -1200,3 +1200,30 @@ def update_match(match_id):
 
     return render_template('update_match.html', match=match)
 
+@views.route('/standings/top_3_teams')
+@login_required
+def standings_top_3_teams():
+    query = """
+    SELECT division, team_name, position, COUNT(*) AS count
+    FROM standings
+    WHERE position IN (1, 2, 3)
+    GROUP BY division, team_name, position
+    ORDER BY division, position, count DESC;
+    """
+    cursor = g.db.cursor(dictionary=True)
+    cursor.execute(query)
+    results = cursor.fetchall()
+    cursor.close()
+
+    # Organize results by division and position
+    divisions = ["Premier League", "Championship", "League One", "League Two", "First Division", "Second Division", "Third Division", "Fourth Division"]
+    top_3_teams = {division: {1: None, 2: None, 3: None} for division in divisions}
+
+    for row in results:
+        division = row['division']
+        position = row['position']
+        if division in top_3_teams and position in top_3_teams[division]:
+            if top_3_teams[division][position] is None or row['count'] > top_3_teams[division][position]['count']:
+                top_3_teams[division][position] = row
+
+    return render_template('standings_top_3_teams.html', top_3_teams=top_3_teams)

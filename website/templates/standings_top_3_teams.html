@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Top 3 Teams{% endblock %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/standings_top_3_teams.css') }}">
+<h1>Top 3 Teams in Each Division</h1>
+
+{% for division, positions in top_3_teams.items() %}
+<h1>{{ division }}</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Ranking</th>
+      <th>Team Name</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="stat-icon"><i class="fas fa-trophy"></i></span> Most Championships</td>
+      <td>{{ positions[1].team_name if positions[1] else 'N/A' }}</td>
+      <td>{{ positions[1].count if positions[1] else 'N/A' }}</td>
+    </tr>
+    <tr>
+      <td><span class="stat-icon"><i class="fas fa-medal" style="color: silver;"></i></span> Most Second Places</td>
+      <td>{{ positions[2].team_name if positions[2] else 'N/A' }}</td>
+      <td>{{ positions[2].count if positions[2] else 'N/A' }}</td>
+    </tr>
+    <tr>
+      <td><span class="stat-icon"><i class="fas fa-medal" style="color: #cd7f32;"></i></span> Most Third Places</td>
+      <td>{{ positions[3].team_name if positions[3] else 'N/A' }}</td>
+      <td>{{ positions[3].count if positions[3] else 'N/A' }}</td>
+    </tr>
+  </tbody>
+</table>
+{% endfor %}
+
+<a href="{{ url_for('views.standings') }}" class="btn btn-dark mt-4">Back to Standings</a>
+{% endblock %}

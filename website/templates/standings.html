@@ -178,9 +178,11 @@
 <p>No standings found.</p>
 {% endif %}
 
+<a href="{{ url_for('views.standings_top_3_teams') }}" class="btn btn-primary float-right">Top 3 Teams</a>
 {% if current_user.is_authenticated and current_user.role == 'admin' %}
 <a href="{{ url_for('views.standings_insert') }}" class="btn green-button float-right">Insert</a>
 {% endif %}
+
 
 <a href="{{ url_for('views.home') }}" class="btn btn-dark mt-4">Back to Home</a>
 {% endblock %}

@@ -1,6 +1,6 @@
 Foreign key kullanarak tablolar oluştur (bu ne demek???)
 
-standings tablosunda takıma tıklayınca teams detailse geçmeli 
+
 
 team details, match details, standing details admin user için insert ve update işlemleri yapılmalı
 
