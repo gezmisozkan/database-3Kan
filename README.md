@@ -1,6 +1,6 @@
 # **Database-3Kan**
 
-A web application that uses a MySQL database for managing football team and match data and SQLite for user authentication.
+A web application that uses a MySQL database for managing football team and match data. It uses the MySQL database for user authentication and comment property as well.  
 
 ---
 
@@ -49,7 +49,7 @@ python main.py
 ### **Features**
 
 - **User Authentication**:
-  - Users can sign up and log in using SQLite for authentication.
+  - Users can sign up and log in using MySQL for authentication.
 - **Team Management**:
   - View and manage football teams and matches using MySQL.
 - **Interactive Interface**:
@@ -68,7 +68,8 @@ python main.py
   - `models.py`: Contains database models.
   - `templates/`: HTML templates for rendering the web pages.
 
+## Screenshots for website
 
-### Screenshot
-Below is a screenshot of the website:
-![image](https://github.com/user-attachments/assets/eb6232ea-58b2-4ed9-85e3-c173a2c91d86)
+You can see the some main pages in our website by looking screenshots named home_page.png, matches_page.png,
+seasons_page.png,
+standings_page.png teams_page.png
