@@ -173,7 +173,14 @@ def matches():
             base_query += " AND " + " AND ".join(filters)
 
         # Count total results for pagination
-        count_query = "SELECT COUNT(*) as total FROM matches m WHERE 1=1"
+        count_query = """
+            SELECT COUNT(*) as total 
+            FROM matches m
+            JOIN teams t1 ON m.home_team_name = t1.team_name
+            JOIN teams t2 ON m.away_team_name = t2.team_name
+            LEFT JOIN seasons s ON m.season_id = s.season_id
+            WHERE 1=1
+        """
         if filters:
             count_query += " AND " + " AND ".join(filters)
         cursor.execute(count_query, params)  # Exclude LIMIT and OFFSET from params

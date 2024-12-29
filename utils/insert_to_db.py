@@ -19,7 +19,7 @@ cursor = db.cursor()
 email = 'admin@admin.com'
 password = 'admin1234'
 hashed_password = generate_password_hash(password, method='scrypt')
-full_name = 'Admin User'
+full_name = 'Admin_User'
 role = 'admin'
 
 try:
@@ -41,7 +41,7 @@ csv_files_order = [
     'teams.csv',
     'standings.csv',
     'matches.csv',
-    'appearances.csv'
+    # 'appearances.csv' # this file is not needed for the project
 ]
 
 # Loop through each CSV file in the directory
