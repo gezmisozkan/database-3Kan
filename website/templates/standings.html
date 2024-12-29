@@ -32,34 +32,11 @@
               </a>
             </th>
             <th>
-              <a href="{{ url_for('views.standings',
-                                   sort_by='tier',
-                                   sort_order='desc' if sort_by == 'tier' and sort_order == 'asc' else 'asc',
-                                   search=search_query) }}">
                 Tier
-                {% if sort_by == 'tier' %}
-                    {% if sort_order == 'asc' %}
-                      ▲
-                    {% else %}
-                      ▼
-                    {% endif %}
-                {% endif %}
               </a>
             </th>
             <th>
-              <a href="{{ url_for('views.standings',
-                                   sort_by='division',
-                                   sort_order='desc' if sort_by == 'division' and sort_order == 'asc' else 'asc',
-                                   search=search_query) }}">
-                Division
-                {% if sort_by == 'division' %}
-                    {% if sort_order == 'asc' %}
-                      ▲
-                    {% else %}
-                      ▼
-                    {% endif %}
-                {% endif %}
-              </a>
+              Division
             </th>
             <th>
               <a href="{{ url_for('views.standings',
@@ -77,19 +54,7 @@
               </a>
             </th>
             <th>
-              <a href="{{ url_for('views.standings',
-                                   sort_by='position',
-                                   sort_order='desc' if sort_by == 'position' and sort_order == 'asc' else 'asc',
-                                   search=search_query) }}">
-                Position
-                {% if sort_by == 'position' %}
-                    {% if sort_order == 'asc' %}
-                      ▲
-                    {% else %}
-                      ▼
-                    {% endif %}
-                {% endif %}
-              </a>
+              Position
             </th>
             <th>Actions</th>
         </tr>
