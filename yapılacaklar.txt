@@ -1,6 +1,1 @@
-
-
 seasons CRUD işlemleri yapılacak. Insert ve Update yok. 
-all seasonsta pagination sıkıntılı 
-
-sunum hazırlanacak.
