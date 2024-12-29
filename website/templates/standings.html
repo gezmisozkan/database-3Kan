@@ -7,136 +7,141 @@
 <h1 class="mb-4">Standings</h1>
 
 <form method="GET" action="/standings" class="form-inline mb-4">
-    <input type="text" name="search" class="form-control mr-2" value="{{ search_query }}" placeholder="Search team">
-    <button type="submit" class="btn btn-primary">Search</button>
+  <input type="text" name="search" class="form-control mr-2" value="{{ search_query }}" placeholder="Search team">
+  <button type="submit" class="btn btn-primary">Search</button>
 </form>
 
 {% if standings %}
 <table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <!-- For each column, turn the header into a clickable link that toggles asc/desc -->
-            <th>
-              <a href="{{ url_for('views.standings',
+  <thead>
+    <tr>
+      <!-- For each column, turn the header into a clickable link that toggles asc/desc -->
+      <th>
+        <a href="{{ url_for('views.standings',
                                    sort_by='season',
                                    sort_order='desc' if sort_by == 'season' and sort_order == 'asc' else 'asc',
                                    search=search_query) }}">
-                Season
-                {% if sort_by == 'season' %}
-                    {% if sort_order == 'asc' %}
-                      ▲
-                    {% else %}
-                      ▼
-                    {% endif %}
-                {% endif %}
-              </a>
-            </th>
-            <th>
-                Tier
-              </a>
-            </th>
-            <th>
-              Division
-            </th>
-            <th>
-              <a href="{{ url_for('views.standings',
-                                   sort_by='team_name',
-                                   sort_order='desc' if sort_by == 'team_name' and sort_order == 'asc' else 'asc',
-                                   search=search_query) }}">
-                Team Name
-                {% if sort_by == 'team_name' %}
-                    {% if sort_order == 'asc' %}
-                      ▲
-                    {% else %}
-                      ▼
-                    {% endif %}
-                {% endif %}
-              </a>
-            </th>
-            <th>
-              Position
-            </th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-      {% for standing in standings %}
-      <tr>
-          <td>{{ standing['season'] }}</td>
-          <td>{{ standing['tier'] }}</td>
-          <td>{{ standing['division'] }}</td>
-          <td>
-            <a href="{{ url_for('views.team_details', team_id=standing['team_id']) }}">
-                {{ standing['team_name'] }}
-            </a>
-        </td>
-          <td>{{ standing['position'] }}</td>
-          <td>
-              <a class="btn btn-info btn-sm" href="{{ url_for('views.standing_details', key_id=standing['key_id']) }}">View Details</a>
-
-              {% if current_user.is_authenticated and current_user.role == 'admin' %}
-              <a href="{{ url_for('views.standings_update', standing_id=standing['key_id']) }}" class="btn btn-warning btn-sm">Update</a>
-              <form method="POST" action="{{ url_for('views.delete_standing', key_id=standing['key_id']) }}" style="display:inline;">
-                  <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-              </form>
+          Season
+          {% if sort_by == 'season' %}
+          {% if sort_order == 'asc' %}
+          ▲
+          {% else %}
+          ▼
+          {% endif %}
+          {% endif %}
+        </a>
+      </th>
+      <th>
+        Tier
+      </th>
+      <th>
+        Division
+      </th>
+      <th>
+        <a href="{{ url_for('views.standings',
+                             sort_by='team_name,season',
+                             sort_order='desc' if sort_by == 'team_name,season' and sort_order == 'asc' else 'asc',
+                             search=search_query) }}">
+          Team Name
+          {% if sort_by == 'team_name,season' %}
+              {% if sort_order == 'asc' %}
+                ▲
+              {% else %}
+                ▼
               {% endif %}
-          </td>
-      </tr>
-      {% endfor %}
-    </tbody>
+          {% endif %}
+        </a>
+      </th>
+      <th>
+        Position
+      </th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for standing in standings %}
+    <tr>
+      <td>{{ standing['season'] }}</td>
+      <td>{{ standing['tier'] }}</td>
+      <td>{{ standing['division'] }}</td>
+      <td>
+        <a href="{{ url_for('views.team_details', team_id=standing['team_id']) }}">
+          {{ standing['team_name'] }}
+        </a>
+      </td>
+      <td>{{ standing['position'] }}</td>
+      <td>
+        <a class="btn btn-info btn-sm" href="{{ url_for('views.standing_details', key_id=standing['key_id']) }}">View
+          Details</a>
+
+        {% if current_user.is_authenticated and current_user.role == 'admin' %}
+        <a href="{{ url_for('views.standings_update', standing_id=standing['key_id']) }}"
+          class="btn btn-warning btn-sm">Update</a>
+        <form method="POST" action="{{ url_for('views.delete_standing', key_id=standing['key_id']) }}"
+          style="display:inline;">
+          <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+        </form>
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
 </table>
 
 <!-- Pagination UI remains unchanged -->
 <nav aria-label="Page navigation">
   <ul class="pagination">
     {% if page > 1 %}
-      <li class="page-item">
-        <a class="page-link" href="{{ url_for('views.standings', page=page-1, search=search_query, sort_by=sort_by, sort_order=sort_order) }}">
-          Previous
-        </a>
-      </li>
+    <li class="page-item">
+      <a class="page-link"
+        href="{{ url_for('views.standings', page=page-1, search=search_query, sort_by=sort_by, sort_order=sort_order) }}">
+        Previous
+      </a>
+    </li>
     {% endif %}
 
     {% set start_page = max(1, page - 2) %}
     {% set end_page = min(total_pages, page + 2) %}
 
     {% if start_page > 1 %}
-      <li class="page-item">
-        <a class="page-link" href="{{ url_for('views.standings', page=1, search=search_query, sort_by=sort_by, sort_order=sort_order) }}">
-          1
-        </a>
-      </li>
-      {% if start_page > 2 %}
-        <li class="page-item disabled"><span class="page-link">...</span></li>
-      {% endif %}
+    <li class="page-item">
+      <a class="page-link"
+        href="{{ url_for('views.standings', page=1, search=search_query, sort_by=sort_by, sort_order=sort_order) }}">
+        1
+      </a>
+    </li>
+    {% if start_page > 2 %}
+    <li class="page-item disabled"><span class="page-link">...</span></li>
+    {% endif %}
     {% endif %}
 
     {% for p in range(start_page, end_page + 1) %}
-      <li class="page-item {% if page == p %}active{% endif %}">
-        <a class="page-link" href="{{ url_for('views.standings', page=p, search=search_query, sort_by=sort_by, sort_order=sort_order) }}">
-          {{ p }}
-        </a>
-      </li>
+    <li class="page-item {% if page == p %}active{% endif %}">
+      <a class="page-link"
+        href="{{ url_for('views.standings', page=p, search=search_query, sort_by=sort_by, sort_order=sort_order) }}">
+        {{ p }}
+      </a>
+    </li>
     {% endfor %}
 
-    {% if end_page < total_pages %}
-      {% if end_page < total_pages - 1 %}
-        <li class="page-item disabled"><span class="page-link">...</span></li>
+    {% if end_page < total_pages %} {% if end_page < total_pages - 1 %} <li class="page-item disabled"><span
+        class="page-link">...</span></li>
       {% endif %}
       <li class="page-item">
-        <a class="page-link" href="{{ url_for('views.standings', page=total_pages, search=search_query, sort_by=sort_by, sort_order=sort_order) }}">
+        <a class="page-link"
+          href="{{ url_for('views.standings', page=total_pages, search=search_query, sort_by=sort_by, sort_order=sort_order) }}">
           {{ total_pages }}
         </a>
       </li>
-    {% endif %}
+      {% endif %}
 
-    {% if page < total_pages %}
-      <li class="page-item">
-        <a class="page-link" href="{{ url_for('views.standings', page=page+1, search=search_query, sort_by=sort_by, sort_order=sort_order) }}">
+      {% if page < total_pages %} <li class="page-item">
+        <a class="page-link"
+          href="{{ url_for('views.standings', page=page+1, search=search_query, sort_by=sort_by, sort_order=sort_order) }}">
           Next
         </a>
-      </li>
-    {% endif %}
+        </li>
+        {% endif %}
   </ul>
 </nav>
 
@@ -148,7 +153,6 @@
 {% if current_user.is_authenticated and current_user.role == 'admin' %}
 <a href="{{ url_for('views.standings_insert') }}" class="btn green-button float-right">Insert</a>
 {% endif %}
-
 
 <a href="{{ url_for('views.home') }}" class="btn btn-dark mt-4">Back to Home</a>
 {% endblock %}

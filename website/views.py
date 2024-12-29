@@ -571,7 +571,7 @@ def standings():
     valid_sort_columns = ['season', 'tier', 'division', 'team_name', 'position']
 
     # Validate columns
-    if sort_by not in valid_sort_columns:
+    if sort_by not in valid_sort_columns and sort_by != 'team_name,season':
         sort_by = 'season'
 
     # Validate sort order
@@ -583,14 +583,24 @@ def standings():
 
         # Build the query with search and sorting
         # IMPORTANT: Use placeholders only for user-submitted *values*, not columns
-        query = f"""
-            SELECT * 
-            FROM standings 
-            WHERE team_name LIKE %s
-               OR season LIKE %s
-               OR division LIKE %s
-            ORDER BY {sort_by} {sort_order}
-        """
+        if sort_by == 'team_name,season':
+            query = f"""
+                SELECT * 
+                FROM standings 
+                WHERE team_name LIKE %s
+                   OR season LIKE %s
+                   OR division LIKE %s
+                ORDER BY team_name {sort_order}, season ASC
+            """
+        else:
+            query = f"""
+                SELECT * 
+                FROM standings 
+                WHERE team_name LIKE %s
+                   OR season LIKE %s
+                   OR division LIKE %s
+                ORDER BY {sort_by} {sort_order}
+            """
 
         cursor.execute(query, (
             f"%{search_query}%",

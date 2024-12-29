@@ -15,8 +15,6 @@ body {
     color: #FFFFFF;
     margin: 0;
     padding: 0;
-    opacity: 0;
-    animation: fade-in 0.5s ease-in forwards;
 }
 
 @keyframes fade-in {
@@ -81,7 +79,6 @@ button:hover {
     color: #000000;
 }
 
-
 /* Button Glow Effect */
 button:hover:before {
     content: '';
@@ -116,7 +113,7 @@ table th, table td {
     text-align: left;
     padding: 10px;
     border: 1px solid #CCCCCC;
-    color: #FFFFFF;
+    color: #FFFFFF; /* Ensure table text is white */
 }
 
 table th {
@@ -159,10 +156,49 @@ a.btn-info:hover {
     color: #000000;
 }
 
+/* Update Button Styling */
+.btn-warning {
+    background: linear-gradient(90deg, #FFA500, #FFD700); /* Orange gradient */
+}
+
+.btn-warning:hover {
+    box-shadow: 0 0 15px #FFD700, 0 0 25px #FFA500;
+}
+
+/* Delete Button Styling */
+.btn-danger {
+    background: linear-gradient(90deg, #FF0000, #FF6347); /* Red gradient */
+}
+
+.btn-danger:hover {
+    box-shadow: 0 0 15px #FF6347, 0 0 25px #FF0000;
+}
+
+/* Insert New Team Button Styling */
 .btn-success {
+    background: linear-gradient(90deg, #32CD32, #00FF00); /* Green gradient */
     display: inline-block; /* Ensure the button does not span the entire line */
     width: auto; /* Adjust the width to fit the content */
 }
+
+.btn-success:hover {
+    box-shadow: 0 0 15px #00FF00, 0 0 25px #32CD32;
+}
+
+/* Button Glow Effect */
+button:hover:before, a.btn:hover:before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 80%);
+    animation: glow 1.00s infinite ease-in-out;
+    z-index: -1;
+    pointer-events: none;
+}
+
 /* Placeholder Styling */
 input::placeholder {
     color: #888888;
