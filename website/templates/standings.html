@@ -75,7 +75,7 @@
               <a class="btn btn-info btn-sm" href="{{ url_for('views.standing_details', key_id=standing['key_id']) }}">View Details</a>
 
               {% if current_user.is_authenticated and current_user.role == 'admin' %}
-              <a href="{{ url_for('views.standings_update', standing_id=standing['key_id']) }}" class="btn btn-warning">Update</a>
+              <a href="{{ url_for('views.standings_update', standing_id=standing['key_id']) }}" class="btn btn-warning btn-sm">Update</a>
               <form method="POST" action="{{ url_for('views.delete_standing', key_id=standing['key_id']) }}" style="display:inline;">
                   <button type="submit" class="btn btn-danger btn-sm">Delete</button>
               </form>

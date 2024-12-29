@@ -30,6 +30,7 @@
               <form method="POST" action="{{ url_for('views.delete_team', team_id=team['team_id']) }}" style="display:inline;">
                   <button type="submit" class="btn btn-danger btn-sm">Delete</button>
               </form>
+              <a class="btn btn-warning btn-sm" href="{{ url_for('views.update_team', team_id=team['team_id']) }}">Update</a>
               {% endif %}
           </td>
       </tr>
@@ -55,6 +56,10 @@
   
 {% else %}
 <p>No teams found.</p>
+{% endif %}
+
+{% if current_user.is_authenticated and current_user.role == 'admin' %}
+<a href="{{ url_for('views.insert_team') }}" class="btn btn-success mt-4">Insert New Team</a>
 {% endif %}
 
 <a href="{{ url_for('views.home') }}" class="btn btn-dark mt-4">Back to Home</a>

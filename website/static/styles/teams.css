@@ -81,6 +81,7 @@ button:hover {
     color: #000000;
 }
 
+
 /* Button Glow Effect */
 button:hover:before {
     content: '';
@@ -158,6 +159,10 @@ a.btn-info:hover {
     color: #000000;
 }
 
+.btn-success {
+    display: inline-block; /* Ensure the button does not span the entire line */
+    width: auto; /* Adjust the width to fit the content */
+}
 /* Placeholder Styling */
 input::placeholder {
     color: #888888;

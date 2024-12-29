@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Insert New Team{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/teams_insert.css') }}">
+<h1 class="mb-4">Insert New Team</h1>
+
+<form method="POST" action="{{ url_for('views.insert_team') }}">
+    <div class="form-group">
+        <label for="team_id">Team ID</label>
+        <input type="text" class="form-control" id="team_id" name="team_id" placeholder="e.g T-500" required>
+    </div>
+    <div class="form-group">
+        <label for="team_name">Team Name</label>
+        <input type="text" class="form-control" id="team_name" name="team_name" required>
+    </div>
+    <div class="form-group">
+        <label for="former_team_names">Former Team Names</label>
+        <input type="text" class="form-control" id="former_team_names" name="former_team_names" placeholder="default:None">
+    </div>
+    <div class="form-group">
+        <label for="first_appearance">First Appearance</label>
+        <input type="number" class="form-control" id="first_appearance" name="first_appearance" placeholder="e.g 1888"
+            required>
+    </div>
+    <div class="form-group">
+        <label for="current">Current Name</label>
+        <input type="checkbox" id="current" name="current" onclick="toggleCheckboxes(this)">
+    </div>
+    <div class="form-group">
+        <label for="former">Former Name</label>
+        <input type="checkbox" id="former" name="former" onclick="toggleCheckboxes(this)">
+    </div>
+    <div class="form-group">
+        <label for="defunct">Defunct</label>
+        <input type="checkbox" id="defunct" name="defunct" onclick="toggleCheckboxes(this)">
+    </div>
+
+    <script>
+        function toggleCheckboxes(selectedCheckbox) {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                if (checkbox !== selectedCheckbox) {
+                    checkbox.disabled = selectedCheckbox.checked;
+                }
+            });
+        }
+    </script>
+    <button type="submit" class="btn btn-primary" id="insert">Insert</button>
+</form>
+
+<a href="{{ url_for('views.teams') }}" class="btn btn-dark mt-4">Back to Teams</a>
+{% endblock %}

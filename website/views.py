@@ -1270,3 +1270,78 @@ def standings_update(standing_id):
         standing = cursor.fetchone()
         cursor.close()
         return render_template('standings_update.html', standing=standing)
+
+@views.route('/insert-team', methods=['GET', 'POST'])
+@login_required
+def insert_team():
+    if current_user.role != 'admin':
+        flash('Only admins can insert teams.', 'error')
+        return redirect(url_for('views.teams'))
+
+    if request.method == 'POST':
+        team_id = request.form.get('team_id')
+        team_name = request.form.get('team_name')
+        former_team_names = request.form.get('former_team_names')
+        first_appearance = request.form.get('first_appearance')
+        current = 'current' in request.form
+        former = 'former' in request.form
+        defunct = 'defunct' in request.form
+
+        try:
+            cursor = g.db.cursor()
+            insert_query = """
+                INSERT INTO teams (team_id, team_name, former_team_names, current, former, defunct, first_appearance)
+                VALUES (%s, %s, %s, %s, %s, %s, %s)
+            """
+            cursor.execute(insert_query, (team_id, team_name, former_team_names, current, former, defunct, first_appearance))
+            g.db.commit()
+            flash('Team inserted successfully!', 'success')
+            return redirect(url_for('views.teams'))
+        except mysql.connector.Error as e:
+            flash(f'An error occurred while inserting the team: {e}', 'error')
+        finally:
+            cursor.close()
+
+    return render_template('teams_insert.html')
+
+@views.route('/update-team/<team_id>', methods=['GET', 'POST'])
+@login_required
+def update_team(team_id):
+    if current_user.role != 'admin':
+        flash('Only admins can update teams.', 'error')
+        return redirect(url_for('views.teams'))
+
+    try:
+        cursor = g.db.cursor(dictionary=True)
+        if request.method == 'POST':
+            team_id = request.form.get('team_id')
+            team_name = request.form.get('team_name')
+            former_team_names = request.form.get('former_team_names')
+            first_appearance = request.form.get('first_appearance')
+            current = 'current' in request.form
+            former = 'former' in request.form
+            defunct = 'defunct' in request.form
+
+            update_query = """
+                UPDATE teams
+                SET team_name = %s, former_team_names = %s, current = %s, former = %s, defunct = %s, first_appearance = %s
+                WHERE team_id = %s
+            """
+            cursor.execute(update_query, (team_name, former_team_names, current, former, defunct, first_appearance, team_id))
+            g.db.commit()
+            flash('Team updated successfully!', 'success')
+            return redirect(url_for('views.teams'))
+
+        else:
+            cursor.execute("SELECT * FROM teams WHERE team_id = %s", (team_id,))
+            team = cursor.fetchone()
+            if not team:
+                flash('Team not found.', 'error')
+                return redirect(url_for('views.teams'))
+
+    except mysql.connector.Error as e:
+        flash(f'An error occurred while updating the team: {e}', 'error')
+    finally:
+        cursor.close()
+
+    return render_template('teams_update.html', team=team)

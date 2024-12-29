@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}Update Team Data{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/teams_update.css') }}">
+<div class="container">
+    <h1>Update Team Data</h1>
+    <form action="{{ url_for('views.update_team', team_id=team['team_id']) }}" method="POST">
+        <div class="form-group">
+            <label for="team_id">Team ID:</label>
+            <input type="text" id="team_id" name="team_id" class="form-control" value="{{ team['team_id'] }}" required>
+        </div>
+        <div class="form-group">
+            <label for="team_name">Team Name:</label>
+            <input type="text" id="team_name" name="team_name" class="form-control" value="{{ team['team_name'] }}"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="former_team_names">Former Team Names:</label>
+            <input type="text" id="former_team_names" name="former_team_names" class="form-control"
+                value="{{ team['former_team_names'] }}">
+        </div>
+        <div class="form-group">
+            <label for="first_appearance">First Appearance:</label>
+            <input type="number" id="first_appearance" name="first_appearance" class="form-control"
+                value="{{ team['first_appearance'] }}" required>
+        </div>
+        <div class="form-group">
+            <label for="current">Current:</label>
+            <input type="checkbox" id="current" name="current" {% if team['current'] %}checked{% endif %}
+                onclick="toggleCheckboxes(this)">
+        </div>
+        <div class="form-group">
+            <label for="former">Former:</label>
+            <input type="checkbox" id="former" name="former" {% if team['former'] %}checked{% endif %}
+                onclick="toggleCheckboxes(this)">
+        </div>
+        <div class="form-group">
+            <label for="defunct">Defunct:</label>
+            <input type="checkbox" id="defunct" name="defunct" {% if team['defunct'] %}checked{% endif %}
+                onclick="toggleCheckboxes(this)">
+        </div>
+        <button type="submit" class="btn btn-primary" id="update">Update</button>
+    </form>
+    <a href="{{ url_for('views.teams') }}" class="btn btn-dark mt-4">Back to Teams</a>
+</div>
+
+<script>
+    function toggleCheckboxes(selectedCheckbox) {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            if (checkbox !== selectedCheckbox) {
+                checkbox.disabled = selectedCheckbox.checked;
+            }
+        });
+    }
+</script>
+{% endblock %}
