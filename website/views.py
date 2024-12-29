@@ -1227,3 +1227,46 @@ def standings_top_3_teams():
                 top_3_teams[division][position] = row
 
     return render_template('standings_top_3_teams.html', top_3_teams=top_3_teams)
+
+@views.route('/standings/update/<int:standing_id>', methods=['GET', 'POST'])
+@login_required
+def standings_update(standing_id):
+    cursor = g.db.cursor(dictionary=True)
+    if request.method == 'POST':
+        season_id = request.form.get('season_id')
+        season = request.form.get('season')
+        tier = request.form.get('tier')
+        division = request.form.get('division')
+        subdivision = request.form.get('subdivision')
+        position = request.form.get('position')
+        team_id = request.form.get('team_id')
+        team_name = request.form.get('team_name')
+        played = request.form.get('played')
+        wins = request.form.get('wins')
+        draws = request.form.get('draws')
+        losses = request.form.get('losses')
+        goals_for = request.form.get('goals_for')
+        goals_against = request.form.get('goals_against')
+        goal_difference = request.form.get('goal_difference')
+        points = request.form.get('points')
+        point_adjustment = request.form.get('point_adjustment')
+
+        try:
+            cursor.execute("""
+                UPDATE standings
+                SET season_id = %s, season = %s, tier = %s, division = %s, subdivision = %s, position = %s,
+                    team_id = %s, team_name = %s, played = %s, wins = %s, draws = %s, losses = %s,
+                    goals_for = %s, goals_against = %s, goal_difference = %s, points = %s, point_adjustment = %s
+                WHERE key_id = %s
+            """, (season_id, season, tier, division, subdivision, position, team_id, team_name, played, wins, draws, losses,
+                  goals_for, goals_against, goal_difference, points, point_adjustment, standing_id))
+            g.db.commit()
+            flash('Standing updated successfully!', 'success')
+            return redirect(url_for('views.standings'))
+        except mysql.connector.Error as e:
+            flash(f'Error updating standing: {e}', 'error')
+    else:
+        cursor.execute("SELECT * FROM standings WHERE key_id = %s", (standing_id,))
+        standing = cursor.fetchone()
+        cursor.close()
+        return render_template('standings_update.html', standing=standing)
