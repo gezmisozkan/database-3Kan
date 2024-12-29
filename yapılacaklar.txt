@@ -1,9 +1,6 @@
 
-standing kısmında insert edilirken season id max 2021 'e kadar olunca çalışıyor. S-2050-2 gibi bir değeri eklemiyor, hata da vermiyor.
-
-!!!! matches sayfasında total pages doğru hesaplanıyor ancak o sayfaya gidilmiyor, son sayfa orada gösterilenden çok daha az, çok mantıksız bir hata ama çözemedim
 
 seasons CRUD işlemleri yapılacak. Insert ve Update yok. 
 all seasonsta pagination sıkıntılı 
-admin kendi yorumunu silemiyor.
+
 sunum hazırlanacak.

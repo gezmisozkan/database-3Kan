@@ -33,4 +33,9 @@ seasons verilerinden birisi silindiğinde trigger ile standingsteki bilgileri g�
 
 Tüm frontend bitti. 
 ER diagram çıkarıldı. 
-standings tablosuna query eklendi bu sayede her ligdeki top 3 team görülebiliyor. 
+standings tablosuna query eklendi bu sayede her ligdeki top 3 team görülebiliyor.
+
+standing kısmında insert edilirken season id max 2021 'e kadar olunca çalışıyor. S-2050-2 gibi bir değeri eklemiyor, hata da vermiyor. 
+Bu bir hata değilmiş seasons tablosuna insert yapılması gerekiyormuş. 
+
+matches tablosu düzeldi. 
