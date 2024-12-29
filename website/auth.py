@@ -59,8 +59,8 @@ def sign_up():
         'full_name': ''
     }
     if request.method == 'POST': 
-        email = request.form.get('email')
-        full_name = request.form.get('fullName')
+        email = request.form.get('email').strip()  # Strip whitespace
+        full_name = request.form.get('fullName').strip().replace(" ", "_")  # Remove all spaces
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
 
