@@ -1,5 +1,5 @@
 CREATE TABLE seasons (
-    key_id INT PRIMARY KEY,
+    key_id INT AUTO_INCREMENT PRIMARY KEY,
     season_id VARCHAR(20) UNIQUE NOT NULL,
     season CHAR(4) NOT NULL,
     tier INT NOT NULL CHECK (tier BETWEEN 1 AND 4),
