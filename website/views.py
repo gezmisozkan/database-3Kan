@@ -1362,3 +1362,138 @@ def update_team(team_id):
         cursor.close()
 
     return render_template('teams_update.html', team=team)
+
+
+@views.route('/upsert-season', methods=['GET', 'POST'])
+@views.route('/upsert-seasons/<season_id>', methods=['GET', 'POST'])
+@login_required
+def upsert_season(season_id=None):
+    """
+    Route to create or update a season in the database.
+    Only admin users can insert or update seasons.
+
+    If season_id is None, we are creating a new season.
+    If season_id is passed, we are editing an existing season.
+    """
+    if current_user.role != 'admin':
+        flash('Only admins can create or update seasons.', 'error')
+        return redirect(url_for('views.search_seasons'))
+
+    # Initialize field values
+    key_id = None
+    form_data = {
+        'season_id': '',
+        'season': '',
+        'tier': '',
+        'division': '',
+        'subdivision': '',
+        'winner': '',
+        'count_teams': ''
+    }
+
+    # If we are updating an existing season, fetch the record
+    if season_id:
+        try:
+            cursor = g.db.cursor(dictionary=True)
+            query = """
+                SELECT key_id, season_id, season, tier, division, subdivision, winner, count_teams
+                FROM Seasons
+                WHERE season_id = %s
+            """
+            cursor.execute(query, (season_id,))
+            season_record = cursor.fetchone()
+            cursor.close()
+
+            if season_record:
+                key_id = season_record['key_id']
+                form_data = {
+                    'season_id': season_record['season_id'],
+                    'season': season_record['season'],
+                    'tier': season_record['tier'],
+                    'division': season_record['division'],
+                    'subdivision': season_record['subdivision'] if season_record['subdivision'] else '',
+                    'winner': season_record['winner'],
+                    'count_teams': season_record['count_teams']
+                }
+            else:
+                flash(f'Season {season_id} not found!', 'error')
+                return redirect(url_for('views.search_seasons'))
+        except mysql.connector.Error as e:
+            flash(f'MySQL Error: {e}', 'error')
+            return redirect(url_for('views.search_seasons'))
+
+    if request.method == 'POST':
+        # Collect form input
+        season_id_form = request.form.get('season_id')
+        season_form = request.form.get('season')
+        tier_form = request.form.get('tier')
+        division_form = request.form.get('division')
+        subdivision_form = request.form.get('subdivision') or None
+        winner_form = request.form.get('winner')
+        count_teams_form = request.form.get('count_teams')
+
+        try:
+            cursor = g.db.cursor()
+
+            # If updating an existing record
+            if key_id:
+                update_query = """
+                    UPDATE Seasons
+                    SET season_id=%s, season=%s, tier=%s, division=%s, 
+                        subdivision=%s, winner=%s, count_teams=%s
+                    WHERE key_id=%s
+                """
+                cursor.execute(update_query, (
+                    season_id_form, season_form, tier_form,
+                    division_form, subdivision_form, winner_form,
+                    count_teams_form, key_id
+                ))
+                g.db.commit()
+                flash(f'Season {season_id_form} updated successfully!', 'success')
+            else:
+                # Inserting a new record
+                insert_query = """
+                    INSERT INTO Seasons (season_id, season, tier, division, 
+                                         subdivision, winner, count_teams)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s)
+                """
+                cursor.execute(insert_query, (
+                    season_id_form, season_form, tier_form,
+                    division_form, subdivision_form, winner_form,
+                    count_teams_form
+                ))
+                g.db.commit()
+                flash(f'Season {season_id_form} created successfully!', 'success')
+
+        except mysql.connector.Error as e:
+            flash(f'An error occurred while saving the season: {e}', 'error')
+        finally:
+            cursor.close()
+
+        return redirect(url_for('views.search_seasons'))
+
+    return render_template(
+        'seasons_upsert.html',
+        form_data=form_data,
+        is_update=True if key_id else False
+    )
+
+
+@views.route('/check_season/<season_id>', methods=['GET'])
+@login_required
+def check_season(season_id):
+    """
+    API endpoint to check if a season_id exists in the database.
+    """
+    if current_user.role != 'admin':
+        return {'exists': False}, 403
+
+    try:
+        cursor = g.db.cursor(dictionary=True)
+        query = "SELECT 1 FROM Seasons WHERE season_id = %s LIMIT 1"
+        cursor.execute(query, (season_id,))
+        result = cursor.fetchone()
+        cursor.close()
+        return {'exists': bool(result)}
+    except mysql.connector.Error as e:
+        return {'error': str(e)}, 500

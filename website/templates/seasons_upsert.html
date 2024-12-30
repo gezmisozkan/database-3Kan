@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Upsert Seasons
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/seasons_upsert.css') }}">
+<div class="container mt-4">
+    <h1 id="form-title" class="mb-4">
+        {{ "Update" if is_update else "Insert" }} Season
+    </h1>
+    <form method="POST">
+        <div class="form-group mb-3">
+            <label for="season_id">Season ID</label>
+            <input
+                type="text"
+                class="form-control"
+                name="season_id"
+                id="season_id"
+                value="{{ form_data.season_id }}"
+                required
+            >
+        </div>
+        <div class="form-group mb-3">
+            <label for="season">Season (Year)</label>
+            <input
+                type="text"
+                class="form-control"
+                name="season"
+                id="season"
+                value="{{ form_data.season }}"
+            >
+        </div>
+        <div class="form-group mb-3">
+            <label for="tier">Tier</label>
+            <input
+                type="number"
+                class="form-control"
+                name="tier"
+                id="tier"
+                value="{{ form_data.tier }}"
+            >
+        </div>
+        <div class="form-group mb-3">
+            <label for="division">Division</label>
+            <input
+                type="text"
+                class="form-control"
+                name="division"
+                id="division"
+                value="{{ form_data.division }}"
+            >
+        </div>
+        <div class="form-group mb-3">
+            <label for="subdivision">Subdivision</label>
+            <input
+                type="text"
+                class="form-control"
+                name="subdivision"
+                id="subdivision"
+                value="{{ form_data.subdivision }}"
+            >
+        </div>
+        <div class="form-group mb-3">
+            <label for="winner">Winner</label>
+            <input
+                type="text"
+                class="form-control"
+                name="winner"
+                id="winner"
+                value="{{ form_data.winner }}"
+            >
+        </div>
+        <div class="form-group mb-3">
+            <label for="count_teams">Count of Teams</label>
+            <input
+                type="number"
+                class="form-control"
+                name="count_teams"
+                id="count_teams"
+                value="{{ form_data.count_teams }}"
+            >
+        </div>
+
+        <button id="submit-button" type="submit" class="btn btn-primary">
+            {{ "Update" if is_update else "Insert" }}
+        </button>
+        <a href="{{ url_for('views.search_seasons') }}" class="btn btn-secondary">Cancel</a>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const seasonIdInput = document.getElementById('season_id');
+                const formTitle = document.getElementById('form-title');
+                const submitButton = document.getElementById('submit-button');
+
+                seasonIdInput.addEventListener('input', () => {
+                    const seasonId = seasonIdInput.value.trim();
+                    if (seasonId) {
+                        fetch(`/check_season/${seasonId}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.exists) {
+                                    formTitle.textContent = "Update Season";
+                                    submitButton.textContent = "Update";
+                                } else {
+                                    formTitle.textContent = "Insert Season";
+                                    submitButton.textContent = "Insert";
+                                }
+                            })
+                            .catch(error => console.error('Error:', error));
+                    } else {
+                        formTitle.textContent = "Insert Season";
+                        submitButton.textContent = "Insert";
+                    }
+                });
+            });
+        </script>
+    </form>
+</div>
+{% endblock %}

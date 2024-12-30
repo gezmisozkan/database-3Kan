@@ -44,6 +44,10 @@
                         {% endfor %}
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/seasons">View All Seasons</a>
+                        {% if current_user.role == 'admin' %}
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/upsert-season">Upsert Seasons</a>
+                        {% endif %}
                     </div>
                 </li>
             </ul>
