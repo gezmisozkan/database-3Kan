@@ -36,11 +36,6 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-html, body {
-    height: 100%; /* Ensure the body fills the viewport height */
-    margin: 0;
-}
-
 body {
     display: flex;
     flex-direction: column; /* Make the body a flex container */
