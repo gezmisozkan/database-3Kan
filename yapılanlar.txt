@@ -31,6 +31,8 @@ matches tablosuna edit ve insert eklendi, atılan gol değiştirildiğinde veya 
 team details sayfasının mantığı değişti, şampiyınluk sayısı, oynanan maç, atılan goller etc. eklendi
 seasons verilerinden birisi silindiğinde trigger ile standingsteki bilgileri güncelliyoruz
 
+admin'in artık sezon tablosu üzerinde upsert yapma şansı var
+
 Tüm frontend bitti. 
 ER diagram çıkarıldı. 
 standings tablosuna query eklendi bu sayede her ligdeki top 3 team görülebiliyor.
