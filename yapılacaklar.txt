@@ -1,1 +1,0 @@
-seasons CRUD işlemleri yapılacak. Insert ve Update yok. 
