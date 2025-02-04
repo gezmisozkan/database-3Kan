@@ -1,75 +1,107 @@
-# **Database-3Kan**
+# 3-KanDB - A Comprehensive Football Database
 
-A web application that uses a MySQL database for managing football team and match data. It uses the MySQL database for user authentication and comment property as well.  
+## Overview
+
+3-KanDB is a Flask-based web application that allows users to explore, manage, and analyze football data, including teams, matches, standings, and seasons. This project aims to provide a structured and efficient way to store and retrieve football statistics using a MySQL database.
+
+## Features
+
+- **User Authentication**: Sign-up, login, and logout functionality.
+- **Teams Management**: View, search, and manage football teams.
+- **Match Tracking**: Insert, update, and view match details.
+- **Season Overview**: View and analyze past football seasons.
+- **Standings Management**: Track team rankings within different seasons and divisions.
+- **Comments & Discussions**: Users can comment on matches and teams.
+- **Admin Panel**: Manage teams, matches, seasons, standings, and comments.
 
 ---
 
-## **Getting Started**
+## **Project Structure**
 
-Follow these steps to set up and use the project on your local machine:
+```
+/FootballDB
+│── /football/                # Contains CSV files with football data
+│── /sql-queries/             # MySQL schema and queries
+│── /website/                 # Application logic and views
+│   │── auth.py               # Authentication and user management
+│   │── views.py              # Application routes and functionalities
+│   │── static/               # Static files for website
+│   │── templates/            # HTML templates for the website
+│── /utils/                   # Contains database scripts
+│   │── build_database.py     # Builds the database schema
+│   │── insert_database.py    # Inserts initial data into the database
+│── main.py                   # Main entry point for the application
+│── README.md                 # Documentation
+```
 
 ---
 
-### **Clone the Repository**
+## **Installation & Setup**
 
-Clone the repository to your local machine:
+### **1. Create MySQL User**
 
-```bash
+Before proceeding, create a MySQL user with the following credentials:
+
+```
+Username: root
+Password: 1234
+```
+
+### **2. Clone the repository**
+
+```sh
 git clone https://github.com/gezmisozkan/database-3Kan.git
 cd database-3Kan
 ```
 
-### Install the necessary Python packages using pip:
-```bash
+### **3. Install Dependencies**
+
+FootballDB requires Python 3 and pip. Install dependencies using:
+
+```sh
 pip install -r requirements.txt
 ```
 
-### To set up the MySQL and SQLite databases:
-Ensure you have MySQL installed and running on your system.
-#### Build MySQL Database
-Run the script in the utils directory to build the database:
-This script will drop the old database (if any), create a new one, and define the schema.
-```bash
+### **4. Set up the MySQL Database**
+
+- Ensure the MySQL user (`root`, `1234`) is created.
+- Run the database setup scripts:
+
+```sh
 python utils/build_database.py
-```
-#### Insert Data into MySQL
-Use the script in the utils directory to insert data into the MySQL database:
-Ensure your .csv files for data insertion are in the appropriate directory (specified in the script).
-```bash
-python utils/insert_to_db.py
+python utils/insert_database.py
 ```
 
-### Start the Application
-Run the main script to start the web application:
-This will start the Flask server and build the website. Navigate to: http://127.0.0.1:5000/
-```bash
+### **5. Run the Application**
+
+```sh
 python main.py
 ```
 
-### **Features**
+- The application will be available at `http://127.0.0.1:5000/`.
 
-- **User Authentication**:
-  - Users can sign up and log in using MySQL for authentication.
-- **Team Management**:
-  - View and manage football teams and matches using MySQL.
-- **Interactive Interface**:
-  - Select a team and view match results.
+## **Usage**
+
+- **User Actions**
+  - Sign up or log in to interact with the database.
+  - Browse teams and match details.
+  - Add comments on matches or teams.
+- **Admin Actions**
+  - Add or update match results.
+  - Manage teams, matches, seasons, and standings.
+  - Delete inappropriate comments.
 
 ---
 
-### **Folder Structure**
+## **Contributors**
 
-- **`utils`**: Contains scripts for building and inserting data into the database.
-  - `build_database.py`: Script for creating and configuring the database.
-  - `insert_to_db.py`: Script for inserting data into the MySQL database.
-- **`website`**: Contains the web application code.
-  - `auth.py`: Handles user authentication.
-  - `views.py`: Defines routes and logic for the website.
-  - `models.py`: Contains database models.
-  - `templates/`: HTML templates for rendering the web pages.
+- **Özkan Gezmiş** - Data Specialist and Backend Developer
+- **Hakan Çetinkaya** - Full Stack Developer
+- **Okan Zagor A.** - Developer and System Analyst
 
-## Screenshots for website
+---
 
-You can see the some main pages in our website by looking screenshots named home_page.png, matches_page.png,
-seasons_page.png,
-standings_page.png teams_page.png
+## **License**
+
+This project is open-source and available under the MIT License.
+
